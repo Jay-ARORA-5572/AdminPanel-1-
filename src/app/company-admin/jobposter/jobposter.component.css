@@ -1,0 +1,429 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.job-list {
+    width: 70%;
+    height: 88vh;
+    overflow-y: scroll;
+}
+
+.filters {
+    width: 25%;
+    border-radius: 10px;
+    height: 88vh;
+    overflow-y: scroll;
+}
+
+#heading{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.job-card {
+    border: 1px solid black;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition-timing-function: ease-in;
+}
+
+.job-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.job-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.job-info{
+    width: 100%;
+}
+
+.job-info h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.job-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.job-info .location,
+.job-info .employment-type {
+    font-weight: bold;
+}
+
+.jobs_posterdate{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.filters h3 {
+    margin-top: 0;
+}
+
+.filters ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.filters ul li {
+    margin: 10px 0;
+}
+
+.jobstype{
+    padding: 5%;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+#jobstypecount{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+.checkboxshow{
+    width: 80%;
+}
+
+.totaljobshow{
+    background-color: #fff;
+    width: 15%;
+    height: 15%;
+    border-radius: 50%;
+
+}
+
+.countjobs{
+    font-size: 17px;
+    margin: 28%;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#outer-container {
+    width: 100%;
+    /* height: 97%; */
+}
+
+
+.custom-card{
+    width: 98%;
+    padding: 1%;
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+}
+
+/* List of Institute */
+
+#heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn1 {
+    background-color:#0D1046 !important;
+    color: #FFFFFF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    width: 9vw;
+    height: 5vh;
+}
+
+
+#left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    align-items: center;
+    width: 10%;
+}
+
+
+.title {
+    font-family: 'Mulish', sans-serif;
+    font-size: 2.6vh;
+    text-align: left;
+    margin: 5%;
+    width: 15vw;
+}
+
+
+#courseheading {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+    background-color:#0D1046;
+}
+
+
+.Coursetitle {
+    font-family: 'Mulish', sans-serif;
+    font-size: 18px;
+    text-align: left;
+    margin-top:3.3%;
+    width: 15vw;
+    color: white;
+    font-weight: 800;
+}
+
+.listicon:hover{
+    cursor: pointer;
+
+}
+
+/* List of Institute */
+
+
+/* --------------Searcbar -------------- */
+/* .stab {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#download{
+    margin-left: 1.3%;
+}
+#searchpop {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70vw;
+    height: 11vh;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-right: 1vw;
+}
+
+#filterForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70vw;
+    align-items: center;
+}
+
+.example-full-width {
+    width: 22vw;
+    margin-top: 2vh;
+}
+
+
+#closeicon {
+    float: right;
+    width: 25px;
+    height: 25px;
+}
+
+.closebtn {
+    color: #f44336;
+    font-size: 24px;
+    position: absolute;
+    top: 2.3vh;
+    left: 70.9vw;
+    cursor: pointer;
+}
+
+#actionbtns {
+    display: flex;
+    gap: 8%;
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchbtn {
+    background-color: #0D1046 !important;
+    color: #FFFFFF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    widows: 100%;
+}
+
+.btn {
+    background-color:#0D1046 !important;
+    color: #FFFFFF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+    text-align: center;
+    width: 100%;
+}
+
+#resetbtn {
+    background-color: #FF5833 !important;
+    color: #FFFFFF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    widows: 100%;
+
+} */
+
+/* --------------Searcbar -------------- */
+
+
+
+
+/* ---------------- cards design ---------------------*/
+/* .card1{
+    background-color: #FDF0D7 !important;
+    transition: transform 0.3s ease;
+}
+
+.textsize1{
+    color: #B0945A !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight:900 !important;
+}
+
+.header{
+    font-family: 'Mulish', sans-serif;
+    font-size: 2vh;
+    font-weight: 900;
+    color:#242424;
+}
+
+.card2{
+    background-color: #FDF2EC !important;
+    transition: transform 0.3s ease;
+
+}
+
+.textsize2{
+    color: #EE7D3D !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight:900 !important;
+}
+
+.card3{
+    background-color: #FDECEC !important;
+    transition: transform 0.3s ease;
+
+}
+
+.textsize3{
+    color: #EF4444 !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight:900 !important;
+}
+
+.card4{
+    background-color: #FDECEC !important;
+    transition: transform 0.3s ease;
+
+}
+
+.textsize4{
+    color: #445FEF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight:900 !important;
+}
+
+.card5{
+    background-color: #FDECEC !important;
+    transition: transform 0.3s ease;
+
+}
+
+.textsize5{
+    color: #0BA700 !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight:900 !important;
+
+}
+
+.card6{
+    background-color: #E7F6E6 !important;
+    transition: transform 0.3s ease;
+
+}
+
+.textsize6{
+    color: #915F26 !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight:900 !important;
+} 
+
+.surface-card:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+}   */
+/* ---------------- cards design ---------------------*/
+
+
+
+/*--------------- tables data------------  */
+/* #tablediv {
+    width: 100%;
+    overflow: scroll;
+} */
+
+
+
+
+/* ----------- Test ---------- */
+

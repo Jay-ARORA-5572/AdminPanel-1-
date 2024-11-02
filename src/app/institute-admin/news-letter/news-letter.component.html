@@ -1,0 +1,31 @@
+<div id="main">
+
+    <h1>Subscribers</h1>
+
+    <div class="top-header">
+        <input type="text" pInputText placeholder="Search" />
+        <!-- <div class="header-controls">
+            <button pButton type="button" label="making .csv type file button" class="button mr-2"></button>
+            <button pButton type="button" label="making copy button" class="button"></button>
+        </div> -->
+    </div>
+
+    <p-table [value]="instructors" responsiveLayout="scroll" [paginator]="true" [rows]="rows" [first]="first"
+        (onPage)="onPageChange($event)">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>#</th>
+                <th>Email</th>
+                <th>Date</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-instructor>
+            <tr class="table-row">
+                <td>{{ instructor.phone }} </td>
+                <td>{{ instructor.user }}</td>
+                <td>{{ instructor.country }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+
+</div>

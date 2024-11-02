@@ -1,0 +1,340 @@
+.container {
+    display: flex;
+    margin: 1rem;
+    height: auto;
+    background-color: #fff;
+}
+
+.sidebar, .main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar {
+    flex: 0 0 400px;
+    margin-right: 1rem;
+}
+
+.courses-header {
+  /* background-color: #f7f7f7; */
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1px 0 0 16px;
+  margin-left: 1rem;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-component {
+  font-size: large !important;
+}
+
+#gap {
+  margin: 0 0;
+}
+
+#gap1 {
+  margin: 0 0;
+}
+
+.course-info h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+  color: #000;
+}
+
+@media (max-width: 576px) {
+  .courses-header {
+    padding: 10px;
+  }
+
+  .course-info h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+::ng-deep .p-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.personal-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+}
+
+.profile-info {
+    margin-left: 1rem;
+}
+
+.account-balance,
+.last-login {
+    margin-top: 1rem;
+    
+}
+
+@media (max-width: 768px) {
+    .sidebar,
+    .main-content {
+        max-width: 100%;
+    }
+}
+
+/* 1st section */
+
+.dashboard-header {
+    background-color: #f8f9fa;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  }
+
+  /* header  */
+  
+  .leftsidediv {
+    display: flex;
+    gap: 1rem;
+    /* flex-wrap: wrap; */
+    flex-direction: row-reverse;
+    margin: auto;
+    margin-bottom: 1%;
+    margin-top: 1%;
+  }
+  
+  .rightsidediv {
+    width: fit-content;
+    padding: 2%;
+    height: 50%;
+    margin-top: 1.4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .shadow-5{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .firstdiv {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.3rem;
+    /* margin-top: 3%; */
+  }
+  
+  .seconddiv {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.3rem;
+  }
+  
+  .thirddiv {
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card {
+    flex: 1;
+    min-width: 200px;
+    box-sizing: border-box;
+  }
+  
+  .overview-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  
+    &.purple {
+      background: #e9e7fd;
+    }
+  
+    &.blue {
+      background: #e0f7fa;
+    }
+  
+    &.yellow {
+      background: #fff8e1;
+    }
+  
+    &.red {
+      background: #ffebee;
+    }
+  }
+  
+  .chart-card,
+  .summary-card {
+    flex: 1;
+    min-width: 300px;
+    /* Adjust as needed */
+  }
+  
+  /* Add responsiveness */
+  @media (max-width: 768px) {
+    .flex-container {
+      flex-direction: column;
+    }
+  }
+  
+  .applicants-summary-container {
+    /* background: #f8f9fa; */
+    border-radius: 10px;
+    padding: 15px;
+    /* margin-top: 15px; */
+  
+    .summary-header {
+      border-bottom: 1px solid #e0e0e0;
+      margin-bottom: 15px;
+  
+      .summary-title {
+        font-size: 1.1em;
+        font-weight: 600;
+        color: #333;
+        border-left: 4px solid #007bff;
+        padding-left: 10px;
+      }
+    }
+  
+    .summary-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      .applicant-summary-item {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        margin: 0 10px;
+        transition: box-shadow 0.2s;
+  
+        &:hover {
+          box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+        }
+  
+        .applicant-icon {
+          font-size: 2em;
+          display: block;
+          margin: 0 auto;
+        }
+  
+        .summary-label {
+          font-size: 1em;
+          color: #777;
+          margin-top: 10px;
+        }
+  
+        .summary-value {
+          font-size: 1.5em;
+          font-weight: 600;
+          margin-top: 5px;
+        }
+  
+        .purple {
+          color: #6f42c1;
+        }
+  
+        .blue {
+          color: #17a2b8;
+        }
+  
+        .yellow {
+          color: #ffc107;
+        }
+      }
+    }
+  }
+  
+  /* Pop show the button */
+
+.p-button {
+    background: none;
+    border: none;
+    color: black;
+  }
+  
+  
+  .actionicon:hover {
+    background-color: rgb(206, 202, 202);
+    border: none;
+  }
+  
+  ::ng-deep .p-overlaypanel-content {
+    padding: 0rem !important;
+  }
+  
+  .menu {
+    padding: 5px;
+    width: 170px;
+  }
+  
+  .menu-item {
+    display: flex;
+    cursor: pointer;
+  }
+  
+  .menu-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  
+  .actioniconover.p-button {
+    transition: none;
+    border: none;
+  }
+  
+  .actioniconover.p-button:hover {
+    background-color: inherit;
+    border-color: inherit;
+    box-shadow: none;
+  }
+  
+  .actioniconover {
+    border: none;
+    font-size: 10px;
+  }
+  
+  .actioniconover:hover {
+    border: none;
+    background-color: rgb(221, 219, 219);
+  }
+  
+  /* Pop show the button */
+  

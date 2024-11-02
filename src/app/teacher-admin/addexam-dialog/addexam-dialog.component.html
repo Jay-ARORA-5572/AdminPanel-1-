@@ -1,0 +1,162 @@
+<div class="Exam-container">
+  <div class="close-icon" (click)="closeDialog()">
+      <i class="pi pi-times" style="font-size: 1rem"></i>
+  </div>
+  <div class="header">
+      <h2>Create New Exam</h2>
+  </div>
+
+  <!-- Stepper Panel -->
+  <div class="card flex justify-content-center">
+      <p-stepper>
+          <!-- Chapter 1 -->
+          <p-stepperPanel header="Step I">
+            <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
+              <div class="main-content">
+                <div class="content">
+                  <div class="select-course">
+                    
+                    <label for="course">Select Course</label>
+                    <input type="search" id="course" placeholder="Select Course" class="search-box"
+                        [(ngModel)]="selectedCourse" readonly>
+                        
+                    <div class="course-options">
+                      <div class="option" *ngFor="let course of courses">
+                        <input type="radio" id="{{course}}" name="course" [value]="course" (change)="onCourseSelect(course)" />
+                        <label for="{{course}}" class="course-label">{{course}}</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="button">
+                  <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()"></p-button>
+                </div>
+              </div>
+            </ng-template>
+          </p-stepperPanel>
+
+          <!-- Chapter 2 -->
+          <p-stepperPanel class="scrollable-panel" header="Step II">
+              <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback">
+                  <div class="main-content">
+                      <div class="content">
+                          <div class="select-course">
+                            <label for="subject">Select Subject</label>
+                            <input type="search" id="subject" placeholder="Select Subject" class="search-box"
+                                [(ngModel)]="selectSubject" readonly>
+                              <div class="course-options">
+                                  <div class="option" *ngFor="let subject of subjects">
+                                      <label>
+                                          <input type="radio" [id]="subject" name="subject" [value]="subject"
+                                              (change)="onSelectSubject(subject)" />
+                                          {{subject}}
+                                      </label>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="button">
+                      <p-button label="Back" icon="pi pi-arrow-left" (click)="prevCallback.emit()"></p-button>
+                      <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
+                          (click)="nextCallback.emit()"></p-button>
+                  </div>
+              </ng-template>
+          </p-stepperPanel>
+          
+
+          <!-- Chapter 3 -->
+          <p-stepperPanel class="scrollable-panel" header="Step III">
+              <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback" >
+                  <form #examspecfic="ngForm" (ngSubmit)="examspecification(examspecfic)">
+                      <div class="main-content">
+                          <div class="exam-specifications">
+                              <h3>Exam Specifications</h3>
+                  
+                              <div class="input-group">
+                                  <label for="total-marks">Number of Questions</label>
+                                  <input type="number" id="total-marks" placeholder="Total Marks"
+                                      [(ngModel)]="Examedata.totalMarks" name="totalMarks" required />
+                              </div>
+                  
+                              <div class="input-group">
+                                  <label for="passing-percentage">Passing Percentage</label>
+                                  <input type="range" id="passing-percentage" min="0" max="100"
+                                      [(ngModel)]="Examedata.passingPercentage" name="passingPercentage" required />
+                                  <span>{{ Examedata.passingPercentage }}%</span>
+                              </div>
+                  
+                              <div class="input-group">
+                                  <label for="exam-schedule">Exam Schedule</label>
+                                  <div class="exam-schedule">
+                                      <input type="date" [(ngModel)]="Examedata.examDate" name="examDate" required />
+                                      <input type="time" [(ngModel)]="Examedata.examTime" (ngModelChange)="logExamTime($event)" name="examTime" required />
+
+                                  </div>
+                              </div>
+                              <div class="upload-btn">
+                                <input type="file" id="file-upload" class="styled-file-upload" (change)="uploadQuestionPaper($event)" />
+                                <label for="file-upload" class="file-upload-label">
+                                  <i class="pi pi-upload"></i> <!-- PrimeNG upload icon -->
+                                  Upload Question Paper
+                                </label>
+                              </div>
+                  
+                              <button class="btn btn-primary" (click)="nextCallback.emit()">Continue</button>
+                          </div>
+                      </div>
+                      <div class="button">
+                          <p-button label="Back" icon="pi pi-arrow-left" (click)="prevCallback.emit()"></p-button>
+                      </div>
+                  </form>
+                  
+                  
+              </ng-template>
+          </p-stepperPanel>
+          <!-- -------------chapter 5----------------- -->
+
+          <p-stepperPanel class="scrollable-panel" header="Step IV">
+              
+            <ng-template pTemplate="content" let-prevCallback="prevCallback">
+                <div class="main-content">
+                  <div class="preview-container">
+                    <h2>Preview</h2>
+                    <div class="exam-details">
+                      <p><strong>Course:</strong> {{selectedCourse}}</p>
+                      <p><strong>Subject:</strong> {{selectSubject}}</p>
+                      <p><strong>Total Marks:</strong> {{Examedata.totalMarks}}</p>
+            
+                      <p><strong>Batches:</strong></p>
+                      <ul>
+                        <li class="batches-li" *ngFor="let batch of selectedBatches">{{batch}}</li>
+                      </ul>
+            
+                      <p><strong>Passing Percentage:</strong> <span class="passing-percentage4">{{Examedata.passingPercentage}}%</span></p>
+
+            
+                      <p><strong>Question Paper:</strong></p>
+                      <div class="upload-filename">{{uploadedFileName}}</div><!-- Display the uploaded file name -->
+            
+                      <p><strong>Exam Schedule:</strong></p>
+                      <div class="exam-schedule4">
+                        <span>
+                          <i class="pi pi-calendar"></i> {{Examedata.examDate | date: 'dd-MM-yyyy'}}
+                        </span>
+                        <span>
+                          <i class="pi pi-clock"></i> {{Examedata.examTime}}
+                        </span>
+                      </div>
+                    </div>
+            
+                  </div>
+                  <div class="button">
+                    <p-button label="Back" icon="pi pi-arrow-left" (click)="prevCallback.emit()"></p-button>
+                    <p-button label="Confirm" (click)="onConfirm()"></p-button>
+                </div>
+                </div>
+              </ng-template>
+          </p-stepperPanel>
+          
+      </p-stepper>
+  </div>
+</div>

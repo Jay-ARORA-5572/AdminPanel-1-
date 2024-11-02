@@ -1,0 +1,208 @@
+/* Top-Header */
+
+.p-dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f4f4f4;
+}
+
+.p-dialog-title {
+  font-weight: bold;
+}
+
+.cross {
+  cursor: pointer;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  border-radius: 16px 16px 0px 0px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+  padding-top: 2vh;
+  text-align: center;
+  margin-right: 4vw;
+}
+
+/* 1. Add Course  */
+
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+  padding-top: 2vh;
+  text-align: center;
+  margin-right: 4vw;
+}
+
+.imagesection {
+  height: 25%;
+  width: 23%;
+  margin-bottom: 1rem;
+}
+
+.imgdiv {
+  height: 30vh;
+  background-color: #D7D7D7;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+tr>td:nth-child(even) {
+  padding-left: 1vw;
+}
+
+table td {
+  height: 10vh;
+}
+
+.form-layout {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.field {
+  padding: 0.5rem;
+}
+
+.uploadimage {
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #0D1046 !important;
+  color: #ffff !important;
+}
+
+.cancel {
+  font-size: 16px;
+  font-weight: 500;
+  color: #0D1046 !important;
+  border: none;
+  background-color: #FF5833;
+}
+
+.custom-button {
+  background-color: #f5f5f5 !important;
+  color: #000 !important;
+  border: 1px solid #ccc !important;
+}
+
+
+.field {
+  padding: 0.5rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form-field {
+  flex: 1;
+  min-width: 200px;
+}
+
+.full-width {
+  flex: 1 1 100%;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  padding: 1%;
+  text-align: left;
+}
+
+.custom-input {
+  width: 100%;
+}
+
+/* 2. Chapter create */
+
+.p-button {
+  background-color: #0D1046 !important;
+  color: #fff !important;
+  border: none !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  height: 4vh !important;
+}
+
+.custom-width {
+  width: 672px;
+}
+
+/* 3. Video upload */
+
+#contentdiv {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.left {
+  height: 25%;
+  width: 23%;
+}
+
+.rightsidediv {
+  width: 70%;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.input-field {
+  flex: 1;
+  min-width: 48%;
+}
+
+.input-box {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.text {
+  display: flex;
+  gap: 1.2vw;
+  margin-left: 12.4rem;
+}

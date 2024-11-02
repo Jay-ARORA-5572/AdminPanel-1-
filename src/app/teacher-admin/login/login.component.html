@@ -1,0 +1,82 @@
+<!-- navbar -->
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <!-- <span class="iconimg"><img src="../assets/skillheedlogo.png" alt="Not Found" id="iconimg"></span> -->
+    <div class="img1">
+        <!-- <img src="../assets/navbaricon.png" alt="Not Found" id="iconimg"> -->
+        <img src="../../../assets/Navbaricon/Nickicon.png" alt="Not Found" id="iconimg">
+    </div>
+
+
+    <span class="example-spacer"></span>
+    <mat-icon style="color:#fff;">person</mat-icon> &nbsp;
+    {{this.username}}
+    <!-- <div class="divder"></div> -->
+    <!-- <img src="../assets/img.jpeg" alt="Not Found" id="userimage"> -->
+</mat-toolbar>
+
+    
+
+<!-- Sidebar -->
+<div class="main">
+    <mat-drawer-container class="example-container">
+        <mat-drawer #drawer mode="side" opened>
+            <br>
+            <div class="items" *ngFor="let item of arr">
+                <li [ngClass]="{active1: Role==item.name}" (click)="RoleChange(item.name)">
+                    <img src="../../../assets/adminsidebaricon/{{item.logo}}" alt="" srcset="" height="40px"> &nbsp; {{item.name}}
+                </li>
+            </div>
+        </mat-drawer>
+        <mat-drawer-content>
+
+            <ng-container *ngIf="myroute=='dashboard'">
+                <app-dashboard></app-dashboard>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='live-class'">
+                <app-live-class></app-live-class>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='adminprofile'">
+               <app-admin-profile></app-admin-profile>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='schedule'">
+            <app-schedule></app-schedule>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='quizzes'">
+                <app-quizzes></app-quizzes>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='exams'">
+                <app-exams></app-exams>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='assignment'">
+                <app-assignments></app-assignments>
+            </ng-container>
+            
+            <ng-container *ngIf="myroute=='batches'">
+                <app-batches></app-batches>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='doubts'">
+                <app-doubts></app-doubts>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='student-profile'">
+                <app-student-profile></app-student-profile>
+            </ng-container>
+
+            
+        </mat-drawer-content>
+    </mat-drawer-container>
+
+
+</div>
+
+<p-toast></p-toast>

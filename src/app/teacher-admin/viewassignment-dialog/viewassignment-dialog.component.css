@@ -1,0 +1,100 @@
+.dialog-container {
+    padding: 20px;
+  }
+  
+  .p-dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    position: sticky; /* Keep it fixed at the top */
+    top: 0;
+    z-index: 1
+  }
+
+  .close-icon
+  {
+    cursor: pointer;
+  }
+  
+  .header
+  {
+    align-items: center;
+  }
+
+
+
+  .main-header
+  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+ 
+ 
+  .assignment-details p, .passing-percentage p, .uploaded-file p, .assignment-schedule p, .batches p {
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+  
+  .assignment-details span {
+    font-size: 1.2rem;
+    margin-left: 5px;
+}
+
+.dialog-content {
+  max-height: 500px; /* Adjust the max height as needed */
+  overflow-y: auto; /* Enables vertical scrolling */
+}
+
+  
+  
+  .passing-percentage .percentage {
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .uploaded-file button {
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    color: #333;
+   
+    
+  }
+  .upload-attachment
+  {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  .schedule-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .schedule-icons button {
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    color: black;
+    width: 16vw;
+  }
+  
+  .batches ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .batches li {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  .assignment-details
+  {
+    padding: 14px;
+  }
+  
+  

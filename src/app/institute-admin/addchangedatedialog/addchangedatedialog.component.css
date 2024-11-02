@@ -1,0 +1,75 @@
+/* top-header */
+
+.p-dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.p-dialog-title {
+  margin: 0;
+  font-weight: 488;
+}
+
+.field {
+  padding: 0.5rem;
+}
+
+.cross {
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .courses-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .courses-header {
+    padding: 10px;
+  }
+
+  .course-info h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* main-section */
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 100%;
+  width: 100%;
+  border-radius: 16px 16px 0px 0px;
+  margin: 20px;
+  padding: 0;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.language-dropdown .p-dropdown {
+  width: 100%;
+}
+
+.selected-language {
+  display: flex;
+  align-items: center;
+}
+
+.selected-language i.pi {
+  margin-right: 8px;
+}
+
+.language-item {
+  padding: 8px;
+  background-color: #f4f4f4;
+}
+
+.language-item:hover {
+  background-color: #d3d3d3;
+}

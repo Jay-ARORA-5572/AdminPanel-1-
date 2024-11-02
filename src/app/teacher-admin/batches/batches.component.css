@@ -1,0 +1,147 @@
+.batch-container {
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .batch-header {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .batch-header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  
+  .batch-tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border-bottom: 1px solid #ddd; */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .batch-tabs ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .batch-tabs li {
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .batch-tabs li.active {
+    border-bottom: 2px solid #0d1046;
+    font-weight: 600;
+  }
+  
+  .add-batch-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .batch-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+  }
+  
+  .batch-card h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .batch-card p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .batch-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .batch-date-time {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: bold;
+  }
+  
+  .batch-stats {
+    text-align: right;
+  }
+  
+  .batch-stats .pass-percentage {
+    font-weight: bold;
+  }
+  
+  .view-details-btn {
+    margin-top: 20px;
+    background-color: #0d1046;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    
+  }
+  .bar{
+    position: sticky;
+    top: 0;
+    background-color: #fafafa;
+    
+  }
+  
+  
+  
+  .questionbank-title h3{
+    padding: 10px;
+  }
+  .search-bar {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    order: 2;
+    flex-grow: 1;
+    margin-left: auto;
+    max-width: 300px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .batch-tabs {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .batch-info {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .batch-stats {
+      text-align: left;
+      margin-top: 10px;
+    }
+  
+    .view-details-btn {
+      width: auto;
+    }
+  }
+  

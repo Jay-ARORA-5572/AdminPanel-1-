@@ -1,0 +1,68 @@
+<!-- navbar -->
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <!-- <span class="iconimg"><img src="../assets/skillheedlogo.png" alt="Not Found" id="iconimg"></span> -->
+    <div class="img1">
+        <!-- <img src="../assets/navbaricon.png" alt="Not Found" id="iconimg"> -->
+        <img src="../../../assets/Navbaricon/Nickicon.png" alt="Not Found" id="iconimg">
+    </div>
+
+
+    <span class="example-spacer"></span>
+    <mat-icon style="color:#FF5833;">add_alert</mat-icon>
+    <!-- <div class="divder"></div> -->
+    <!-- <img src="../assets/img.jpeg" alt="Not Found" id="userimage"> -->
+</mat-toolbar>
+
+    
+
+<!-- Sidebar -->
+<div class="main">
+    <mat-drawer-container class="example-container">
+        <mat-drawer #drawer mode="side" opened>
+            <br>
+            <div class="items" *ngFor="let item of arr">
+                <li [ngClass]="{active1: Role==item.name}" (click)="RoleChange(item.name)">
+                    <!-- <img src="../assets/sidebarMainadminicon/{{item.logo}}" alt="" srcset="" height="40px"> &nbsp; {{item.name}} -->
+                    <img src="../../../assets/adminsidebaricon/{{item.logo}}" alt="" srcset="" height="40px"> &nbsp; {{item.name}}
+                </li>
+            </div>
+        </mat-drawer>
+        <mat-drawer-content>
+            <!-- <button (click)="drawer.toggle()" mat-mini-fab color="primary" class="hidebtn"><mat-icon >menu</mat-icon></button> -->
+
+            <ng-container *ngIf="myroute=='dashboard'">
+                <app-dashboard></app-dashboard>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='order'">
+                <app-order></app-order>
+            </ng-container>
+
+
+            <ng-container *ngIf="myroute=='payment'">
+                <app-payment></app-payment>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='socket'">
+                <app-socket-home></app-socket-home>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='help'">
+                <app-helpsection></app-helpsection>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='Settings'">
+                <app-setting></app-setting>
+            </ng-container>
+
+
+        </mat-drawer-content>
+    </mat-drawer-container>
+
+
+</div>
+
+<p-toast></p-toast>

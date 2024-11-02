@@ -1,0 +1,154 @@
+.main-container
+{
+    width: 98%;
+    margin: auto;
+}
+
+.schedule-board {
+   
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.header .date {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #8D8D8D;
+    background-color: #e0e0e0;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.header .date i {
+    margin-right: 8px;
+}
+.date span{
+    color: #8D8D8D;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Ensure items are aligned to the top */
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.column {
+    flex: 1;
+    min-width: 250px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+     
+}
+
+.column-header {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px 8px 0 0;
+    color: #fff;
+}
+.not-started
+{
+    background-color: #F1F1F1;
+}
+.ongoing
+{
+    background-color: #FFF9E9;
+}
+.completed{
+    background-color: #E8FFF3;
+}
+.missed
+{
+    background-color: #FFECE6;
+}
+
+.not-started .column-header {
+    background-color: #7b7b7b;
+}
+
+.ongoing .column-header {
+    background-color: #f9bc02;
+}
+
+.completed .column-header {
+    background-color: #28a745;
+}
+
+.missed .column-header {
+    background-color: #dc3545;
+}
+
+.task-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.task-card p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.task-card a {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 400;
+}
+.view-details
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.task-card a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .columns {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .header .date {
+        font-size: 12px;
+    }
+
+    .task-card p, .task-card a {
+        font-size: 12px;
+    }
+}

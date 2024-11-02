@@ -1,0 +1,226 @@
+<div id="outer-container">
+
+    <!-- top-header -->
+    <section class="shadow-3 border-round-sm">
+
+        <div class="top-header">
+            <div class="leftdiv flex align-items-center justify-content-left">
+                <mat-icon (click)="drawer.open()" style="cursor: pointer ;">keyboard_backspace</mat-icon>
+                &nbsp;
+                &nbsp;
+                <h2>View All Course Video</h2>
+            </div>
+
+            <div class="header-controls">
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon">
+                        <i class="pi pi-search"></i>
+                    </span>
+                    <input type="text" pInputText placeholder="Search by name" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- top-header  -->
+
+        <!-- Demo Courses -->
+
+        <mat-card class="custom-card">
+            <!-- <div class="" id="courseheading">
+            <div class="mx-3">
+                <mat-icon (click)="drawer.open()" style="cursor: pointer ;">list</mat-icon>
+            </div>
+            <div>
+                <p class="Coursetitle">View All Course</p>
+            </div>
+        </div> -->
+
+            <mat-card-content class="custom-content">
+                <mat-drawer-container class="example-container">
+                    <mat-drawer #drawer mode="side" opened>
+                        <div class="maincontainer">
+                            <!-- Loop through data items -->
+                            <div class="card" *ngFor="let item of data">
+                                <div class="card-info">
+                                    <!-- Display course details -->
+                                    <div><img src="../../../assets/{{item.courseicon}}" class="card-avatar"></div>
+                                    <div class="card-title">{{item.coursetitle}}</div>
+                                    <!-- <div class="card-subtitle"> Details</div> -->
+                                    <hr>
+                                    <p>{{item.desc}}</p>
+                                    <ul class="card-social">
+                                        <button class="btn" (click)="courseDetails(drawer,item)">
+                                            View</button>
+                                        &nbsp;
+                                        &nbsp;
+                                        &nbsp;
+                                        &nbsp;
+                                        <button class="btn" (click)="updatecourse()">Edit</button>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- End of loop -->
+                        </div>
+                    </mat-drawer>
+
+                    <mat-drawer-content>
+                        <div class="container">
+                            {{courseData|json}}
+                            <div class="course-section"
+                                style="background-image: url('../../../assets/image\ 4.png'); background-size: cover;">
+                                <div class="course_head">
+                                    DSA to Development: A Complete Guide
+                                </div>
+                                <div class="c_icon">
+                                    <span class="badge badge-secondary">1:1 Mock Interview</span>
+                                    <span class="badge badge-secondary">Master Classes with Industry Experts</span>
+                                </div>
+                                <div class="c_pra">Recommended for Students and Working Professionals</div>
+                                <!-- <div class="buttons">
+                                <button class="btn-custom">View Details</button>
+                            </div> -->
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="course-section">
+                                <div class="course_head">
+                                    About The Course
+                                </div>
+                                <div class="c_d_pra">
+                                    Embark on an extraordinary coding odyssey with our groundbreaking course, "DSA to
+                                    Development - Complete Coding Guide"! 🌟 Discover the transformative power of
+                                    mastering
+                                    Data Structures and Algorithms (DSA) as you venture towards becoming a Proficient
+                                    Developer or Data Scientist. 💻 <br>
+
+                                    Comprehensive DSA Mastery: Learn essential data structures, algorithms, and advanced
+                                    techniques for optimized coding. <br>
+                                    Programming Proficiency: Develop a strong foundation in programming languages to
+                                    tackle
+                                    coding challenges with confidence. <br>
+                                    Real-World Application: Engage in hands-on projects and build remarkable
+                                    applications to
+                                    apply your skills. <br>
+                                    Versatility in Tech Stacks: Choose full-stack development, data science or
+                                    specialize in
+                                    specific technology stacks like MERN, Java, Python or Machine Learning. <br>
+                                    Expert Mentoring: Gain valuable insights and guidance from industry professionals
+                                    and
+                                    mentors. <br>
+                                </div>
+                                <div class="corse_jun">
+                                    <div class="subject_cover">
+                                        <ul>
+                                            <li>HTML</li>
+                                            <li>CSS</li>
+                                            <li>Javascript</li>
+                                            <li>Java</li>
+                                            <li>Python</li>
+                                            <li>C++</li>
+                                            <li>DSA</li>
+                                        </ul>
+                                    </div>
+                                    <div class="c_question">
+                                        Why Choose Aakash BYJU'S Live JEE Course?
+                                        Foundation for Excellence: Our program focuses on building a robust foundation,
+                                        enhancing students’ <br> understanding and problem-solving abilities from a
+                                        young
+                                        age, crucial for JEE's selectiveness and vast syllabus.
+                                        Tailored Learn Journeys: A meticulously curated journey of videos that caters to
+                                        proper understanding of concepts for each topic. <br>
+                                        Advanced Learning Technology: Experience learning like never before with
+                                        powerful
+                                        visualizations and personalized learning journeys, accessible on both web and
+                                        the
+                                        Aakash BYJU’S app.
+                                    </div>
+                                    <div class="c_question">
+                                        <h3>Course Structure</h3>
+                                        Foundation for Excellence: Our program focuses on building a robust foundation,
+                                        enhancing students’ <br> understanding and problem-solving abilities from a
+                                        young
+                                        age, crucial for JEE's selectiveness and vast syllabus.
+                                        Tailored Learn Journeys: A meticulously curated journey of videos that caters to
+                                        proper understanding of concepts for each topic. <br>
+                                        Advanced Learning Technology: Experience learning like never before with
+                                        powerful
+                                        visualizations and personalized learning journeys, accessible on both web and
+                                        the
+                                        Aakash BYJU’S app.
+                                    </div>
+
+
+                                    <div class="section">
+                                        <div class="course_head">
+                                            Additional Course Section
+                                        </div>
+                                        <div class="c_d_pra">
+                                            This is an additional section for another course or related content. You can
+                                            add
+                                            more details about the course here.
+                                        </div>
+                                        <div class="corse_jun">
+                                            <div class="subject_cover">
+                                                <ul>
+                                                    <li>Topic 1</li>
+                                                    <li>Topic 2</li>
+                                                    <li>Topic 3</li>
+                                                </ul>
+                                            </div>
+                                            <div class="c_question">
+                                                Why Choose This Course?
+                                                You can list reasons or benefits of taking this course.
+                                            </div>
+                                            <div class="c_question">
+                                                <h3>Course Structure</h3>
+                                                You can outline the structure or curriculum of the course in this
+                                                section.
+                                            </div>
+                                            <!-- Styled Button -->
+                                            <div class="couserupadatediv">
+                                                <button type="submit" class="btn-custom shadow-effect"
+                                                    (click)="updatecourse()">
+                                                    Update
+                                                </button>
+                                                &nbsp;
+                                                &nbsp;
+                                                &nbsp;
+                                                &nbsp;
+                                                <!-- <p-button (click)="conform()" icon="pi pi-check" label="Confirm"></p-button> -->
+
+                                                <button type="submit" class="btn-custom shadow-effect"
+                                                    (click)="conform()">
+                                                    Delete </button>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </mat-drawer-content>
+
+                </mat-drawer-container>
+            </mat-card-content>
+
+
+        </mat-card>
+
+    <!-- Demo Courses -->
+
+    <p-confirmDialog />
+    <!-- <ng-template pTemplate="message" let-message>
+                <div class="flex flex-column align-items-center w-full gap-3 border-bottom-1 surface-border">
+                    <i class="pi pi-exclamation-circle text-6xl text-primary-500"></i>
+                    <p>{{ message.message }}</p>
+                </div>
+            </ng-template>
+        </p-confirmDialog> -->
+
+
+    <p-toast />

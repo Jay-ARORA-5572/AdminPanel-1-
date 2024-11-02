@@ -1,0 +1,409 @@
+.chat-container {
+  width: 400px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.message-list {
+  height: 300px;
+  overflow-y: scroll;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+.message-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.message-list li {
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.input-container {
+  display: flex;
+}
+/* 
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 50%;
+} */
+
+button {
+  padding: 10px;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* button:hover {
+  background-color: #1e90ff;
+} */
+
+.audio {
+  background-color: rgb(0, 136, 255);
+  border-radius: 50%;
+}
+.audio:hover {
+ background-color:rgb(53, 143, 223);
+}
+
+.screen-share{
+   background-color: rgb(0, 136, 255);
+  border-radius: 50%;
+}
+.screen-share:hover {
+  background-color: rgb(53, 143, 223);
+ }
+
+.video {
+  background-color: rgb(0, 136, 255);
+  border-radius: 50%;
+}
+
+.video:hover {
+  background-color: rgb(53, 143, 223);
+
+}
+
+.open-chat{
+   background-color: rgb(0, 136, 255);
+  border-radius: 50%;
+}
+.open-chat:hover {
+  background-color: rgb(53, 143, 223);
+ }
+
+/* .localvideo{
+    border: 2px solid red;
+
+  } */
+
+/* -------------------------live streaming ----------------- */
+
+/* .video-call-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ } */
+
+.live-streaming {
+  display: flex;
+  gap: 10px;
+  margin: 0px 10px 0 10px;
+}
+
+video {
+  width: 100%; /* Adjust as needed */
+  /* max-width: 600px; */
+  height: auto;
+  /* margin-bottom: 10px; */
+}
+
+.localvideo {
+ box-shadow: 5px 5px 5px  1px rgba(150, 147, 147, 0.2);
+  border-radius: 5px;
+}
+.videos{
+  margin-top: 20px;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: .8rem;
+  /* position: sticky;
+  top: 0; */
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px  5px rgba(150, 147, 147, 0.2);
+}
+
+.header i.pi {
+  cursor: pointer;
+  background: none !important;
+  color: #0a80f6;
+}
+
+.header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+
+/* .localvideo {
+  width: 100%; 
+  height: auto;
+  max-width: 100%;
+  border: 2px solid #000; 
+} */
+
+
+.remotevideo {
+  border: 2px solid #1e90ff;
+}
+
+button {
+  cursor: pointer;
+}
+
+input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* -------------------------chat section----------------------- */
+.send-chat-btn {
+  /* width: fit-content;
+  height: fit-content; */
+  padding: 8px;
+  border-radius: 50%;
+  background-color: #1e90ff;
+  color: white;
+  
+}
+.send-chat-btn {
+  background-color: #0a80f6;
+}
+.msg {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  bottom: 0;
+  align-items: center;
+  margin-bottom: 10px;
+  margin: 8px;
+}
+.msg input{
+  height: 40px;
+  width: 100%;
+  padding: 5px; 
+}
+.masseges {
+  height: 90%;
+}
+.chats {
+  margin-top: 20px;
+  border: 1px solid rgba(150, 147, 147, 0.2);
+  box-shadow: 5px 5px 5px  1px rgba(150, 147, 147, 0.2);
+  border-radius: 5px;
+  width: 30%;
+  background-color: rgb(227, 221, 221);
+  max-height: 525px;
+  gap: 10px;
+  margin-bottom: 1%;
+}
+.chats i.pi{
+  cursor: pointer;
+  color: black ;
+  float: right;
+}
+
+.stop-recording {
+  /* position: absolute;
+  top: 422px;
+  left: 555px; */
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  /* height:50px ;
+  width:50px ; */
+}
+.stop-recording:hover{
+background-color: rgba(245, 0, 0, 0.722);
+}
+.pi{
+  padding: 5px;
+}
+.start-recording {
+  /* position: absolute;
+  top: 422px;
+  left: 755px; */
+  background-color: #1e90ff;
+  color: white;
+  border-radius: 50%;
+
+}
+.access-btn {
+  display: flex;
+  /* position: absolute;
+  top: 100vh; */
+  padding: 10px;
+  margin-bottom: 1%;
+  gap: 2%;
+  justify-content: center;
+  background-color: rgb(180, 174, 174);
+  border-radius: 10px;
+}
+
+pi-send{
+  color: white;
+}
+
+button mat-icon{
+  color: white;
+}
+
+.full-screen{
+  background: none;
+}
+
+/* -------------------------------scroller------------------------------- */
+.fab-container {
+  position: relative;
+  width: 120px;
+  height: 120px; /* Adjust height to fit the circle */
+  margin: 0 auto;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom :20px; ;
+}
+
+/* Main Button */
+.main-button {
+  width: 60px;
+  height: 60px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  position: absolute;
+  bottom: 0; /* Main button stays at the bottom */
+  left: calc(50% - 30px); /* Center horizontally */
+  transition: transform 0.3s ease;
+}
+
+/* FAB Buttons - Initially hidden */
+.scroller-item {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* FAB Button Styling */
+.fab-button {
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  margin-left: 0 !important;
+}
+
+.pi {
+  font-size: 20px;
+  color: white;
+}
+
+/* Show Buttons */
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.Ongoing-call{
+  display: flex;
+  justify-content: space-between;
+}
+.Ongoing-call i.pi{
+  background-color: #0a80f6;
+  color: #0a80f6;
+}
+
+.messages{
+  max-height: 72%;
+  overflow-y: auto;
+  min-height: 72%;
+  margin: 8px;
+}
+.msg-text{
+  margin-left: 5px;
+  align-items: center;
+}
+
+.message {
+  display: flex;
+  margin-top: 5px;
+  margin-right: 5px;
+  /* align-items: center; Aligns icon and text vertically */
+}
+
+.pi-user {
+  /* color: #007bff; 
+  font-size: 1.2em; */
+  background-color: gray;
+  color: black;
+  border-radius: 50%; /* Adjust size if needed */
+}
+
+/* 
+.nav{
+  margin: 18px;
+} */
+
+ 
+/* form data  */
+
+.form-layout {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.field {
+  padding: 0.5rem;
+}
+
+.field-half {
+  flex: 1 1 26%;
+}
+
+.field-full {
+  width: 26%;
+}
+.field-btn{
+  width: 12%;
+}
+
+.button{
+  background-color:#0D1046 ;
+  color: #fff;
+}
+
+
+
+@media (max-width: 768px) {
+  .field-half {
+    flex: 1 1 100%;
+  }
+}
+

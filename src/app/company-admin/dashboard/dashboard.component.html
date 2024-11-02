@@ -1,0 +1,284 @@
+<div id="outer-container">
+
+      
+
+    <mat-card class="custom-card mx-3">
+        <mat-card-content class="custom-content">
+            <div class="surface-grnd">
+ 
+                
+    <div class="search-bar">
+        <input type="text" placeholder="Search by Institute Section" [(ngModel)]="searchQuery" />
+        <select [(ngModel)]="selectedBranch">
+          <option value="">Select Branch</option>
+          <!-- Add branch options dynamically if needed -->
+          <option *ngFor="let branch of branches" [value]="branch">{{ branch }}</option>
+        </select>
+        <select [(ngModel)]="selectedInstitute">
+          <option value="">Select Institute</option>
+          <!-- Add institute options dynamically if needed -->
+          <option *ngFor="let institute of institutes" [value]="institute">{{ institute }}</option>
+        </select>
+        <button class="download-btn" (click)="downloadData()">
+            <i class="pi pi-download" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div id="heading" class="mx-1 my-3">
+        <div id="left">
+            <p class="title">Business Summary</p>
+        </div>
+    </div>
+
+
+                
+                <div class="grid">
+                    <!-- first -->
+                    <div class="col-12 md:col-6 lg:col-4 hovereffect">
+                        <div class="surface-card shadow-2 p-3 border-round card1">
+                            <div class="flex justify-content-between mb-3">
+                                <div>
+                                    <span class="block header font-medium mb-3">Total Institute</span>
+                                    <div class="text-900 font-medium text-xl textsize1">{{this.totalins}}</div>
+                                </div>
+                                <div class="flex align-items-center justify-content-center border-round"
+                                    style="width:2.5rem;height:2.5rem">
+                                    <img src="../../../assets/adminsidebaricon/institute1.png" alt="">
+                                </div>
+                            </div>
+                            <!-- <span class="text-green-500 font-medium">24 new </span>
+                                <span class="text-500">since last visit</span>   -->
+                        </div>
+                    </div>
+                    <!-- first -->
+
+                    <!-- second -->
+                    <div class="col-12 md:col-6 lg:col-4 hovereffect">
+                        <div class="surface-card shadow-2 p-3 border-round card2">
+                            <div class="flex justify-content-between mb-3">
+                                <div>
+                                    <span class="block header font-medium mb-3">Total Branch</span>
+                                    <div class="text-900 font-medium text-xl textsize2">100</div>
+                                </div>
+                                <div class="flex align-items-center justify-content-center  border-round"
+                                    style="width:2.5rem;height:2.5rem">
+                                    <img src="../../../assets/adminsidebaricon/totalstaff.png" alt="">
+
+                                </div>
+                            </div>
+                            <!-- <span class="text-green-500 font-medium">%52+ </span>
+                                <span class="text-500">since last week</span> -->
+                        </div>
+                    </div>
+                    <!-- second -->
+
+                    <!-- third -->
+                    <div class="col-12 md:col-6 lg:col-4 hovereffect" (click)="gotofranchise()">
+                        <div class="surface-card shadow-2 p-3 border-round card3">
+                            <div class="flex justify-content-between mb-3">
+                                <div>
+                                    <span class="block header font-medium mb-3">Total Franchise</span>
+                                    <div class="text-900 font-medium text-xl textsize3">75</div>
+                                </div>
+                                <div class="flex align-items-center justify-content-center bg-cyan-100 border-round"
+                                    style="width:2.5rem;height:2.5rem">
+                                    <img src="../../../assets/adminsidebaricon/onboard.png" alt="">
+
+                                </div>
+                            </div>
+                            <!-- <span class="text-green-500 font-medium">520  </span>
+                                <span class="text-500">newly registered</span> -->
+                        </div>
+                    </div>
+                    <!-- third -->
+
+                    <!-- Forth -->
+                    <div class="col-12 md:col-6 lg:col-4 hovereffect">
+                        <div class="surface-card shadow-2 p-3 border-round card4">
+                            <div class="flex justify-content-between mb-3">
+                                <div>
+                                    <span class="block header font-medium mb-3">Onboard</span>
+                                    <div class="text-900 font-medium text-xl textsize4">120</div>
+                                </div>
+                                <div class="flex align-items-center justify-content-center border-round"
+                                    style="width:2.5rem;height:2.5rem ">
+                                    <img src="../../../assets/adminsidebaricon/onboard.png" alt="">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Forth -->
+                    
+
+                    <!-- fivth -->
+                    <div class="col-12 md:col-6 lg:col-4 hovereffect">
+                        <div class="surface-card shadow-2 p-3 border-round card5">
+                            <div class="flex justify-content-between mb-3">
+                                <div>
+                                    <span class="block header font-medium mb-3">Active User</span>
+                                    <div class="text-900 font-medium text-xl textsize5">152</div>
+                                </div>
+                                <div class="flex align-items-center justify-content-center border-round"
+                                    style="width:2.5rem;height:2.5rem">
+                                    <img src="../../../assets/adminsidebaricon/activeuser.png" alt="">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fivth -->
+
+                    <!-- Sixth -->
+                    <div class="col-12 md:col-6 lg:col-4 hovereffect">
+                        <div class="surface-card shadow-2 p-3 border-round card6">
+                            <div class="flex justify-content-between mb-3">
+                                <div>
+                                    <span class="block header font-medium mb-3">Total jobs</span>
+                                    <div class="text-900 font-medium text-xl textsize6">15</div>
+                                </div>
+                                <div class="flex align-items-center justify-content-center border-round"
+                                    style="width:2.5rem;height:2.5rem">
+                                    <img src="../../../assets/adminsidebaricon/totaljobpost.png" alt="Not Found" style="width: 3.3rem;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sixth -->
+
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+    <!-- Chart Section -->
+    <mat-card class="custom-card mx-3 my-4" id="chartcard">
+        <mat-card-content class="custom-content">
+            <div id="chartContainer">
+
+                <mat-card class="graphcard">
+                    <mat-card-content class="custom-content">
+                        <div id="chart">
+                            <p-chart type="line" [data]="data" [options]="options"></p-chart>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+
+                <mat-card class="graphcard">
+                    <mat-card-content class="custom-content">
+                        <div id="chart">
+                            <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <!-- Chart Section -->
+
+    <mat-card class="custom-card mx-3 my-4" id="chartcard">
+        <mat-card-content class="custom-content">
+            <div id="chartContainer">
+                <div class="activities">
+                    <h2>Recent Activities</h2>
+                    <ul class="activity-list">
+                      <li *ngFor="let activity of activities">
+                        <div class="activity-item">
+                          <div class="icon">
+                            <!-- You can customize icons here based on the action -->
+                            <span class="material-icons">event</span>
+                          </div>
+                          <div class="details">
+                            <p><strong>{{ activity.user }}</strong> {{ activity.action }}</p>
+                            <small>{{ activity.timeAgo }}</small>
+                            <p class="description">{{ activity.description }}</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <mat-card class="graphcard">
+                    <mat-card-content class="custom-content">
+                        <div id="chart">
+                            <p-chart type="doughnut" [data]="data" [options]="options"></p-chart>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+
+
+
+
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+
+
+
+   <!-- Searching  -->
+   <mat-card class="custom-card mx-3 my-4">
+    <mat-card-content class="custom-content">
+        <div class="main">
+            <div class="stab">
+                <div id="searchbox">
+                    <button *ngIf="!search_bar" mat-flat-button id="searchbtn" color="primary" class="btn btn-save"
+                        (click)="searchbar()">
+                        <i class="fa fa-search" aria-hidden="true"></i> Search
+                    </button>
+                    <button mat-raised-button color="warn" *ngIf="singlecheck.length > 0"
+                        (click)="deletedata()">Delete</button>
+                </div>
+
+                <div id="searchpop" *ngIf="search_bar">
+                    <form id="filterForm" class="mx-2">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Search by institute id</mat-label>
+                            <input matInput name="instituteid" [(ngModel)]="this.searchby">
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Branch Name</mat-label>
+                            <input matInput name="Amount" />
+                        </mat-form-field>
+
+
+                        <div id="actionbtns">
+                            <button mat-flat-button id="search" color="primary" class="btn btn-save"
+                                (click)="searching()">
+                                Search
+                            </button>
+                         
+
+                            <button mat-flat-button id="resetbtn" class="btn btn-save" (click)="resetFilter()">
+                                Reset
+                            </button>
+                        </div>
+                    </form>
+                    <div id="closeicon">
+                        <mat-icon class="closebtn" (click)="close_search_bar()">cancel</mat-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </mat-card-content>
+</mat-card>
+<!-- Searching  -->
+
+
+
+    <!-- Table data  -->
+    <mat-card class="custom-card mx-3">
+        <mat-card-content class="custom-content">
+            <div id="tablediv">
+                <app-dynamic-table-component [isCheckbox]="true" [items]="searcharray" [column]="iscolumn"
+                (selectedRow)="checkbox($event)" headerBackgroundColor="#0D1046"
+                headerTextColor="#ffffff" tableTextColor="#365B64" rowHeight="45"
+                tableFontFamily="Mulish', sans-serif" tableFontSize="18"
+                (onView)="viewfunc($event)"></app-dynamic-table-component>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+</div>

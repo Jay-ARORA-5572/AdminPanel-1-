@@ -1,0 +1,352 @@
+.exam-result-details-container {
+    padding: 20px;
+    min-width: 700px;
+    margin: 0 auto;
+    max-height: 676px;
+  }
+  .close-icon
+  {
+    cursor: pointer;
+  }
+  
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+  }
+  
+  .header h1 {
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .heading-container{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .exam-info {
+    margin-bottom: 20px;
+  }
+  .course-info p {
+    margin: 3px;
+  }
+  
+  /* .actions {
+      display: flex;
+      gap: 10px;
+    } */
+  
+  .actions {
+    display: flex;
+    gap: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    overflow: hidden;
+    width: fit-content;
+    height: 38px;
+  }
+  
+  /* Base Button Styles */
+  .details-button {
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    color: #333;
+  
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    font-size: 0.95rem;
+  }
+  .details-button {
+    background-color: #eeeff9;
+    color: #7e7e7e;
+  }
+  
+  /* Hover and Focus States for All Buttons */
+  
+  .details-button:focus {
+    background-color: #0d1046;
+    color: #fff;
+    transform: scale(1.05);
+  }
+  
+  /* Active State for Selected Filter Button */
+  .details-button.active {
+    background-color: #0d1046 !important;
+    color: #fff !important;
+  }
+   
+  /* -----------------------------exam Container Css */
+  .exam-container {
+    font-family: Arial, sans-serif;
+    max-height: 350px;
+    overflow-y: auto;
+    width: 50%;
+    margin-top: 15px;
+  }
+  
+  .exam-container h2 {
+    text-align: start;
+    margin: 15px 0 15px 0;
+  }
+  .exam-info {
+    margin-bottom: 20px;
+  }
+  
+  .questions-count {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .passing-percentage {
+    align-items: center;
+    gap: 10px;
+  }
+  .peracentage-value {
+    width: 97% !important;
+  }
+  
+  .percentage-value {
+    font-size: 14px;
+    color: #1a73e8;
+  }
+  
+  .exam-schedule {
+    margin-top: 20px;
+  }
+  
+  .schedule-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  .sliders {
+    margin: 0 auto;
+    padding: 5px;
+  }
+  .sliders p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19.36px;
+    color: #000000;
+    margin-top: 10px;
+  }
+  
+  .schedule {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .date-item {
+    border-radius: 5px;
+    padding: 8px;
+    background-color: #ededf5;
+  }
+  
+  
+  /* --------------------------------------response button content css----------------------------------- */
+  
+  .table-container {
+      max-height: 400px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      margin-top: 20px;
+    
+  }
+  
+  table {
+      width: 100%;
+      border-collapse: collapse;
+  }
+  
+  thead {
+      position: sticky;
+      top: 0;
+      background-color: #f4f4f4;
+      color: black;
+      z-index: 2;
+  }
+  
+  th, td {
+      padding: 14px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+      background-color: #ddd;
+      font-weight: bold;
+  }
+  
+  td a {
+      text-decoration: none;
+      color: #007bff;
+  }
+  
+  td a:hover {
+      text-decoration: underline;
+  }
+
+ 
+
+
+
+.p-button-text {
+  background-color: #F2F2F2 !important;
+  color: #2C62EE;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.p-button-secondary {
+  background-color: #ECF1FF !important;
+  color: #2C62EE;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.download-label
+{
+padding-left: 2px;
+}
+
+
+
+/* Make sure buttons are within the scrollable content */
+tbody tr {
+  background-color: #fff;
+}
+
+tbody td {
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+  
+  
+  .question-paper button {
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    color: #333;
+    height: 5vh;
+  }
+
+.paper-label{
+    font-size: 0.8rem;
+    padding-top: 10px;
+  }
+
+ 
+
+  .question-paper
+  {
+    margin-top: 8px;
+  }
+  .passing-percentage span
+  {
+    margin-left: 6px;
+    color: #007bff;
+  }
+  .batches ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .batches li {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  .batches
+  {
+    margin-top: 8px;
+  }
+
+  .attachment-name-cell
+  {
+    font-size: 0.7rem;
+    margin-top: 12px;
+    padding: 3px;
+    padding-left: 21px;
+    background-color: rgb(237, 230, 230);
+    border-radius: 2px;
+    color: #7e7e7e;
+  }
+
+  
+.p-button {
+  background: none;
+  border: none;
+  color: black;
+  
+}
+
+
+.actionicon:hover {
+  background-color: rgb(206, 202, 202);
+  border: none;
+}
+
+::ng-deep .p-overlaypanel-content {
+  padding: 0rem !important;
+}
+
+.menu {
+  padding: 5px;
+  width: 170px;
+}
+
+.menu-item {
+  display: flex;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+
+.actioniconover.p-button {
+  transition: none;
+  border: none;
+}
+
+.actioniconover.p-button:hover {
+  background-color: inherit;
+  border-color: inherit;
+  box-shadow: none;
+}
+
+.actioniconover {
+  border: none;
+  font-size: 10px;
+}
+
+.actioniconover:hover {
+  border: none;
+  background-color: rgb(221, 219, 219);
+}
+
+/* Pop show the button */
+  
+
+
+  
+  

@@ -1,0 +1,65 @@
+<div id="main">
+    <!-- Top header  -->
+    <section class="shadow-3 border-round-sm">
+        <header class="heading">
+            <div class="title-section">
+                <h1>About Us Details</h1>
+            </div>
+        </header>
+    </section>
+    <!-- Top header -->
+
+<!-- Main Content -->
+
+    <div class="p-fluid form-layout mt-4 p-3">
+
+        <div class="field field-full">
+            <label for="course">Banner</label>
+            <div class="file-upload">
+                <span class="file-name">No file selected</span>
+                <label for="fileInput" class="custom-file-upload">
+                    <i class="pi pi-upload"></i> Choose File
+                </label>
+                <input type="file" id="fileInput" (change)="onFileSelected($event)"
+                    class="custom-file-input" accept=".png, .jpg, .jpeg, .pdf" multiple>
+            </div>
+        </div>
+
+        <div class="field field-half">
+            <label for="country">Heading</label>
+            <input id="country" type="text" pInputText [(ngModel)]="country" class="custom-input">
+        </div>
+
+        <div class="field field-half">
+            <label for="state">Short Description</label>
+            <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+        </div>
+
+        <div class="field field-half">
+            <label for="payment">Highlighted Text</label>
+            <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+        </div>
+
+        <div class="field field-half">
+            <label for="payment">Long Description</label>
+            <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+        </div>
+
+        <div class="field field-half">
+            <label for="payment">Total Student</label>
+            <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+        </div>
+
+        <div class="field field-half">
+            <label for="payment">Total Branch</label>
+            <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+        </div>
+        
+    </div>
+
+    <div class="field field-full p-3">
+        <button class="button" pButton type="button" label="Publish" (click)="enrollStudent()"></button>
+    </div>
+
+<!-- Main Content -->
+</div>

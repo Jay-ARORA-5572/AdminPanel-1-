@@ -1,0 +1,142 @@
+
+.close-icon{
+
+  float: left;
+  font-weight: 500;
+  cursor: pointer;
+  
+}
+.class-header h3{
+  font-size: 1.2rem;
+}
+
+.p-dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  position: sticky; /* Keep it fixed at the top */
+  top: 0;
+  z-index: 1
+}
+
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7px;
+    padding: 15px;
+    margin-bottom: 32px;
+    align-items: center;
+}
+
+.batch-details {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 16px;
+  font-size: 0.8rem;
+}
+
+.status-badge {
+  padding: 5px;
+  font-size: 0.8rem;
+  background-color: #f0f0f0;
+  color: #6c757d;
+  border-radius: 14px;
+
+}
+.batch-badge
+{
+  padding: 5px;
+  font-size: 0.8rem;
+  border: 3px solid #f0f0f0; 
+  color: #6c757d;
+}
+
+.submit-btn {
+  background-color: #0d1046;       
+  color: white;                   
+  border: none;                    
+  padding: 12px 24px;               
+  font-size: 16px;                 
+  border-radius: 8px;              
+  cursor: pointer;                  
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, 
+              box-shadow 0.2s ease, 
+              background-color 0.2s ease; 
+}
+
+.submit-btn:hover {
+  background-color: #1b1f64;        
+  transform: scale(1.02);           
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+}
+
+.submit-btn:active {
+  transform: scale(0.98);           
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);  
+}
+
+
+
+
+.table-container {
+  max-width: 97%;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  background-color: #fff;
+  margin-top: 12px;
+}
+
+/* Styling for the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* Fixed header styling */
+thead {
+  background-color: #f4f4f4;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Header text styling */
+thead th {
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Styling for table body rows */
+tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Make the table content scrollable */
+.table-container {
+  height: 333px; /* Adjust height to make content scrollable */
+  overflow-y: auto;
+}
+
+/* Styling for attendance status */
+.status {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: white;
+}
+
+/* Styling for absent label */
+.status.absent {
+  background-color: #e74c3c; /* Red color for absent */
+}
+

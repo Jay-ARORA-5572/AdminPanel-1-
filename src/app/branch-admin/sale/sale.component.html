@@ -1,0 +1,401 @@
+<div class="main">
+
+  <!-- Top header  -->
+  <section class="shadow-3 border-round-sm mt-3">
+    <header class="heading">
+      <div class="header-content">
+        <div class="title-section">
+          <h1>Sales</h1>
+        </div>
+      </div>
+    </header>
+  </section>
+  <!-- Top header -->
+
+  <!-- 1st conatiner -->
+  <div class="stats-dashboard">
+    <div class="stat-card" *ngFor="let stat of stats">
+      <p-card>
+        <div class="card-content">
+          <div class="header">
+            <span>{{ stat.title }}</span>
+            <span class="percentage" [ngClass]="{'positive': stat.percentage > 0, 'negative': stat.percentage < 0}">
+              {{ stat.percentage > 0 ? '+' : '' }}{{ stat.percentage }}%
+            </span>
+          </div>
+          <h2>{{ stat.value }}</h2>
+          <p>{{ stat.subtitle }}</p>
+          <a href="#" class="details-link">Show full stats <i [class]="stat.icon"></i></a>
+        </div>
+      </p-card>
+    </div>
+  </div>
+  <!-- 1st conatiner -->
+
+  <!-- 2nd container -->
+  <div class="dashboard-container mt-4">
+
+    <!-- Recent Transactions -->
+    <div class="recent-transactions">
+      <div class="card-header">
+        <h2>Recent Transactions</h2>
+      </div>
+      <div class="divdata">
+        <div *ngFor="let transaction of transactions" class="transaction-item">
+          <div class="transaction-icon">
+            <i class="pi pi-{{ transaction.icon }}"></i>
+          </div>
+          <div class="transaction-details">
+            <div class="transaction-name">{{ transaction.name }}</div>
+            <div class="transaction-date">{{ transaction.date | date }}</div>
+          </div>
+          <div class="transaction-amount">{{ transaction.amount | currency }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sales Overview -->
+    <div class="sales-overview">
+      <div class="card-header">
+        <h2>Sales Overview</h2>
+      </div>
+      <div>
+        <p-chart type="bar" height="380" [data]="chartData" [options]="chartOptions"></p-chart>
+      </div>
+    </div>
+    <!-- Activities -->
+    <div class="activities-card">
+      <div class="card-header">
+        <h2>Activities</h2>
+        <a href="#" class="view-all">View All</a>
+      </div>
+
+      <div class="activity-list">
+        <div *ngFor="let activity of activities" class="activity-item">
+          <div class="activity-dot" [style.background-color]="activity.color"></div>
+          <div class="activity-content">
+            <div class="activity-text" [innerHTML]="activity.content"></div>
+            <div class="activity-time">{{ activity.time }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2nd container -->
+
+
+  <!-- task section start -->
+  <div class="tasks-section">
+    <!-- 
+    <div class="task-controls">
+      <button class="active-tasks-btn">Active Tasks</button>
+      <button class="completed-tasks-btn">Completed Tasks</button>
+      <button class="add-task-btn">+ Add Task</button>
+    </div>
+    <table class="tasks-table">
+      <thead>
+        <tr>
+          <th>Task Details</th>
+          <th>Assigned Date</th>
+          <th>Target</th>
+          <th>Assigned To</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td><input type="checkbox" /> {{ task.details }}</td>
+          <td class="assignedDate">{{ task.assignedDate }}</td>
+          <td><span class="target-label" [ngClass]="task.target === 'Today' ? 'today-label' : 'tomorrow-label'">{{
+              task.target }}</span></td>
+          <td>
+            <div class="assignees">
+              <img *ngFor="let assignee of task.assignedTo" [src]="assignee.avatar" alt="avatar" class="avatar" />
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination-container">
+      <div class="entries-info">Showing {{ tasks.length }} Entries →</div>
+      <div class="pagination-controls">
+        <span class="prev">Prev</span>
+        <span class="page-number active-page">1</span>
+        <span class="page-number">2</span>
+        <a href="#" class="next">Next</a>
+      </div>
+    </div> -->
+    <h2>Task Overview</h2>
+    <hr />
+    <p-table [value]="tasks" responsiveLayout="scroll" [paginator]="true" [rows]="rows" [first]="first"
+      (onPage)="onPageChange($event)">
+      <ng-template pTemplate="header">
+        <tr>
+          <th> <p-checkbox [(ngModel)]="checkedall" [binary]="true" inputId="binary" /></th>
+          <th>Task Details</th>
+          <th>Assigned Date</th>
+          <th>Target</th>
+          <th>Assigned To</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-task>
+        <tr class="table-row">
+          <td> <p-checkbox [(ngModel)]="checkedone" [binary]="true" inputId="binary" /></td>
+          <td>{{ task.details }}</td>
+          <td>{{ task.assignedDate }}</td>
+          <td>
+            <span [ngClass]="{
+                'status-complete': task.status === 'Complete',
+                'status-pending': task.status === 'Pending',
+                'status-cancelled': task.status === 'Cancelled'
+            }">
+              {{ task.status }}
+            </span>
+          </td>
+          <td>{{ task.assignedTo }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <!-- 3rd container -->
+
+  <div class="dashboard-container mt-4">
+    <div class="visitor-card">
+      <h2>Visitors By Countries</h2>
+      <hr />
+      <div class="visitor-card-content">
+        <div class="visitor-list">
+          <ul>
+            <li *ngFor="let country of countries">
+              <span class="visitor-dot" [ngStyle]="{'background-color': country.color}"></span>
+              <span class="visitor-country">{{ country.name }}</span>
+              <span class="visitor-count">{{ country.visitors | number }}</span>
+            </li>
+          </ul>
+        </div>
+        <!-- <div class="map-section">
+          <p-gmap [options]="mapOptions" [overlays]="overlays"></p-gmap>
+        </div> -->
+      </div>
+    </div>
+
+
+    <!-- Billing Section -->
+    <div class="billing-section">
+      <h2 class="section-title">Billing</h2>
+      <hr>
+      <div class="billing-details">
+        <div *ngFor="let invoice of invoices" class="invoice">
+          <span class="invoice-status" [ngClass]="invoice.statusClass">{{ invoice.status }}</span>
+          <p class="invoice-info">{{ invoice.info }}<br>{{ invoice.date }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3rd container -->
+  <!-- <div class="orders-card">
+      <h3>Orders</h3>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Order Id</th>
+            <th>Customer</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Ordered Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders">
+            <td><input type="checkbox"></td>
+            <td><a href="#">{{ order.id }}</a></td>
+            <td>
+              <img [src]="order.customerImage" [alt]="order.customerName"> {{ order.customerName }}
+            </td>
+            <td>{{ order.quantity }}</td>
+            <td>{{ order.price | currency }}</td>
+            <td><span class="status" [ngClass]="order.status.toLowerCase()">{{ order.status }}</span></td>
+            <td>{{ order.date | date: 'dd,MMM yyyy' }}</td>
+            <td class="action-buttons">
+              <button class="download-button"><i class="pi pi-download" style="font-size: 1rem"></i></button>
+              <button class="edit-button"><i class="pi pi-pencil" style="font-size: 1rem"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pagination">
+        <span>Showing {{ orders.length }} Entries</span>
+        <div class="page-numbers">
+          <span>Prev</span>
+          <span class="active">1</span>
+          <span>2</span>
+          <span>Next</span>
+        </div>
+      </div>
+    </div> -->
+
+  <div class="dashboard-container mt-4">
+    <!-- Customer Section -->
+    <!-- <d iv class="customer-container"> -->
+    <div class="customers-section">
+      <h2 class="section-title">Customers</h2>
+      <hr>
+      <div class="customer-details">
+        <div *ngFor="let customer of customers" class="customer">
+          <img [src]="customer.imgSrc" [alt]="customer.name">
+          <div class="customer-info">
+            <p class="customer-name">{{ customer.name }}</p>
+            <p class="customer-id">User ID: {{ customer.userId }}</p>
+          </div>
+          <p class="customer-time" *ngIf="customer.time">{{ customer.time }}</p>
+          <p class="customer-time" *ngIf="customer.date">{{ customer.date }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sales Section -->
+    <div class="sales-section">
+      <div class="section-header">
+        <h2 class="section-title">Sale Value</h2>
+      </div>
+      <hr>
+      <div class="card2 flex justify-content-center">
+        <p-chart type="doughnut" [style]="{'width': '100%'}" [data]="circledata" [options]="circleoptions"></p-chart>
+      </div>
+      <div class="increase-text">60% Increase in sale value since last week</div>
+      <hr>
+      <div class="sales-summary">
+        <div class="sales-item">
+          <p class="sales-items">Sale Items</p>
+          <p class="sales-value">567</p>
+          <p class="sales-change positive">Increased</p>
+          <span class="change-value">0.9%</span>
+        </div>
+        <div class="sales-revenue">
+          <p class="revenue-label">Sale Revenue</p>
+          <p class="revenue-value">$11,197</p>
+          <p class="revenue-change positive">Profit</p>
+          <span class="change-value">0.15%</span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Profitable Categories Section -->
+
+    <div class="card">
+      <h3>Profitable Categories</h3>
+      <hr />
+      <ul class="category-list">
+        <li *ngFor="let category of categories">
+          <span>{{ category.name }}</span><span>{{ category.value }}</span>
+        </li>
+      </ul>
+      <div class="see-all-button">
+        <button class="see-all">See All Activity</button>
+      </div>
+      <!-- </div> -->
+    </div>
+
+    <!-- orders card section  -->
+    <div class="order-section">
+      <h2>Orders</h2>
+      <hr />
+      <!-- <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Order Id</th>
+            <th>Customer</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Ordered Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders">
+            <td><input type="checkbox"></td>
+            <td><a href="#">{{ order.id }}</a></td>
+            <td>
+              <img [src]="order.customerImage" [alt]="order.customerName"> {{ order.customerName }}
+            </td>
+            <td>{{ order.quantity }}</td>
+            <td>{{ order.price | currency }}</td>
+            <td><span class="status" [ngClass]="order.status.toLowerCase()">{{ order.status }}</span></td>
+            <td>{{ order.date | date: 'dd,MMM yyyy' }}</td>
+            <td class="action-buttons">
+              <button class="download-button"><i class="pi pi-download" style="font-size: 1rem"></i></button>
+              <button class="edit-button"><i class="pi pi-pencil" style="font-size: 1rem"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pagination">
+        <span>Showing {{ orders.length }} Entries</span>
+        <div class="page-numbers">
+          <span>Prev</span>
+          <span class="active">1</span>
+          <span>2</span>
+          <span>Next</span>
+        </div>
+      </div>
+     </div> -->
+
+      <p-table [value]="orders" responsiveLayout="scroll" [paginator]="true" [rows]="rows" [first]="first"
+        (onPage)="moredata($event)">
+        <ng-template pTemplate="header">
+          <tr>
+            <th> <p-checkbox [(ngModel)]="checkedall" [binary]="true" inputId="binary" /></th>
+            <th>Order Id</th>
+            <th>Customer</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Ordered Date</th>
+            <th>Action</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-order>
+          <tr>
+            <td> <p-checkbox [(ngModel)]="checkedone" [binary]="true" inputId="binary" /></td>
+            <td>
+              <a href="#">{{ order.id }}</a>
+            </td>
+            <td>
+              <div class="customer1">
+                <img [src]="order.customerImage" [alt]="order.customerName">
+               {{ order.customerName }}
+              </div>
+            </td>
+            <td>{{ order.quantity }}</td>
+            <td>{{ order.price | currency }}</td>
+            <td>
+              <span [ngClass]="{
+                        'status-complete': order.status === 'Shipped',
+                        'status-pending': order.status === 'Under Process',
+                        'status-cancelled': order.status === 'Cancelled'
+                    }">
+                {{ order.status }}
+              </span>
+            </td>
+            <td>{{ order.date | date: 'dd,MMM yyyy' }}</td>
+            <td>
+              <button pButton type="button" icon="pi pi-pencil"
+                class="noPrint actionicon p-button p-button-secondary"></button>
+              <button pButton type="button" icon="pi pi-clipboard"
+                class="actionicon p-button p-button-primary"></button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+
+    </div>
+
+  </div>

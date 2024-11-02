@@ -1,0 +1,201 @@
+<div id="main">
+
+  <!-- Top header  -->
+  <section class="shadow-3 border-round-sm mt-3">
+    <header class="heading">
+      <div class="header-content">
+        <div class="title-section">
+          <h1>Instructor Payment</h1>
+        </div>
+      </div>
+    </header>
+  </section>
+  <!-- Top header -->
+
+  <!-- 2nd Section -->
+
+
+  <section class="shadow-3 border-round-sm mt-4">
+    <p-tabView styleClass="tabview-custom">
+
+      <!-- 1st tabs -->
+      <p-tabPanel>
+        <ng-template pTemplate="header">
+          <div class="flex align-items-center gap-2">
+            <i class="pi pi-check-circle" style="font-size: 1rem"></i>
+
+            <span class="font-bold white-space-nowrap m-0">
+              Completed Payment
+            </span>
+          </div>
+        </ng-template>
+
+        <div class="contentdiv">
+
+          <p-table [value]="completepaymentclient" responsiveLayout="scroll" [paginator]="true" [rows]="rows"
+            [first]="first" (onPage)="completepayment($event)">
+            <ng-template pTemplate="header">
+              <tr>
+                <th><p-checkbox [(ngModel)]="checkedall" [binary]="true" inputId="binary" /></th>
+                <th>Instructor</th>
+                <th>Account Number</th>
+                <th>Amount</th>
+                <th>Payment date</th>
+                <th>
+
+
+                  <button class="actionicon" pButton type="button" icon="pi pi-ellipsis-h"
+                    (click)="op.toggle($event)"></button>
+
+                  <!-- Overlay Panel -->
+                  <p-overlayPanel #op>
+                    <div class="menu">
+                      <div class="menu-item">
+                        <button class="actioniconover" label="Suspend Selected" pButton type="button"
+                          icon="pi pi-ban"></button>
+                      </div>
+
+                      <div class="menu-item">
+                        <button class="actioniconover" label="Remove Selected" pButton type="button"
+                          icon="pi pi-trash"></button>
+                      </div>
+                    </div>
+                  </p-overlayPanel>
+
+                </th>
+
+              </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-rowData>
+              <tr class="table-row">
+                <td><p-checkbox [(ngModel)]="checkedone" [binary]="true" inputId="binary" /></td>
+                <td>
+                  <p-avatar [label]="rowData.name[0] + rowData.name.split(' ')[1][0]" styleClass="mr-2"></p-avatar>
+                  <div class="d-inline-block">
+                    <div>{{rowData.name}}</div>
+                    <small>{{rowData.email}}</small>
+                  </div>
+                </td>
+                <td>{{rowData.accountNumber}}</td>
+                <td>{{rowData.amount | currency}}</td>
+                <td>{{rowData.paymentDate | date:'dd-MM-yy'}}</td>
+                <td>
+                  <button class="actionicon" pButton type="button" icon="pi pi-ellipsis-h"
+                    (click)="op.toggle($event)"></button>
+
+                  <!-- Overlay Panel -->
+                  <p-overlayPanel #op>
+                    <div class="menu">
+                      <div class="menu-item">
+                        <button class="actioniconover" label="Send Email" pButton type="button"
+                          icon="pi pi-envelope"></button>
+                      </div>
+
+                      <div class="menu-item">
+                        <button class="actioniconover" label="View Details" pButton type="button"
+                          icon="pi pi-eye"></button>
+                      </div>
+                    </div>
+                  </p-overlayPanel>
+
+                </td>
+
+              </tr>
+            </ng-template>
+          </p-table>
+
+
+        </div>
+      </p-tabPanel>
+
+      <!-- 2th tabs -->
+      <p-tabPanel>
+        <ng-template pTemplate="header">
+          <div class="flex align-items-center gap-2">
+            <!-- <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/ionibowcher.png"
+                              shape="circle" /> -->
+            <i class="pi pi-spin pi-spinner-dotted" style="font-size: 1rem"></i>
+            <span class="font-bold white-space-nowrap m-0">
+              Pending Payment
+            </span>
+            <!-- <p-badge value="2" /> -->
+          </div>
+        </ng-template>
+
+        <div class="contentdiv">
+
+          <p-table [value]="pendingpaymentclient" responsiveLayout="scroll" [paginator]="true" [rows]="rows"
+            [first]="first" (onPage)="pendingpayment($event)">
+            <ng-template pTemplate="header">
+              <tr>
+                <th><p-checkbox [(ngModel)]="checkedall" [binary]="true" inputId="binary" /></th>
+                <th>Instructor</th>
+                <th>Account Number</th>
+                <th>Amount</th>
+                <th>Payment date</th>
+                <th>
+
+                  <button class="actionicon" pButton type="button" icon="pi pi-ellipsis-h"
+                    (click)="op.toggle($event)"></button>
+
+                  <!-- Overlay Panel -->
+                  <p-overlayPanel #op>
+                    <div class="menu">
+                      <div class="menu-item">
+                        <button class="actioniconover" label="Suspend Selected" pButton type="button"
+                          icon="pi pi-ban"></button>
+                      </div>
+
+                      <div class="menu-item">
+                        <button class="actioniconover" label="Remove Selected" pButton type="button"
+                          icon="pi pi-trash"></button>
+                      </div>
+                    </div>
+                  </p-overlayPanel>
+
+                </th>
+
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData>
+              <tr class="table-row">
+                <td><p-checkbox [(ngModel)]="checkedone" [binary]="true" inputId="binary" /></td>
+                <td>
+                  <p-avatar [label]="rowData.name[0] + rowData.name.split(' ')[1][0]" styleClass="mr-2"></p-avatar>
+                  <div class="d-inline-block">
+                    <div>{{rowData.name}}</div>
+                    <small>{{rowData.email}}</small>
+                  </div>
+                </td>
+                <td>{{rowData.accountNumber}}</td>
+                <td>{{rowData.amount | currency}}</td>
+                <td>{{rowData.paymentDate | date:'dd-MM-yy'}}</td>
+                <td>
+                  <button class="actionicon" pButton type="button" icon="pi pi-ellipsis-h"
+                    (click)="op.toggle($event)"></button>
+
+                  <!-- Overlay Panel -->
+                  <p-overlayPanel #op>
+                    <div class="menu">
+                      <div class="menu-item">
+                        <button class="actioniconover" label="Send Email" pButton type="button"
+                          icon="pi pi-envelope"></button>
+                      </div>
+
+                      <div class="menu-item">
+                        <button class="actioniconover" label="View Details" pButton type="button"
+                          icon="pi pi-eye"></button>
+                      </div>
+                    </div>
+                  </p-overlayPanel>
+
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </p-tabPanel>
+    </p-tabView>
+  </section>
+</div>

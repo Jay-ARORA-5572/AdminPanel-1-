@@ -1,0 +1,59 @@
+<div id="main">
+    <!-- Top header  -->
+    <section class="shadow-3 border-round-sm">
+        <header class="heading">
+            <div class="title-section">
+                <h1>Profile</h1>
+            </div>
+        </header>
+    </section>
+    <!-- Top header -->
+
+    <!-- Main Content -->
+
+    <div class="p-fluid form-layout mt-4 p-3">
+
+        <div class="field field-full">
+            <label for="course">Business Logo</label>
+            <div class="file-upload">
+                <span class="file-name">No file selected</span>
+                <label for="fileInput" class="custom-file-upload">
+                    <i class="pi pi-upload"></i> Choose File
+                </label>
+                <input type="file" id="fileInput" (change)="onFileSelected($event)" class="custom-file-input"
+                    accept=".png, .jpg, .jpeg, .pdf" multiple>
+            </div>
+        </div>
+
+        <div class="field field-half">
+            <label for="country">Business Address</label>
+            <input id="country" type="text" pInputText [(ngModel)]="country" class="custom-input">
+        </div>
+
+        <div class="field field-half">
+            <label for="state">Select Business Type</label>
+            <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+        </div>
+
+        <div class="field field-half">
+            <label for="payment">Password (Optional)</label>
+            <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+        </div>
+
+        <div class="field field-half">
+            <label for="payment">Contact</label>
+            <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+        </div>
+
+        <div class="field field-half">
+            <label for="payment">Email</label>
+            <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+        </div>
+
+    </div>
+
+    <div class="field field-full p-3">
+        <button class="button" pButton type="button" label="Submit" (click)="enrollStudent()"></button>
+    </div>
+
+</div>

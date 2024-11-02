@@ -1,0 +1,21 @@
+#main {
+    width: 97%;
+    margin: auto;
+}
+
+.button {
+    background-color: #0D1046 !important;
+    color: #fff !important;
+  }
+
+h1 {
+    margin-left: 0.8rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: bolder;
+}
+
+h3 {
+    margin-left: 1rem;
+    margin-top: 1.2rem;
+}

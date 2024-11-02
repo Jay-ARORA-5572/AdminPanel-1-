@@ -1,0 +1,184 @@
+<div class="container">
+    <!-- Sidebar Menu -->
+    <div class="sidebar">
+        <p-card>
+            <div class="profile-header">
+                <p-avatar label="AB" size="large"></p-avatar>
+                <div class="courses-header">
+                    <div class="course-info">
+                        <h3 id="gap">Abu Bin Ishtiyak</h3>
+                        <p id="gap1">infosoftnio.com</p>
+                    </div>
+                    </div>
+                    <div >
+                    
+                    <button class="actionicon" pButton type="button" icon="pi pi-ellipsis-h"
+                        (click)="op.toggle($event)"></button>
+
+                    <!-- Overlay Panel -->
+                    <p-overlayPanel #op>
+                        <div class="menu">
+                            <div class="menu-item">
+                                <button class="actioniconover" label="View License" pButton type="button"
+                                    icon="pi pi-ban"></button>
+                            </div>
+
+                            <div class="menu-item">
+                                <button class="actioniconover" label="Cancel License" pButton type="button"
+                                    icon="pi pi-trash"></button>
+                            </div>
+                        </div>
+                    </p-overlayPanel>
+
+                </div>
+            </div>
+            <div class="account-balance">
+                <h4>About Institute</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus fugiat ea, reiciendis,
+                    necessitatibus voluptatibus nihil enim dignissimos qui labore atque suscipit inventore consectetur
+                    optio! Ad iste beatae voluptatibus quas nulla.
+                </p>
+            </div>
+
+            <div class="last-login">
+                <h4>top students</h4>
+                <p>1.tank</p>
+                <p>2.sunil</p>
+            </div>
+
+            <div class="account-balance">
+                <h4>Branch: Rajasthan</h4>
+            </div>
+
+            <div class="last-login">
+                <h4>pending payments</h4>
+                <p>none</p>
+            </div>
+
+            <div class="last-login">
+                <h4>Total Students</h4>
+                <p>82</p>
+            </div>
+
+            <button class="actionicon" pButton type="button" icon="pi pi-ellipsis-h"
+                (click)="opt.toggle($event)"></button>
+
+            <!-- Overlay Panel -->
+            <p-overlayPanel #opt>
+                <div class="menu">
+                    <div class="menu-item">
+                        <button class="actioniconover" label="View License" pButton type="button"
+                            icon="pi pi-envelope"></button>
+                    </div>
+
+                    <div class="menu-item">
+                        <button class="actioniconover" label="Suspend License" pButton type="button"
+                            icon="pi pi-ban"></button>
+                    </div>
+
+                </div>
+            </p-overlayPanel>
+
+        </p-card>
+    </div>
+
+    <div class="main-content">
+
+        <!-- 1st Section -->
+        <div class="leftsidediv">
+
+            <div class="firstdiv">
+                <div class="card overview-card purple  ">
+                    <i class="pi pi-users"></i>
+                    <div class="overview-content">
+                        <span>Total teachers</span>
+                        <h2>22,124</h2>
+                        <span class="change">+1.03%</span>
+                    </div>
+                </div>
+
+                <div class="card overview-card blue ">
+                    <i class="pi pi-briefcase"></i>
+                    <div class="overview-content">
+                        <span>students above 90%</span>
+                        <h2>528</h2>
+                        <span class="change">+0.36%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="seconddiv">
+
+                <div class="card overview-card purple">
+                    <i class="pi pi-heart"></i>
+                    <div class="overview-content">
+                        <span>Total active students</span>
+                        <h2>8,289</h2>
+                        <span class="change negative">-1.28%</span>
+                    </div>
+                </div>
+
+                <div class="card overview-card red ">
+                    <i class="pi pi-user-plus"></i>
+                    <div class="overview-content">
+                        <span>Affliated by branch:</span>
+                        <h2>1,453</h2>
+                        <span class="change positive">+4.25%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="thirddiv">
+                <div class="applicants-summary-container p-shadow-1">
+                    <div class="summary-header">
+                        <h4 class="summary-title">Applicants Summary</h4>
+                    </div>
+                    <div class="summary-content">
+                        <div class="applicant-summary-item">
+                            <i class="pi pi-file applicant-icon purple"></i>
+                            <p class="summary-label">New Applicants</p>
+                            <p class="summary-value">2,981</p>
+                        </div>
+                        <div class="applicant-summary-item">
+                            <i class="pi pi-user-plus applicant-icon blue"></i>
+                            <p class="summary-label">Selected Candidates</p>
+                            <p class="summary-value">2,981</p>
+                        </div>
+                        <div class="applicant-summary-item">
+                            <i class="pi pi-user-edit applicant-icon yellow"></i>
+                            <p class="summary-label">Rejected Candidates</p>
+                            <p class="summary-value">2,981</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="rightsidediv shadow-5">
+            <div class="rightsidecard chart-card p-3">
+                <span>Performance By Category</span>
+
+                <div class="card-header">
+                    <p-tabMenu [model]="timeRanges" [(activeItem)]="selectedRange"></p-tabMenu>
+                </div>
+                <div class="card-body">
+                    <p-chart type="bar" height="300" width="400" [data]="chartData" [options]="chartOptions"></p-chart>
+                </div>
+            </div>
+
+            <div class="rightsidecard chart-card p-3">
+                <span>Performance By Category</span>
+
+                <div class="card-header">
+                    <p-tabMenu [model]="timeRanges" [(activeItem)]="selectedRange"></p-tabMenu>
+                </div>
+                <div class="card-body">
+                    <p-chart type="bar" height="300" width="400" [data]="chartData" [options]="chartOptions"></p-chart>
+                </div>
+            </div>
+        </div>
+        <!-- 1st Section -->
+    </div>
+</div>

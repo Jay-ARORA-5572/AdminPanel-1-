@@ -1,0 +1,427 @@
+#outer-container {
+    /* border: 2px solid red; */
+    width: 100%;
+    height: 97%;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    gap: 30px;
+  }
+  
+  .search-filters {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+  }
+  
+ 
+  .search-bar input[type="text"] {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    width: 250px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .search-bar input[type="text"]:focus {
+    border-color: #007bff;
+  }
+  
+  
+  .search-bar select {
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .search-bar select:focus {
+    border-color: #007bff;
+  }
+  
+
+  .download-btn {
+    padding: 10px;
+    font-size: 16px;
+    color: #0D1046;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  
+
+
+
+
+
+#heading {
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.custom-card {
+    width: 98%;
+    padding: 1%;
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+
+
+#left {
+    width: 20%;
+    padding: 1%;
+}
+
+
+.title {
+    height: 24px;
+    font-family: 'Mulish', sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+span {
+    color: #6C6C6C;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+#right,
+#download{
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+
+/* ---------------- cards design ---------------------*/
+
+.card1 {
+    background-color: #F5E2E2 !important;
+    transition: transform 0.3s ease;
+}
+
+.textsize1 {
+    color: #B0945A !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight: 900 !important;
+}
+
+.header {
+    font-family: 'Mulish', sans-serif;
+    font-size: 2vh;
+    font-weight: 900;
+    color: #242424;
+}
+
+.card2 {
+    background-color: #E2F5EA !important;
+    transition: transform 0.3s ease;
+
+}
+
+.textsize2 {
+    color: #EE7D3D !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight: 900 !important;
+}
+
+.card3 {
+    background-color: #EEE2F5 !important;
+    transition: transform 0.3s ease;
+
+}
+
+.textsize3 {
+    color: #EF4444 !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight: 900 !important;
+}
+
+.card4 {
+    background-color: #D3E1ED !important;
+    transition: transform 0.3s ease;
+
+}
+
+.textsize4 {
+    color: #445FEF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight: 900 !important;
+}
+
+.card5 {
+    background-color:  #EDD3D3 !important;
+    transition: transform 0.3s ease;
+
+}
+
+.textsize5 {
+    color: #0BA700 !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight: 900 !important;
+
+}
+
+.card6 {
+    background-color: #E7F6E6 !important;
+    transition: transform 0.3s ease;
+
+}
+
+.textsize6 {
+    color: #915F26 !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight: 900 !important;
+}
+
+.surface-card:hover {
+    cursor: pointer;
+    /* background-color: #E7F6E6 !important; */
+    transform: scale(1.02);
+}
+
+/* ---------------- cards design ---------------------*/
+
+
+
+/* --------------Searcbar -------------- */
+.stab{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.down {
+    margin-top: 8vh;
+}
+
+.up{
+    margin-top:0.8vh;
+}
+
+#searchpop{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70vw;
+    height: 11vh;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-right: 1vw;
+}
+
+#filterForm{
+    display: flex ;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70vw;
+    align-items: center;
+}
+
+.example-full-width{
+    width: 22vw;
+    margin-top:2vh;
+}
+
+
+#closeicon {
+    float: right;
+    width: 25px;
+    height: 25px;
+}
+
+.closebtn{
+color: #f44336;
+font-size: 24px;
+position: absolute;
+top: 2.3vh;
+left: 70.9vw;
+cursor: pointer;
+}
+
+#actionbtns{
+    display: flex;
+    gap: 16%;
+    width: 25%;
+}
+
+
+#searchbtn{
+    background-color:#0D1046 !important;
+    color: #FFFFFF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+    text-align: center;
+    width: 100%;
+
+}
+
+.btn {
+    background-color:#0D1046 !important;
+    color: #FFFFFF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+    text-align: center;
+    width: 100%;
+}
+
+ 
+#resetbtn{
+    background-color:#FF5833 !important;
+    color: #FFFFFF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    font-weight: 600; 
+    text-align: center;
+    widows: 100%;
+
+}
+/* --------------Searcbar -------------- */
+
+
+
+
+#filterinput {
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.example-full-width{
+    width: 21vw;
+    height: 9vh;
+}
+
+
+
+#institute {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list {
+    width: 18%;
+}
+
+.list>p {
+    font-family: 'Mulish', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 25px;
+    text-align: left;
+    padding: 5%;
+}
+
+
+
+
+/* -------------- Chart Css --------------------*/
+
+#chartContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    gap: 2%;
+    width: 100%;
+    padding: 0.5%;
+}
+.graphcard{
+    width: 48%;
+}
+
+
+
+.barchart {
+    width: 70%;
+    height: 0%;
+}
+
+.piechart {
+    width: 50%;
+    height: 50%;
+}
+
+
+/* -------------- Chart Css --------------------*/
+
+
+/*--------------- tables data------------  */
+
+#tablediv {
+    width: 100%;
+    overflow: scroll;
+}
+
+
+/*--------------- tables data------------  */
+
+
+
+
+
+
+.activities {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    width: 48%;
+  }
+ 
+.activity-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .activity-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  .icon {
+    margin-right: 15px;
+  }
+  
+  .details {
+    flex: 1;
+  }
+  
+  .description {
+    color: #666;
+  }
+  
+  .material-icons {
+    font-size: 24px;
+  }
+
+
+  

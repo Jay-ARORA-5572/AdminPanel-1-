@@ -1,0 +1,213 @@
+<div id="main">
+
+    <!-- Top header  -->
+    <section class="shadow-3 border-round-sm">
+        <div class="courses-header">
+            <div class="course-info">
+                <h2>Fee Collection</h2>
+            </div>
+        </div>
+    </section>
+    <!-- Top header  -->
+
+    <!-- 1st conatiner -->
+    <div class="stats-dashboard">
+        <div class="stat-card">
+            <p-card>
+                <div class="card-content">
+                    <span class="ok">Total Student</span>
+                    <div class="header">
+                        <img src="../../../assets/Instituteadminicon/studenadmissonstudentinformationicon/First.png.png" alt="first pic"
+                            style="width: fit-content;">
+                        <span class="acha">25</span>
+                    </div>
+                </div>
+            </p-card>
+        </div>
+        <!-- 1st conatiner -->
+
+        <!-- 2nd conatiner -->
+        <div class="stat-card">
+            <p-card>
+                <div class="card-content">
+                    <span class="ok">Total Fees</span>
+                    <div class="header">
+                        <img src="../../../assets/Instituteadminicon/studenadmissonstudentinformationicon/Second.png.png" alt="second pic"
+                            style="width: fit-content;">
+                        <span class="acha">25</span>
+                    </div>
+                </div>
+            </p-card>
+        </div>
+        <!-- 2nd conatiner -->
+
+        <!-- 3rd conatiner -->
+        <div class="stat-card">
+            <p-card>
+                <div class="card-content">
+                    <span class="ok3">Collected Fees</span>
+                    <div class="header">
+                        <img src="../../../assets/Instituteadminicon/admissionbarfrontofficeicon/third.png.png" alt="third pic"
+                            style="width: fit-content;">
+                        <span class="acha">25</span>
+                    </div>
+                </div>
+            </p-card>
+        </div>
+        <!-- 3rd conatiner -->
+
+        <!-- 4th conatiner -->
+        <div class="stat-card">
+            <p-card>
+                <div class="card-content">
+                    <span class="ok">Due Fees</span>
+                    <div class="header">
+                        <img src="../../../Instituteadminicon/assets/admissionbarfrontofficeicon/fourth.png.png" alt="fourth pic"
+                            style="width: fit-content;">
+                        <span class="acha">25</span>
+                    </div>
+                </div>
+            </p-card>
+        </div>
+        <!-- 4th conatiner -->
+    </div>
+
+    <section class="shadow-3 border-round-sm">
+
+        <h1>Select Criteria</h1>
+
+        <div class="p-fluid form-layout mt-4 p-3">
+
+            <div class="field field-onethird">
+                <label for="country">Admission Session</label>
+                <input id="country" type="text" pInputText [(ngModel)]="country" class="custom-input">
+            </div>
+
+            <div class="field field-onethird">
+                <label for="state">Class</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-onethird">
+                <label for="state">Section</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-onethird">
+                <label for="state">Admission Source</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-onethird">
+                <label for="state">From Date</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-onethird">
+                <label for="state">To Date</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-onethird">
+                <label for="state">Fee Status</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-onethird">
+                <label for="state">Transfer To</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+        </div>
+
+        <div class="field field-full p-3">
+            <button class="button" pButton type="button" label="Search"></button>
+            <button class="button" pButton type="button" label="Reset"></button>
+        </div>
+
+    </section>
+
+    <section class="shadow-3 border-round-sm">
+
+        <div class="courses-header">
+            <div class="course-info">
+                <h2>Collect Fee</h2>
+            </div>
+            <button class="login" mat-raised-button>+ Add New </button>
+        </div>
+
+        <div class="top-header">
+            <input type="text" pInputText placeholder="Search" />
+            <div class="header-controls">
+                <button pButton type="button" label="making .csv type file button" class="add-button"></button>
+                <button pButton type="button" label="making copy button" class="add-button"></button>
+            </div>
+        </div>
+
+        <p-table [value]="instructors" responsiveLayout="scroll" [paginator]="true" [rows]="rows" [first]="first"
+            (onPage)="onPageChange($event)">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Sr no.</th>
+                    <th>View Details</th>
+                    <th>Roll No</th>
+                    <th>Student Name</th>
+                    <th>Class</th>
+                    <th>Admission Source</th>
+                    <th>Session</th>
+                    <th>Transfer To</th>
+                    <th>Total Fees</th>
+                    <th>Collected Fees</th>
+                    <th>Due Fees</th>
+                    <th>Fine</th>
+                    <th>Other Amount</th>
+                    <th>Next Due Date</th>
+                    <th>Collect Fee</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-instructor>
+                <tr class="table-row">
+                    <td>{{ instructor.phone }} </td>
+                    <td>{{ instructor.country }}</td>
+                    <td>{{ instructor.user }}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{ instructor.activeCourses }}</td>
+                    <td>
+                        <button class="actionicon" pButton type="button" icon="pi pi-ellipsis-h"
+                            (click)="op.toggle($event)"></button>
+
+                        <!-- Overlay Panel -->
+                        <p-overlayPanel #op>
+                            <div class="menu">
+                                <div class="menu-item">
+                                    <button class="actioniconover" (click)="selectbtn(op)" label="Edit" pButton
+                                        type="button"></button>
+                                </div>
+
+                                <div class="menu-item">
+
+                                    <button class="actioniconover" (click)="selectbtn(op)" label="Delete" pButton
+                                        type="button"></button>
+                                </div>
+                            </div>
+                        </p-overlayPanel>
+
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+    </section>
+
+
+
+</div>

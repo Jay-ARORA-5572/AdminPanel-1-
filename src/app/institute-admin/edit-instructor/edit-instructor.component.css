@@ -1,0 +1,81 @@
+
+.p-dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f4f4f4;
+  }
+  
+  .p-dialog-title {
+    font-weight: bold;
+  }
+  
+  .p-dialog-content {
+    padding: 1rem;
+  }
+  
+  
+  .form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* space between items */
+  }
+  
+  .form-group {
+    flex: 1 1 48%; /* Take up approximately half the width of the container */
+    display: flex;
+    flex-direction: column;
+    min-width: 250px; /* Prevent fields from getting too small on small screens */
+  }
+  
+  .full-width {
+    flex: 1 1 100%;
+  }
+  
+  .p-dialog-content {
+    padding: 20px;
+  }
+  
+  .p-dialog-footer {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: right; */
+    gap: 3%;
+  }
+  
+  .buttonsection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 3%;
+  }
+  
+  .savebtn {
+    width: 30%;
+    background-color:#0D1046;
+    color: white;
+  }
+  
+  
+  .cross{
+    cursor: pointer;
+  }
+  
+  .Cancel{
+    background-color: #fff;
+    color: red;
+    border: 1px solid red;
+    width: 20%;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 1%;
+    text-align: left;
+  }

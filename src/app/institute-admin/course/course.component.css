@@ -1,0 +1,536 @@
+#outer-container {
+    width: 97%;
+    margin: auto;
+    margin-top: 2%;
+}
+
+
+/* top-header */
+
+ .top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+    margin: 10px;
+  }
+  
+  .header-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-controls > * {
+    margin-left: 10px;
+  }
+  
+  .add-button {
+    background-color: #0D1046 !important;
+    border: none;
+    color: white !important;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 24px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+  }
+  
+/* top-header */
+
+.custom-content1{
+    overflow: auto;
+    height:100%;
+    width: 100%;
+}
+
+
+/* .custom-card {
+    width: 98%;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+} */
+
+.btn1 {
+    background-color: #0D1046 !important;
+    color: #FFFFFF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    width: 10vw;
+    height: 5vh;
+}
+
+/* Course Show  */
+
+
+/* ------------- List of Courses header ----------- */
+
+#heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    align-items: center;
+    width: 10%;
+}
+
+.btn {
+    background-color: #0D1046 !important;
+    color: #FFFFFF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    width: 5vw;
+    height: 5vh;
+}
+
+
+
+#resetbtn {
+    background-color: #FF5833 !important;
+    color: #FFFFFF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    width: 5vw;
+    height: 5vh;
+
+}
+
+
+.title {
+    font-family: 'Mulish', sans-serif;
+    font-size: 2.6vh;
+    text-align: left;
+    margin: 5%;
+    width: 15vw;
+}
+
+/* ------------- List of Courses header ----------- */
+
+
+
+
+
+
+
+
+
+/* ---------------- Demo Course --------------------- */
+
+.example-container {
+    height: 92.5vh;
+    /* width: 100%; */
+}
+
+
+
+.Coursetitle {
+    font-family: 'Mulish', sans-serif;
+    font-size: 18px;
+    text-align: left;
+    margin-top:3.3%;
+    width: 15vw;
+    color: white;
+}
+
+.listicon:hover{
+    cursor: pointer;
+
+}
+
+
+#courseheading {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+    background-color:#0D1046;
+}
+
+
+
+
+.courseviewcard{
+    width: 98%;
+    height: 60%;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+.maincontainer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#login-container {
+    background-color: #D3E1ED;
+   
+    border-radius: 5px;
+    cursor: pointer ;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+#login-container:hover{
+    background-color: #D3E1ED !important;
+    transition: transform 0.3s ease;
+}
+
+
+.description{
+    margin-top: 10%;
+}
+
+
+.cdetails{
+    font-family: 'Mulish', sans-serif;
+    font-size: 2vh;
+    font-weight: 900;
+    color: #242424;
+    line-height: 20%;
+}
+
+
+.profile-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.profile-img img{
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.view {
+    background-color: #0D1046 !important;
+    color: #FFFFFF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    width: 27%;
+    height: 10%;
+    border: none;
+    float: right;
+    cursor: pointer;
+}
+
+.join{
+    background-color: #0D1046 !important;
+    color: #FFFFFF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    width: 27%;
+    height: 10%;
+    border: none;
+    float: left;
+    cursor: pointer;
+
+}
+
+.divbutton{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ---------------- Demo Course --------------------- */
+
+.card {
+    margin-top: 2%;
+    width: 255px;
+    height: 350px;
+    color: white;
+    background-color: #0D1046 !important;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    transition: box-shadow .3s ease, transform .2s ease;
+   }
+   
+   .card-info {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    width: 200px;
+    height: 350px;
+    align-items: center;
+   }
+   
+   .card-info p {
+    font-size: 14px; 
+    line-height: 1.5; 
+    /* overflow: hidden;  */
+    overflow-y: scroll;
+    text-overflow: ellipsis;
+}
+   
+   /*Image*/
+   .card-avatar {
+    --size: 80px;
+    background: linear-gradient(to top, #f1e1c1 0%, #fcbc97 100%);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    transition: transform .2s ease;
+    margin-bottom: 1rem;
+   }
+
+   .card-social {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-bottom: 5.4%;
+    /* border: 1px solid red; */
+    margin-right: 23%;
+   }
+
+   .btn{
+    color: white;
+    font-size: 14px;
+    border-color: white;
+   }
+
+
+
+   /*Text*/
+   .card-title {
+    font-weight: 600;
+    text-align: left;
+   }
+
+   hr{
+    background: black;
+    width: 100%;
+   }
+   
+   .card-subtitle {
+    color: #859ba8;
+    font-size: 0.8em;
+   }
+   
+   /*Hover*/
+   .card:hover {
+    box-shadow: 0 8px 50px #23232333;
+   }
+   
+   /* .card:hover .card-info {
+    transform: translateY(-5%);
+   } */
+   
+   
+   .card-avatar:hover {
+    transform: scale(1.1);
+   }
+   
+  .card-social button {
+     display: inline-block;
+     width: 5em;
+     height: 2em;
+     line-height: 2.em;
+     overflow: hidden;
+     cursor: pointer;
+     font-size: 17px;
+     z-index: 1;
+     /* color: var(--color); */
+     border: 2px solid white;
+     border-radius: 6px;
+     position: relative;
+   }
+   
+   .card-social button::before {
+
+     position: absolute;
+     content: "";
+     width: 150px;
+     height: 200px;
+     z-index: -1;
+     border-radius: 50%;
+   }
+   
+ 
+   .card-social button:before {
+     top: 100%;
+     left: 100%;
+     transition: 0.3s all;
+   }
+   
+   .card-social button:hover::before {
+     top: -30px;
+     left: -30px;
+   }
+  
+/* ---------------------- Courses Deatlis -------------------- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.course-section {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    color: #333;
+    background-size: cover;
+    background-position: center;
+}
+
+.course_head {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.c_icon {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.c_pra {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.c_d_pra, .c_question {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.subject_cover ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subject_cover ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+/* Button Styles */
+.btn-custom {
+    background-color: #0D1046;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color:#0D1046;
+    border-color: #0056b3;
+}
+
+/* Shadow Effect */
+.shadow-effect {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.couserupadatediv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ----------------------Popular Courses -------------------- */
+
+.popular{
+    padding: 2%;
+    font-family: 'Mulish', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: #242424;
+}
+
+#maincontainer{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 2%; */
+
+}
+
+
+#tablediv {
+    margin-top: 1.2%;
+    width: 100%;
+    overflow: scroll;
+}
+
+/* ----------------------Popular Courses -------------------- */
+
+
+
+/* styles.css or styles.scss */
+
+::ng-deep .p-confirm-dialog-accept {
+    background-color: #0D1046;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+::ng-deep .p-confirm-dialog-reject {
+    background-color: #ee1d1d;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+

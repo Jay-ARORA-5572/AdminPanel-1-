@@ -1,0 +1,79 @@
+<div class="main-container">
+  <div class="container">
+    <div class="header">
+      <h2>Live Classes</h2>
+      <button class="add-class" (click)="toggleAddClass()">
+        <span>+ Add Class</span>
+      </button>
+    </div>
+
+    <div class="search-and-tabs">
+      <div class="tabs">
+        <button class="tab" [ngClass]="{'active': selectedTab === 'scheduled'}" (click)="selectTab('scheduled')">Scheduled Classes</button>
+        <button class="tab" [ngClass]="{'active': selectedTab === 'history'}" (click)="selectTab('history')">Class History</button>
+      </div>
+      <input type="text" placeholder="Search..." class="search-bar">
+    </div>
+    
+    <div class="class-cards" *ngIf="selectedTab === 'scheduled'">
+      <div 
+        class="card" 
+        [ngClass]="{
+          'ongoing': class.status === 'Ongoing', 
+          'starting-soon': class.status === 'Starting in 60 Minutes', 
+          'not-started': class.status === 'Not Started'
+        }" 
+        *ngFor="let class of classes">
+        <h3>{{ class.title }}</h3>
+        <p class="batch">{{ class.batch }}</p>
+        <p>
+          <span class="icon time">🕒</span> 
+          <span class="time-text">{{ class.time }}</span> 
+          | 
+          <span class="icon calendar">📅</span> 
+          <span class="date-text">{{ class.date }}</span>
+        </p>
+        <p class="status" 
+           [ngClass]="{
+             'status-ongoing': class.status === 'Ongoing', 
+             'status-starting-soon': class.status === 'Starting in 60 Minutes', 
+             'status-not-started': class.status === 'Not Started'
+           }">
+          Status: {{ class.status }}
+        </p>
+        <button>Start Now</button>
+      </div>
+    </div>
+
+    <div class="class-cards" *ngIf="selectedTab === 'history'">
+      <div *ngIf="historyClasses.length === 0" class="empty-history">
+        No classes in history. Add new classes to see them here.
+      </div>
+      
+      <div *ngFor="let class of historyClasses">
+        <div 
+          class="card" 
+          [ngClass]="{
+            'completed': class.status === 'completed'
+          }">
+          <h3>{{ class.title }}</h3>
+          <p class="batch">{{ class.batch }}</p>
+          <p>
+            <span class="icon time">🕒</span> 
+            <span class="time-text">{{ class.time }}</span> 
+            | 
+            <span class="icon calendar">📅</span> 
+            <span class="date-text">{{ class.date }}</span>
+          </p>
+          <p class="status" 
+             [ngClass]="{
+               'status-completed': class.status === 'completed'
+             }">
+            Status: {{ class.status }}
+          </p>
+          <button (click)="viewDetails()">Attendence</button>
+        </div>
+      </div>
+      
+
+</div>

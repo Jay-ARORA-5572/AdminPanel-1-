@@ -1,0 +1,78 @@
+<!-- top -->
+<div id="main">
+
+
+  <section class="shadow-3 border-round-sm">
+
+    <div class="course-category-container">
+      <div class="title-container">
+        <h2 class="p-m-0">Course Category</h2>
+        <p class="p-m-0">You have total 8 Categories</p>
+      </div>
+
+      <div class="actions-container">
+        <p-dropdown [options]="filterOptions" icon="pi pi-filter" iconPos="left" [(ngModel)]="selectedFilter"
+          placeholder="Filtered By" (onChange)="onFilterChange($event)">
+        </p-dropdown>
+        <button pButton type="button" icon="pi pi-plus" label="Add Categories" class="add-category-button"
+          (click)="addCategory()"></button>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="shadow-3 border-round-sm">
+    <div class="container">
+      <!-- <div class="card" id="graphics-design">
+        <div class="card-header">
+          <div class="icon" class="blue">GD</div>
+          <div class="title">Graphics Design</div>
+        </div>
+        <p>Website Design & Develop the website with web applications</p>
+        <div class="tags">
+          <span class="tag" class="violet-tag">Photoshop</span>
+          <span class="tag" class="red-tag">Adobe Illustrator</span>
+          <span class="tag" class="pink-tag">Logo Design</span>
+          <span class="tag" class="yellow-tag">Drawing</span>
+          <span class="tag" class="grey-tag">Figma</span>
+        </div>
+      </div> -->
+
+      <!-- Web Development -->
+
+      <div class="card" >
+        <div class="card-header">
+          <div class="icon" class="yellow">WD</div>
+          <div class="title">Web Development</div>
+        </div>
+        <p>Website Design & Develop the website with web applications</p>
+        <div class="tags">
+          <span class="tag" class="violet-tag">Responsive Design</span>
+          <span class="tag" class="red-tag">Wordpress Customization</span>
+          <span class="tag" class="pink-tag">Theme Development</span>
+          <span class="tag" class="yellow-tag">Bootstrap</span>
+          <span class="tag" class="grey-tag">HTML & CSS Grid</span>
+        </div>
+      </div>
+
+
+    <div *ngFor="let category of categories" class="card">
+        <div class="card-header">
+          <div class="icon yellow">{{ category.categoryName[0] }}</div>
+          <div class="title">{{ category.categoryName }}</div> 
+        </div>
+        <p>{{ category.description }}</p> 
+        
+        <div class="tags">
+          <span *ngFor="let subcategory of category.subcategories" class="tag">
+            {{ subcategory.name }} 
+          </span>
+        </div>
+      </div>
+      
+
+    </div>
+
+  </section>
+
+</div>

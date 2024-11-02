@@ -1,0 +1,215 @@
+<div id="outer-container">
+
+    <!-- Header -->
+    <mat-card class="custom-card mx-3 my-4">
+        <mat-card-content class="custom-content">
+            <div id="heading">
+                <div id="left">
+                    <div>
+                        <mat-icon class="arrow">arrow_back</mat-icon>
+                    </div>
+                    <div>
+                        <p class="title">
+                            List of Branch
+                        </p>
+                    </div>
+                </div>
+
+                <div id="right">
+                    <button mat-flat-button class="btn1" (click)="addBranch()">+ Add Branch</button> &nbsp;
+                </div>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+    <!-- Header -->
+
+
+    <!-- Business Summary -->
+    <mat-card class="custom-card mx-3 my-4">
+        <mat-card-content class="custom-content">
+            <div class="maincontainer">
+                <div class="surface-ground">
+                    <div class="grid">
+                        <div class="col-12 md:col-6 lg:col-4 hovereffect">
+                            <div class="surface-card shadow-2 p-3 border-round card1">
+                                <div class="flex justify-content-between mb-3">
+                                    <div>
+                                        <span class="block header font-medium mb-3">Total Branch</span>
+                                        <div class="text-900 font-medium text-xl textsize1">{{this.totalbranch}}</div>
+                                    </div>
+                                    <div class="flex align-items-center justify-content-center bg-blue-100 border-round"
+                                        style="width:2.5rem;height:2.5rem">
+                                        <i class="pi pi-user text-blue-500 text-xl"></i>
+                                    </div>
+                                </div>
+                                <!-- <span class="text-green-500 font-medium">24 new </span>
+                        <span class="text-500">since last visit</span>   -->
+                            </div>
+                        </div>
+                        <div class="col-12 md:col-6 lg:col-4 hovereffect">
+                            <div class="surface-card shadow-2 p-3 border-round card2">
+                                <div class="flex justify-content-between mb-3">
+                                    <div>
+                                        <span class="block header font-medium mb-3">Total Active User</span>
+                                        <div class="text-900 font-medium text-xl textsize2">{{this.totalbranch}}</div>
+                                    </div>
+                                    <div class="flex align-items-center justify-content-center bg-orange-100 border-round"
+                                        style="width:2.5rem;height:2.5rem">
+                                        <i class="pi pi-users text-orange-500 text-xl"></i>
+                                    </div>
+                                </div>
+                                <!-- <span class="text-green-500 font-medium">%52+ </span>
+                        <span class="text-500">since last week</span> -->
+                            </div>
+                        </div>
+                        <div class="col-12 md:col-6 lg:col-4 hovereffect">
+                            <div class="surface-card shadow-2 p-3 border-round card3">
+                                <div class="flex justify-content-between mb-3">
+                                    <div>
+                                        <span class="block header font-medium mb-3">Total Jobs Apply</span>
+                                        <div class="text-900 font-medium text-xl textsize3">75</div>
+                                    </div>
+                                    <div class="flex align-items-center justify-content-center bg-cyan-100 border-round"
+                                        style="width:2.5rem;height:2.5rem">
+                                        <i class="pi pi-user-plus text-cyan-500 text-xl"></i>
+                                    </div>
+                                </div>
+                                <!-- <span class="text-green-500 font-medium">520  </span>
+                        <span class="text-500">newly registered</span> -->
+                            </div>
+                        </div>
+                        <div class="col-12 md:col-6 lg:col-4 hovereffect">
+                            <div class="surface-card shadow-2 p-3 border-round card4">
+                                <div class="flex justify-content-between mb-3">
+                                    <div>
+                                        <span class="block header font-medium mb-3">Successfully Apply Jobs</span>
+                                        <div class="text-900 font-medium text-xl textsize4">120</div>
+                                    </div>
+                                    <div class="flex align-items-center justify-content-center bg-purple-100 border-round"
+                                        style="width:2.5rem;height:2.5rem">
+                                        <!-- <i class="pi pi-comment text-purple-500 text-xl"></i> -->
+                                        <mat-icon class="text-blue-500 text-xl">supervised_user_circle</mat-icon>
+                                    </div>
+                                </div>
+                                <!-- <span class="text-green-500 font-medium">85 </span>
+                        <span class="text-500">responded</span> -->
+                            </div>
+                        </div>
+                        <div class="col-12 md:col-6 lg:col-4 hovereffect">
+                            <div class="surface-card shadow-2 p-3 border-round card5">
+                                <div class="flex justify-content-between mb-3">
+                                    <div>
+                                        <span class="block header font-medium mb-3">Active User</span>
+                                        <div class="text-900 font-medium text-xl textsize5">{{this.totalbranch}}</div>
+                                    </div>
+                                    <div class="flex align-items-center justify-content-center bg-purple-100 border-round"
+                                        style="width:2.5rem;height:2.5rem">
+                                        <!-- <i class="pi pi-comment text-purple-500 text-xl"></i> -->
+                                        <mat-icon class="text-orange-500 text-xl">verified_user</mat-icon>
+                                    </div>
+                                </div>
+                                <!-- <span class="text-green-500 font-medium">85 </span>
+                        <span class="text-500">responded</span> -->
+                            </div>
+                        </div>
+                        <div class="col-12 md:col-6 lg:col-4 hovereffect">
+                            <div class="surface-card shadow-2 p-3 border-round card6">
+                                <div class="flex justify-content-between mb-3">
+                                    <div>
+                                        <span class="block header font-medium mb-3">Total jobs</span>
+                                        <div class="text-900 font-medium text-xl textsize6">15</div>
+                                    </div>
+                                    <div class="flex align-items-center justify-content-center bg-purple-100 border-round"
+                                        style="width:2.5rem;height:2.5rem">
+                                        <!-- <i class="pi pi-comment text-purple-500 text-xl"></i> -->
+                                        <mat-icon class="text-green-500 text-xl">add_alert</mat-icon>
+                                    </div>
+                                </div>
+                                <!-- <span class="text-green-500 font-medium">85 </span>
+                        <span class="text-500">responded</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+    <!-- Business Summary -->
+
+   
+
+    <!-- Searching  -->
+    <mat-card class="custom-card mx-3 my-4">
+        <mat-card-content class="custom-content">
+            <div class="main">
+                <div class="stab">
+                    <div id="searchbox">
+                        <button *ngIf="!search_bar" mat-flat-button id="searchbtn" color="primary" class="btn btn-save"
+                            (click)="searchbar()">
+                            <i class="fa fa-search" aria-hidden="true"></i> Search
+                        </button>
+                        <button mat-raised-button color="warn" *ngIf="singlecheck.length > 0"
+                            (click)="deletedata()">Delete</button>
+                    </div>
+
+                    <div id="searchpop" *ngIf="search_bar">
+                        <form id="filterForm" class="mx-2">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Search by institute id</mat-label>
+                                <input matInput name="instituteid">
+                            </mat-form-field>
+
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Branch Name</mat-label>
+                                <input matInput name="Amount" />
+                            </mat-form-field>
+
+
+                            <div id="actionbtns">
+                                <button mat-flat-button id="search" color="primary" class="btn btn-save"
+                                    (click)="searching()">
+                                    Search
+                                </button>
+                                <!-- &nbsp;
+                                &nbsp;
+                                &nbsp; -->
+
+                                <button mat-flat-button id="resetbtn" class="btn btn-save" (click)="resetFilter()">
+                                    Reset
+                                </button>
+                            </div>
+                        </form>
+                        <div id="closeicon">
+                            <mat-icon class="closebtn" (click)="close_search_bar()">cancel</mat-icon>
+                        </div>
+                    </div>
+
+                    <div id="download">
+                        <i class="pi pi-download text-black-500 text-xl" style="color: #0D1046;"
+                        (click)="download(searcharray)"></i>
+                    </div>
+                </div>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+    <!-- Searching  -->
+
+
+    <!-- Table data  -->
+    <mat-card class="custom-card mx-3 my-4">
+        <mat-card-content class="custom-content">
+            <div id="tablediv">
+                <app-dynamic-table-component [isCheckbox]="true" [items]="searcharray" [column]="iscolumn"
+                                    (selectedRow)="checkbox($event)" headerBackgroundColor="#0D1046"
+                                    headerTextColor="#ffffff" tableTextColor="#365B64" rowHeight="45"
+                                    tableFontFamily="Mulish', sans-serif" tableFontSize="18" [Actions]="['View']"
+                                    (onView)="viewfunc($event)"></app-dynamic-table-component>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <!-- Table data  -->
+
+</div>

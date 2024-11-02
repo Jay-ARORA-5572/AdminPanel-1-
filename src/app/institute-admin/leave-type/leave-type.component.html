@@ -1,0 +1,58 @@
+<div id="main">
+
+    <div class="courses-header">
+        <div class="course-info">
+            <h2>Leave Type List</h2>
+        </div>
+        <button class="login" mat-raised-button (click)="addnew()">+ Add New </button>
+    </div>
+    
+    <div class="top-header">
+        <input type="text" pInputText placeholder="Search" />
+        <div class="header-controls">
+            <button pButton type="button" label="making .csv type file button" class="add-button"></button>
+            <button pButton type="button" label="making copy button" class="add-button"></button>
+        </div>
+    </div>
+    
+    <p-table [value]="instructors" responsiveLayout="scroll" [paginator]="true" [rows]="rows" [first]="first"
+        (onPage)="onPageChange($event)">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Sr No</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-instructor>
+            <tr class="table-row">
+                <td>{{ instructor.phone }} </td>
+                <td>{{ instructor.country }}</td>
+                <td>{{ instructor.user }}</td>
+                <td>
+                    <button class="actionicon" pButton type="button" icon="pi pi-ellipsis-h"
+                        (click)="op.toggle($event)"></button>
+    
+                    <!-- Overlay Panel -->
+                    <p-overlayPanel #op>
+                        <div class="menu">
+                            <div class="menu-item">
+                                <button class="actioniconover" (click)="selectbtn(op)" label="Edit" pButton
+                                    type="button"></button>
+                            </div>
+    
+                            <div class="menu-item">
+    
+                                <button class="actioniconover" (click)="selectbtn(op)" label="Delete" pButton
+                                    type="button"></button>
+                            </div>
+                        </div>
+                    </p-overlayPanel>
+    
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    
+    </div>

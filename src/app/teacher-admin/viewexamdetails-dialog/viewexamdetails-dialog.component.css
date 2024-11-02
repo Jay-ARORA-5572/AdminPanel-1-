@@ -1,0 +1,85 @@
+.dialog-container {
+    padding: 20px;
+  }
+  
+  .p-dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    position: sticky; /* Keep it fixed at the top */
+    top: 0;
+    z-index: 1
+  }
+  
+  .header
+  {
+    align-items: center;
+  }
+
+  .close-icon
+  {
+    cursor: pointer;
+  }
+
+
+  .main-header
+  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+ 
+ 
+  .exam-details p, .passing-percentage p, .question-paper p, .exam-schedule p, .batches p {
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+  
+  .exam-details span {
+    font-size: 1.2rem;
+    margin-left: 5px;
+}
+  
+  
+  .passing-percentage .percentage {
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .question-paper button {
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    color: #333;
+    width: 25vw;
+  }
+  
+  .schedule-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .schedule-icons button {
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    color: black;
+    width: 16vw;
+  }
+  
+  .batches ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .batches li {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  .exam-details
+  {
+    padding: 14px;
+  }
+  

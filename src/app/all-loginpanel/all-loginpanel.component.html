@@ -1,0 +1,99 @@
+<div id="main">
+
+    <!-- <div id="left">
+        <img src="../../assets/test.png" alt="" id="imgdiv">
+    </div> -->
+    <div id="right">
+        <div class="imagedivright">
+            <img src="../../assets/SS_logo.png" alt="Not Found" id="rightsideimage">
+            <!-- <img src="../../assets/Navbaricon/Nickicon.png" alt="Not Found" id="rightsideimage"> -->
+        </div>
+
+
+        <!-- Admin Login  -->
+        <div class="input" *ngIf="loginhide">
+            <p class="formheading">Please enter your registered email id to sigin in </p>
+            <br>
+            <form #formdata="ngForm" (ngSubmit)="logindata(formdata.value)">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Enter your email </mat-label>
+                    <input matInput class="input1" ngModel name="email" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" required name="password" ngModel>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <div id="forget">
+                    <p class="forget" (click)="forgetpasswordstart()">Forget password?</p>
+                </div>
+                <div class="button">
+                    <button class="cancel" mat-raised-button>Cancel</button>
+                    &nbsp;
+                    &nbsp;
+                    <button class="login" mat-raised-button>Login</button>
+                </div>
+            </form>
+        </div>
+        <!-- Admin Login  -->
+
+
+        <!-- Forget password send in email address -->
+        <div class="card mt-3" *ngIf="forgetpassword">
+            <p class="lock-icon"><mat-icon>lock</mat-icon></p>
+            <h2>Forgot Password?</h2>
+            <p>You can reset your Password here</p>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter your email </mat-label>
+                <input matInput [(ngModel)]="forgotpassemail" name="email" required placeholder="Email address">
+            </mat-form-field>
+            <br>
+                <button (click)="homepage()" type="submit" class="forgetbtn" mat-raised-button>Home</button>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <button (click)="forgetpasswordsend()" type="submit" class="forgetbtn" mat-raised-button>Send</button>        
+            </div>
+
+        <!-- Forget password send in email address -->
+
+
+        <!-- Email password send enter -->
+        <div class="card mt-3" *ngIf="forgetpasswordenter">
+            <p class="lock-icon"><mat-icon>lock</mat-icon></p>
+            <h2>Reset Password Here?</h2>
+            <p>You can reset your Password here</p>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Enter OTP </mat-label>
+                <input matInput [(ngModel)]="opt" name="resetpassword" required placeholder="Enter opt">
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>New Password </mat-label>
+                <input matInput [(ngModel)]="conformpass" name="conformpassword" required placeholder="Enter new password">
+            </mat-form-field>
+            <br>
+            <button (click)="homepage()" type="submit" class="cancel" mat-raised-button>Cancel</button>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <button class="forgetbtn" (click)="changepassword()" mat-raised-button>Conform!</button>
+        </div>
+        <!-- Email password send enter -->
+
+
+    </div>
+</div>
+
+
+<!-- Forget Password -->
+
+
+
+<p-toast></p-toast>

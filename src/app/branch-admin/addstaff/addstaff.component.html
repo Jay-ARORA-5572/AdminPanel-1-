@@ -1,0 +1,59 @@
+<div class="p-dialog p-component p-fluid">
+    <div class="p-dialog-header">
+        <span class="p-dialog-title">Add Staff</span>
+        <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+
+    </div>
+    <div class="p-dialog-content">
+        <div class="form-container">
+            <div class="form-group">
+                <label for="firstName">Name</label>
+                <input id="firstName" class="mt-2" type="text" pInputText placeholder="Name" />
+            </div>
+            <div class="form-group">
+                <label for="lastName">UserName</label>
+                <input id="lastName" class="mt-2" type="text" pInputText />
+            </div>
+            <div class="form-group">
+                <label for="email">Employee ID</label>
+                <input id="email" class="mt-2" type="text" pInputText />
+            </div>
+            <div class="form-group">
+                <label for="phone">Aadhaar Number</label>
+                <input id="phone" class="mt-2" type="text" pInputText />
+            </div>
+            <div class="form-group">
+                <label for="address1">Phone Number</label>
+                <input id="address1" class="mt-2" type="text" pInputText />
+            </div>
+            <div class="form-group">
+                <label for="address2">Primary Number</label>
+                <input id="address2" class="mt-2" type="text" pInputText />
+            </div>
+            <div class="form-group">
+                <label for="state">Gmail Address</label>
+                <input id="state" class="mt-2" type="text" pInputText placeholder="e.g. ABC@example.com" />
+            </div>
+            <div class="form-group">
+                <label for="country">Recovery Mail</label>
+                <input id="country" class="mt-2" type="text" pInputText placeholder="e.g. XYZ@example.com" />
+            </div>
+            <div class="form-group">
+                <label for="state">Create New Password</label>
+                <input id="state" class="mt-2" type="text" pInputText />
+            </div>
+            <div class="form-group">
+                <label for="country">Confirm Password</label>
+                <input id="country" class="mt-2" type="text" pInputText />
+            </div>
+            <div class="form-group full-width">
+                <label for="about">Address</label>
+                <textarea id="about" class="mt-2" rows="4" pInputTextarea placeholder="Address"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="p-dialog-footer">
+        <button pButton pRipple label="Add Staff" class="savebtn"></button>
+        <button pButton pRipple label="Cancel" class="savebtn1" (click)="onCancelClick()"></button>
+    </div>
+</div>

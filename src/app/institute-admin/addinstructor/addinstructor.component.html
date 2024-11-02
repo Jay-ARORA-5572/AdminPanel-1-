@@ -1,0 +1,150 @@
+<div class="p-dialog p-component p-fluid">
+  <div class="p-dialog-header">
+    <span class="p-dialog-title">Add Instructor</span>
+    <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+  </div>
+  <div class="p-dialog-content">
+
+    <form #registerinstructor="ngForm" (ngSubmit)="register(registerinstructor)" enctype="multipart/form-data" class="form-container">
+
+      <div class="form-container">
+    
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input id="firstName" class="mt-2" type="text" pInputText placeholder="First name" name="firstname" ngModel required/>
+          <div *ngIf="registerinstructor.submitted && !registerinstructor.controls['firstname']?.valid" class="error">
+            First Name is required
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input id="lastName" class="mt-2" type="text" pInputText placeholder="Last name" name="lastname" ngModel required/>
+          <div *ngIf="registerinstructor.submitted && !registerinstructor.controls['lastname']?.valid" class="error">
+            Last Name is required
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="UserName">User Name</label>
+          <input id="UserName" class="mt-2" type="text" pInputText placeholder="User name" name="username" ngModel required/>
+          <div *ngIf="registerinstructor.submitted && !registerinstructor.controls['username']?.valid" class="error">
+            User Name is required
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="Email">Email Address</label>
+          <input id="Email" class="mt-2" type="text" pInputText placeholder="Email Address" name="email" ngModel required/>
+          <div *ngIf="registerinstructor.submitted && !registerinstructor.controls['email']?.valid" class="error">
+            Email Id is required
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input id="phone" class="mt-2" type="text" pInputText placeholder="+91" name="mobile" ngModel required/>
+          <div *ngIf="registerinstructor.submitted && !registerinstructor.controls['mobile']?.valid" class="error">
+            Mobile no is required
+          </div>
+        </div>
+
+        <!-- Password Field with Eye Icon to Toggle Visibility -->
+        <div class="form-group">
+          <label for="Password">Password</label>
+          <div class="p-inputgroup mt-2">
+            <span class="p-inputgroup-addon">
+              <i class="pi pi-lock"></i> <!-- Lock Icon -->
+            </span>
+            <input [type]="showPassword ? 'text' : 'password'" id="Password" pInputText placeholder="Password" name="password" ngModel required/>
+            <span class="p-inputgroup-addon">
+              <i class="pi" [ngClass]="showPassword ? 'pi-eye-slash' : 'pi-eye'" (click)="togglePasswordVisibility()"></i> <!-- Eye Icon -->
+            </span>
+          </div>
+          <div *ngIf="registerinstructor.submitted && !registerinstructor.controls['password']?.valid" class="error">
+            Password is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="Confirmpassword">Confirm Password</label>
+          <div class="p-inputgroup mt-2">
+            <span class="p-inputgroup-addon">
+              <i class="pi pi-lock"></i> <!-- Lock Icon -->
+            </span>
+            <input [type]="showConfirmPassword ? 'text' : 'password'" id="Confirmpassword" pInputText placeholder="Confirm Password" name="confirmpassword" ngModel required/>
+            <span class="p-inputgroup-addon">
+              <i class="pi" [ngClass]="showConfirmPassword ? 'pi-eye-slash' : 'pi-eye'" (click)="toggleConfirmPasswordVisibility()"></i> <!-- Eye Icon -->
+            </span>
+          </div>
+          <div *ngIf="registerinstructor.submitted && !registerinstructor.controls['confirmpassword']?.valid" class="error">
+            Confirm Password is required
+          </div>
+        </div>
+    
+        <!-- Password Field with Eye Icon to Toggle Visibility -->
+
+        <div class="form-group">
+          <label for="address1">Address Line 1</label>
+          <input id="address1" class="mt-2" type="text" pInputText placeholder="Address ...." name="firstaddress" ngModel required />
+          <div *ngIf="registerinstructor.submitted && !registerinstructor.controls['firstaddress']?.valid" class="error">
+            First Address is required
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="address2">Address Line 2</label>
+          <input id="address2" class="mt-2" type="text" pInputText placeholder="Address Line 2" name="secondaddress" ngModel />
+        </div>
+
+        <div class="form-group">
+          <label for="City">City</label>
+          <input id="City" class="mt-2" type="text" pInputText placeholder="City .." name="city" ngModel />
+          <div *ngIf="registerinstructor.submitted && !registerinstructor.controls['city']?.valid" class="error">
+            City is required
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="Pincode">Pincode</label>
+          <input id="Pincode" class="mt-2" type="text" pInputText placeholder="Pincode .." name="pincode" ngModel />
+          <div *ngIf="registerinstructor.submitted && !registerinstructor.controls['pincode']?.valid" class="error">
+            Pincode is required
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="State">State</label>
+          <input id="State" class="mt-2" type="text" pInputText placeholder="State ..." name="state" ngModel required/>
+          <div *ngIf="registerinstructor.submitted && !registerinstructor.controls['state']?.valid" class="error">
+            State is required
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="Salary">Salary</label>
+          <input id="Salary" class="mt-2" type="text" pInputText placeholder="Numeric value" name="salary" ngModel required/>
+          <div *ngIf="registerinstructor.submitted && !registerinstructor.controls['salary']?.valid" class="error">
+            Salary is required
+          </div>
+        </div>
+    
+        <div class="form-group full-width">
+          <label for="about">About Instructor</label>
+          <textarea id="about" rows="4" pInputTextarea ngModel name="aboutinstructor" class="custom-width mt-2" required spellcheck="true"></textarea>
+          <div *ngIf="registerinstructor.submitted && !registerinstructor.controls['aboutinstructor']?.valid" class="error">
+            Description is required
+          </div>
+        </div>
+    
+        <div class="mt-5 buttonsection">
+          <button type="submit" pButton pRipple label="Add Instructor" class="savebtn"></button>
+          <button pButton pRipple label="Cancel" class="Cancel" (click)="onCancelClick()"></button>
+        </div>
+      </div>
+    
+    </form>
+    
+  </div>
+
+</div>

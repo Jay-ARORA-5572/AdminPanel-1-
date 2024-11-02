@@ -1,0 +1,147 @@
+.test{
+    margin-top: 20%;
+}
+
+h1{
+    color:  green;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+}
+#outer-container {
+    width: 100%;
+    height: 97%;
+}
+
+#outer-container {
+    width: 100%;
+    height: 97%;
+}
+
+#heading {
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.custom-card {
+    width: 98%;
+    padding: 1%;
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+
+#left {
+    width: 20%;
+    padding: 1%;
+}
+
+
+.title {
+    height: 24px;
+    font-family: 'Mulish', sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+span {
+    color: #6C6C6C;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+#right,
+#download {
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+.surface-card:hover {
+    cursor: pointer;
+    /* background-color: #E7F6E6 !important; */
+    transform: scale(1.02);
+}
+
+/* ---------------- cards design ---------------------*/
+
+.card1 {
+    background-color: #F5E2E2 !important;
+    transition: transform 0.3s ease;
+}
+
+.textsize1 {
+    color: #B0945A !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight: 900 !important;
+}
+
+.header {
+    font-family: 'Mulish', sans-serif;
+    font-size: 2vh;
+    font-weight: 900;
+    color: #242424;
+}
+
+.card2 {
+    background-color: #E2F5EA !important;
+    transition: transform 0.3s ease;
+
+}
+
+.textsize2 {
+    color: #EE7D3D !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight: 900 !important;
+}
+
+.card3 {
+    background-color: #EEE2F5 !important;
+    transition: transform 0.3s ease;
+
+}
+
+.textsize3 {
+    color: #EF4444 !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight: 900 !important;
+}
+/* ---------------- cards design ---------------------*/
+
+
+
+/* -------------- Chart Css --------------------*/
+
+#chartContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    gap: 2%;
+    width: 100%;
+    padding: 0.5%;
+}
+
+.graphcard {
+    width: 48%;
+}
+
+
+
+.barchart {
+    width: 70%;
+    height: 0%;
+}
+
+.piechart {
+    width: 50%;
+    height: 50%;
+}
+
+/* -------------- Chart Css --------------------*/

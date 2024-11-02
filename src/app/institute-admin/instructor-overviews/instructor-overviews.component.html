@@ -1,0 +1,136 @@
+<div id="main">
+    <!-- Top header  -->
+    <header class="heading">
+        <div class="header-content">
+            <div class="title-section">
+                <h1>Instructor Overview</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2nd Section -->
+    <div class="instructor-overview">
+        <div class="total-earning">
+            <div class="header">Total Earning</div>
+            <div class="earning-stats">
+                <div class="stat">
+                    <div class="label">Monthly</div>
+                    <div class="amount">9.28K</div>
+                    <div class="change positive">↑ 4.63%</div>
+                </div>
+                <div class="stat">
+                    <div class="label">Weekly</div>
+                    <div class="amount">2.69K</div>
+                    <div class="change negative">↓ 1.92%</div>
+                </div>
+                <div class="stat">
+                    <div class="label">Daily (Avg)</div>
+                    <div class="amount">0.94K</div>
+                    <div class="change positive">↑ 3.45%</div>
+                </div>
+            </div>
+
+            <div id="chart">
+                <p-chart width="300" height="200" type="line" [data]="salesData"></p-chart>
+            </div>
+
+
+        </div>
+
+        <div class="other-stats">
+            <div class="stat-box">
+                <div class="header">Active Students</div>
+                <div class="activestudent">
+                    <div class="amount">329</div>
+                    <div class="change positive">↑ 4.63%</div>
+                </div>
+
+                <div class="card">
+                    <p-chart type="line" height="70" width="100" [data]="data" [options]="options" />
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="header">New Enrollment</div>
+                <div class="activestudent">
+                    <div class="amount">194</div>
+                    <div class="change positive">↑ 4.63%</div>
+                </div>
+
+                <div class="card">
+                    <p-chart type="line" height="70" width="100" [data]="chartData" [options]="chartOptions"></p-chart>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 3rd section -->
+    <section class="top">
+        <div class="dashboard-container3">
+            <div class="card-container3">
+                <div class="card3">
+                    <div class="card-header3">
+                        <h2>Top Courses</h2>
+                        <span class="timeframe">Weekly ▼</span>
+                    </div>
+                    <div class="course-list">
+                        <div class="course-item" *ngFor="let course of courses">
+                            <div class="course-info">
+                                <div class="course-icon" [ngStyle]="{'background-color': course.color}">
+                                    {{course.short}}
+                                </div>
+                                <div class="course-details">
+                                    <div class="course-title">{{course.title}}</div>
+                                    <div class="course-price">{{course.price}}</div>
+                                </div>
+                            </div>
+                            <div class="course-sales">{{course.sales}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card3">
+                    <div class="card-header3">
+                        <h2>Top Instructors</h2>
+                        <span class="view-all">View All</span>
+                    </div>
+                    <div class="instructor-list">
+                        <div class="instructor-item" *ngFor="let instructor of instructors">
+                            <div class="instructor-info">
+                                <div class="instructor-icon" [ngStyle]="{'background-color': instructor.color}">
+                                    {{instructor.initials}}</div>
+                                <div class="instructor-details">
+                                    <div class="instructor-name">{{instructor.name}}</div>
+                                    <div class="instructor-email">{{instructor.email}}</div>
+                                </div>
+                            </div>
+                            <div class="instructor-rating">{{instructor.rating}} - {{instructor.reviews}} Reviews</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card3">
+                    <div class="card-header3">
+                        <h2>Support Requests</h2>
+                        <span class="view-all">View All</span>
+                    </div>
+                    <div class="support-list">
+                        <div class="support-item" *ngFor="let request of supportRequests">
+                            <div class="support-info">
+                                <div class="support-icon">
+                                    <img [src]="request.avatar" alt="Avatar">
+                                </div>
+                                <div class="support-details">
+                                    <div class="support-name">{{ request.name }}</div>
+                                    <div class="support-message">{{ request.message }}</div>
+                                    <div class="support-time">{{ request.time }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</div>

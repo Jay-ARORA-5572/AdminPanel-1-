@@ -1,0 +1,108 @@
+#main {
+    width: 98%;
+    background-color: #f5f6fa;
+    margin: auto;
+}
+
+/* Top-header */ 
+
+.courses-header {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 16px 10px 16px;
+    margin-top: 1.4rem;
+}
+
+.course-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-info h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+    color: #000;
+}
+
+.course-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* main-section */
+
+.pi {
+    font-size: 1.2em;
+}
+
+.p-button {
+    background: none;
+    border: none;
+    color: black;
+    margin-right: 8px;
+}
+
+
+.actionicon:hover {
+    background-color: gray;
+    border: none;
+}
+
+
+.actionicon1 {
+    background-color: #0D1046;
+    color: white;
+}
+
+.student-payment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+.student-payment-table th, 
+.student-payment-table td {
+    padding: 12px 15px;
+}
+
+.student-payment-table tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+.student-payment-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.status-complete {
+    color: green;
+    font-weight: bold;
+}
+
+.status-pending {
+    color: orange;
+    font-weight: bold;
+}
+
+.status-cancelled {
+    color: red;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .student-payment-table th,
+    .student-payment-table td {
+        font-size: 14px;
+    }
+
+    .student-payment-table td a {
+        font-size: 14px;
+    }
+}

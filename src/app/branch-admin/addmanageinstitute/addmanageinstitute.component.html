@@ -1,0 +1,164 @@
+<div id="main">
+
+  <section class="shadow-3 border-round-sm">
+
+    <div class="course-category-container">
+      <div class="title-container">
+        <h2 class="p-m-0">Manage Institute</h2>
+      </div>
+
+      <div class="actions-container">
+        <button pButton type="button" icon="pi pi-plus" label="Add Categories" class="add-category-button"></button>
+        <!-- (click)="addCategory()" -->
+      </div>
+    </div>
+  </section>
+
+  <section class="shadow-3 border-round-sm">
+    <div class="container">
+
+      <div class="card" id="graphics-design">
+        <div class="card-header">
+          <!-- <div class="icon" class="blue">GD</div> -->
+          <div class="title">All Institute Name</div>
+        </div>
+        <p>1. sedlkfnfgkkgf Institute</p>
+        <p>2. sdjkfhfkwehfg Institute</p>
+        <!-- <div class="card flex justify-content-center"> -->
+        <div class="mt-8">
+          <!-- <a href="#" class="details-link">Show full stats <i (onClick)="showDialog()" [class]="stat.icon"></i></a> -->
+          <button (click)="viewallinstitute()" class="add-category-button">view more</button>
+          <!-- <div class="card flex justify-content-center"> -->
+    
+        </div>
+        <!-- Overlay Panel -->
+        <!-- <p-overlayPanel #op>
+            <div class="menu">
+              <div class="menu-item">
+                <button (click)="EditCourse()" class="actioniconover" label="xcgddfgzsdfasd Institute" pButton type="button"
+                  icon="pi pi-file-edit"></button>
+              </div>
+
+              <div class="menu-item">
+                <button (click)="DeleteCourse()" class="actioniconover" label="ABC Institute" pButton type="button"
+                  icon="pi pi-trash"></button>
+              </div>
+              
+              
+            </div>
+          </p-overlayPanel> -->
+      </div>
+
+    <!-- Graphics Design-2 -->
+
+    <div class="card">
+      <div class="card-header">
+        <!-- <div class="icon" class="blue">GD</div> -->
+        <div class="title">Top 5 Institute</div>
+      </div>
+      <p>1. sdkjcnfhsf Institute</p>
+      <p>2. asclkweflh Institute</p>
+      <!-- <div class="card flex justify-content-center"> -->
+      <div class="mt-8">
+        <!-- <a href="#" class="details-link">Show full stats <i (onClick)="showDialog()" [class]="stat.icon"></i></a> -->
+        <button (click)="viewtop5institute()" class="add-category-button">view more</button>
+      </div>
+      <!-- Overlay Panel -->
+      <!-- <p-overlayPanel #opt>
+            <div class="menu">
+              <div class="menu-item">
+                <button (click)="EditCourse()" class="actioniconover" label="ABC Institute" pButton type="button"
+                  icon="pi pi-file-edit"></button>
+              </div>
+
+              <div class="menu-item">
+                <button (click)="DeleteCourse()" class="actioniconover" label="ABC Institute" pButton type="button"
+                  icon="pi pi-trash"></button>
+              </div>
+
+              <div class="menu-item">
+                <button (click)="EditCourse()" class="actioniconover" label="ABC Institute" pButton type="button"
+                  icon="pi pi-file-edit"></button>
+              </div>
+
+              <div class="menu-item">
+                <button (click)="EditCourse()" class="actioniconover" label="ABC Institute" pButton type="button"
+                  icon="pi pi-file-edit"></button>
+              </div>
+
+              <div class="menu-item">
+                <button (click)="EditCourse()" class="actioniconover" label="ABC Institute" pButton type="button"
+                  icon="pi pi-file-edit"></button>
+              </div>
+            </div>
+          </p-overlayPanel> -->
+    </div>
+
+    <!-- Web Development -->
+
+    <div class="card">
+      <div class="card-header">
+        <!-- <div class="icon" class="yellow">WD</div> -->
+        <div class="title">Top 10 students</div>
+      </div>
+      <p>1. Tank</p>
+      <p>2. Sunil</p>
+      <!-- <div class="card flex justify-content-center"> -->
+      <div class="mt-8">
+        <!-- <a href="#" class="details-link">Show full stats <i (onClick)="showDialog()" [class]="stat.icon"></i></a> -->
+        <button (click)="viewtop10students()" class="add-category-button">view more</button>
+      </div>
+      <!-- Overlay Panel -->
+      <!-- <p-overlayPanel #opti>
+            <div class="menu">
+              <div class="menu-item">
+                <button (click)="EditCourse()" class="actioniconover" label="Tank" pButton type="button"
+                  icon="pi pi-file-edit"></button>
+              </div>
+
+              <div class="menu-item">
+                <button (click)="DeleteCourse()" class="actioniconover" label="Sunil" pButton type="button"
+                  icon="pi pi-trash"></button>
+              </div>
+
+              
+            </div>
+          </p-overlayPanel> -->
+    </div>
+
+    <!-- Mobile Application -->
+
+    <div class="card">
+      <div class="card-header">
+        <!-- <div class="icon" class="grey">MA</div> -->
+        <div class="title">Pending Payment</div>
+      </div>
+      <p>1. sdfjfv Institute</p>
+      <p>2. erifugsdj Institute</p>
+      <!-- <div class="card flex justify-content-center"> -->
+      <div class="mt-8">
+        <!-- <a href="#" class="details-link">Show full stats <i (onClick)="showDialog()" [class]="stat.icon"></i></a> -->
+        <!-- <div class="card flex justify-content-center"> -->
+          <button (click)="viewpendingpayments()" class="add-category-button">view more</button>
+      </div>
+      <!-- <p-overlayPanel #optio>
+            <div class="menu">
+              <div class="menu-item">
+                <button (click)="EditCourse()" class="actioniconover" label="ABC Institute" pButton type="button"
+                  icon="pi pi-file-edit"></button>
+              </div>
+
+              <div class="menu-item">
+                <button (click)="DeleteCourse()" class="actioniconover" label="XYZ Institute" pButton type="button"
+                  icon="pi pi-trash"></button>
+
+              </div>
+            </div>
+          </p-overlayPanel> -->
+
+    </div>
+  </div>
+
+
+  </section>
+</div>

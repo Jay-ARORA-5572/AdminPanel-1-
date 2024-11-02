@@ -1,0 +1,321 @@
+#main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+#right {
+    width: 50%;
+    height: 100%;
+}
+
+.imagedivright {
+    margin-top: 17vh;
+}
+
+#rightsideimage {
+    width: 48%;
+    height: 30%;
+}
+
+.input {
+    margin: auto;
+    width: 50%;
+    height: 40%;
+    margin-top: 1%;
+}
+
+.formheading {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    color: black;
+}
+
+
+/* ------------Input fields ------------- */
+
+mat-form-field {
+    width: 25vw;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+    height: 6.5vh !important;
+}
+
+mat-label {
+    font-size: 15px;
+}
+
+.inputemail {
+    background-color: #0D1046;
+    width: 25vw;
+}
+
+
+/* ------------Input fields ------------- */
+
+#forget {
+    height: 7vh;
+    margin: auto;
+}
+
+.forget {
+    float: right;
+    font-size: 16px;
+    color: #515151;
+}
+
+.forget:hover {
+    cursor: pointer;
+    color: #0D1046;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.login {
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #0D1046 !important;
+    color: #fff !important;
+    border: 1px solid #0D1046;
+}
+
+
+.cancel {
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #fff !important;
+    color: rgb(254, 76, 76) !important;
+    border: 1px solid rgb(254, 76, 76);
+}
+
+/* Forget Password  */
+
+.inside{
+    display: flex;
+    flex: wrap;
+    align-items: center;
+    margin: auto;
+    border: 1px solid red;
+    width: 70%;
+}
+
+.forgetemailinput{
+    width: 10vw;
+}
+
+.forgetbtn {
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #0D1046 !important;
+    color: #fff !important;
+    border: 1px solid #0D1046;
+}
+
+.sendmailclose{
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+}
+
+
+
+/* Media query for large desktops */
+@media (max-width: 1200px) {
+    #right {
+        width: 70%;
+    }
+
+    .imagedivright {
+        margin-top: 15vh;
+    }
+
+    #rightsideimage {
+        width: 60%;
+    }
+
+    .input {
+        width: 60%;
+    }
+
+    .formheading {
+        font-size: 15px;
+    }
+
+    mat-form-field {
+        width: 60vw;
+    }
+
+    .inputemail {
+        width: 60vw;
+    }
+
+    .inside {
+        width: 80%;
+    }
+
+    .forgetemailinput {
+        width: 40vw;
+    }
+
+    .sendmailclose {
+        width: 30%;
+    }
+}
+
+/* Media query for tablets */
+@media (max-width: 1024px) {
+    #right {
+        width: 100%;
+        height: auto;
+    }
+
+    .imagedivright {
+        margin-top: 10vh;
+    }
+
+    #rightsideimage {
+        width: 70%;
+        height: auto;
+    }
+
+    .input {
+        width: 70%;
+        height: auto;
+        margin-top: 2%;
+    }
+
+    .formheading {
+        font-size: 14px;
+    }
+
+    mat-form-field {
+        width: 70vw;
+    }
+
+    ::ng-deep .mat-mdc-text-field-wrapper {
+        height: auto !important;
+    }
+
+    .inputemail {
+        width: 70vw;
+    }
+
+    .inside {
+        width: 80%;
+    }
+
+    .forgetemailinput {
+        width: 50vw;
+    }
+
+    .sendmailclose {
+        width: 40%;
+    }
+}
+
+/* Media query for large mobile phones */
+@media (max-width: 768px) {
+    #right {
+        width: 100%;
+        height: auto;
+    }
+
+    .imagedivright {
+        margin-top: 8vh;
+    }
+
+    #rightsideimage {
+        width: 80%;
+        height: auto;
+    }
+
+    .input {
+        width: 80%;
+        height: auto;
+        margin-top: 3%;
+    }
+
+    .formheading {
+        font-size: 13px;
+    }
+
+    mat-form-field {
+        width: 80vw;
+    }
+
+    .inputemail {
+        width: 80vw;
+    }
+
+    .inside {
+        width: 90%;
+    }
+
+    .forgetemailinput {
+        width: 60vw;
+    }
+
+    .sendmailclose {
+        width: 50%;
+    }
+}
+
+/* Media query for small mobile phones */
+@media (max-width: 480px) {
+    #right {
+        width: 100%;
+        height: auto;
+    }
+
+    .imagedivright {
+        margin-top: 5vh;
+    }
+
+    #rightsideimage {
+        width: 90%;
+        height: auto;
+    }
+
+    .input {
+        width: 90%;
+        height: auto;
+        margin-top: 4%;
+    }
+
+    .formheading {
+        font-size: 12px;
+    }
+
+    mat-form-field {
+        width: 90vw;
+    }
+
+    .inputemail {
+        width: 90vw;
+    }
+
+    .inside {
+        width: 100%;
+    }
+
+    .forgetemailinput {
+        width: 70vw;
+    }
+
+    .sendmailclose {
+        width: 60%;
+    }
+}

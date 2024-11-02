@@ -1,0 +1,425 @@
+.header i.pi {
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+}
+
+.header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+::ng-deep .p-button {
+  background-color: #0d1046 !important;
+  color: #fff !important;
+  border: none !important;
+  margin: 10px 10px 10px 10px;
+}
+::ng-deep .button {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+
+
+/* -------------------------------------first chapter----------------------------- */
+/* Center the form container on the page */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 765px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.tag {
+  font-size: 14px;
+  color: grey;
+  /* margin-bottom: 20px; */
+}
+
+.question-box {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.question-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f6f6f6;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.question-input input {
+  width: 85%;
+  border: none;
+  background-color: #f6f6f6;
+  outline: none;
+  font-size: 16px;
+}
+
+.question-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-button {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-button i {
+  font-size: 18px;
+  color: #6c63ff;
+}
+
+.options {
+  margin-top: 10px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.option input[type="text"] {
+  width: 70%;
+  margin-right: 10px;
+}
+
+.add-option button {
+  background: none;
+  border: none;
+  color: #6c63ff;
+  cursor: pointer;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.proceed-button {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.proceed-button button {
+  background-color: #6c63ff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Container for the action buttons */
+.question-action-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+/* Add question button */
+
+
+.add-button{
+  background-color: #0d1046 !important;
+  color: #fff !important;
+  border: none !important;
+  margin: 10px 10px 10px 10px;
+  padding: 8px;
+  border-radius: 5px;
+  
+  
+}
+
+.container-heading{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+/* ::ng-deep .delete-all-Question{
+  background-color: #0d1046 !important;
+  color: #fff !important;
+  border: none !important;
+  margin: 10px 10px 10px 10px;
+} */
+
+.add-button:hover {
+  background-color:  #0d1046;
+}
+.add-button span{
+  font-weight: 530;
+  font-size: .9rem;
+}
+
+.delete-all-questions{
+  background-color:red;
+  color: white;
+  border: none !important;
+  margin: 10px 10px 10px 10px;
+  padding: 8px;
+  border-radius: 5px;
+  font-weight: 500;
+  
+}
+.delete-all-questions span{
+  font-weight: 530;
+  font-size: .9rem;
+}
+
+.question{
+  display: flex;
+}
+
+/* Delete all questions button */
+/* .question-action-buttons button:nth-child(2) {
+  background-color: #dc3545;
+}
+
+.question-action-buttons button:nth-child(2):hover {
+  background-color: #c82333;
+} */
+
+.all-questions {
+  overflow-y: auto;
+  max-height: 330px;
+}
+
+/* -------------------------------second step loading screeen --------------- */
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  margin-top: 50px;
+}
+
+.loading-content {
+  text-align: center;
+  width: 250px;
+}
+.loading-content2 {
+  text-align: center;
+  width: 333px;
+}
+
+.phone-image {
+  width: 250px;
+  height: 250px;
+  height: auto;
+}
+.report-image {
+  width: 250px;
+  height: 250px;
+  height: auto;
+}
+p {
+  font-size: 1.3rem;
+  color: #000000;
+  font-weight: 600;
+  margin: 20px 0 10px;
+}
+
+small {
+  font-size: 14px;
+  color: #8a8a8a;
+  font-weight: 400;
+}
+
+/* -------------------------last content------------------------------------- */
+
+.report-container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  width: 765px;
+}
+
+.report-container h2{
+  color: #000000;
+  font-size: 1.36rem;
+}
+
+.label {
+  display: block;
+  margin: 5px 0;
+}
+
+.unique {
+  color: #303030;
+  font-size: 0.9rem;
+  font-weight: 450;
+}
+.unique span {
+  color: blue;
+  font-weight: 550;
+}
+
+.repeated {
+  color: #303030;
+  font-size: 0.9rem;
+  font-weight: 450;
+}
+
+.repeated span {
+  color: orange;
+  font-weight: 550;
+}
+
+.unique-repeated-question{
+  margin-top: 20px;
+}
+
+.preview-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #0d1046;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+.total-question {
+  margin-top: 20px;
+  font-size: 1.36rem;
+  font-weight: 400;
+}
+.total-question span{
+  color: #000000;
+  font-weight: 550;
+}
+
+
+
+/* ----------------------------------chapter 3 ------------------------------ */
+
+.preview-questions {
+  font-family: Arial, sans-serif;
+  width: 765px;
+  margin: 0 auto;
+
+}
+
+.preview-question{
+  max-height: 430px;
+  overflow-y: auto;
+  width: 765px;
+}
+.question-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  
+}
+
+h3 {
+  font-size: 18px;
+ 
+}
+
+p {
+  font-size: 16px;
+}
+
+.options {
+  list-style: none;
+  padding: 0;
+}
+
+.options li {
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+input[type="radio"] {
+  margin-right: 8px;
+}
+
+.correct {
+  color: green;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.edit-btn, .delete-btn {
+  background-color: #0d1046;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.edit-btn span{
+  font-weight: 530;
+  font-size: .9rem;
+
+}
+
+.delete-btn {
+  background-color: red;
+}
+.delete-btn span{
+  font-weight: 530;
+  font-size: .9rem;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+  opacity: 0.8;
+}
+
+.question-image {
+  width: 100%;
+  height: auto;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
+/* .chartdiv{
+  max-height: 600px;
+  overflow-y: auto;
+} */

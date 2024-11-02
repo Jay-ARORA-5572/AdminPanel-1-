@@ -1,0 +1,262 @@
+<div class="assignment-container">
+    <div class="close-icon" (click)="closeDialog()">
+        <i class="pi pi-times" style="font-size: 1rem"></i>
+    </div>
+    <div class="header">
+        <h2>Create New Assignment</h2>
+    </div>
+
+    <!-- Stepper Panel -->
+    <div class="card flex justify-content-center">
+        <p-stepper>
+            <!-- Chapter 1 -->
+            <p-stepperPanel class="scrollable-panel" header="Course">
+                <ng-template pTemplate="content" let-nextCallback="nextCallback">
+                    <div class="main-content">
+                        <div class="content">
+                            <div class="select-course">
+                                <label for="course">Select Course</label>
+                                <input type="text" id="course" placeholder="Select Course" class="search-box"
+                                    [(ngModel)]="selectedCourse" readonly>
+
+                                <div class="course-options">
+                                    <div class="option" *ngFor="let course of courses">
+                                        <label>
+                                            <input type="radio" [id]="course" name="course" [value]="course"
+                                                (change)="onCourseSelect(course)" />
+                                            {{course}}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
+                            (click)="nextCallback.emit()"></p-button>
+                    </div>
+                </ng-template>
+            </p-stepperPanel>
+
+            <!-- Chapter 2 -->
+            <p-stepperPanel class="scrollable-panel" header="Subject">
+                <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback">
+                    <div class="main-content">
+                        <div class="content">
+                            <div class="select-course">
+                                <label for="subject">Select Subject</label>
+                                <input type="text" id="subject" placeholder="Select Subject" class="search-box"
+                                    [(ngModel)]="selectedSubject" readonly>
+
+                                <div class="course-options">
+                                    <div class="option" *ngFor="let subject of subjects">
+                                        <label>
+                                            <input type="radio" [id]="subject" name="subject" [value]="subject"
+                                                (change)="onSelectSubject(subject)" />
+                                            {{subject}}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <p-button label="Back" icon="pi pi-arrow-left" (click)="prevCallback.emit()"></p-button>
+                        <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
+                            (click)="nextCallback.emit()"></p-button>
+                    </div>
+                </ng-template>
+            </p-stepperPanel>
+
+            <!-- Chapter 3 -->
+            <p-stepperPanel class="scrollable-panel" header="Tags">
+                <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback">
+                    <div class="main-content">
+                        <div class="content">
+                            <div class="subject-card">
+                                <div class="tag-selection">
+                                    <label for="tags">Select Tags</label>
+                                    <input type="text" id="search" placeholder="Search Tags" name="searchQuery" />
+                                    <div class="tag-list">
+                                        <div class="tag-item" *ngFor="let tag of tags">
+                                            <label>
+                                                <input type="checkbox" [value]="tag" name="tag"
+                                                    (change)="onSelectSubject(tag)" />
+                                                {{ tag }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="button">
+                        <p-button label="Back" icon="pi pi-arrow-left" (click)="prevCallback.emit()"></p-button>
+                        <p-button label="Proceed" icon="pi pi-arrow-right" iconPos="right"
+                            (click)="nextCallback.emit()"></p-button>
+                    </div>
+                </ng-template>
+            </p-stepperPanel>
+
+
+            <!-- Chapter 4 -->
+            <p-stepperPanel class="scrollable-panel" header="Exam">
+                <ng-template class="content-div" pTemplate="content" let-prevCallback="prevCallback"
+                    let-nextCallback="nextCallback">
+                    <form #examspecfic="ngForm" (ngSubmit)="examspecification(examspecfic)">
+                        <div class="main-content">
+                            <div class="exam-specifications">
+                                <h3>Exam Specifications</h3>
+
+                                <div class="input-group">
+                                    <label for="total-marks">Number of Questions</label>
+                                    <input type="number" id="total-marks" placeholder="Total Marks"
+                                        [(ngModel)]="assignmentedata.totalMarks" name="totalMarks" required />
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="passing-percentage">Passing Percentage</label>
+
+
+                                    <input type="range" id="passing-percentage" min="0" max="100"
+                                        [(ngModel)]="assignmentedata.passingPercentage" name="passingPercentage" required />
+                                    <span>{{ assignmentedata.passingPercentage }}%</span>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="exam-schedule">assignment Schedule</label>
+                                    <div class="exam-schedule">
+                                        <input type="date" [(ngModel)]="assignmentedata.examDate" name="examDate" required />
+                                        <input type="time" [(ngModel)]="assignmentedata.examTime" name="examTime" required />
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary" (click)="nextCallback.emit()">Continue</button>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <p-button label="Back" icon="pi pi-arrow-left" (click)="prevCallback.emit()"></p-button>
+                        </div>
+                    </form>
+
+
+                </ng-template>
+            </p-stepperPanel>
+            <!-- -------------chapter 5----------------- -->
+
+            <p-stepperPanel class="scrollable-panel" header="Quiestions">
+                <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback">
+                    <div class="main-content">
+                        <div class="sliders">
+                            <h2>Select Question Composition</h2>
+                            <div class="slider">
+                                <p>Current Affairs</p>
+                                <div class="card flex justify-content-center">
+                                    <form [formGroup]="formGroup">
+                                        <p-slider formControlName="value" styleClass="w-14rem" />
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="slider">
+                                <p>Logical Reasoning</p>
+                                <div class="card flex justify-content-center">
+                                    <form [formGroup]="formGroup">
+                                        <p-slider formControlName="value" styleClass="w-14rem" />
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="slider">
+                                <p>Basic Computers</p>
+                                <div class="card flex justify-content-center">
+                                    <form [formGroup]="formGroup">
+                                        <p-slider formControlName="value" styleClass="w-14rem" />
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="slider">
+                                <p>Basic Science</p>
+                                <div class="card flex justify-content-center">
+                                    <form [formGroup]="formGroup">
+                                        <p-slider formControlName="value" styleClass="w-14rem" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <p-button label="Back" icon="pi pi-arrow-left" (click)="prevCallback.emit()"></p-button>
+                        <p-button label="Proceed" icon="pi pi-arrow-right" iconPos="right"
+                            (click)="nextCallback.emit()"></p-button>
+                    </div>
+
+                </ng-template>
+            </p-stepperPanel>
+
+            <!-- -------------chapter 6----------------- -->
+            <p-stepperPanel class="scrollable-panel" header="assignment Rules">
+                <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback">
+                    <div class="main-content">
+                        <div class="assignment-rules-container">
+                            <h3>assignment Rules</h3>
+
+                            <textarea placeholder="Start Typing the Rules" [(ngModel)]="rules" maxlength="5000"
+                                rows="6">
+                            </textarea>
+
+                            <div class="char-count">
+                                {{ rules.length }}/5000
+                            </div>
+
+                            <div class="time-input-container">
+                                <input type="number" placeholder="Enter Time Per Question" [(ngModel)]="timePerQuestion"
+                                    min="0" class="time-input" />
+                                <span>Seconds</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="button">
+                        <p-button label="Back" icon="pi pi-arrow-left" (click)="prevCallback.emit()"></p-button>
+                        <p-button label="Proceed" icon="pi pi-arrow-right" iconPos="right"
+                            (click)="nextCallback.emit()"></p-button>
+                    </div>
+
+                </ng-template>
+            </p-stepperPanel>
+
+
+            <!-- -------------chapter 7----------------- -->
+            <!-- Preview Chapter -->
+<p-stepperPanel class="scrollable-panel" header="Preview">
+    <ng-template pTemplate="content" let-prevCallback="prevCallback">
+      <div class="preview-card">
+        <h3>Preview</h3>
+        <div class="course-info">
+          <p><strong>Course:</strong> {{ selectedCourse }}</p>
+          <p><strong>Subject:</strong> {{ selectedSubject }}</p>
+          <p><strong>Number of Questions:</strong> {{ assignmentedata.totalMarks }}</p>
+          <p><strong>Passing Percentage:</strong> {{ assignmentedata.passingPercentage }}%</p>
+        </div>
+        <div class="assignment-schedule">
+          <p><strong>assignment Schedule:</strong> {{ assignmentedata.examDate | date }} at {{ assignmentedata.examTime }}</p>
+        </div>
+        <div class="tags">
+          <p><strong>Selected Tags:</strong> {{ selectedTags.join(', ') }}</p>
+        </div>
+        <div class="rules">
+            <p><strong>Rules:</strong></p>
+            <ul [innerHTML]="rules | lineBreak"></ul>
+          </div>
+      </div>
+      <div class="button">
+        <p-button label="Back" icon="pi pi-arrow-left" (click)="prevCallback.emit()"></p-button>
+        <p-button label="Confirm" icon="pi pi-check" iconPos="right" (click)="confirmassignment()"></p-button>
+      </div>
+    </ng-template>
+  </p-stepperPanel>
+  
+
+        </p-stepper>
+    </div>
+</div>

@@ -1,0 +1,182 @@
+<div id="main">
+  <!-- Top header  -->
+  <div class="courses-header">
+    <h2>Enroll a student</h2>
+  </div>
+  <!-- Top header  -->
+
+  <section class="shadow-3 border-round-sm">
+
+    <form #addstudentdata="ngForm" (ngSubmit)="enrollStudent(addstudentdata)" enctype="multipart/form-data">
+      <div class="p-fluid form-layout mt-4 p-3">
+
+        <div class="field field-half">
+          <label for="firstName">First Name</label>
+          <input id="firstName" class="mt-2" type="text" pInputText placeholder="First name" name="firstname" ngModel
+            required />
+          <div *ngIf="addstudentdata.submitted && !addstudentdata.controls['firstname']?.valid" class="error">
+            First Name is required
+          </div>
+          <!-- <p-dropdown [options]="users" name="role" placeholder="Select a user" class="custom-input"></p-dropdown> -->
+        </div>
+
+        <div class="field field-half">
+          <label for="lastName">Last Name</label>
+          <input id="lastName" class="mt-2" type="text" pInputText placeholder="Last name" name="lastname" ngModel
+            required />
+          <div *ngIf="addstudentdata.submitted && !addstudentdata.controls['lastname']?.valid" class="error">
+            Last Name is required
+          </div>
+
+        </div>
+
+        <div class="field field-half">
+          <label for="Aadhar">Aadhar Number</label>
+          <input id="Aadhar" class="mt-2" type="text" pInputText placeholder="Last name" name="aadhar" ngModel
+            required />
+          <div *ngIf="addstudentdata.submitted && !addstudentdata.controls['aadhar']?.valid" class="error">
+            Last Name is required
+          </div>
+        </div>
+
+        <div class="field field-half">
+          <label for="Course">Select Course</label>
+          <p-dropdown id="Course" class="custom-input" [options]="courses" name="coursename" ngModel
+            placeholder="Select a course"></p-dropdown>
+          <div *ngIf="addstudentdata.submitted && !addstudentdata.controls['coursename']?.valid" class="error">
+            Last Name is required
+          </div>
+        </div>
+
+        <div class="field field-half">
+          <label for="UserName">User Name</label>
+          <input id="UserName" class="mt-2" type="text" pInputText placeholder="User name" name="username" ngModel
+            required />
+          <div *ngIf="addstudentdata.submitted && !addstudentdata.controls['username']?.valid" class="error">
+            User Name is required
+          </div>
+        </div>
+
+        <div class="field field-half">
+          <label for="State">State</label>
+          <input id="State" type="text" pInputText class="custom-input" name="state">
+          <div *ngIf="addstudentdata.submitted && !addstudentdata.controls['state']?.valid" class="error">
+            State Id is required
+          </div>
+        </div>
+
+        <div class="field field-half">
+          <label for="Email">Email Address</label>
+          <input id="Email" class="mt-2" type="text" pInputText placeholder="Email Address" name="email" ngModel
+            required />
+          <div *ngIf="addstudentdata.submitted && !addstudentdata.controls['email']?.valid" class="error">
+            Email Id is required
+          </div>
+        </div>
+
+        <div class="field field-half">
+          <label for="phone">Phone Number</label>
+          <input id="phone" class="mt-2" type="text" pInputText placeholder="+91" name="mobile" ngModel required />
+          <div *ngIf="addstudentdata.submitted && !addstudentdata.controls['mobile']?.valid" class="error">
+            Mobile no is required
+          </div>
+        </div>
+
+        <div class="field field-half">
+          <label for="Password">Password</label>
+          <div class="p-inputgroup mt-2">
+            <span class="p-inputgroup-addon">
+              <i class="pi pi-lock"></i>
+            </span>
+            <input [type]="showPassword ? 'text' : 'password'" id="Password" pInputText placeholder="Password"
+              name="password" ngModel required />
+            <span class="p-inputgroup-addon">
+              <i class="pi" [ngClass]="showPassword ? 'pi-eye-slash' : 'pi-eye'"
+                (click)="togglePasswordVisibility()"></i>
+            </span>
+          </div>
+          <div *ngIf="addstudentdata.submitted && !addstudentdata.controls['password']?.valid" class="error">
+            Password is required
+          </div>
+        </div>
+
+        <div class="field field-half">
+          <label for="Confirmpassword">Confirm Password</label>
+          <div class="p-inputgroup mt-2">
+            <span class="p-inputgroup-addon">
+              <i class="pi pi-lock"></i>
+            </span>
+            <input [type]="showConfirmPassword ? 'text' : 'password'" id="Confirmpassword" pInputText
+              placeholder="Confirm Password" name="confirmpassword" ngModel required />
+            <span class="p-inputgroup-addon">
+              <i class="pi" [ngClass]="showConfirmPassword ? 'pi-eye-slash' : 'pi-eye'"
+                (click)="toggleConfirmPasswordVisibility()"></i>
+            </span>
+          </div>
+          <div *ngIf="addstudentdata.submitted && !addstudentdata.controls['confirmpassword']?.valid" class="error">
+            Confirm Password is required
+          </div>
+        </div>
+
+        <div class="field field-half">
+          <label for="address1">Address Line 1</label>
+          <input id="address1" class="mt-2" type="text" pInputText placeholder="Address ...." name="firstaddress"
+            ngModel required />
+          <div *ngIf="addstudentdata.submitted && !addstudentdata.controls['firstaddress']?.valid" class="error">
+            First Address is required
+          </div>
+        </div>
+
+        <div class="field field-half">
+          <label for="address2">Address Line 2</label>
+          <input id="address2" class="mt-2" type="text" pInputText placeholder="Address Line 2" name="secondaddress"
+            ngModel />
+        </div>
+
+        <div class="field field-half">
+          <label for="City">City</label>
+          <input id="City" class="mt-2" type="text" pInputText placeholder="City .." name="city" ngModel />
+          <div *ngIf="addstudentdata.submitted && !addstudentdata.controls['city']?.valid" class="error">
+            City is required
+          </div>
+        </div>
+
+        <div class="field field-half">
+          <label for="Pincode">Pincode</label>
+          <input id="Pincode" class="mt-2" type="text" pInputText placeholder="Pincode .." name="pincode" ngModel />
+          <div *ngIf="addstudentdata.submitted && !addstudentdata.controls['pincode']?.valid" class="error">
+            Pincode is required
+          </div>
+        </div>
+
+        <div class="field field-half">
+          <label for="State">State</label>
+          <input id="State" class="mt-2" type="text" pInputText placeholder="State ..." name="state" ngModel required />
+          <div *ngIf="addstudentdata.submitted && !addstudentdata.controls['state']?.valid" class="error">
+            State is required
+          </div>
+        </div>
+
+        <div class="field field-half">
+          <label for="Salary">Fee</label>
+          <input id="Salary" class="mt-2" type="text" pInputText placeholder="Numeric value" name="salary" ngModel
+            required />
+          <div *ngIf="addstudentdata.submitted && !addstudentdata.controls['Salary']?.valid" class="error">
+            Fee is required
+          </div>
+        </div>
+
+      </div>
+
+      <div class="field field-full p-3">
+        <!-- <button class="button" pButton type="button" label="Enroll Student"></button> -->
+        <div class="mt-5 buttonsection">
+          <button type="submit" pButton pRipple label="Enroll Student" class="savebtn"></button>
+          <!-- <button pButton pRipple label="Cancel" class="Cancel" (click)="onCancelClick()"></button> -->
+        </div>
+      </div>
+    </form>
+  </section>
+
+
+</div>

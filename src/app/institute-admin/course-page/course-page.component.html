@@ -1,0 +1,181 @@
+<div id="main">
+    <!-- Top header  -->
+    <section class="shadow-3 border-round-sm">
+        <header class="heading">
+            <div class="title-section">
+                <h1>Course Page</h1>
+            </div>
+        </header>
+    </section>
+    <!-- Top header -->
+
+    <!-- Main Content -->
+
+    <section class="shadow-3 border-round-sm">
+
+        <h1>Add New Course</h1>
+
+        <div class="p-fluid form-layout mt-4 p-3">
+
+            <div class="field field-full">
+                <label for="course">Course Image</label>
+                <div class="file-upload">
+                    <span class="file-name">No file selected</span>
+                    <label for="fileInput" class="custom-file-upload">
+                        <i class="pi pi-upload"></i> Choose File
+                    </label>
+                    <input type="file" id="fileInput" (change)="onFileSelected($event)" class="custom-file-input"
+                        accept=".png, .jpg, .jpeg, .pdf" multiple>
+                </div>
+            </div>
+
+            <div class="field field-half">
+                <label for="country">Course or Subject Name</label>
+                <input id="country" type="text" pInputText [(ngModel)]="country" class="custom-input">
+            </div>
+
+            <div class="field field-half">
+                <label for="state">Course Type</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-full1">
+                <label for="payment">Full Overview or Description</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-half">
+                <label for="payment">Language</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-half">
+                <label for="payment">Want to provide Certificate of Completion ?</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-half">
+                <label for="payment">Selling Price</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-half">
+                <label for="payment">Discount (%) (Optional)</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-half">
+                <label for="payment">Duration (In Month)</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-half">
+                <label for="payment">Hours (Optional)</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-half">
+                <label for="payment">Total Chapters or Sessions</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-half">
+                <label for="payment">Total Video Lectures (optional)</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-half">
+                <label for="payment">Online Price (Optional)</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-half">
+                <label for="payment">Offline Price (Optional)</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field field-half">
+                <label for="payment">Course Mode (Optional)</label>
+                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            </div>
+
+            <div class="field1 field-half">
+                <p-checkbox [(ngModel)]="checkedall" [binary]="true" inputId="binary" />
+                        &nbsp;
+                        &nbsp;
+                        <p class="mt-5">Show On Homepage</p>
+            </div>
+
+
+        </div>
+
+        <div class="field field-full p-3">
+            <button class="button" pButton type="button" label="Publish" (click)="enrollStudent()"></button>
+        </div>
+
+    </section>
+
+    <section class="shadow-3 border-round-sm">
+
+        <h1>Courses List</h1>
+
+        <div class="top-header">
+            <input type="text" pInputText placeholder="Search" />
+            <!-- <div class="header-controls">
+                <button pButton type="button" label="making .csv type file button" class="add-button"></button>
+                <button pButton type="button" label="making copy button" class="add-button"></button>
+            </div> -->
+        </div>
+
+        <p-table [value]="instructors" responsiveLayout="scroll" [paginator]="true" [rows]="rows" [first]="first"
+            (onPage)="onPageChange($event)">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>#</th>
+                    <th>Course Name</th>
+                    <th>Course Price</th>
+                    <th>Show/Hide</th>
+                    <th>Course Type</th>
+                    <th>Actions</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-instructor>
+                <tr class="table-row">
+                    <td>{{ instructor.phone }} </td>
+                    <td>{{ instructor.user }}</td>
+                    <td>{{ instructor.country }}</td>
+                    <td><p-inputSwitch [(ngModel)]="checked" /></td>
+                    <td>
+                        <span class="status" [ngClass]="getStatusClass(instructor.status)">{{ instructor.status }}</span>
+                    </td>
+
+                    <td>
+                        <button class="actionicon" pButton type="button" icon="pi pi-ellipsis-h"
+                            (click)="op.toggle($event)"></button>
+
+                        <!-- Overlay Panel -->
+                        <p-overlayPanel #op>
+                            <div class="menu">
+                                <div class="menu-item">
+                                    <button class="actioniconover" (click)="selectbtn(op)" label="Edit" pButton
+                                        type="button"></button>
+                                </div>
+
+                                <div class="menu-item">
+
+                                    <button class="actioniconover" (click)="selectbtn(op)" label="Delete" pButton
+                                        type="button"></button>
+                                </div>
+                            </div>
+                        </p-overlayPanel>
+
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+    </section>
+
+
+
+</div>

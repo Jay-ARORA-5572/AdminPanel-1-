@@ -1,0 +1,17 @@
+<p-dialog header="Add Note" [(visible)]="display" [modal]="true" [closable]="false" [responsive]="true" [style]="{width: '30vw'}">
+    <div class="p-fluid">
+        <div class="p-field">
+            <label for="note">Note</label>
+            <textarea id="note" rows="5" pInputTextarea placeholder="Write your note..." [(ngModel)]="noteContent"></textarea>
+        </div>
+    </div>
+    
+    <p-footer>
+        <div class="button">
+            <button class="save" (click)="onSave()" mat-raised-button>Save</button>
+            &nbsp;
+            &nbsp;
+            <button class="cancel" (click)="onCancel()" mat-raised-button>Close</button>
+        </div>
+    </p-footer>
+</p-dialog>

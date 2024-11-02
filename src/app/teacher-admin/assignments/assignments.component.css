@@ -1,0 +1,205 @@
+.Assignment-container {
+    width: 98%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .Assignment-header {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .Assignment-header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  
+  .Assignment-tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .Assignment-tabs ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .Assignment-tabs li {
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .Assignment-tabs li.active {
+    border-bottom: 2px solid #0d1046;
+    font-weight: 600;
+  }
+  
+  .add-Assignment-btn {
+    background-color: #0d1046;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .Assignment-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 35%; /* Default width for larger screens */
+  }
+  
+  .Assignment-card h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .Assignment-card p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .Assignment-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .Assignment-date-time {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: bold;
+  }
+  
+  .Assignment-stats {
+    text-align: right;
+  }
+  
+  .Assignment-stats .pass-percentage {
+    font-weight: bold;
+  }
+  
+  .progress-bar {
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 8px;
+    margin-top: 10px;
+  }
+  
+  .progress {
+    background-color: #0d1046;
+    height: 100%;
+  }
+  
+  .view-details-btn {
+    margin-top: 20px;
+    background-color: #0d1046;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .bar {
+    position: sticky;
+    top: 0;
+    background-color: #fafafa;
+  }
+  
+  .pi {
+    font-weight: bold;
+  }
+  
+  #question {
+    color: red;
+  }
+  
+  #course {
+    font-weight: bold;
+    color: black;
+  }
+  
+  #subject {
+    font-weight: bold;
+    color: black;
+  }
+  
+  .questionbank-title {
+    width: fit-content;
+    font-weight: bold;
+    background-color: #F1F1F1;
+    border-radius: 5%;
+  }
+  
+  .questionbank-title h3 {
+    padding: 10px;
+  }
+  
+  /* Responsive Adjustments */
+  @media screen and (max-width: 1024px) {
+    .Assignment-card {
+        width: 48%; /* Make Assignment cards wider on medium screens */
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .Assignment-tabs {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+  
+    .Assignment-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+  
+    .Assignment-stats {
+        text-align: left;
+        margin-top: 10px;
+    }
+  
+    .Assignment-card {
+        width: 100%; /* Full width for small screens */
+    }
+  
+    .view-details-btn {
+        width: auto;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .Assignment-header h1 {
+        font-size: 1.5rem; /* Smaller font size for very small screens */
+    }
+  
+    .Assignment-card {
+        padding: 15px; /* Reduce padding for small screens */
+    }
+  
+    .add-Assignment-btn,
+    .view-details-btn {
+        padding: 8px 15px; /* Smaller buttons on small screens */
+    }
+  }
+  
+  .Assignment-card-container
+  {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Add some space between the cards */
+  }

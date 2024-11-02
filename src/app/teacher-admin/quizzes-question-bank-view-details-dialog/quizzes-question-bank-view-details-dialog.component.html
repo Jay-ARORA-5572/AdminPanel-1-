@@ -1,0 +1,65 @@
+<div class="header">
+  <h1>Tag Details</h1>
+  <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+</div>
+<div class="tag-details-header">
+  <div class="outiside">
+
+
+    <div class="btn">
+      <button class="edit-tag-btn">✏️ Edit Tag</button>
+      <button class="add-questions-btn" (click)="addQuestion() ">+ Add Questions</button>
+    </div>
+
+    <div class="tag-info">
+
+
+      <p>
+        Name of Tag: <span>Mathematics</span><br />
+        Total Number of Questions: <span class="question-count">1568</span>
+      </p>
+      <p>
+        Course: <span>B.Tech Specialization in Healthinformatics</span><br />
+        Subject: <span>Networking</span>
+      </p>
+    </div>
+    <div class="questionaction">
+      <h3>Question</h3>
+      <h3>Action</h3>
+    </div>
+  </div>
+
+  <div class="quiz-container">
+    <div *ngFor="let question of questions; let i = index" class="question-card">
+      <div class="question-header">
+        <h3>Q{{ i + 1 }}. {{ question.text }}</h3>
+        <div class="question-actions">
+          <button mat-icon-button (click)="editQuestion(i)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <div class="card flex justify-content-center gap-2">
+            <p-toast />
+            <p-confirmDialog />
+            <p-button (onClick)="confirm2($event)" label="Delete" severity="danger" [outlined]="true" />
+        </div>
+          <!-- <button class="cancel" (onClick)="confirm2($event)"  mat-raised-button>Cancel</button> -->
+        </div>
+      </div>
+      <div class="option-list">
+        <div *ngFor="let option of question.options" class="option-item">
+          <button class="option-button" [ngClass]="{
+                        'selected': selectedAnswers[i] === option.text && !answerStatus[i],
+                        'correct': selectedAnswers[i] === option.text && answerStatus[i],
+                        'wrong': selectedAnswers[i] === option.text && !answerStatus[i]
+                      }" (click)="selectOption(i, option.text, option.isCorrect)">
+            {{ option.text }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+<p-toast />

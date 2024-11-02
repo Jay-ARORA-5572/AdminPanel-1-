@@ -1,0 +1,29 @@
+<div class="batch-container">
+    <!-- -------------------navbar---------------- -->
+    <div class="bar">
+        <div class="batch-header">
+            <h1>batches</h1>
+        </div>
+    
+        <div class="batch-tabs">
+            <ul>
+                <li [class.active]="activeTab === 'batches'" (click)="setActiveTab('batches')">Batches
+                </li>
+                <li [class.active]="activeTab === 'course'" (click)="setActiveTab('course')">Course
+                </li>
+            </ul>
+            <input type="text" placeholder="Search..." class="search-bar ">
+        </div>
+    </div>
+    <!-- ----------------------Scheduled batchzes contant-------------------------- -->
+    <div *ngIf="activeTab === 'batches'" class="batch-card">
+        <h3>{{ batch.title }}</h3>
+        <p>Course : {{ batch.course }}</p>
+        
+        <button class="view-details-btn" (click)="viewDetails()">View Details</button>
+    </div>
+    
+
+    <!-- ---------------------- Course contant-------------------------- -->
+   
+</div>

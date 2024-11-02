@@ -1,0 +1,357 @@
+<mat-tab-group>
+    <!-- Govt Jobs -->
+    <mat-tab label="Govt Jobs">
+        <div class="container">
+            <form>
+                <!-- Image upload -->
+                <div class="section">
+                    <h3>Profile Photos</h3>
+                    <input type="file" id="imageupload" name="image" accept="image/*" required>
+                </div>
+
+
+
+                <!-- Basic Information -->
+                <h3 (click)="togglePersonalInformation()">Personal Information #</h3>
+                <div class="section" *ngIf="showPersonalInformation">
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Full Name</mat-label>
+                            <input matInput name="fullName" required>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Date of Birth</mat-label>
+                            <input matInput type="date" name="dateOfBirth" required>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Gender</mat-label>
+                            <mat-select name="gender" required>
+                                <mat-option value="Male">Male</mat-option>
+                                <mat-option value="Female">Female</mat-option>
+                                <mat-option value="Other">Other</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Marital Status</mat-label>
+                            <mat-select name="maritalStatus" required>
+                                <mat-option value="Single">Single</mat-option>
+                                <mat-option value="Married">Married</mat-option>
+                                <mat-option value="Divorced">Divorced</mat-option>
+                                <mat-option value="Widowed">Widowed</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Religion</mat-label>
+                            <input matInput name="religion" required>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Caste</mat-label>
+                            <input matInput name="caste" required>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Mother Tongue</mat-label>
+                            <input matInput name="motherTongue" required>
+                        </mat-form-field>
+                    </div>
+                    <!-- Add more personal information fields -->
+                </div>
+                <!-- Basic Information -->
+
+
+                <!-- Contact Information -->
+                <div class="section">
+                    <h3>Contact Information</h3>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Email</mat-label>
+                            <input matInput type="email" name="email" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput type="tel" name="phoneNumber">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Address</mat-label>
+                            <textarea matInput name="address"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <!-- Contact Information -->
+
+
+                <!-- Physical Attributes -->
+                <div class="section">
+                    <h3>Physical Attributes</h3>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Height (cm)</mat-label>
+                            <input matInput type="number" name="height" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Weight (kg)</mat-label>
+                            <input matInput type="number" name="weight" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Complexion</mat-label>
+                            <input matInput name="complexion" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Body Type</mat-label>
+                            <input matInput name="bodyType" required>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+
+                <!-- Physical Attributes -->
+
+
+                <!-- Educations details  -->
+                <div class="section">
+
+                    <h3>Education and Career</h3>
+
+                    <div class="form-group">
+
+                        <mat-form-field appearance="outline" style="width: 100%">
+
+                            <mat-label>Education Level</mat-label>
+
+                            <input matInput id="educationLevel" required>
+
+                        </mat-form-field>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <mat-form-field appearance="outline" style="width: 100%">
+
+                            <mat-label>Occupation</mat-label>
+
+                            <input matInput id="occupation" required>
+
+                        </mat-form-field>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <mat-form-field appearance="outline" style="width: 100%">
+
+                            <mat-label>Annual Income</mat-label>
+
+                            <input matInput type="number" id="annualIncome" required>
+
+                        </mat-form-field>
+
+                    </div>
+
+                </div>
+
+                <!-- Educations details  -->
+
+
+                <!-- Family details -->
+                <div class="section">
+                    <h3>Family Details</h3>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Family Status</mat-label>
+                            <mat-select id="familyStatus" required>
+                                <mat-option value="Nuclear">Nuclear</mat-option>
+                                <mat-option value="Joint">Joint</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Parents' Occupation</mat-label>
+                            <input matInput name="parentsOccupation" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Number of Siblings</mat-label>
+                            <input matInput type="number" id="numberOfSiblings" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <!-- Family details -->
+
+
+
+                <!-- lifestyle   -->
+                <div class="section">
+                    <h3>Lifestyle</h3>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Diet</mat-label>
+                            <input matInput name="diet" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Smoking Habits</mat-label>
+                            <input matInput name="smokingHabits" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Drinking Habits</mat-label>
+                            <input matInput name="drinkingHabits" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <!-- lifestyle   -->
+
+
+
+
+
+                <!-- Add sections for physical attributes, education and career, family details, lifestyle, hobbies and interests, partner preferences -->
+
+                <button type="submit" class="mat-button mat-raised-button mat-primary">Update</button>
+            </form>
+
+
+
+
+
+            <!-- <section class="main">
+                <div class="sec1">
+                    <div class="r_sec1">
+                        <h1 class="s_head">Post your job in just 2 minutes!</h1>
+                        <ul>
+                            <li>Get unlimited calls directly from the candidates.</li>
+                            <li>Get access to the database of over 3.5 Crore candidates.</li>
+                        </ul>
+                    </div>
+                    <div class="sec1_img">
+                        <img src="../../../assets/gov1.png" alt="" width="50%">
+                    </div>
+                </div>
+                <div class="s-details">
+                    <div class="d-head">Basic Job Details </div>
+                    <div class="d-num">Need Help? Call us at 00000000000</div>
+                </div>
+
+                <div class="form_sec">
+                    <div class="box-head">Job Sector *</div>
+                    <input type="text" name="">
+                    <div class="box-head">Post Name *</div>
+                    <input type="text" name="">
+                    <div class="box-head">Egibility</div>
+
+
+                    <div class="card flex justify-content-center">
+                        <p-dropdown [options]="cities" optionLabel="name" placeholder="Select a City" />
+                    </div>
+
+
+                    <div class="f-dropdown">
+                        <select name="">
+                            <option value="">xth</option>
+                            <option value="">XIIth</option>
+                            <option value="">Gradeuate</option>
+                        </select>
+
+                        <select name="">
+                            <option value="">IT Sector</option>
+                            <option value="">Web developer</option>
+                            <option value="">Telecalling</option>
+                            <option value="">WardBoy</option>
+                        </select>
+                    </div>
+                    <div class="box-head">Exam Rank *</div>
+                    <input type="text" name="">
+                </div>
+
+                <div class="rfiexd_sec">
+                    <div class="box-head">Last date 15-5-2024</div>
+
+                </div>
+
+
+                <h2>Canditates Posts</h2>
+                <div class="form_sec req-sec">
+                    <div class="box-head">Heighest Qualification</div>
+                    <input type="text" name="">
+
+                    <div class="box-head">Monthly In-hand Salary * </div>
+                    
+
+                    <div><input type="checkbox" name="" id="">I Accept Terms And Conditions and Privacy Policy.*</div>
+                    <button mat-flat-button class="btn1">Submit</button>
+
+
+                </div>
+
+                <div class="contact_sec">
+                    <div class="box-head">Need help? Contact us.</div>
+                    <div class="box-head">Call :080 6982 4660</div>
+                    <div>Email :skillheeed.com</div>
+                    <div>Timings :9AM - 9PM, Monday to Friday</div>
+                </div>
+            </section> -->
+        </div>
+    </mat-tab>
+
+
+    <!-- Private Jobs -->
+    <mat-tab label="Private Jobs">
+        <div class="container">
+                <h3>Jobs Description *</h3>
+                <div class="section">
+                    <p-editor [(ngModel)]="data" [style]="{ height: '320px' }" [modules]="{ toolbar: customToolbar }">
+                        <ng-template pTemplate="header">
+                            <!-- <span class="ql-formats">
+                                <button type="button" class="ql-bold" aria-label="Bold"></button>
+                                <button type="button" class="ql-italic" aria-label="Italic"></button>
+                                <button type="button" class="ql-underline" aria-label="Underline"></button>
+                            </span> -->
+                        </ng-template>
+                    </p-editor>
+                </div>
+    
+                <div class="contact_sec">
+                    <div class="box-head">Need help? Contact us.</div>
+                    <div class="box-head">Call :080 6982 4660</div>
+                    <div>Email :skillheeed.com</div>
+                    <div>Timings :9AM - 9PM, Monday to Friday</div>
+                </div>
+        </div>
+    </mat-tab>
+    
+</mat-tab-group>
+
+
+<p-toast></p-toast>

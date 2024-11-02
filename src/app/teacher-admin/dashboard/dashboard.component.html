@@ -1,0 +1,113 @@
+<div class="container">
+  <div class="dashboard-container">
+
+    <!-- -----------live classes content------------->
+    <div class="live-classes">
+      <h2>Live Classes</h2>
+      <div *ngFor="let class of classes" class="class-card" [ngClass]="class.classType">
+        <h2>{{ class.title }}</h2>
+        <p>Batch: {{ class.batch }}</p>
+        <p> <i class="pi pi-chevron-circle-left"></i> {{ class.time }}</p>
+        <p class="status" [ngClass]="{
+          'status-ongoing': class.classType === 'ongoing',
+          'status-upcoming': class.classType === 'upcoming',
+          'status-not-started': class.classType === 'not-started'
+        }">
+          Status: {{ class.status }}
+        </p>
+        <button class="join-btn">Join Now</button>
+      </div>
+      
+    </div>
+
+    <!-- -------------------------task content--------------->
+    <div class="tasks">
+      <h2>My Tasks</h2>
+      <!-- --------navbar--------- -->
+      <p-tabView [(activeIndex)]="activeIndex">
+        <p-tabPanel header="All">
+          <div *ngFor="let task of tasks"
+            [ngClass]="{'task-card': true, 'ongoing': task.status === 'Ongoing', 'completed': task.status === 'Completed'}">
+            <h2 id="title">{{ task.title }}</h2>
+            <p>Assigned : <span class="date-time"><i class="pi pi-chevron-circle-left"></i> {{ task.assigned | date:'shortTime' }} </span>,<span class="date-time"><i
+                class="pi pi-calendar"></i> {{ task.assigned | date:'dd MMM yyyy' }}</span></p>
+            <p>Due : <span class="date-time"> <i class="pi pi-chevron-circle-left"></i> {{ task.due | date:'shortTime' }}</span>,<span class="date-time"> <i
+                class="pi pi-calendar"></i> {{ task.due | date:'dd MMM yyyy' }}</span></p>
+            <p><span class="status">{{ task.status }}</span></p>
+            <button class="view-details-btn" (click)="viewDetails(task)"><span>View Details</span></button>
+          </div>
+        </p-tabPanel>
+        <p-tabPanel header="Not Started">
+          <div *ngFor="let task of tasks">
+            <div *ngIf="task.status === 'Not Started'" class="task-card">
+              <h2 id="title">{{ task.title }}</h2>
+              <p>Assigned : <i class="pi pi-chevron-circle-left"></i> {{ task.assigned | date:'shortTime' }}, <i
+                  class="pi pi-calendar"></i> {{ task.assigned | date:'dd MMM yyyy' }}</p>
+              <p>Due : <i class="pi pi-chevron-circle-left"></i> {{ task.due | date:'shortTime' }}, <i
+                  class="pi pi-calendar"></i> {{ task.due | date:'dd MMM yyyy' }}</p>
+              <p><span class="status">{{ task.status }}</span></p>
+              <button class="view-details-btn" (click)="viewDetails(task)"><span>View Details</span></button>
+            </div>
+          </div>
+        </p-tabPanel>
+        <p-tabPanel header="Ongoing">
+          <div *ngFor="let task of tasks">
+            <div *ngIf="task.status === 'Ongoing'" class="task-card ongoing">
+              <h2 id="title">{{ task.title }}</h2>
+              <p>Assigned : <i class="pi pi-chevron-circle-left"></i> {{ task.assigned | date:'shortTime' }}, <i
+                  class="pi pi-calendar"></i> {{ task.assigned | date:'dd MMM yyyy' }}</p>
+              <p>Due : <i class="pi pi-chevron-circle-left"></i> {{ task.due | date:'shortTime' }}, <i
+                  class="pi pi-calendar"></i> {{ task.due | date:'dd MMM yyyy' }}</p>
+              <p><span class="status">{{ task.status }}</span></p>
+              <button class="view-details-btn" (click)="viewDetails(task)"><span>View Details</span></button>
+            </div>
+          </div>
+        </p-tabPanel>
+        <p-tabPanel header="Completed">
+          <div *ngFor="let task of tasks">
+            <div *ngIf="task.status === 'Completed'" class="task-card completed">
+              <h2 id="title">{{ task.title }}</h2>
+              <p>Assigned : <i class="pi pi-chevron-circle-left"></i> {{ task.assigned | date:'shortTime' }}, <i
+                  class="pi pi-calendar"></i> {{ task.assigned | date:'dd MMM yyyy' }}</p>
+              <p>Due : <i class="pi pi-chevron-circle-left"></i> {{ task.due | date:'shortTime' }}, <i
+                  class="pi pi-calendar"></i> {{ task.due | date:'dd MMM yyyy' }}</p>
+              <p><span class="status">{{ task.status }}</span></p>
+              <button class="view-details-btn" (click)="viewDetails(task)"><span>View Details</span></button>
+            </div>
+          </div>
+        </p-tabPanel>
+        <p-tabPanel header="Missed">
+          <div *ngFor="let task of tasks">
+            <div *ngIf="task.status === 'Missed'" class="task-card missed">
+              <h2 id="title">{{ task.title }}</h2>
+              <p>Assigned : <i class="pi pi-chevron-circle-left"></i> {{ task.assigned | date:'shortTime' }}, <i
+                  class="pi pi-calendar"></i> {{ task.assigned | date:'dd MMM yyyy' }}</p>
+              <p>Due : <i class="pi pi-chevron-circle-left"></i> {{ task.due | date:'shortTime' }}, <i
+                  class="pi pi-calendar"></i> {{ task.due | date:'dd MMM yyyy' }}</p>
+              <p><span class="status">{{ task.status }}</span></p>
+              <button class="view-details-btn" (click)="viewDetails(task)"><span>View Details</span></button>
+            </div>
+          </div>
+        </p-tabPanel>
+      </p-tabView>
+    </div>
+    
+    <!-- -----------batches content--------------->
+
+    <div class="batches">
+      <h2>My Batches</h2>
+      <div *ngFor="let batch of batches" class="batch-card">
+        <h2>{{ batch.name }}</h2>
+        <p>{{ batch.subjects }} Subjects</p>
+        <p>{{ batch.students }} Students</p>
+        <p>{{ batch.quizzes }} Quizzes</p>
+        <p>{{ batch.exams }} Exams</p>
+        <p>{{ batch.assignments }} Assignments</p>
+        <div class="end">
+          <p id="end">Batch Ends at {{ batch.endDate | date: 'dd MMM yyyy' }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

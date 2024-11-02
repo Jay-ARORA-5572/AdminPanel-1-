@@ -1,0 +1,55 @@
+<div class="p-dialog p-component p-fluid">
+    <div class="p-dialog-header">
+        <span class="p-dialog-title">Exam Details</span>
+        <span class="close-icon">
+        <i class="pi pi-times cross" (click)="closeDialog()"></i>
+      </span>
+    </div>
+    
+   
+    <div class="exam-details">
+        <div class="main-header">
+         <div class="header"><h1>BHI Health Informatics mid semester  Exam</h1></div>
+         <div class="card flex justify-content-center gap-2">
+          
+            <p-confirmDialog />
+            <p-button (onClick)="confirm2($event)" label="Delete" icon="pi pi-trash"  severity="danger" [outlined]="true" />
+        </div>
+
+        </div>
+      <p><strong>Course:</strong> <span>B.Tech Spcl. in Health Informatics</span></p>
+      <p><strong>Subject:</strong> <span>Networking</span></p>
+      <p><strong>Total Marks:</strong> <span>50</span></p>
+    
+  
+    <div class="passing-percentage">
+      <p><strong>Passing Percentage:</strong> <span class="percentage">70%</span></p>
+    </div>
+  
+    <div class="question-paper">
+      <p><strong>Question Paper</strong></p>
+      <button pButton label="Networking Mid Sem Question Paper.pdf" icon="pi pi-file-pdf"></button>
+    </div>
+  
+    <div class="exam-schedule">
+      <p><strong>Exam Schedule</strong></p>
+      <div class="schedule-icons">
+        <button pButton label="12-01-2023" icon="pi pi-calendar"></button>
+        <button pButton label="12-01-2023" icon="pi pi-clock"></button>
+      </div>
+    </div>
+  
+    <div class="batches">
+      <p><strong>Batches</strong></p>
+      <ul>
+        <li>3CO - JYY</li>
+        <li>3CO - JYY</li>
+        <li>3CO - JYY</li>
+        <li>3CO - JYY</li>
+        <li>3CO - JYY</li>
+      </ul>
+    </div>
+</div>
+
+  </div>
+  

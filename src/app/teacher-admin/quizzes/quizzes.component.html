@@ -1,0 +1,83 @@
+<div class="quiz-container">
+    <!-- -------------------navbar---------------- -->
+    <div class="bar">
+        <div class="quiz-header">
+            <h1>Quizzes</h1>
+        </div>
+
+        <div class="quiz-tabs">
+            <ul>
+                <li [class.active]="activeTab === 'scheduled'" (click)="setActiveTab('scheduled')">Scheduled Quizzes
+                </li>
+                <li [class.active]="activeTab === 'questionBank'" (click)="setActiveTab('questionBank')">Question Bank
+                </li>
+                <li [class.active]="activeTab === 'history'" (click)="setActiveTab('history')">History</li>
+            </ul>
+            <button class="add-quiz-btn" (click)="addQuiz()">+ Add Quiz</button>
+        </div>
+    </div>
+    <!-- ----------------------Scheduled Quizzes contant-------------------------- -->
+    <div class="quiz-cards">
+        <div *ngFor="let quiz of quizzes">
+            <div *ngIf="activeTab === 'scheduled'" class="quiz-card">
+                <h3>{{ quiz.title }}</h3>
+                <p>Course : {{ quiz.course }}</p>
+                <p>Subject : {{ quiz.subject }}</p>
+                <div class="quiz-info">
+                    <div class="quiz-date-time">
+                        <span class="quiz-date"><i class="pi pi-calendar"></i> {{ quiz.date }}</span>
+                        <span class="quiz-time"><i class="pi pi-chevron-circle-left"></i> {{ quiz.time }}</span>
+                    </div>
+                    <div class="quiz-stats">
+                        <p>Questions : {{ quiz.questions }}</p>
+                        <p>Passing Percentage: <span class="pass-percentage">{{ quiz.passingPercentage }}%</span></p>
+                        <div class="progress-bar">
+                            <div class="progress" [ngStyle]="{'width.%': quiz.passingPercentage}"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="view-details-btn" (click)="viewDetails()">View Details</button>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- ---------------------- Question Bankcontant-------------------------- -->
+    <div class="quiz-cards">
+        <div *ngIf="activeTab === 'questionBank'" class="quiz-card">
+            <div class="questionbank-title">
+                <h3>{{ questionbank.title }}</h3>
+            </div>
+            <p>Total Question : <span id="question">{{ questionbank.questions}}</span></p>
+            <p>Course : <span id="course">{{ questionbank.course }}</span></p>
+            <p>Subject : <span id="subject">{{ questionbank.subject }}</span></p>
+            <button class="view-details-btn" (click)="questionbankViewDetails()">View Details</button> 
+
+        </div>
+    </div>
+    <!-- ---------------------- History contant-------------------------- -->
+    <div class="quiz-cards">
+        <div *ngIf="activeTab === 'history'" class="quiz-card">
+
+            <h3>{{ history.title }}</h3>
+            <p>Course : {{ history.course }}</p>
+            <p>Subject : {{ history.subject }}</p>
+            <div class="quiz-info">
+                <div class="quiz-date-time">
+                    <span class="quiz-date"><i class="pi pi-calendar"></i> {{ history.date }}</span>
+                    <span class="quiz-time"><i class="pi pi-chevron-circle-left"></i> {{ history.time }}</span>
+                </div>
+                <div class="quiz-stats">
+                    <p>Questions : {{ history.questions }}</p>
+                    <p>Passing Percentage: <span class="pass-percentage">{{ history.passingPercentage }}%</span></p>
+                    <div class="progress-bar">
+                        <div class="progress" [ngStyle]="{'width.%': history.passingPercentage}"></div>
+                    </div>
+                </div>
+            </div>
+            <button class="view-details-btn" (click)="historyViewDetails()">View Details</button>
+
+        </div>
+    </div>
+
+</div>

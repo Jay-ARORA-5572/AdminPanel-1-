@@ -1,0 +1,35 @@
+<div id="main">
+    <div class="courses-header">
+        <div class="course-info">
+            <h2>Menubar List</h2>
+        </div>
+        <button class="login" mat-raised-button>+ Add New </button>
+    </div>
+
+    <div class="top-header">
+        <input type="text" pInputText placeholder="Search" />
+        <div class="header-controls">
+            <button pButton type="button" label="making .csv type file button" class="add-button"></button>
+            <button pButton type="button" label="making copy button" class="add-button"></button>
+        </div>
+    </div>
+
+    <p-table [value]="instructors" responsiveLayout="scroll" [paginator]="true" [rows]="rows" [first]="first"
+        (onPage)="onPageChange($event)">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Sr no.</th>
+                <th>Menu Name</th>
+                <th>Hide/Show</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-instructor>
+            <tr class="table-row">
+                <td>{{ instructor.phone }} </td>
+                <td>{{ instructor.country }}</td>
+                <td><p-inputSwitch [(ngModel)]="checked" /></td>
+            </tr>
+        </ng-template>
+    </p-table>
+
+</div>

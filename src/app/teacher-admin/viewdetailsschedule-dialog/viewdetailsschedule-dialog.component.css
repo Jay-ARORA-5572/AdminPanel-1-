@@ -1,0 +1,145 @@
+.p-dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    /* Ensures it stays on top */
+}
+
+.header {
+    position: sticky;
+    display: flex;
+    top: 50;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 12px;
+    gap: 90px;
+    background-color: white;
+    z-index: 9;
+
+}
+
+.close-icon {
+    cursor: pointer;
+
+}
+
+.task-header {
+    padding-top: 7px;
+}
+
+
+.header-left h2 {
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.task-header {
+    font-size: 1.9rem;
+    font-weight: 500;
+}
+
+select {
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #EFEFEF;
+    color: #8A8A8A;
+    height: 37px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right input,
+label {
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    margin-right: 10px;
+    padding: 5px;
+    color: #FD2727;
+}
+
+.header-right {
+    background-color: #FFEBEB;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.save-button {
+    background-color: #171b6b;
+    color: #fff;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 35px;
+    width: 65px;
+}
+
+.content {
+    flex-grow: 1;
+    overflow-y: auto;
+
+    padding: 15px;
+    height: calc(100vh - 250px);
+}
+
+.task-title {
+    margin-bottom: 20px;
+}
+
+.task-title h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.assigned {
+    margin-bottom: 20px;
+}
+
+h5 {
+    color: #787878;
+}
+
+.assignee-name {
+    font-size: 1.2rem;
+}
+
+.description {
+    margin-bottom: 20px;
+}
+
+.description p {
+    margin-bottom: 5px;
+}
+
+.attachments {
+    margin-bottom: 20px;
+}
+
+.attachment-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.attachment-item {
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.attachment-item:hover {
+    background-color: #e1e1e1;
+}

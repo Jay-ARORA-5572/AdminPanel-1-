@@ -1,0 +1,83 @@
+mat-toolbar.mat-toolbar.mat-toolbar-single-row {
+    background-color: #0D1046;
+    color: white;
+}
+
+mat-drawer,
+.hidebtn {
+    background-color: #0D1046;
+    width: 17vw;
+}
+
+.active1 {
+    background-color: #F10B0B;
+    border-radius: 4px;
+}
+
+.example-container {
+    height: 92.5vh;
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+    margin: auto;
+    padding: 2%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: white;
+    font-family: 'Mulish', sans-serif;
+}
+
+button {
+    margin: 1vh;
+}
+
+.items {
+    width: 100%;
+    padding: 1.5vh;
+    padding-left: 1vw;
+    text-align: left;
+}
+
+
+.divder {
+    border-right: 1px solid #fff;
+    height: 45%;
+    margin-left: 10px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.loginimage {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    margin: .5vw;
+}
+
+#iconimg {
+    margin-top: 1vh;
+    width: 11vw;
+    height: 6.5vh;
+}
+
+.submenu{
+    border: 2px solid red;
+}
+
+.iconshow{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.subicon{
+    margin-right: 7%;
+}
+
+/* test */

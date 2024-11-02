@@ -1,0 +1,297 @@
+<!-- Stepper module  -->
+<div class="p-dialog p-component p-fluid">
+    <div class="p-dialog-header">
+        <span class="p-dialog-title">Add Course</span>
+        <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+    </div>
+</div>
+
+
+<div class="container">
+    <p-stepper>
+
+        <!-- 1. Add Course  -->
+        <p-stepperPanel header="Add Course">
+            <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
+                <div class="flex flex-column">
+                    <div
+                        class="field border-2 surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
+                        <div id="content">
+                            <div class="imagesection">
+                                <div class="imgdiv">
+                                    <img *ngIf="imgsrc" [src]="imgsrc">
+                                    <img src="../assets/upload.png" alt="" *ngIf="!imgsrc">
+                                </div>
+                                <br>
+                                <input hidden (change)="courseimage($event)" #fileInput type="file" id="file"
+                                    accept=".jpg, .jpeg, .png">
+                                <button type="button" class="uploadimage" mat-raised-button
+                                    (click)="fileInput.click()">Course Image</button>
+                            </div>
+
+                            <form #registercourse="ngForm" (ngSubmit)="register(registercourse, nextCallback)"
+                                enctype="multipart/form-data" class="form-container">
+
+                                <!-- Row 1 -->
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <div class="p-2 text-left">
+                                        <label for="institutionId">Institute ID</label>
+                                        </div>
+                                    
+                                        <input pInputText id="username" aria-describedby="username-help" class="custom-input"  name="InstituteID"
+                                            [(ngModel)]="selectedUsername" />
+                                   
+                                        <div *ngIf="registercourse.submitted && !registercourse.controls['institutionId']?.valid"
+                                            class="error">
+                                            Institute Id is required
+                                        </div>
+                                    </div>
+
+                                    <div class="form-field">
+                                        <div class="p-2 text-left">
+                                        <label for="coursename">Course Name</label>
+                                        </div>
+                                 
+                                        <input pInputText id="username" aria-describedby="username-help" class="custom-input" name="CourseName"
+                                            [(ngModel)]="selectedCourseName" />
+                                        <div *ngIf="registercourse.submitted && !registercourse.controls['coursename']?.valid"
+                                            class="error">
+                                            Course Name is required
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Row 2 -->
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <div class="p-2 text-left">
+                                        <label for="duration">Duration</label>
+                                        </div>
+                               
+                                        <input pInputText id="username" aria-describedby="username-help" class="custom-input" name="Duration"
+                                            [(ngModel)]="selectedDuration" />
+                                        <div *ngIf="registercourse.submitted && !registercourse.controls['duration']?.valid"
+                                            class="error">
+                                            Duration is required
+                                        </div>
+                                    </div>
+
+                                    <div class="form-field">
+                                        <div class="p-2 text-left">
+                                        <label for="country">Country</label>
+                                        </div>
+                                
+                                        <input pInputText id="username" aria-describedby="username-help" class="custom-input" name="Country"
+                                            [(ngModel)]="selectedCountry" />
+                                        <div *ngIf="registercourse.submitted && !registercourse.controls['country']?.valid"
+                                            class="error">
+                                            Country is required
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Row 3 -->
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <div class="p-2 text-left">
+                                        <label for="coursesubtitle">Course Category</label>
+                                        </div>
+                                        
+                                        <input pInputText id="username" aria-describedby="username-help" class="custom-input" name="CourseCategory"
+                                            [(ngModel)]="selectedCourseCategory" />
+                                        <div *ngIf="registercourse.submitted && !registercourse.controls['coursesubtitle']?.valid"
+                                            class="error">
+                                            Course Subtitle is required
+                                        </div>
+                                    </div>
+
+                                    <div class="form-field">
+                                        <div class="p-2 text-left">
+                                        <label for="instructor">Instructor</label>
+                                        </div>
+                                     
+                                        <input pInputText id="username" aria-describedby="username-help" class="custom-input" name="Instructor"
+                                            [(ngModel)]="selectedInstructor" />
+                                        <div *ngIf="registercourse.submitted && !registercourse.controls['instructor']?.valid"
+                                            class="error">
+                                            Instructor is required
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Row 4: Description -->
+                                <div class="form-row">
+                                    <div class="form-field full-width">
+                                        <div class="p-2 text-left">
+                                            <label for="description">Description</label>
+                                        </div>
+                                        <p-floatLabel>
+                                            <textarea id="description" name="description" ngModel
+                                                rows="2.8" cols="26" pInputTextarea class="custom-width" required
+                                                spellcheck="true"></textarea>
+                                        </p-floatLabel>
+                                        <div *ngIf="registercourse.submitted && !registercourse.controls['description']?.valid"
+                                            class="error">
+                                            Description is required
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Row 5: Buttons -->
+                                <div class="form-row">
+                                    <div class="form-field full-width">
+                                        <button type="button" class="cancel" mat-raised-button
+                                            (click)="onCancelClick()">Cancel</button>
+                                        &nbsp;&nbsp;
+                                        <button type="submit" class="uploadimage" mat-raised-button>Save</button>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-stepperPanel>
+
+        <!-- 2. Chapter create -->
+        <p-stepperPanel header="Course Chapter">
+            <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback"
+                let-index="index">
+                <div class="flex justify-content-between">
+                    <div
+                        class="border-2 surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
+
+
+                        <form #chapter="ngForm" (submit)="chapterupload(chapter,nextCallback)">
+                            <table>
+                                <tr class="rowheight">
+                                    <td>
+                                        <p-floatLabel>
+                                            <input pInputText id="courseId" name="courseId" ngModel required>
+                                            <label for="courseId">Course Id</label>
+                                        </p-floatLabel>
+                                        <div *ngIf="chapter.submitted && !chapter.controls['courseId']?.valid"
+                                            class="error">
+                                            Course Id is required
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p-floatLabel>
+                                            <input pInputText id="title" name="title" ngModel required />
+                                            <label for="title" required>Chapter Title</label>
+                                        </p-floatLabel>
+
+                                        <div *ngIf="chapter.submitted && !chapter.controls['title']?.valid"
+                                            class="error">
+                                            Title is required
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">
+                                        <button type="button" (click)="prevCallback.emit()"
+                                            class="p-button p-component custom-button">
+                                            <span class="p-button-icon pi pi-arrow-left mr-2"></span>
+                                            <span class="p-button-label">Back</span>
+                                        </button>
+                                    </td>
+
+                                    <td>
+                                        <button type="submit" pButton label="Save" icon="pi pi-arrow-right"
+                                            iconPos="right"></button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+                <div class="flex pt-4 justify-content-between">
+
+                </div>
+            </ng-template>
+        </p-stepperPanel>
+
+        <!-- 3. Video upload -->
+        <p-stepperPanel header="Course Upload">
+            <ng-template pTemplate="content" let-prevCallback="prevCallback" let-index="index">
+                <div class="flex flex-column">
+                    <div class="border-2 border-dashed surface-border border-round surface-ground font-medium">
+                        <div id="contentdiv">
+                            <div class="left mb-3 p-2">
+                                <div class="imgdiv">
+                                    <img *ngIf="videoicon" [src]="videoicon">
+                                    <img src="../assets/streaming.png" alt="" *ngIf="!videoicon">
+                                </div>
+                                <br>
+                                <input hidden (change)="uploadvideo($event)" #fileInput type="file" id="file"
+                                    accept=".mp4, .webm, .3gp">
+                                <div class="flex justify-content-center align-items text-center">
+                                    <button type="button" class="uploadimage" mat-raised-button
+                                        (click)="fileInput.click()">Upload Video</button>
+                                </div>
+                            </div>
+
+                            <div class="rightsidediv p-2">
+                                <form #videoupload="ngForm" (ngSubmit)="courseuploadvideo(videoupload)"
+                                    class="form-container">
+                                    <div class="form-layout">
+                                        <div class="input-row">
+                                            <div class="input-field">
+                                                <label for="courseId">Course Id</label>
+                                                <input id="courseId" type="text" name="courseId" pInputText ngModel
+                                                    required class="input-box">
+                                                <div *ngIf="videoupload.submitted && !videoupload.controls['courseId']?.valid"
+                                                    class="error">
+                                                    Course Id is required
+                                                </div>
+                                            </div>
+                                            <div class="input-field">
+                                                <label for="chapterId">Chapter Id</label>
+                                                <input id="chapterId" type="text" name="chapterId" pInputText ngModel
+                                                    required class="input-box">
+                                                <div *ngIf="videoupload.submitted && !videoupload.controls['chapterId']?.valid"
+                                                    class="error">
+                                                    Chapter Id is required
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-row">
+                                            <div class="input-field">
+                                                <label for="title">Video Title</label>
+                                                <input id="title" type="text" name="title" pInputText ngModel required
+                                                    class="input-box">
+                                                <div *ngIf="videoupload.submitted && !videoupload.controls['title']?.valid"
+                                                    class="error">
+                                                    Video Title is required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex justify-content-center align-items text-center">
+                                        <button type="button" class="cancel" mat-raised-button
+                                            (click)="onCancelClick()">Cancel</button> &nbsp; &nbsp;
+                                        <button type="submit" class="uploadimage" mat-raised-button>Save</button>
+                                    </div>
+                                </form>
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-stepperPanel>
+
+    </p-stepper>
+</div>
+
+
+<p-toast></p-toast>

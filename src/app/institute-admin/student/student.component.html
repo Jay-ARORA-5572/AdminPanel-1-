@@ -1,0 +1,123 @@
+<div id="maindiv">
+
+  <!-- top-header -->
+  <section class="shadow-3 border-round-sm">
+
+    <div class="top-header">
+      <h2>Students</h2>
+      <div class="header-controls">
+        <input type="text" pInputText placeholder="Search by name" />
+        <p-dropdown [options]="statusOptions" placeholder="Status"></p-dropdown>
+        <button pButton type="button" label="Add" icon="pi pi-plus" class="add-button" (click)="addstudent()"></button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- top-header  -->
+
+
+  <!-- main-content -->
+
+  <section class="shadow-3 border-round-sm">
+    <p-table [value]="instructors" responsiveLayout="scroll" [paginator]="true" [rows]="rows" [first]="first"
+      (onPageChange)="onPageChange($event)">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>User</th>
+          <th>Enrolled Courses</th>
+          <th>Phone</th>
+          <th>Country</th>
+          <th>Payment</th>
+          <th>Status</th>
+          <th>
+
+            <button class="actionicon" pButton type="button" icon="pi pi-ellipsis-h"
+              (click)="opt.toggle($event)"></button>
+
+            <!-- Overlay Panel -->
+            <p-overlayPanel #opt>
+              <div class="menu">
+                <div class="menu-item">
+                  <button class="actioniconover" label="Send Email to All" pButton type="button"
+                    icon="pi pi-envelope"></button>
+                </div>
+
+                <div class="menu-item">
+                  <button class="actioniconover" label="Suspend Selected" pButton type="button"
+                    icon="pi pi-ban"></button>
+                </div>
+
+                <div class="menu-item">
+                  <button class="actioniconover" label="Remove Selected" pButton type="button"
+                    icon="pi pi-trash"></button>
+                </div>
+              </div>
+            </p-overlayPanel>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-user>
+        <tr class="table-row">
+          <td>
+            <div class="flex p-ai-center">
+              <img *ngIf="user.avatar" [src]="user.avatar" class="avatar" />
+              <div class="p-ml-2">
+                <div>{{user.name}}</div>
+                <div class="email">{{user.email}}</div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="p-d-flex p-jc-between p-ai-center" style="height: 100%;">
+              <span>{{user.course}}</span>
+              <button pButton label="View More" (onClick)="addinfo()" class="p-button-link"></button>
+            </div>
+          </td>
+          <td>{{user.phone}}</td>
+          <td>{{user.country}}</td>
+          <td>
+            <span [ngClass]="{'text-red': user.payment === 'Due', 'text-green': user.payment === 'Paid'}">
+              {{user.payment}}
+            </span>
+          </td>
+          <td>
+            <span
+              [ngClass]="{'text-green': user.status === 'Active', 'text-yellow': user.status === 'Inactive', 'text-red': user.status === 'Suspended'}">
+              {{user.status}}
+            </span>
+          </td>
+          <td>
+            <button class="actionicon" pButton type="button" icon="pi pi-ellipsis-h"
+              (click)="op.toggle($event)"></button>
+
+            <!-- Overlay Panel -->
+            <p-overlayPanel #op>
+              <div class="menu">
+                <div class="menu-item">
+                  <button class="actioniconover" label="Send Email" pButton type="button"
+                    icon="pi pi-envelope"></button>
+                </div>
+
+                <div class="menu-item">
+                  <button class="actioniconover" label="View Details" pButton type="button"
+                    icon="pi pi-eye"></button>
+                </div>            
+
+                <div class="menu-item">
+                  <button class="actioniconover" label="Activities" pButton type="button"
+                    icon="pi pi-chart-line"></button>
+                </div>             
+              </div>
+            </p-overlayPanel>
+
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+  </section>
+
+
+  <!-- main-content -->
+</div>

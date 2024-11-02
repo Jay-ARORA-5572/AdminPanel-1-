@@ -1,0 +1,100 @@
+.p-dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f4f4f4;
+}
+
+.p-dialog-title {
+  font-weight: bold;
+  font-size: 40%;
+  font-size: 1.1rem;
+  color:  #0D1046;;
+}
+
+
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  /* space between items */
+}
+
+.form-group {
+  flex: 1 1 48%;
+  /* Take up approximately half the width of the container */
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  /* Prevent fields from getting too small on small screens */
+}
+
+.full-width {
+  flex: 1 1 100%;
+}
+
+.p-dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.savebtn {
+  background-color: #0D1046;
+  color: white;
+  width: 19%;
+  font-size: 0.8rem;
+}
+
+
+.cross {
+  cursor: pointer;
+  float: right;
+}
+
+
+/* Address css */
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 calc(50% - 20px);
+  min-width: 200px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.payment-methods {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.savebtn {
+  background-color: #0D1046;
+  color: white;
+  width: 19%;
+  font-size: 0.8rem;
+}
+
+.Cancel{
+  background-color: #fff;
+  color: red;
+  border: 1px solid red;
+  width: 19%;
+  font-size: 0.8rem;
+}

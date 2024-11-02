@@ -1,0 +1,121 @@
+<!-- navbar -->
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <!-- <span class="iconimg"><img src="../assets/skillheedlogo.png" alt="Not Found" id="iconimg"></span> -->
+    <div class="img1">
+        <!-- <img src="../assets/navbaricon.png" alt="Not Found" id="iconimg"> -->
+        <img src="../../../assets/Navbaricon/Nickicon.png" alt="Not Found" id="iconimg">
+    </div>
+
+
+    <span class="example-spacer"></span>
+    <mat-icon style="color:#fff;">person</mat-icon> &nbsp;
+    {{this.username}}
+    <!-- <div class="divder"></div> -->
+    <!-- <img src="../assets/img.jpeg" alt="Not Found" id="userimage"> -->
+</mat-toolbar>
+
+    
+
+<!-- Sidebar -->
+<div class="main">
+    <mat-drawer-container class="example-container">
+        <mat-drawer #drawer mode="side" opened>
+            <br>
+            <div class="items" *ngFor="let item of arr">
+                <li [ngClass]="{active1: Role==item.name}" (click)="RoleChange(item.name)" class="iconshow">
+                    <div class="flex align-items-center innerdiv">
+                        <img src="../../../assets/adminsidebaricon/{{item.logo}}" alt="" srcset="" height="40px"
+                        style="color: white;"> &nbsp;
+                        <p class="showname align-items-center mt-3">
+                            {{item.name}}
+                        </p>
+                    </div>
+
+                    <div class="subicon">
+                        <i *ngIf="item['show'] == false && item['sub'] !== undefined" class="pi pi-chevron-right"
+                            style="font-size: 1rem; margin-left:40%;"></i>
+                        <i *ngIf="item['show'] !=false && item['sub'] !== undefined" class="pi pi-chevron-down"
+                            style="font-size: 1rem; margin-left:40%;"></i>
+                    </div>
+
+                </li>
+                <ng-container *ngIf="item['sub'] !== undefined">
+                    <li [ngClass]="{active1: Role==subitem.name}" (click)="RoleChange(subitem.name)"
+                        *ngFor="let subitem of item['sub']" style="margin-top: 7%;">
+                        <img src="../../../assets/adminsidebaricon/{{subitem.logo}}" alt="" srcset="" height="40px"
+                            style="color: white; margin-left: 10px;"> &nbsp;
+                        {{subitem.name}}
+                    </li>
+                </ng-container>
+            </div>
+        </mat-drawer>
+        <mat-drawer-content>
+            <!-- <button (click)="drawer.toggle()" mat-mini-fab color="primary" class="hidebtn"><mat-icon >menu</mat-icon></button> -->
+
+            <ng-container *ngIf="myroute=='dashboard'">
+                <app-dashboard></app-dashboard>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='sale'">
+                <app-sale></app-sale>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='staffmanagement'">
+                <app-staffmanagement></app-staffmanagement>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='adminprofile'">
+               <app-admin-profile></app-admin-profile>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='addmanageinstitute'">
+                <app-addmanageinstitute></app-addmanageinstitute>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='viewinstitute'">
+                <app-viewinstitute></app-viewinstitute>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='viewstudent'">
+                <app-viewstudent></app-viewstudent>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='postjobs'">
+                <app-postjobs></app-postjobs>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='invoicelist'">
+                <app-invoice-list></app-invoice-list>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='invoicehistroy'">
+                <app-invoicepayment-details></app-invoicepayment-details>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='contact'">
+                <app-contact></app-contact>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='help'">
+                <app-helpsection></app-helpsection>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='eventmanagement'">
+                <app-eventmanagement></app-eventmanagement>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='Settings'">
+                <app-settings></app-settings>
+            </ng-container>
+
+
+        </mat-drawer-content>
+    </mat-drawer-container>
+
+
+</div>
+
+<p-toast></p-toast>

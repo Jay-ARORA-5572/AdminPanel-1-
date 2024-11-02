@@ -1,0 +1,209 @@
+ 
+#maindiv{
+  width: 97%;
+  margin: auto;
+  margin-top: 2%;
+}
+
+
+/* top-header */
+
+ .top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+    margin: 10px;
+  }
+  
+  .header-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-controls > * {
+    margin-left: 10px;
+  }
+  
+  .add-button {
+    background-color: #0D1046 !important;
+    border: none;
+    color: white !important;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 24px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+  }
+  
+/* top-header */
+
+
+/* main-content */
+
+.instructor-info {
+  display: flex;
+  align-items: center;
+}
+
+section.shadow-3.border-round-sm {
+  margin-top: 26px;
+}
+
+.instructor-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.instructor-name {
+  font-weight: bold;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 12px;
+  text-align: center;
+  width: 78%;
+  }
+
+.status.Active {
+  background-color: #28a745;
+  color: white;
+  display: block;
+}
+
+.status.Pending {
+  background-color: #ffc107;
+  color: white;
+  display: block;
+}
+
+.status.Suspend {
+  background-color: #dc3545;
+  color: white;
+  display: block;
+}
+
+.actionicon {
+  background-color: #fff;
+  color: black;
+  border: none;
+}
+
+.actions {
+  display: flex;
+  gap: 0.88rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  margin-top: 1rem;
+}
+
+.actionicon:hover {
+  background-color: gray;
+  border: none;
+}
+
+.p-button {
+  background: none;
+  border: none;
+  color:black;
+}
+
+/* main-content */
+
+
+  /* Responsive Design */
+ 
+  @media (max-width: 768px) {
+    .top-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .header-controls {
+      margin-top: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .header-controls > * {
+      margin: 5px 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .instructor-info {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .instructor-image {
+      margin-bottom: 10px;
+    }
+  }
+  
+    /* Responsive Design */
+
+    
+/* Pop show the button */
+
+.p-button {
+  background: none;
+  border: none;
+  color: black;
+}
+
+
+.actionicon:hover {
+  background-color: rgb(206, 202, 202);
+  border: none;
+}
+
+::ng-deep .p-overlaypanel-content {
+  padding: 0rem !important;
+}
+
+.menu {
+  padding: 5px;
+  width: 170px;
+}
+
+.menu-item {
+  display: flex;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+
+.actioniconover.p-button {
+  transition: none;
+  border: none;
+}
+
+.actioniconover.p-button:hover {
+  background-color: inherit;
+  border-color: inherit;
+  box-shadow: none;
+}
+
+.actioniconover {
+  border: none;
+  font-size: 10px;
+}
+
+.actioniconover:hover {
+  border: none;
+  background-color: rgb(221, 219, 219);
+}
+
+/* Pop show the button */

@@ -1,0 +1,138 @@
+<div class="header">
+    <h1>Result</h1>
+    <span class="close-icon">
+        <i class="pi pi-times cross" (click)="closeDialog()"></i>
+      </span>
+</div>
+
+<div class="exam-result-details-container">
+    <!-- exam Info Section -->
+     <div class="heading-container">
+    <div class="exam-info">
+        <h2>BHI Health Informatic mid semester Exam.</h2>
+    </div>
+
+    <div class="actions">
+      <div class="card flex justify-content-center">
+        <button class="details-button" 
+                [ngClass]="{'active': selectedTab === 'Details'}" 
+                (click)="details()"> Details
+        </button>
+        <button class="details-button" 
+                [ngClass]="{'active': selectedTab === 'Result'}" 
+                (click)="response()"> Result
+        </button>
+      </div>
+    </div>
+  </div>
+
+    
+    
+
+    <!-- Response Section (Show on Response Button Click) -->
+    <div *ngIf="selectedTab === 'Details'">
+        <div class="details-container">
+          <div class="exam-container">
+            <div class="exam-info">
+                <div class="course-info">
+                    <p><strong>Course:</strong> {{ course }}</p>
+                    <p><strong>Subject:</strong> {{ subject }}</p>
+                </div>
+                <p class="questions-count">Number of Questions: 50</p>
+                <div class="course-info">
+
+                    <div class="passing-percentage">
+                        <p><strong>Passing Percentage:</strong> <span>{{ passingPercentage }}%</span></p>
+                    </div>
+                </div>
+
+                <div class="question-paper">
+                    <p><strong>Question Paper</strong></p>
+                    <button pButton><p class="paper-label">Networking Mid sem question paper.pdf</p></button>
+                  </div>
+                
+
+            </div>
+
+            <div class="exam-schedule">
+                <p><strong>exam Schedule:</strong></p>
+                <div class="schedule">
+                    <div class="date-item">
+                        <i class="pi pi-calendar"></i> {{ examDate }}
+                    </div>
+                    <div class="date-item">
+                        <i class="pi pi-chevron-circle-left"></i> {{ examTime }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="batches">
+                <p><strong>Batches</strong></p>
+                <ul>
+                  <li>3CO - JYY</li>
+                  <li>3CO - JYY</li>
+                  <li>3CO - JYY</li>
+                  <li>3CO - JYY</li>
+                  <li>3CO - JYY</li>
+                </ul>
+              </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- ---------------------------------- Result Button--------------------------------- -->
+    <div *ngIf="selectedTab === 'Result'">
+    <div class="details-container">
+        <div class="Result-container">
+           
+            <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Student ID</th>
+                      <th>Name</th>
+                      <th>Attachments</th>
+                      <th>Marks</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let student of students">
+                      <td>{{ student.id }}</td>
+                      <td>{{ student.name }}</td>
+                      <td><p class="attachment-name-cell">{{ student.attachmentName }}</p></td>
+                      <td><input type="text" [(ngModel)]="student.marks" class="marks-input" style="width: 40px;" /> /50</td>
+                      <td>
+                        <button class="actionicon" pButton type="button" icon="pi pi-ellipsis-h"
+                        (click)="op.toggle($event)"></button>
+
+                        <p-overlayPanel #op>
+                          <div class="menu">
+                              <div class="menu-item" (click)="EditCourse()">
+                                  <!-- <i class="pi pi-eye"></i> View Details -->
+                                  <button class="actioniconover"  (click)="selectbtn(op)" label="Add Note" pButton type="button"
+                                      icon="pi pi-file-edit"></button>
+                              </div>
+                              
+                              <div class="menu-item" (click)="DeleteCourse">
+                                  <!-- <i class="pi pi-chart-line"></i> Activities -->
+                                  <button class="actioniconover" (click)="selectbtn(op)" label="Delete" pButton type="button"
+                                      icon="pi pi-trash"></button>
+
+                              </div>
+                          </div>
+                      </p-overlayPanel>
+                      </td>
+                      
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+             
+
+        </div>
+    </div>
+
+
+</div>
+</div>

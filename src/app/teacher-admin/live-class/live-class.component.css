@@ -1,0 +1,265 @@
+.main-container {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.add-class {
+  background-color: #0d1046;;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.5s ease-in-out;
+
+}
+.add-class::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #242880, #0d1046); /* Gradient color */
+  transition: all 1s ease; /* Increased duration for slower effect */
+}
+.add-class:hover:before
+{
+  left: 100%;
+}
+.add-class span
+{
+  position: relative;
+  z-index: 1;
+}
+
+.search-and-tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 20px;
+  order: 1;
+}
+
+.tab {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #6c757d;
+}
+
+.tab.active {
+  color: #000000;
+  border-bottom: 2px solid #0d1046;
+}
+.tab:hover
+{
+  color: #007bff;
+}
+
+.search-bar {
+  padding: 10px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  order: 2;
+  flex-grow: 1;
+  margin-left: auto;
+  max-width: 300px;
+}
+
+
+
+.class-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 98%;
+
+  
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 2px solid black;
+  width: 98%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.04); /* Slightly increase size */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow effect on hover */
+}
+
+.ongoing
+{
+  background-color: #FFECEC;
+}
+.starting-soon
+{
+  background-color: #ECFFEE
+  ;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.card p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+.batch
+{
+  border: 1px solid #ccc;
+  color: #989898;
+  width: fit-content;
+  padding: 5px;
+
+}
+
+.time-text
+{
+  color: grey;
+  font-size: 0.8rem;
+  
+}
+.date-text
+{
+  color: grey;
+  font-size: 0.8rem;
+}
+
+/* .icon time {
+  margin-right: 5px;
+  
+} */
+
+.status {
+  font-weight: bold;
+  margin-bottom: 15px;
+  width: fit-content;
+}
+
+.ongoing .status {
+  color: #dc3545;
+  background-color: #FFDDDD;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.starting-soon .status {
+  color: #28a745;
+  background-color: #DDFFE7;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.not-started .status {
+  color: #6c757d;
+  background-color: #f0f0f0;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.completed .status{
+ 
+    color: #6c757d;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 5px;
+  
+}
+
+.card button {
+  background-color: #0d1046;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 5px;
+  border-radius: 5px;
+  width: 97%;
+}
+
+.card button:hover {
+  background-color: #404383;
+}
+
+
+@media (max-width: 992px) {
+  .class-cards {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search-bar {
+      max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .class-cards {
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  .header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .search-and-tabs {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .tabs {
+      width: 100%;
+      justify-content: flex-start;
+      order: 1;
+  }
+
+  .search-bar {
+      width: 100%;
+      order: 2;
+      margin-top: 10px;
+  }
+
+  .add-class {
+      width: 100%;
+      margin-top: 10px;
+
+  }
+}

@@ -1,0 +1,133 @@
+<div class="video-call-container">
+  <div class="nav">
+
+    <section class="shadow-3 border-round-sm">
+      <form #formdata="ngForm" (ngSubmit)="startLiveStreaming(formdata)">
+
+        <div class="p-fluid form-layout mt-4 p-3">
+          <div class="field field-full">
+            <label for="instituteId">Institute Id</label><br>
+            <input id="instituteId" type="text" pInputText name="instituteId" ngModel required class="custom-input">
+          </div>
+
+          <div class="field field-full">
+            <label for="streamTitle">Stream Title</label><br>
+            <input id="streamTitle" type="text" pInputText name="streamTitle" ngModel required class="custom-input">
+          </div>
+
+          <div class="field field-full">
+            <label for="startTime">Start Time</label><br>
+            <input id="startTime" type="text" pInputText name="startTime" ngModel required class="custom-input">
+          </div>
+
+          <div class="field field-btn mt-5">
+            <button class="button" pButton type="submit" label="Start"></button>
+          </div>
+        </div>
+
+
+      </form>
+
+    </section>
+  </div>
+
+
+  <!-- video section  -->
+  <!-- <div *ngIf="isselect"> -->
+  <div>
+    <div class="live-streaming">
+      <div class="videos">
+        <div class="header">
+          <div class="Ongoing-call">
+            <i class="pi pi-phone"></i>
+            <h1>Ongoing Call</h1>
+          </div>
+          <div class="right">
+            <button class="full-screen" (click)="op.toggle($event)">
+              <i class="pi pi-expand"></i>
+            </button>
+            <p-overlayPanel #op>
+              <div class="menu">
+                <div class="menu-item p-1" *ngFor="let res of resolutions" (click)="selectResolution(op, res.label)">
+                  <span class="flex align-items-center text-align-center">
+                    <mat-icon>{{ res.icon }}</mat-icon> {{ res.label }}
+                  </span>
+                </div>
+              </div>
+            </p-overlayPanel>
+          </div>
+        </div>
+        <video class="localvideo" #localVideo autoplay playsinline></video>
+        <div class="access-btn">
+          <!-- <button class="stop-recording" (click)="stopRecordingAndSending()" [disabled]="!isRecording">
+            <i class="pi pi-phone"></i>
+          </button> -->
+          <button class="stop-recording"  (click)="endCall()">
+            <i class="pi pi-phone"></i>
+          </button>
+          <button class="video" (click)="toggleVideo()">
+            <mat-icon>{{ isVideoOff ? 'videocam_off' : 'videocam' }}</mat-icon>
+          </button>
+          <button class="audio" (click)="toggleAudio()">
+            <mat-icon>{{ isMuted ? 'mic_off' : 'mic' }}</mat-icon>
+          </button>
+          <button class="screen-share" (click)="toggleScreenShare()">
+            <mat-icon>{{ isScreenSharing ? 'stop_screen_share' : 'screen_share' }}</mat-icon>
+          </button> 
+          <button class="open-chat"  (click)="toggleChat()">
+            <mat-icon> chat</mat-icon>
+          </button>
+          
+        </div>
+      </div>
+
+
+
+      <!-- Chat Section -->
+      <div class="chats" *ngIf="isChatOpen">
+        <div class="header">
+          <div class="Ongoing-call">
+            <i class="pi pi-chat"></i>
+            <h1>Chat</h1>
+          </div>
+          <button class="full-screen" (click)="toggleChat()">
+            <i class="pi pi-times cross"></i>
+          </button>
+        </div>
+
+        <div class="messages">
+          <div *ngFor="let msg of messages" class="message">
+            <i class="pi pi-user"></i>
+            <strong class="msg-text">{{ msg.sender }}</strong>
+            {{ msg.text }}
+            <span class="timestamp">{{ msg.timestamp }}</span>
+          </div>
+        </div>
+
+        <div class="msg">
+          <input type="text" (keyup.enter)="sendMessage()" [(ngModel)]="message" placeholder="Type a message" />
+          <button class="send-chat-btn" (click)="sendMessage()">
+            <i class="pi pi-send"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+   
+    <div class="fab-container">
+      <button class="main-button" (click)="toggleMenu()">
+        <i class="pi pi-plus"></i>
+      </button>
+      <div *ngFor="let item of buttons; let i = index" class="scroller-item" [ngStyle]="getButtonStyle(i)"
+        [ngClass]="{'show': menuOpen}">
+        <button class="fab-button" [ngStyle]="{'background-color': item.bgColor, 'color': item.color}">
+          <i class="{{ item.icon }}"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- video section  -->
+
+</div>

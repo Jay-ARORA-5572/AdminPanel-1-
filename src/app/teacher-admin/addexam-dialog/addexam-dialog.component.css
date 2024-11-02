@@ -1,0 +1,472 @@
+.Exam-container {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+}
+
+.header h2 {
+  margin-bottom: 10px;
+}
+
+.header .progress-bar {
+  width: 100%;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.header .progress {
+  width: 25%;
+  height: 4px;
+  background-color: #4a90e2;
+}
+
+.search-box {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+
+.close-icon{
+
+  float: right;
+  font-weight: 500;
+  cursor: pointer;
+  
+}
+
+/* .content {
+  
+  margin: 22px 22px;
+} */
+
+.select-course {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.select-course label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+.course-options .option {
+  margin-bottom: 10px;
+}
+
+.course-options input[type="radio"] {
+  margin-right: 10px;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.button1 {
+  display: flex;
+  justify-content: space-between;
+}
+.next {
+  margin-left: 100%;
+}
+
+.course-options {
+  max-height: 300px; /* Set a maximum height for the scrollable area */
+  overflow-y: auto; /* Enable vertical scrolling */
+  margin-top: 5px;
+  background-color: white;
+}
+
+.option {
+  display: flex;
+  align-items: last baseline;
+  padding: 10px;
+  cursor: pointer;
+  line-height: 19.36px;
+  
+}
+.option label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.option input[type="radio"] {
+  margin-right: 10px; /* Space between the radio button and label */
+}
+
+.option:last-child {
+  border-bottom: none;
+}
+
+.option:hover {
+  background-color: #f1f1f1;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .Exam-container {
+    padding: 10px;
+  }
+
+  .content {
+    margin-top: 15px;
+  }
+
+  .search-box {
+    padding: 8px;
+  }
+
+  .select-course {
+    padding: 15px;
+  }
+}
+
+
+
+
+
+/* ------------------------------chapter 3 css------------------------------- */
+
+.create-exam-container {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.create-exam-container h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #e0e0e0;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.progress-bar .progress {
+  width: 75%; /* This should be dynamic based on the current step */
+  height: 100%;
+  background-color: #007bff;
+  border-radius: 2px;
+}
+
+.exam-specifications {
+  margin-top: 20px;
+  border: 1px solid rgb(226, 226, 226);
+  box-shadow: #7f8a93;
+  padding: 10px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.input-group input[type="number"],
+.input-group input[type="text"],
+.input-group input[type="date"],
+.input-group input[type="time"],
+.input-group input[type="file"],
+.input-group input[type="range"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.input-group input[type="range"] {
+  padding: 0;
+}
+
+.input-group span {
+  display: inline-block;
+  margin-left: 10px;
+  color: #007bff;
+}
+
+.exam-schedule {
+  display: flex;
+  justify-content: space-between;
+}
+
+.exam-schedule input[type="date"],
+.exam-schedule input[type="time"] {
+  width: 48%;
+}
+
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.upload-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  /* Adjust as needed */
+}
+
+.styled-file-upload {
+  display: none;
+  /* Hide the default file input */
+}
+
+.file-upload-label {
+  display: inline-block;
+  padding: 10px 45px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  /* Set your desired background color */
+  border: 2px solid #007bff;
+  /* Optional: match the border to the background color */
+  border-radius: 4px;
+  /* Optional: rounded corners */
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  /* Prevent text selection */
+  width: 100%;
+
+}
+
+
+
+@media (min-width: 768px) {
+  .create-exam-container {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .create-exam-container {
+    max-width: 700px;
+  }
+}
+
+/* -------------------------chapter 4 css----------------------- */
+
+
+.content {
+  margin-bottom: 20px;
+}
+
+.card {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #e9e6e6;
+}
+
+.tag-selection {
+  text-align: left;
+}
+
+.tag-selection label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#search {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.tag-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.tag-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.tag-item label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.tag-item input {
+  margin-right: 8px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-btn,
+.next-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.back-btn {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.next-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.back-btn:hover,
+.next-btn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .Exam-container {
+    padding: 10px;
+  }
+
+  .Exam-header h2 {
+    font-size: 20px;
+  }
+
+  .Exam-header p {
+    font-size: 14px;
+  }
+
+  .tag-selection label {
+    font-size: 14px;
+  }
+
+  .back-btn,
+  .next-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+
+
+
+/* Exam preview container */
+.preview-container {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.preview-container h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.exam-details p {
+  font-size: 1rem;
+  margin: 8px 0;
+}
+
+.exam-details strong {
+  font-weight: bold;
+}
+
+.exam-schedule i {
+  margin-right: 5px;
+}
+
+
+input[type="date"], input[type="time"] {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.exam-schedule4{
+  display: flex;
+  gap: 45px;
+}
+
+.passing-percentage4
+{
+  color: blue;
+  margin-left: 10px;
+}
+
+.upload-filename
+{
+   background-color: #f0f0f0;
+   padding: 4px;
+   color: grey;
+   width: fit-content;
+}
+
+.batches-li
+{
+  list-style-type: none;
+  margin-left: -37px;
+  color: rgb(151, 151, 151);
+}
+
+::ng-deep .p-button {
+  background-color: #0D1046 !important;
+  color: #fff !important;
+}
+
+
+

@@ -1,0 +1,225 @@
+.quiz-result-details-container {
+  padding: 20px;
+  min-width: 700px;
+  max-height: 561px;
+}
+
+.header i.pi {
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+}
+
+.header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.quiz-info {
+  margin-bottom: 20px;
+}
+.course-info p {
+  margin: 0;
+}
+
+/* .actions {
+    display: flex;
+    gap: 10px;
+  } */
+
+.actions {
+  display: flex;
+  gap: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+/* Base Button Styles */
+.details-button {
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  color: #333;
+
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  font-size: 0.95rem;
+}
+.details-button {
+  background-color: #eeeff9;
+  color: #7e7e7e;
+}
+
+/* Hover and Focus States for All Buttons */
+/* .details-button:hover, */
+.details-button:focus {
+  background-color: #0d1046;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Active State for Selected Filter Button */
+.details-button.active {
+  background-color: #0d1046 !important;
+  color: #fff !important;
+}
+
+/* -----------------------------Quiz Container Css */
+.quiz-container {
+  font-family: Arial, sans-serif;
+  max-height: 350px;
+  overflow-y: auto;
+  width: 50%;
+  margin-top: 15px;
+}
+
+.quiz-container h2 {
+  text-align: start;
+  margin: 15px 0 15px 0;
+}
+.quiz-info {
+  margin-bottom: 20px;
+}
+
+.questions-count {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.passing-percentage {
+  align-items: center;
+  gap: 10px;
+}
+.peracentage-value {
+  width: 97% !important;
+}
+
+.percentage-value {
+  font-size: 14px;
+  color: #1a73e8;
+}
+
+.quiz-schedule {
+  margin-top: 20px;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.sliders {
+  margin: 0 auto;
+  padding: 5px;
+}
+.sliders p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19.36px;
+  color: #000000;
+  margin-top: 10px;
+}
+
+.schedule {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-item {
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #ededf5;
+}
+
+.rules-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.rules-list li {
+  margin-bottom: 10px;
+}
+
+/* --------------------------------------response button content css----------------------------------- */
+
+
+.result-container h3{
+
+    color: #7E7E7E;
+    font-size: 0.9rem;
+}
+h3{
+    margin-top: 10px;
+}
+.table-container {
+    max-height: 315px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    background-color: #f4f4f4;
+    color: black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.8rem;
+}
+
+th {
+    background-color: #ddd;
+    font-weight: bold;
+}
+
+td a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+.pass {
+    color: green;
+    font-weight: 400;
+}
+
+.fail {
+    color: red;
+    font-weight: 400;
+}
+
+.pi-eye {
+    margin-right: 5px;
+}

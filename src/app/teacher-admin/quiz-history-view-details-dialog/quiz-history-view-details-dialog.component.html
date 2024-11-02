@@ -1,0 +1,145 @@
+<div class="header">
+    <h1>Quiz History</h1>
+    <i class="pi pi-times cross" (click)="closeDialog()"></i>
+</div>
+
+<div class="quiz-result-details-container p-5">
+    <!-- Quiz Info Section -->
+    <div class="quiz-info">
+        <h2>Quiz Name: {{quizName}}</h2>
+        <div class="course-info">
+            <p><strong>Course:</strong> {{ course }}</p>
+            <p><strong>Subject:</strong> {{ subject }}</p>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="actions">
+        <div class="card flex justify-content-center">
+          <button class="details-button" 
+                  [ngClass]="{'active': selectedTab === 'Details'}" 
+                  (click)="details()"> Details
+          </button>
+          <button class="details-button" 
+                  [ngClass]="{'active': selectedTab === 'Result'}" 
+                  (click)="response()"> Result
+          </button>
+        </div>
+      </div>
+    <!-- Response Section (Show on Response Button Click) -->
+    <div *ngIf="selectedTab === 'Details'">
+        <div class="quiz-container">
+            <div class="quiz-info">
+                <p class="questions-count">Number of Questions: 50</p>
+                <div class="course-info">
+
+                    <div class="passing-percentage">
+                        <p><strong>Passing Percentage:</strong> <span>{{ passingPercentage }}%</span></p>
+                        <input class="peracentage-value" type="range" min="0" max="100" [value]="passingPercentage"
+                            readonly>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-schedule">
+                <p><strong>Quiz Schedule:</strong></p>
+                <div class="schedule">
+                    <div class="date-item">
+                        <i class="pi pi-calendar"></i> {{ quizDate }}
+                    </div>
+                    <div class="date-item">
+                        <i class="pi pi-chevron-circle-left"></i> {{ quizTime }}
+                    </div>
+                </div>
+            </div>
+            <div class="composition-tag">
+
+                <h2>Tags Composition</h2>
+                <div class="sliders">
+
+                    <div class="slider">
+                        <p>Current Affairs</p>
+                        <div class="card flex justify-content-center">
+                            <form [formGroup]="formGroup">
+                                <p-slider formControlName="value" styleClass="w-14rem" />
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="slider">
+                        <p>Logical Reasoning</p>
+                        <div class="card flex justify-content-center">
+                            <form [formGroup]="formGroup">
+                                <p-slider formControlName="value" styleClass="w-14rem" />
+                            </form>
+                        </div>
+                    </div>
+                    <div class="slider">
+                        <p>Basic Computers</p>
+                        <div class="card flex justify-content-center">
+                            <form [formGroup]="formGroup">
+                                <p-slider formControlName="value" styleClass="w-14rem" />
+                            </form>
+                        </div>
+                    </div>
+                    <div class="slider">
+                        <p>Basic Science</p>
+                        <div class="card flex justify-content-center">
+                            <form [formGroup]="formGroup">
+                                <p-slider formControlName="value" styleClass="w-14rem" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rules-container">
+                <h2>Rules</h2>
+                <ul class="rules-list">
+                    <li *ngFor="let rule of rule">{{ rule }}</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ---------------------------------- Result Button--------------------------------- -->
+
+    <div *ngIf="selectedTab === 'Result'">
+        <div class="Result-container">
+            
+           <h3>My Students</h3>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Marks</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let student of students">
+                            <td>{{ student.name }}</td>
+                            <td>{{ student.marks }}/100</td>
+                            <td>
+                                <span [ngClass]="{'pass': student.status === 'Pass', 'fail': student.status === 'Fail'}">
+                                    {{ student.status }}
+                                </span>
+                            </td>
+                            <td><i class="pi pi-eye"></i> <a href="#">Complete Result</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            
+
+
+        </div>
+    </div>
+
+
+</div>

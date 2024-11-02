@@ -1,0 +1,55 @@
+<div id="main">
+
+       <!-- Top header  -->
+       <section class="shadow-3 border-round-sm">
+        <div class="courses-header">
+            <div class="course-info">
+                <h2>Invoices</h2>
+                <p>You have total 20 Invoices.</p>
+            </div>
+            <div class="course-actions">
+                <button class="actionicon1" pButton type="button" (onClick)="addinvoice()" icon="pi pi-plus" style="font-size: 0.8rem"></button>
+            </div>
+        </div>        
+    </section>
+        <!-- Top header  -->
+
+
+    <section class="shadow-3 border-round-sm mt-4">
+    <p-table [value]="studentPayments" responsiveLayout="scroll" [paginator]="true" [rows]="rows" [first]="first"
+        (onPage)="moredata($event)">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Student ID</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </ng-template>
+            <ng-template pTemplate="body" let-payment>
+            <tr>
+                <td>
+                    <a href="#">{{ payment.studentId }}</a>
+                </td>
+                <td>{{ payment.date }}</td>
+                <td>{{ payment.amount | currency: 'USD': 'symbol' }}</td>
+                <td>
+                    <span [ngClass]="{
+                        'status-complete': payment.status === 'Complete',
+                        'status-pending': payment.status === 'Pending',
+                        'status-cancelled': payment.status === 'Cancelled'
+                    }">
+                        {{ payment.status }}
+                    </span>
+                </td>
+                <td>
+                    <button onclick="window.print();" pButton type="button" icon="pi pi-pencil" class="noPrint actionicon p-button p-button-secondary"></button>
+                    <button pButton type="button" label="View" class="actionicon p-button p-button-primary"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    </section>
+
+</div>

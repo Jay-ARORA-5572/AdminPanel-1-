@@ -1,0 +1,70 @@
+<div class="header">
+  <h1>Assignment Result Details</h1>
+  <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+</div>
+<div class="quiz-result-details-container">
+
+
+
+  <!-- Header Section -->
+  <div class="result">
+    <!-- <button class="back-button" (click)="closeDialog()">←</button> -->
+
+    <p class="result-declaration">
+      Result Declared on {{ resultTime }} | {{ resultDate }}
+    </p>
+  </div>
+
+  <!-- Student Info Section -->
+  <div class="student-details">
+    <img class="profile-pic" src="../assets/student.jpeg" alt="Student" />
+    <div class="student-info">
+      <h2>{{ studentName }}</h2>
+      <p>Student ID: {{ studentId }}</p>
+
+    </div>
+  </div>
+
+  <!-- Quiz Info Section -->
+  <div class="quiz-info">
+    <p class="description">{{ quizDescription }}</p>
+    <div class="quiz-meta">
+      <p id="batch"><strong>Batch:</strong> {{ batch }}</p>
+      <p><i class="pi pi-clock"></i> {{ quizTime }}</p>
+      <p><i class="pi pi-calendar"></i> {{ quizDate }}</p>
+      <p class="status" [ngClass]="status === 'Pass' ? 'status-pass' : 'status-fail'">
+        Status: {{ status }}
+      </p>
+    </div>
+    <div class="course-info">
+      <p><strong>Course:</strong> {{ course }}</p>
+      <p><strong>Subject:</strong> {{ subject }}</p>
+    </div>
+
+    <!-- ----------------------inside content---------------------------- -->
+    <div class="result-container">
+      <h3>Total Marks: {{ totalMarks }}</h3>
+
+      <div class="passing-percentage">
+        <label>Passing Percentage:</label>
+        <span class="percentage"> {{ passingPercentage }}%</span>
+      </div>
+
+      <h4>Instructor's Attachments</h4>
+      <div class="attachments">
+        <button class="download-btn" *ngFor="let attachment of instructorAttachments">
+          {{ attachment }}
+        </button>
+      </div>
+
+      <h2>Result</h2>
+
+      <h4>Student's Attachments</h4>
+      <div class="attachments">
+        <button class="download-btn" *ngFor="let attachment of studentAttachments">
+          {{ attachment }}
+        </button>
+      </div>
+    </div>
+
+  </div>

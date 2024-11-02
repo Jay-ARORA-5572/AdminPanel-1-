@@ -1,0 +1,63 @@
+<div id="main">
+
+    <section class="shadow-3 border-round-sm">
+
+        <!-- Top header  -->
+        <div class="p-dialog-header">
+            <span class="p-dialog-title">New Leads</span>
+            <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+
+        </div>
+        <!-- Top header  -->
+    </section>
+
+    <section class="shadow-3 border-round-sm">
+        <!-- Assuming you are using PrimeNG for pagination -->
+        <div class="table-container">
+            <p-table [value]="courses" [paginator]="true" [rows]="rows" [first]="first" (onPage)="onPageChange($event)">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>User Name</th>
+                        <th>Post Name</th>
+                        <th>Order Status</th>
+                        <th>Receiver Staff</th>
+                        <th>Payment</th>
+                        <th>Status</th>
+                        <th>Query</th>
+                        <th>Action</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-course>
+                    <tr>
+                        <td data-label="Category">{{ course.category }}</td>
+                        <td data-label="Instructor">{{ course.instructor }}</td>
+                        <td data-label="Status"><span class="status" [ngClass]="course.statusClass">{{
+                                course.status}}</span></td>
+                        <td data-label="Enrolment">{{ course.enroleStudent }}</td>
+                        <td data-label="Lesson">{{ course.lesson }}</td>
+                        <td data-label="Price" class="pr-0">{{ course.price }}</td>
+                        <td class="pl-0"><button class="login1" mat-raised-button (click)="addcourse()">View</button>
+                        </td>
+                        <td>
+                            <button class="actionicon" pButton type="button" icon="pi pi-ellipsis-h"
+                                (click)="op.toggle($event)"></button>
+
+                            <!-- Overlay Panel -->
+                            <p-overlayPanel #op>
+                                <div class="menu">
+
+                                    <div class="menu-item" (click)="DeleteCourse()">
+                                        <!-- <i class="pi pi-chart-line"></i> Activities -->
+                                        <button class="actioniconover" (click)="selectbtn(op)" label="View History"
+                                            pButton type="button"></button>
+                                    </div>
+
+                                </div>
+                            </p-overlayPanel>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </section>
+</div>

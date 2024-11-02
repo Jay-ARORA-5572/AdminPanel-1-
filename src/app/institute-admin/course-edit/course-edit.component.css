@@ -1,0 +1,146 @@
+
+.p-dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f4f4f4;
+}
+
+.p-dialog-title {
+  font-weight: bold;
+}
+
+.p-dialog-content {
+  padding: 1rem;
+}
+
+
+.form-group {
+  flex: 1 1 48%; /* Take up approximately half the width of the container */
+  display: flex;
+  flex-direction: column;
+  min-width: 250px; /* Prevent fields from getting too small on small screens */
+}
+
+.full-width {
+  flex: 1 1 100%;
+}
+
+.p-dialog-content {
+  padding: 20px;
+}
+
+.p-dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.savebtn {
+  background-color:#0D1046;
+  color: white;
+}
+
+
+.cross{
+  cursor: pointer;
+}
+
+
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .form-item {
+    flex: 1 1 45%; /* Flexible items with min-width of 45% */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-item.full-width {
+    flex: 1 1 100%; /* Full width item */
+  }
+  
+  
+  .p-formgroup-inline{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top:2%;
+    width: 55%;
+  }
+
+
+  .form-item1{
+    width: 100%;
+  } 
+  
+  @media (max-width: 768px) {
+    .form-item {
+      flex: 1 1 100%; /* On smaller screens, all items become full width */
+    }
+  }
+
+  .datatype{
+    border-radius: 5px;
+    border: 1px solid rgb(189, 185, 185);
+    /* padding: 5%; */
+    color:rgb(189, 185, 185);;
+  }
+
+  .totalLesson{
+    width: 100%;
+  }
+
+  
+.Cancel{
+  background-color: #fff;
+  color: red;
+  border: 1px solid red;
+  width: 19%;
+  font-size: 0.8rem;
+}
+ 
+.uploaddiv{
+  width: 100%;
+}
+
+
+
+.file-upload {
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+  border: 1px solid gray;
+  height: 43%;
+  display: flex; /* Use flexbox */
+  align-items: center; /* Vertically center the content */
+  justify-content: space-between;
+}
+
+.custom-file-upload {
+  padding: 9px 16px;
+  border: 2px solid #0d1046;
+  background-color: #0d1046;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  float: right;
+}
+
+   
+input[type="file"] {
+  display: none; 
+}
+
+.file-name {
+  font-size: 15px;
+  vertical-align: middle;
+  padding: 1%;
+  margin-left: 1%;
+  /* margin-left: 87px; */
+}

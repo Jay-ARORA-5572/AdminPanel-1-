@@ -1,0 +1,378 @@
+<!-- navbar -->
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+        (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="img1">
+        <img src="../../../assets/Navbaricon/Nickicon.png" alt="Not Found" id="iconimg">
+    </div>
+    <span class="example-spacer"></span>
+    <mat-icon style="color:#fff;">person</mat-icon> &nbsp;
+    {{this.username}}
+    <!-- <div class="divder"></div> -->
+    <!-- <img src="../assets/img.jpeg" alt="Not Found" class="loginimage"> -->
+</mat-toolbar>
+
+
+
+<!-- Sidebar -->
+<div class="main">
+    <mat-drawer-container class="example-container">
+        <mat-drawer #drawer mode="side" opened>
+            <br>
+            <div class="items" *ngFor="let item of arr">
+                <li [ngClass]="{active1: Role==item.name}" (click)="RoleChange(item.name)" class="iconshow">
+                    <div class="flex align-items-center innerdiv">
+                        <img src="../../../assets/Instituteadminicon/{{item.logo}}" alt="" srcset="" height="40px"
+                        style="color: white;"> &nbsp;
+                        <p class="showname align-items-center mt-3">
+                            {{item.name}}
+                        </p>
+                    </div>
+
+                    <div class="subicon">
+                        <i *ngIf="item['show'] == false && item['sub'] !== undefined" class="pi pi-chevron-right"
+                            style="font-size: 1rem; margin-left:40%;"></i>
+                        <i *ngIf="item['show'] !=false && item['sub'] !== undefined" class="pi pi-chevron-down"
+                            style="font-size: 1rem; margin-left:40%;"></i>
+                    </div>
+
+                </li>
+                <ng-container *ngIf="item['sub'] !== undefined">
+                    <li [ngClass]="{active1: Role==subitem.name}" (click)="RoleChange(subitem.name)"
+                        *ngFor="let subitem of item['sub']" style="margin-top: 7%;">
+                        <img src="../../../assets/Instituteadminicon/{{subitem.logo}}" alt="" srcset="" height="40px"
+                            style="color: white; margin-left: 10px;"> &nbsp;
+                        {{subitem.name}}
+                    </li>
+                </ng-container>
+            </div>
+        </mat-drawer>
+        <mat-drawer-content>
+
+            <ng-container *ngIf="myroute=='Dashboard'">
+                <app-dashboard></app-dashboard>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='CenterSetup'">
+                <app-center-setup></app-center-setup>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='HomePage'">
+                <app-home-page></app-home-page>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='CoursePage'">
+                <app-course-page></app-course-page>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='AboutUsPage'">
+                <app-about-us-page></app-about-us-page>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='EducatorsPage'">
+                <app-educators-page></app-educators-page>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='FaqPage'">
+                <app-faq-page></app-faq-page>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='Blogs'">
+                <app-blogs></app-blogs>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='WebsiteInquiry'">
+                <app-website-inquiry></app-website-inquiry>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='Newsletter'">
+                <app-news-letter></app-news-letter>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='Colors'">
+                <app-colors></app-colors>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='MyWebsite'">
+                <app-my-website></app-my-website>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='AdmissionEnquiry'">
+                <app-addmission-enquiry></app-addmission-enquiry>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='VisitorBooks'">
+                <app-visitor-books></app-visitor-books>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='PhoneCallLogs'">
+                <app-phone-call-logs></app-phone-call-logs>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='Complains'">
+                <app-complains></app-complains>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='PostalService'">
+                <app-postal-service></app-postal-service>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='FrontOfficeSetup'">
+                <app-front-office-setup></app-front-office-setup>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='StudentAdmission'">
+                <app-student-admission></app-student-admission>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='StudentIDCards'">
+                <app-student-id-cards></app-student-id-cards>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='SetupInfo.'">
+                <app-setup-info></app-setup-info>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='UpgradedStudent'">
+                <app-upgraded-student></app-upgraded-student>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='StudentLogin'">
+                <app-student-login></app-student-login>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='Trash'">
+                <app-trash></app-trash>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='FeeCollection'">
+                <app-fee-collection></app-fee-collection>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='Attendance'">
+                <app-attendance></app-attendance>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='Examinations'">
+                <app-examinations></app-examinations>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='EmployeeDirectory'">
+                <app-employee-directory></app-employee-directory>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='EmployeeAttendance'">
+                <app-employee-attendance></app-employee-attendance>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='EmployeeIDCard'">
+                <app-employee-id-card></app-employee-id-card>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='LeaveRequest'">
+                <app-leave-request></app-leave-request>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='LeaveType'">
+                <app-leave-type></app-leave-type>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='Department'">
+                <app-department></app-department>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='Designation'">
+                <app-designation></app-designation>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='Payroll'">
+                <app-payroll></app-payroll>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='AddIncome'">
+                <app-add-income></app-add-income>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='SetupIncomeHead'">
+                <app-steup-income-head></app-steup-income-head>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='AddExpense'">
+                <app-add-expense></app-add-expense>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='SetupExpenseHead'">
+                <app-steup-expense-head></app-steup-expense-head>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='NoticeBoard'">
+                <app-notice-board></app-notice-board>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='SMSTemplate'">
+                <app-sms-template></app-sms-template>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='EmailTemplate'">
+                <app-email-template></app-email-template>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='ContentType'">
+                <app-content-type></app-content-type>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='UploadContent'">
+                <app-share-content></app-share-content>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='VideoTutuorial'">
+                <app-video-tutorial></app-video-tutorial>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='Billing&Account'">
+                <app-billing></app-billing>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='Profile'">
+                <app-profile></app-profile>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='SiteSettings'">
+                <app-site-settings></app-site-settings>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='SidebarMenu'">
+                <app-sidebar-menu></app-sidebar-menu>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='AddCourse'">
+                <app-course></app-course>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='Student'">
+                <app-student></app-student>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='adminprofile'">
+                <app-admin-profile></app-admin-profile>
+            </ng-container>
+
+
+            <ng-container *ngIf="myroute=='Test'">
+                <app-create-test></app-create-test>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='Settings'">
+                <app-settings></app-settings>
+
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='about'">
+                <app-aboutus></app-aboutus>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='certificate'">
+                <app-certificate></app-certificate>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='coursecategory'">
+                <app-course-category></app-course-category>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='courselist'">
+                <app-course-list></app-course-list>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='coursevideo'">
+                <app-course></app-course>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='instructoroverviews'">
+                <app-instructor-overviews></app-instructor-overviews>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='instructorlist'">
+                <app-instructor-list></app-instructor-list>
+            </ng-container>
+
+
+            <ng-container *ngIf="myroute=='instructordetails'">
+                <app-instructor-details></app-instructor-details>
+            </ng-container>
+
+
+            <ng-container *ngIf="myroute=='instructorpayment'">
+                <app-instructor-payment></app-instructor-payment>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='student'">
+                <app-student></app-student>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='studentenroll'">
+                <app-enroll-student></app-enroll-student>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='enroll_list'">
+                <app-enrollment-list></app-enrollment-list>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='invoicelist'">
+                <app-invoice-list></app-invoice-list>
+
+            </ng-container>
+
+
+            <ng-container *ngIf="myroute=='invoicehistroy'">
+                <app-invoicepayment-details></app-invoicepayment-details>
+            </ng-container>
+
+
+            <!-- export component load  -->
+            <ng-container *ngIf="myroute=='liveclass'">
+                <app-live-class></app-live-class>
+            </ng-container>
+
+            <ng-container *ngIf="myroute=='profile'">
+                <app-admin-profile></app-admin-profile>
+            </ng-container>
+
+ 
+             <ng-container *ngIf="myroute=='schedule'">
+             <app-schedule></app-schedule>
+             </ng-container>
+ 
+             <ng-container *ngIf="myroute=='quizzes'">
+                 <app-quizzes></app-quizzes>
+             </ng-container>
+ 
+             <ng-container *ngIf="myroute=='exams'">
+                 <app-exams></app-exams>
+             </ng-container>
+ 
+             <ng-container *ngIf="myroute=='assignment'">
+                 <app-assignments></app-assignments>
+             </ng-container>
+             
+             <ng-container *ngIf="myroute=='batches'">
+                 <app-batches></app-batches>
+             </ng-container>
+ 
+             <ng-container *ngIf="myroute=='doubts'">
+                 <app-doubts></app-doubts>
+             </ng-container>
+ 
+             <ng-container *ngIf="myroute=='student-profile'">
+                 <app-student-profile></app-student-profile>
+             </ng-container>
+ 
+
+
+
+        </mat-drawer-content>
+    </mat-drawer-container>
+
+
+</div>

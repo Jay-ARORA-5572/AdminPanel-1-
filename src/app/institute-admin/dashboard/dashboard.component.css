@@ -1,0 +1,360 @@
+
+/* ------------- -New UI ---------------------- */
+
+
+#main{
+    width: 100%;
+    height: 97%;
+    background-color: #f5f6fa;
+}
+
+
+.dashboard-header {
+    background-color: #f8f9fa;
+    padding: 10px;
+    width: 97.5%;
+    margin: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-section h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.title-section p {
+    margin: 5px 0 0 0;
+    font-size: 16px;
+    color: #6c757d;
+}
+
+.buttons-section {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.reports-btn {
+  background-color: #0D1046;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: large;
+}
+
+
+/* drop down button  */
+
+.p-dropdown .p-dropdown-label {
+    display: flex;
+    align-items: center;
+  }
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .buttons-section {
+        flex-direction: column;
+        width:28%;
+        gap: 10px;
+    }
+
+    .date-filter,
+    .reports-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* 2nd graph-section  */
+
+.graph-section {
+    padding: 10px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.dashboard {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+}
+
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+  }
+
+  .card1 {
+    background: #fff !important;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 35%;
+  }
+
+  .card-header {
+    margin-bottom: 20px;
+  }
+
+  .card-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+
+  .card-header p {
+    color: #888;
+    margin: 5px 0 0;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+  .statistics {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-item h1 {
+    margin: 0;
+    font-size: 2em;
+  }
+
+  .stat-item p {
+    margin: 5px 0 0;
+    color: #888;
+  }
+
+  .stat-item .increase {
+    color: green;
+  }
+
+  .stat-item .decrease {
+    color: red;
+  }
+
+  .category {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .category-label {
+    margin-bottom: 5px;
+  }
+  
+
+
+  /* 3rd section   */
+
+
+  .dashboard-container3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 10px; */
+  }
+  
+  .card-container3 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .card3 {
+    background: #fff !important;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    /* min-width: 300px;
+    max-width: 700px; */
+    width: 25.7vw;
+    margin: 10px;
+  }
+  
+  .card-header3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 95%;
+  }
+  
+  .course-list, .instructor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .course-item, .instructor-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .course-info, .instructor-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .course-icon, .instructor-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .course-title, .instructor-name {
+    font-weight: bold;
+  }
+  
+  .course-price, .instructor-email {
+    color: #888;
+  }
+  
+  .course-sales, .instructor-rating {
+    font-weight: bold;
+  }
+  
+
+
+.support-list .support-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .support-icon img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+  }
+  
+  .support-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .support-name {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .support-message {
+    color: #666;
+  }
+  
+  .support-time {
+    font-size: 12px;
+    color: #999;
+  }
+
+
+.view-all {
+    cursor: pointer;
+    color: #007bff;
+  }
+  
+
+  @media (max-width: 768px) {
+    .card-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      min-width: 100%;
+    }
+  }
+  
+
+
+/*  4th section */
+
+.buttons-section1{
+    width: 100%;
+    padding: 10px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.dashboard2 {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    /* justify-content: space-around; */
+    gap: 10px;
+    padding: 10px;
+}
+.card-body4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+.card2 {
+    background: #fff !important;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 57%;
+  }
+
+
+.card4 {
+    background: #fff !important;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 40%;
+  }
+
+#chart4{
+    width: 90%;
+}
+
+#donutchart{
+  width: 100%;
+}

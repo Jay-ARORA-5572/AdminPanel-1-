@@ -1,0 +1,81 @@
+<div id="main">
+
+    <section class="shadow-3 border-round-sm">
+
+        <!-- Top header  -->
+        <div class="courses-header">
+            <div class="course-info">
+                <h2>Courses</h2>
+                <p>You have total 20 Courses.</p>
+            </div>
+            <div class="course-actions">
+                <div class="card flex justify-content-center">
+                    <p-dropdown 
+                        [options]="status" 
+                        [(ngModel)]="selectedStatus" 
+                        optionLabel="OngoingStatus"
+                        placeholder="Filtered By" />
+                </div>
+                <button class="login" mat-raised-button (click)="addcourse()">+ Add Course </button>
+            </div>
+        </div>
+        <!-- Top header  -->
+    </section>
+        
+    <section class="shadow-3 border-round-sm">
+        <div class="table-container">
+            <p-table [value]="courses" [paginator]="true" [rows]="rows" [first]="first" (onPage)="onPageChange($event)">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th> <p-checkbox [(ngModel)]="checkedall" [binary]="true" inputId="binary" /></th>
+                        <th>Badge</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Instructor</th>
+                        <th>Lesson</th>
+                        <th>Enrolment</th>
+                        <th>Status</th>
+                        <th>Price</th>
+                        <th>Deadline</th>
+                        <th>Action</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-course>
+                    <tr>
+                        <td> <p-checkbox [(ngModel)]="checkedone" [binary]="true" inputId="binary" /></td>
+                        <td data-label="Badge"><span class="course-badge" [ngClass]="course.badgeClass">{{ course.badge}}</span></td>
+                        <td data-label="Name">{{ course.name }}</td>
+                        <td data-label="Category">{{ course.category }}</td>
+                        <td data-label="Instructor">{{ course.instructor }}</td>
+                        <td data-label="Lesson">{{ course.lesson }}</td>
+                        <td data-label="Enrolment">{{ course.enroleStudent }}</td>
+
+                        <td data-label="Status"><span class="status" [ngClass]="course.statusClass">{{ course.status}}</span></td>
+                        <td data-label="Price">{{ course.price }}</td>
+                        <td data-label="Deadline">{{ course.deadline }}</td>
+                        <td>
+                            <button class="actionicon" pButton type="button" icon="pi pi-ellipsis-h"
+                                (click)="op.toggle($event)"></button>
+    
+                            <p-overlayPanel #op>
+                                <div class="menu">
+                                    <div class="menu-item" (click)="EditCourse()">
+                                        <button class="actioniconover"  (click)="selectbtn(op)" label="Edit Course" pButton type="button"
+                                            icon="pi pi-file-edit"></button>
+                                    </div>
+                                    
+                                    <div class="menu-item" (click)="DeleteCourse()">
+                                        <button class="actioniconover" (click)="selectbtn(op)" label="Delete Course" pButton type="button"
+                                            icon="pi pi-trash"></button>
+                                    </div>
+                                    
+                                </div>
+                            </p-overlayPanel>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </section> 
+
+</div>

@@ -1,0 +1,324 @@
+.quiz-result-details-container {
+  padding: 20px;
+  min-width: 700px;
+  margin: 0 auto;
+  max-height: 676px;
+}
+
+.header i.pi {
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+}
+
+.header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.p-dialog-title {
+  font-weight: bold;
+}
+
+.result {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+}
+
+
+.result-declaration {
+  color: #9c9c9c;
+  font-size: 14px;
+  border-radius: 5px;
+  background-color: #ECF2FF;
+  padding: 10px;
+}
+
+.student-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.student-info {
+  flex-grow: 1;
+}
+
+.student-info h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+#view-profile {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+  text-align: center;
+}
+
+.quiz-info {
+  margin-bottom: 20px;
+}
+.description{
+  font-size: 1.1rem;
+  font-weight: 500;
+
+}
+
+.quiz-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.quiz-meta p {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #989898;
+  font-weight: 400;
+  line-height: 19.36px;
+  padding: 5px;
+}
+.quiz-meta i{
+  margin-right: 5px;
+}
+
+.status {
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.status-pass {
+  background-color: #e6ffe6 !important;
+  color: #28a745 !important;
+}
+
+.status-fail {
+  background-color: #ffe6e6 !important;
+  color: #dc3545 !important;
+}
+
+.course-info p {
+  margin: 0;
+}
+
+/* .actions {
+  display: flex;
+  gap: 10px;
+} */
+
+.actions  {
+    display: flex;
+    gap: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    overflow: hidden;
+    width: fit-content;
+}
+
+/* Base Button Styles */
+.details-button {
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    color: #333;
+    
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    font-size: 0.95rem;
+}
+.details-button{
+  background-color: #EEEFF9;
+  color: #7E7E7E;
+}
+
+/* Hover and Focus States for All Buttons */
+
+.details-button:focus {
+    background-color:#0D1046;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Active State for Selected Filter Button */
+.details-button.active {
+    background-color:  #0D1046 !important;
+    color:  #fff !important; 
+}
+
+
+/* .details-button.active:hover,
+.details-button.active:focus {
+    background-color:  #0D1046; 
+    color: #fff;
+} */
+
+
+
+
+#batch {
+  border: 2px solid #D3D3D3;
+  border-radius: 5px;
+  text-align: center;
+  
+}
+
+/* -----------------------------Quiz Container Css */
+.quiz-container {
+  font-family: Arial, sans-serif;
+  max-height: 250px;
+  overflow-y: auto;
+  width: 50%;
+  margin-top: 15px;
+}
+
+.quiz-container h2{
+  text-align: start;
+  margin: 15px 0 15px 0;
+
+}
+.quiz-info {
+  margin-bottom: 20px;
+}
+
+.questions-count {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.passing-percentage {
+  
+  align-items: center;
+  gap: 10px;
+}
+.peracentage-value{
+  width: 97% !important;
+}
+
+
+
+.percentage-value {
+  font-size: 14px;
+  color: #1a73e8;
+  
+}
+
+.quiz-schedule {
+  margin-top: 20px;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+
+.sliders{
+
+  margin: 0 auto;
+  padding: 5px;
+ 
+ 
+}
+.sliders p{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19.36px;
+  color: #000000;
+  margin-top: 10px;
+}
+
+.schedule {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-item{
+  border-radius: 5px;
+  padding: 8px;
+  background-color:  #EDEDF5;
+
+
+}
+
+.rules-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.rules-list li {
+  margin-bottom: 10px;
+}
+
+/* --------------------------------------response button content css----------------------------------- */
+
+.question-container {
+  margin-bottom: 20px;
+}
+
+.question-container h3{
+  font-size: 0.8rem;
+  font-weight: 450;
+}
+
+.option-container {
+  margin: 5px 0;
+}
+
+.option-button {
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.option-button.selected {
+  background-color: lightblue;
+  color: black;
+}
+
+.option-button.correct {
+  background-color: lightgreen;
+  color: black;
+}
+
+.option-button:hover {
+  background-color: #f1f1f1;
+}
+
+.quiz-result-details-container i.pi{
+  cursor: pointer;
+}

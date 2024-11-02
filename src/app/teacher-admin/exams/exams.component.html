@@ -1,0 +1,73 @@
+<div class="Exam-container">
+    <!-- -------------------navbar---------------- -->
+    <div class="bar">
+        <div class="Exam-header">
+            <h1>Exams</h1>
+        </div>
+        <div class="Exam-tabs">
+            <ul>
+                <li [class.active]="activeTab === 'scheduled'" (click)="setActiveTab('scheduled')">Scheduled Exams
+                </li>
+                <li [class.active]="activeTab === 'history'" (click)="setActiveTab('history')">History</li>
+            </ul>
+            <button class="add-Exam-btn" (click)="addExam()">+ Add Exam</button>
+        </div>
+    </div>
+    <!-- ----------------------Scheduled Quizzes contant-------------------------- -->
+     
+    <div *ngIf="activeTab === 'scheduled'" class="Exam-card">
+        <h3>{{ Exam.title }}</h3>
+        <p>Course : {{ Exam.course }}</p>
+        <p>Subject : {{ Exam.subject }}</p>
+        <div class="Exam-info">
+            <div class="Exam-date-time">
+                <span class="Exam-date"><i class="pi pi-calendar"></i> {{ Exam.date }}</span>
+                <span class="Exam-time"><i class="pi pi-chevron-circle-left"></i> {{ Exam.time }}</span>
+            </div>
+            <div class="Exam-stats">
+                <p>Questions : {{ Exam.questions }}</p>
+                <p>Passing Percentage: <span class="pass-percentage">{{ Exam.passingPercentage }}%</span></p>
+                <div class="progress-bar">
+                    <div class="progress" [ngStyle]="{'width.%': Exam.passingPercentage}"></div>
+                </div>
+            </div>
+        </div>
+        <button class="view-details-btn" (click)="viewDetails()">View Details</button>
+    </div>
+    
+   
+ 
+    <!-- ---------------------- History contant-------------------------- -->
+    <div *ngIf="activeTab === 'history'" class="Exam-card-container">
+      <div *ngFor="let Exam of history" class="Exam-card">
+        <h3>{{ Exam.title }}</h3>
+        <p>Course : {{ Exam.course }}</p>
+        <p>Subject : {{ Exam.subject }}</p>
+        <div class="Exam-info">
+          <div class="Exam-date-time">
+            <span class="Exam-date"><i class="pi pi-calendar"></i> {{ Exam.date }}</span>
+            <span class="Exam-time"><i class="pi pi-chevron-circle-left"></i> {{ Exam.time }}</span>
+          </div>
+          <div class="Exam">
+            <p class="Exam-question">Questions : {{ Exam.questions }}</p>
+            <p>Passing Percentage: <span class="pass-percentage">{{ Exam.passingPercentage }}%</span></p>
+            <div class="progress-bar">
+              <div class="progress" [ngStyle]="{'width.%': Exam.passingPercentage}"></div>
+            </div>
+          </div>
+        </div>
+        <button 
+          class="view-details-btn" 
+          [ngClass]="{
+            'declare-result-btn': !Exam.resultDeclared, 
+            'view-result-btn': Exam.resultDeclared
+          }" 
+          (click)="Exam.resultDeclared ? viewResult() : declareResult()">
+          {{ Exam.resultDeclared ? 'View Results' : 'Declare Result' }}
+        </button>
+        
+      </div>     
+    </div>
+    
+</div>
+      

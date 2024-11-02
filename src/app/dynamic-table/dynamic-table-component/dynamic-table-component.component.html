@@ -1,0 +1,47 @@
+<div id="maintablediv">
+    
+    <div id="tablediv">
+        <table class="table" [ngStyle]="{'font-family': allFontFamily, 'font-size': allFontSize}">
+            <thead [ngStyle]="{'background-color': thBackgroundColor, 'color': thTextColor}">
+                <tr [ngStyle]="{'height.px': allrowHeight}">
+                    <th *ngIf="isCkeck"><input type="checkbox" class="check2" name="" id="allcheck" (click)="allchecked($event)" ng-model="all"></th>
+                    <th *ngIf="isSerialno">S. NO.</th>
+                    <th *ngFor="let headings of iscolumn">{{headings.show|uppercase}}</th>
+                    <th *ngIf="showAction">ACTION</th>
+                </tr>
+            </thead>
+
+            <tbody [ngStyle]="{'color': allTextColor}">
+                 <tr *ngFor="let data of items| paginate : {itemsPerPage: items1, currentPage: p };let i = index" [ngStyle]="{'height.px': allrowHeight}">
+                    <td *ngIf="isCkeck" class="checkone"><input type="checkbox" name="" (click)="singlechecked($event,data)" [checked]="checkalltoggle"></td>
+                    <td *ngIf="isSerialno">{{items1*(p-1)+i+1}}</td>
+                    <td *ngFor="let headings1 of iscolumn">{{data[headings1.key]}}</td>
+                    <td *ngIf="showAction">
+                        <div class="actiondiv">
+                            <mat-icon title="View" *ngIf="isView" (click)="callview(data)">open_in_new</mat-icon>
+                            <span *ngIf="isEdit" class="editdiv" style="border: 1px solid; border-radius: 5px;"><mat-icon icon title="Edit">edit</mat-icon></span>
+                            <mat-icon *ngIf="isDelete" icon title="Delete">delete</mat-icon>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            
+        </table>
+
+        <div class="paginationdiv">
+            <div style="margin-top: 14px">
+                <span>Items per page </span>
+                <select [(ngModel)]="items1" class="selectbox">
+                    <option *ngFor="let itm of itemperpage" [ngValue]="itm">
+                        {{ itm }}
+                    </option>
+                </select>
+            </div>
+            <div>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+
+   
+</div>

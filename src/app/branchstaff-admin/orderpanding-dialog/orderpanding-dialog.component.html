@@ -1,0 +1,74 @@
+<div id="main">
+
+    <!-- <section class="shadow-3 border-round-sm">
+
+        Top header 
+        <div class="courses-header">
+            <div class="course-info">
+                <h2>Courses</h2>
+                <p>You have total 20 Courses.</p>
+            </div>
+            <div class="course-actions">
+                <div class="card flex justify-content-center">
+                    <p-dropdown 
+                        [options]="status" 
+                        [(ngModel)]="selectedStatus" 
+                        optionLabel="OngoingStatus"
+                        placeholder="Filtered By" />
+                </div>
+                <button class="login" mat-raised-button >+ Add Skills </button>
+            </div>
+        </div>
+        Top header 
+    </section> -->
+
+    <section class="shadow-3 border-round-sm">
+        <!-- Assuming you are using PrimeNG for pagination -->
+        <div class="table-container">
+            <p-table [value]="courses" [paginator]="true" [rows]="rows" [first]="first" (onPage)="onPageChange($event)">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>User Name</th>
+                        <th>Post Name</th>
+                        <th>Order Status</th>
+                        <th>Payment</th>
+                        <th>Timing</th>
+                        <th>Quary</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-course>
+                    <tr>
+                        
+                        <td data-label="Name">{{ course.name }}</td>
+                        <td data-label="Post Name">{{ course.postName }}</td>
+
+                        <td data-label="Order Status"><span class="status" [ngClass]="course.statusClass">{{ course.status}}</span></td>
+                        <td data-label="Payment">{{ course.payment }}</td>
+                        <td data-label="Timing">{{ course.timing }}</td>
+                        <td>
+                            <button class="Quary" pButton type="button" icon="pi pi-ellipsis-h"
+                                (click)="op.toggle($event)"></button>
+    
+                            <!-- Overlay Panel -->
+                            <p-overlayPanel #op>
+                                <div class="menu">
+                                    <div class="menu-item" >
+                                        <!-- <i class="pi pi-eye"></i> View Details -->
+                                        <button class="actioniconover"  (click)="selectbtn()"  label="View All" pButton type="button"
+                                            ><mat-icon>remove_red_eye</mat-icon></button>
+                                    </div>
+                                    
+                                    <!-- <div class="menu-item" (click)="DeleteCourse()">
+                                      
+                                        <button class="actioniconover" (click)="selectbtn(op)" label="Delete Course" pButton type="button"
+                                            icon="pi pi-trash"></button>
+                                    </div> -->
+                                </div>
+                            </p-overlayPanel>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </section>
+</div>

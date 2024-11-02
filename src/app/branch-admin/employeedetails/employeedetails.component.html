@@ -1,0 +1,94 @@
+<div id="main">
+
+  <!-- Top header  -->
+  <div class="p-dialog-header">
+    <span class="p-dialog-title">Add Staff</span>
+    <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+</div>
+  <!-- Top header  -->
+
+  <!-- 2nd container -->
+  <div class="header">
+    <div class="student-info">
+      <img class="avatar" src="../assets/student.jpeg" alt="Student Avatar">
+      <!-- <div class="details">
+            <h2>{{ studentName }}</h2>
+            <p>Student ID: {{ studentID }}</p>
+            <p>Gender: {{ gender }}</p>
+        </div> -->
+    </div>
+    <div class="attendance">
+      <div class="details">
+        <p>Name: {{ studentID }}</p>
+        <p>User Name: {{ studentID }}</p>
+        <p>Phone No.: {{ gender }}</p>
+        <p>Aadhaar No.: {{ gender }}</p>
+        <p>Address: {{ gender }}</p>
+
+      </div>
+    </div>
+    <div class="attendance">
+      <div class="details">
+        <p>Employee User Id: {{ gender }}</p>
+        <p>Email: {{ gender }}</p>
+        <p>Pan No.: {{ gender }}</p>
+        <p>Account No.: {{ gender }}</p>
+
+      </div>
+    </div>
+  </div>
+  <!-- <div class="attendance">
+    <p id="attendance">Attendance</p>
+    <div class="p-attendance">
+        <h1>{{ attendancePercentage }}%</h1>
+                <p>{{ attendanceRatio }}</p>
+    </div>
+    <!-- 2nd container -->
+
+  <!-- 3rd container -->
+
+  <section class="shadow-3 border-round-sm">
+    <p-table [value]="instructors" responsiveLayout="scroll" [paginator]="true" [rows]="rows" [first]="first"
+      (onPageChange)="onPageChange($event)">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Attendance</th>
+          <th>Leave</th>
+          <th>Complete Task</th>
+          <th>Pending Task</th>
+          <th>Issue Task</th>
+          <th>Account Status</th>
+          <th>Earn Point</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-user>
+        <tr class="table-row">
+          <td>
+            <div class="flex p-ai-center">
+              {{user.attendancePercentage}}
+            </div>
+          </td>
+          <td>
+            <div class="p-d-flex p-jc-between p-ai-center" style="height: 100%;">
+              <span>{{user.leave}}</span>
+            </div>
+          </td>
+          <td>{{user.completeTask}}</td>
+          <td>{{user.completeTask}}</td>
+          <td>{{user.pendingTask}}</td>
+          <td>
+            <span
+              [ngClass]="{'text-green': user.status === 'Active', 'text-yellow': user.status === 'Inactive', 'text-red': user.status === 'Suspended'}">
+              {{user.status}}
+            </span>
+          </td>
+          <td></td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+  </section>
+
+
+  <!-- 3rd-container -->
+</div>

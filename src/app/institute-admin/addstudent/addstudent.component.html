@@ -1,0 +1,88 @@
+<div class="p-dialog-header">
+  <span class="p-dialog-title">Add Student</span>
+  <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+</div>
+
+<p-tabView>
+  <p-tabPanel header="Student Information">
+    <div class="p-component p-fluid">
+      <div class="p-dialog-content">
+        <div class="form-container">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input id="firstName" class="mt-2" type="text" pInputText placeholder="First name" />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" class="mt-2" type="text" pInputText placeholder="Last name" />
+          </div>
+          <div class="form-group">
+            <label for="address1" class="mb-2">Course to Enroll</label>
+            <p-dropdown [options]="courses" [(ngModel)]="courseSelect" placeholder="Select a courses"
+              class="custom-input"></p-dropdown>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input id="email" class="mt-2" type="text" pInputText placeholder="Email Address" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input id="phone" class="mt-2" type="text" pInputText placeholder="+91" />
+          </div>
+
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input id="dob" class="mt-2" type="text" pInputText placeholder="dd-mm-yyyy" />
+          </div>
+
+        </div>
+      </div>
+      <div class="p-dialog-footer mt-3">
+        <button pButton pRipple label="Add Student" class="savebtn"></button>
+        <button pButton pRipple label="Cancel" class="Cancel" (click)="onCancelClick()"></button>
+      </div>
+    </div>
+
+
+  </p-tabPanel>
+
+
+  <p-tabPanel header="Address">
+    <div class="p-component p-fluid">
+      <div class="p-dialog-content">
+        <div class="form-container">
+          <div class="form-group">
+            <label for="firstName">Address Line 1</label>
+            <input id="address" class="mt-2" type="text" pInputText placeholder="Enter the address 1" />
+          </div>
+
+          <div class="form-group">
+            <label for="firstName">Address Line 2</label>
+            <input id="address" class="mt-2" type="text" pInputText />
+          </div>
+
+
+          <div class="form-group">
+            <label for="address1" class="mb-2">State</label>
+            <p-dropdown [options]="states" [(ngModel)]="selectedState"  [showClear]="true"  placeholder="Select a state"
+              class="custom-input"></p-dropdown>
+          </div>
+
+
+          <div class="form-group">
+            <label for="firstName">Country</label>
+            <input id="address" class="mt-2" type="text" pInputText placeholder="India" />
+          </div>
+
+
+        </div>
+      </div>
+      <div class="p-dialog-footer mt-5">
+        <button pButton pRipple label="Add Student" class="savebtn"></button>
+        <button pButton pRipple label="Cancel" class="Cancel" (click)="onCancelClick()"></button>
+      </div>
+    </div>
+
+  </p-tabPanel>
+</p-tabView>

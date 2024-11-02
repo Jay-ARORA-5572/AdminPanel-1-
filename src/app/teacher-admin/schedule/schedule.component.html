@@ -1,0 +1,61 @@
+<!-- app.component.html -->
+<div class="main-container">
+    <div class="schedule-board">
+      <div class="header">
+        <h1>My Schedule</h1>
+        <div class="date">
+          <i class="pi pi-calendar"></i>
+          <span>09 - 01 - 2023</span>
+        </div>
+      </div>
+  
+      <div class="columns">
+        <div class="column not-started">
+          <div class="column-header">Not Started</div>
+          <div *ngFor="let task of notStartedTasks" class="task-card">
+            <p>{{ task }}</p>
+            <div class="view-details">
+              <a href="#" (click)="viewDetails($event)">View Details</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="column ongoing">
+          <div class="column-header">Ongoing</div>
+          <div *ngFor="let task of ongoingTasks" class="task-card">
+            <p>{{ task }}</p>
+            <div class="view-details">
+              <a href="#" (click)="viewDetails($event)">View Details</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="column completed">
+          <div class="column-header">Completed</div>
+          <div *ngFor="let task of completedTasks" class="task-card">
+            <p>{{ task }}</p>
+            <div class="view-details">
+              <a href="#" (click)="viewDetails($event)">View Details</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="column missed">
+          <div class="column-header">Missed</div>
+          <div class="task-card">
+            <p>Any task beyond Due Date</p>
+            <p>Nothing to show</p>
+          </div>
+          <div class="task-card">
+            <p>Any task beyond Due Date</p>
+            <p>Nothing to show</p>
+          </div>
+          <div class="task-card">
+            <p>Any task beyond Due Date</p>
+            <p>Nothing to show</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

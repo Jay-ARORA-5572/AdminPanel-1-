@@ -1,0 +1,54 @@
+#outer-container {
+    /* border: 2px solid red; */
+    width: 100%;
+    height: 97%;
+}
+
+
+.custom-card{
+    width: 98%;
+    padding: 1%;
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+}
+
+/* List of Institute */
+
+#heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    align-items: center;
+}
+
+.title {
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.2rem;
+    text-align: left;
+    margin: 4%;
+    width: 100%;
+}
+
+
+#right {
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+.btn1 {
+    background-color:#0D1046 !important;
+    color: #FFFFFF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+    text-align: center;
+    width: 100%;
+}

@@ -1,0 +1,120 @@
+/* header */
+
+.courses-header {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 16px 10px 16px;
+    margin-top: 1.4rem;
+  }
+  
+  .course-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .course-info h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+    color: #000;
+  }
+  
+  .course-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .course-actions p-dropdown {
+    margin-right: 10px;
+  }
+  
+  .login {
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #0D1046 !important;
+    color: #fff !important;
+    border: 1px solid #0D1046;
+    height: 74%;
+    padding: 0.8rem;
+  }
+
+  /* containers */
+
+.stats-dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+    margin-top: 2%;
+  }
+  
+  .stat-card {
+    width: calc(25% - 16px);
+    min-width: 250px;
+  }
+  
+  .card-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  
+  h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .details-link {
+    color: #9b59b6;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  .percentage {
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .positive {
+    background-color: #e6fff1;
+    color: #27ae60;
+  }
+  
+  .negative {
+    background-color: #ffe6e6;
+    color: #e74c3c;
+  }
+  
+  
+  ::ng-deep .p-card {
+    height: 155px !important;
+  }
+  
+  ::ng-deep .p-card .p-card-body {
+    padding: .6rem !important;
+  }
+  
+  @media (max-width: 768px) {
+    .stat-card {
+      width: calc(50% - 16px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .stat-card {
+      width: 100%;
+    }
+  }
+  
+  /* containers */

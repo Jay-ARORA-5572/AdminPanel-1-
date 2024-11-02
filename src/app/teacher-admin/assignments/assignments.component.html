@@ -1,0 +1,71 @@
+<div class="Assignment-container">
+    <!-- -------------------navbar---------------- -->
+    <div class="bar">
+        <div class="Assignment-header">
+            <h1>Assignments</h1>
+        </div>
+        <div class="Assignment-tabs">
+            <ul>
+                <li [class.active]="activeTab === 'scheduled'" (click)="setActiveTab('scheduled')">Scheduled Assignments
+                </li>
+                <li [class.active]="activeTab === 'history'" (click)="setActiveTab('history')">History</li>
+            </ul>
+            <button class="add-Assignment-btn" (click)="addAssignment()">+ Add Assignment</button>
+        </div>
+    </div>
+    <!-- ----------------------Scheduled Quizzes contant-------------------------- -->
+     
+    <div *ngIf="activeTab === 'scheduled'" class="Assignment-card">
+        <h3>{{ Assignment.title }}</h3>
+        <p>Course : {{ Assignment.course }}</p>
+        <p>Subject : {{ Assignment.subject }}</p>
+        <div class="Assignment-info">
+            <div class="Assignment-date-time">
+                <span class="Assignment-date"><i class="pi pi-calendar"></i> {{ Assignment.date }}</span>
+                <span class="Assignment-time"><i class="pi pi-chevron-circle-left"></i> {{ Assignment.time }}</span>
+            </div>
+            <div class="Assignment-stats">
+                <p>Questions : {{ Assignment.questions }}</p>
+                <p>Passing Percentage: <span class="pass-percentage">{{ Assignment.passingPercentage }}%</span></p>
+                <div class="progress-bar">
+                    <div class="progress" [ngStyle]="{'width.%': Assignment.passingPercentage}"></div>
+                </div>
+            </div>
+        </div>
+        <button class="view-details-btn" (click)="viewDetails()">View Details</button>
+    </div>
+    
+   
+ 
+    <!-- ---------------------- History contant-------------------------- -->
+    <div *ngIf="activeTab === 'history'" class="Assignment-card-container">
+        <div *ngFor="let Assignment of history" class="Assignment-card">
+          <h3>{{ Assignment.title }}</h3>
+          <p>Course : {{ Assignment.course }}</p>
+          <p>Subject : {{ Assignment.subject }}</p>
+          <div class="Assignment-info">
+            <div class="Assignment-date-time">
+              <span class="Assignment-date"><i class="pi pi-calendar"></i> {{ Assignment.date }}</span>
+              <span class="Assignment-time"><i class="pi pi-chevron-circle-left"></i> {{ Assignment.time }}</span>
+            </div>
+            <div class="Assignment">
+              <p class="Assignment-question">Questions : {{ Assignment.questions }}</p>
+              <p>Passing Percentage: <span class="pass-percentage">{{ Assignment.passingPercentage }}%</span></p>
+              <div class="progress-bar">
+                <div class="progress" [ngStyle]="{'width.%': Assignment.passingPercentage}"></div>
+              </div>
+            </div>
+          </div>
+          <button 
+            class="view-details-btn" 
+            [ngClass]="{
+              'declare-result-btn': !Assignment.resultDeclared, 
+              'view-result-btn': Assignment.resultDeclared
+            }" 
+            (click)="Assignment.resultDeclared ? viewResult() : declareResult()">
+            {{ Assignment.resultDeclared ? 'View Results' : 'Declare Result' }}
+          </button>
+        </div>     
+      </div>
+      </div>
+      

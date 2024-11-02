@@ -1,0 +1,140 @@
+<div class="p-dialog p-component p-fluid">
+
+    <!-- top-header -->
+    <div class="p-dialog-header">
+        <span class="p-dialog-title">Add Parcel</span>
+        <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+    </div>
+
+    <!-- main-content -->
+    <div class="p-dialog-content">
+        <div class="form-row p-field mt-3">
+            <div class="form-field">
+                <label for="coursesubtitle" class="bold">Name :</label>
+                <br>
+                <!-- <p-dropdown [options]="courses" name="coursesubtitle" id="coursesubtitle"
+                    [(ngModel)]="selectedCourseSubtitle" placeholder="Course Subtitle"
+                    [editable]="true" class="custom-input" required>
+                </p-dropdown> -->
+                <!-- <input pInputText id="username" aria-describedby="username-help" class="custom-input"
+                    [(ngModel)]="value" /> -->
+                <input pInputText id="username" aria-describedby="username-help" class="custom-input mt-2"
+                    [(ngModel)]="value" />
+                <!-- <div *ngIf="registercourse.submitted && !registercourse.controls['coursesubtitle']?.valid"
+                    class="error">
+                    Course Subtitle is required
+                </div> -->
+            </div>
+
+            <div class="form-field">
+                <label for="instructor" class="bold">Parcel Type :</label>
+                <br>
+                <!-- <p-dropdown [options]="instructors" name="instructor" id="instructor"
+                    [(ngModel)]="selectedInstructor" placeholder="Teacher Name"
+                    [editable]="true" class="custom-input" required>
+                </p-dropdown> -->
+                <input pInputText id="username" aria-describedby="username-help" class="custom-input mt-2"
+                    [(ngModel)]="value" />
+                <!-- <div *ngIf="registercourse.submitted && !registercourse.controls['instructor']?.valid"
+                    class="error">
+                    Instructor is required
+                </div> -->
+            </div>
+        </div>
+        <!-- <div class="p-field mt-2">
+            <label for="categoryName">Important Date :</label>
+            <br>
+            <input id="categoryName" class="mt-2" type="text" pInputText placeholder="dd-mm-yyyy" />
+        </div> -->
+        <div class="form-row p-field mt-3">
+            <div class="form-field">
+                <label for="coursesubtitle" class="bold">Refrence No. :</label>
+                <br>
+                <!-- <p-dropdown [options]="courses" name="coursesubtitle" id="coursesubtitle"
+                    [(ngModel)]="selectedCourseSubtitle" placeholder="Course Subtitle"
+                    [editable]="true" class="custom-input" required>
+                </p-dropdown> -->
+                <!-- <input pInputText id="username" aria-describedby="username-help" class="custom-input"
+                    [(ngModel)]="value" /> -->
+                <input pInputText id="username" aria-describedby="username-help" class="custom-input mt-2"
+                    [(ngModel)]="value" />
+                <!-- <div *ngIf="registercourse.submitted && !registercourse.controls['coursesubtitle']?.valid"
+                    class="error">
+                    Course Subtitle is required
+                </div> -->
+            </div>
+
+            <div class="form-field">
+                <label for="instructor" class="bold">Date :</label>
+                <br>
+                <!-- <p-dropdown [options]="instructors" name="instructor" id="instructor"
+                    [(ngModel)]="selectedInstructor" placeholder="Teacher Name"
+                    [editable]="true" class="custom-input" required>
+                </p-dropdown> -->
+                <input pInputText id="username" aria-describedby="username-help" class="custom-input mt-2"
+                    [(ngModel)]="value" />
+                <!-- <div *ngIf="registercourse.submitted && !registercourse.controls['instructor']?.valid"
+                    class="error">
+                    Instructor is required
+                </div> -->
+            </div>
+        </div>
+        <div class="form-row p-field mt-3">
+            <div class="form-field">
+                <label for="coursesubtitle" class="bold">Address :</label>
+                <br>
+                <!-- <p-dropdown [options]="courses" name="coursesubtitle" id="coursesubtitle"
+                    [(ngModel)]="selectedCourseSubtitle" placeholder="Course Subtitle"
+                    [editable]="true" class="custom-input" required>
+                </p-dropdown> -->
+                <!-- <input pInputText id="username" aria-describedby="username-help" class="custom-input"
+                    [(ngModel)]="value" /> -->
+                <textarea id="description" class="form-control mt-1" placeholder="Write Category Description"
+                    name="description" rows="5" cols="30" pInputTextarea class="custom-width mt-2" required
+                    spellcheck="true">
+                </textarea>
+                <!-- <div *ngIf="registercourse.submitted && !registercourse.controls['coursesubtitle']?.valid"
+                    class="error">
+                    Course Subtitle is required
+                </div> -->
+            </div>
+        </div>
+        <div class="p-field mt-3">
+            <label for="description" class="bold">Notes :</label>
+            <br>
+            <textarea id="description" class="form-control mt-1" placeholder="Write Category Description"
+                name="description" rows="5" cols="30" pInputTextarea class="custom-width mt-2" required
+                spellcheck="true">
+            </textarea>
+        </div>
+        <div class="form-row p-field mt-3">
+            <div class="form-field">
+                <label for="instructor" class="bold">Attach Document :</label>
+                <br>
+                <!-- <p-dropdown [options]="instructors" name="instructor" id="instructor"
+                        [(ngModel)]="selectedInstructor" placeholder="Teacher Name"
+                        [editable]="true" class="custom-input" required>
+                    </p-dropdown> -->
+                <div class="file-upload">
+                    <span class="file-name">No file selected</span>
+                    <label for="fileInput" class="custom-file-upload">
+                        <i class="pi pi-upload"></i> Choose File
+                    </label>
+                    <input type="file" id="fileInput" (change)="onFileSelected($event)" class="custom-file-input"
+                        accept=".png, .jpg, .jpeg, .pdf" multiple>
+                </div>
+                <!-- <div *ngIf="registercourse.submitted && !registercourse.controls['instructor']?.valid"
+                        class="error">
+                        Instructor is required
+                    </div> -->
+            </div>
+        </div>
+        <div class="p-dialog-footer">
+            <div class="form-row">
+                <div class="form-field full-width">
+                    <button type="submit" class="uploadimage" mat-raised-button>Submit Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

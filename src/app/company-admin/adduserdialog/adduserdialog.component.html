@@ -1,0 +1,171 @@
+<div class="container">
+
+    <div id="content">
+        <div class="imagesection">
+            <div class="imgdiv">
+                <img *ngIf="imgsrc" [src]="imgsrc">
+                <img src="../assets/imageupload.png" alt="" *ngIf="!imgsrc">
+            </div>
+            <br>
+            <input hidden (change)="readURL($event)" #fileInput type="file" id="file" accept=".jpg, .jpeg, .png">
+            <button type="button" class="addcourse" mat-raised-button (click)="fileInput.click()">User image</button>
+        </div>
+
+        <div id="inputsection">
+            <div class="allinput">
+                <form #userdata="ngForm" (submit)="adduser(userdata)">
+                    <table>
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Full Name</mat-label>
+                                    <input matInput required name="name" ngModel>
+                                </mat-form-field>
+                            </td>
+                            <td>
+                            
+                                <mat-form-field appearance="outline" class="period">
+                                    <mat-label>Role</mat-label>
+                                    <mat-select [(ngModel)]="selectedRole" (selectionChange)="onRoleChange()" required name="role">
+                                      <mat-option value="admin">Admin</mat-option>
+                                      <mat-option value="institute">Institute</mat-option>
+                                      <mat-option value="branch">Branch</mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+
+                                <!-- <mat-form-field appearance="outline" class="period">
+                                    <mat-label>Role</mat-label>
+                                    <mat-select required name="role" ngModel>
+                                        <mat-option value="admin">Admin</mat-option>
+                                        <mat-option value="institute">Institute</mat-option>
+                                        <mat-option value="branch">Branch</mat-option> 
+                                        <mat-option value="jobposter">Job Poster</mat-option>
+                                        <mat-option value="branchstaff">Branch Staff</mat-option>
+                                        <mat-option value="franchise">Franchise</mat-option>
+                                    </mat-select>
+                                </mat-form-field> -->
+
+                            </td>
+                        </tr>
+
+                        <tr *ngIf="showdropdownins">
+                            <td>
+                                <mat-form-field appearance="outline" class="period">
+                                    <mat-label>Institute Onwer</mat-label>
+                                    <mat-select required ngModel name="rolekey"  (selectionChange)="onInstitutionChange($event)">
+                                        <mat-option *ngFor="let role of dropdowndata" value={{role.institutionId}} >{{role.instituionname}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+
+                        <tr *ngIf="showdropdownbra">
+                            <td>
+                                <mat-form-field appearance="outline" class="period">
+                                    <mat-label>Branch Onwer</mat-label>
+                                    <mat-select required ngModel name="rolekey"  (selectionChange)="onBranchhange($event)">
+                                        <mat-option *ngFor="let role of dropdowndata" value={{role.branchId}} >{{role.branchName}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Aadhar No.</mat-label>
+                                    <input matInput required name="aadharnumber" ngModel>
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>User Name</mat-label>
+                                    <input matInput required name="username" ngModel>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Enter your password</mat-label>
+                                    <input matInput [type]="hide ? 'password' : 'text'" required name="password"
+                                        ngModel>
+                                    <button mat-icon-button matSuffix (click)="hide = !hide"
+                                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+                                </mat-form-field>
+
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>House No.</mat-label>
+                                    <input matInput required name="housenumber" ngModel>
+                                </mat-form-field>
+
+                            </td>
+                        </tr>
+
+                        
+
+                        <tr>
+                            <td>
+
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Pin Code</mat-label>
+                                    <input matInput required name="zipcode" ngModel>
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Landmark</mat-label>
+                                    <input matInput required name="landmark" ngModel>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>State</mat-label>
+                                    <input matInput required name="state" ngModel>
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>City</mat-label>
+                                    <input matInput required name="city" ngModel>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Mobile No.</mat-label>
+                                    <input matInput required name="mobnum" ngModel>
+                                </mat-form-field>
+
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Email id</mat-label>
+                                    <input matInput required name="emailid" ngModel>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                <button type="button" class="cancel" mat-raised-button
+                                    (click)="onCancelClick()">Cancel</button> &nbsp; &nbsp;
+                                <button class="addcourse" mat-raised-button>Add User</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<p-toast></p-toast>

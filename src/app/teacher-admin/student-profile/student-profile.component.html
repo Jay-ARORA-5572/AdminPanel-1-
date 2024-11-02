@@ -1,0 +1,251 @@
+<div class="student-profile-container">
+    <h1><i class="pi pi-arrow-left"></i> &nbsp; Student Profile</h1>
+    <div class="header">
+        <div class="student-info">
+            <img class="avatar" src="../assets/student.jpeg" alt="Student Avatar">
+            <div class="details">
+                <h2>{{ studentName }}</h2>
+                <p>Student ID: {{ studentID }}</p>
+                <p>Gender: {{ gender }}</p>
+            </div>
+        </div>
+        <div class="attendance">
+            <p id="attendance">Attendance</p>
+            <div class="p-attendance">
+                <h1>{{ attendancePercentage }}%</h1>
+                <p>{{ attendanceRatio }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="-full-card">
+
+        <p-tabView [(activeIndex)]="activeIndex">
+            <!-- ----------------------general content-------------------- -->
+            <p-tabPanel header="General">
+                <div class="content">
+                    <div class="general-info">
+                        <p id="p-course">Course: {{ courseName }}</p>
+                        <p id="p-course">Full name: {{ studentFullName }}</p>
+                        <p>Mother’s name: {{ motherName }}</p>
+                        <p>Father’s name: {{ fatherName }}</p>
+                        <p>Course Start Date: {{ courseStartDate }}</p>
+                        <p>Course End Date: {{ courseEndDate }}</p>
+                    </div>
+
+                    <div class="center-info">
+                        <div class="center-details">
+                            <h2>Center Details</h2>
+                            <p>Pincode: {{ centerPincode }}</p>
+                            <p>District: {{ centerDistrict }}</p>
+                            <p>State: {{ centerState }}</p>
+                            <p>Address: {{ centerAddress }}</p>
+                        </div>
+
+                        <div class="contact-details">
+                            <h2>Center Contact</h2>
+                            <p><i class="pi pi-phone"></i> {{ centerContact }}</p>
+                            <p><i class="pi pi-envelope"></i> {{ centeremail }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ---------------------------------status card---------------------------------- -->
+                <div class="status-cards-container">
+                    <div *ngFor="let card of statusCards" class="status-card">
+                        <h2>{{ card.title }}</h2>
+                        <h3 class="p-title">Total {{ card.title }}: <strong>{{ card.total }}</strong></h3>
+
+                        <p *ngIf="card.attended !== undefined" class="status-text">Attended: <span class="green-text">{{
+                                card.attended }}</span></p>
+                        <p *ngIf="card.missed !== undefined" class="status-text">Missed: <span class="red-text">{{
+                                card.missed }}</span></p>
+
+                        <div *ngIf="card.attempted !== undefined && card.unattempted !== undefined" class="attempted">
+                            <p class="status-text">Attempted: <span class="grey-text">{{ card.attempted }}</span></p>
+                            <p class="status-text">Unattempted: <span class="grey-text">{{ card.unattempted }}</span>
+                            </p>
+                        </div>
+                        <div class="attempted">
+
+                            <p *ngIf="card.passed !== undefined" class="status-text">Passed: <span class="green-text">{{
+                                    card.passed }}</span></p>
+                            <p *ngIf="card.failed !== undefined" class="status-text">Failed: <span class="red-text">{{
+                                    card.failed }}</span></p>
+                        </div>
+
+                        <button class="view-details-btn" (click)="viewDetails(card)"><span>View Details</span></button>
+                    </div>
+                </div>
+
+            </p-tabPanel>
+            <!-- ----------------------------------Quiz content--------------------------------- -->
+            <p-tabPanel header="Quiz">
+                <div class="quiz-summary">
+                    <div class="summary-header">
+                        <p>Total Quizzes: {{ totalQuizzes }}</p>
+                        <p>Attempted: {{ attempted }}</p>
+                        <p>Unattempted: {{ unattempted }}</p>
+                        <p class="status passed">Passed: {{ passed }}</p>
+                        <p class="status failed">Failed: {{ failed }}</p>
+                    </div>
+
+                    <div class="quiz-cards">
+                        <div class="quiz-card" *ngFor="let quiz of quizzes">
+
+                            <p class="quiz-card-header">{{ quiz.title }}</p>
+
+                            <div class="card-body">
+                                <h3>{{ quiz.subject }}</h3>
+                                <div class="quiz-info">
+                                    <p>
+                                        <i class="pi pi-calendar"></i>{{ quiz.date }}
+                                    </p>
+                                    <p>
+                                        <i class="pi pi-chevron-circle-left"></i>{{ quiz.time }}
+                                    </p>
+                                </div>
+                                <div class="percentage">
+                                    <p>Passing Percentage: <span>{{ quiz.passingPercentage }}%</span></p>
+                                    <p>Scored Percentage: <span [ngStyle]="{ color: quiz.scoreColor }">{{
+                                            quiz.scoredPercentage }}%</span><span id="show-status" [ngClass]="{
+                                                    'status-failed': quiz.status === 'Failed',
+                                                    'status-passed': quiz.status === 'Passed',
+                                                    'status-missed': quiz.status === 'Missed'
+                                                  }">
+                                            {{ quiz.status }}
+                                        </span></p>
+
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="details-button" (click)="quizviewDetails(quiz)"><span>View
+                                        Details</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </p-tabPanel>
+            <!-- ----------------------------------Exams content--------------------------------- -->
+            <p-tabPanel header="Exams">
+                <div class="quiz-summary">
+                    <div class="summary-header">
+                        <p>Total Exams: {{ totalexams }}</p>
+                        <p>Attempted: {{ examAttempet }}</p>
+                        <p>Unattempted: {{ examUnattempe }}</p>
+                        <p class="status passed">Passed: {{ examPassed }}</p>
+                        <p class="status failed">Failed: {{ examFailed }}</p>
+                    </div>
+
+                    <div class="quiz-cards">
+                        <div class="quiz-card" *ngFor="let exam of exams">
+
+                            <p class="quiz-card-header">{{ exam.title }}</p>
+
+                            <div class="card-body">
+                                <h3>{{ exam.subject }}</h3>
+                                <div class="quiz-info">
+                                    <p>
+                                        <i class="pi pi-calendar"></i>{{ exam.date }}
+                                    </p>
+                                    <p>
+                                        <i class="pi pi-chevron-circle-left"></i>{{ exam.time }}
+                                    </p>
+                                </div>
+                                <div class="percentage">
+                                    <p>Passing Percentage: <span>{{ exam.passingPercentage }}%</span></p>
+                                    <p>Scored Percentage: <span [ngStyle]="{ color: exam.scoreColor }">{{
+                                            exam.scoredPercentage }}%</span><span id="show-status" [ngClass]="{
+                                                    'status-failed': exam.status === 'Failed',
+                                                    'status-passed': exam.status === 'Passed',
+                                                    'status-missed': exam.status === 'Missed'
+                                                  }">
+                                            {{ exam.status }}
+                                        </span></p>
+
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="details-button"  (click)="examviewDetails(exam)"><span>View Details</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </p-tabPanel>
+            <!-- ----------------------------------Assignment content--------------------------------- -->
+            <p-tabPanel header="Assignment">
+                <div class="quiz-summary">
+                    <div class="summary-header">
+                        <p>Total Assignments: {{ totalAssignments }}</p>
+                        <p>Attempted: {{ assignmentAttempted }}</p>
+                        <p>Unattempted: {{ assignmentUnattempted }}</p>
+                        <p class="status passed">Passed: {{ assignmentPassed }}</p>
+                        <p class="status failed">Failed: {{ assignmentPassed }}</p>
+                    </div>
+
+                    <div class="quiz-cards">
+                        <div class="quiz-card" *ngFor="let assignment of assignments">
+
+                            <p class="quiz-card-header">{{ assignment.title }}</p>
+
+                            <div class="card-body">
+                                <h3>{{ assignment.subject }}</h3>
+                                <div class="quiz-info">
+                                    <p>
+                                        <i class="pi pi-calendar"></i>{{ assignment.date }}
+                                    </p>
+                                    <p>
+                                        <i class="pi pi-chevron-circle-left"></i>{{ assignment.time }}
+                                    </p>
+                                </div>
+                                <div class="percentage">
+                                    <p>Passing Percentage: <span>{{ assignment.passingPercentage }}%</span></p>
+                                    <p>Scored Percentage: <span [ngStyle]="{ color: assignment.scoreColor }">{{
+                                            assignment.scoredPercentage }}%</span><span id="show-status" [ngClass]="{
+                                                    'status-failed': assignment.status === 'Failed',
+                                                    'status-passed': assignment.status === 'Passed',
+                                                    'status-missed': assignment.status === 'Missed'
+                                                  }">
+                                            {{ assignment.status }}
+                                        </span></p>
+
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="details-button" (click)="assignmentviewDetails(assignment)"><span>View Details</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </p-tabPanel>
+            <!-- ----------------------------------Classes content--------------------------------- -->
+            <p-tabPanel header="classes">
+                <div class="live-classes">
+                    <div class="summary-header">
+                        <p>Total Classed: {{ totalClass }}</p>
+                        <p class="status absent">Present: {{ present }}</p>
+                        <p class="status present">Absent: {{ absent }}</p>
+                    </div>
+                    <div class="class-cards">
+                        <div *ngFor="let class of classes" class="class-card" [ngClass]="class.classType">
+                            <h2 class="title">{{ class.title }}</h2>
+                            <p class="batch">Batch: {{ class.batch }}</p>
+                            <p> <span> <i class="pi pi-chevron-circle-left"></i> {{ class.time }}</span><span> <i
+                                        class="pi pi-chevron-circle-left"></i> {{class.date}}</span></p>
+                            <p class="status" [ngClass]="{
+                        'status-present': class.classType === 'present',
+                        'status-absent': class.classType === 'absent'
+                      }">
+                                Status: {{ class.status }}
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+
+</div>

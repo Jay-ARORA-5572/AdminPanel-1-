@@ -1,0 +1,107 @@
+<div class="content">
+    <div class="center-info">
+        <div class="center-details">
+            <h2>Center Details</h2>
+            <p>First Name: {{ firstName }}</p>
+            <p>Last Name: {{ lastName }}</p>
+            <p>Pincode: {{ centerPincode }}</p>
+            <p>District: {{ centerDistrict }}</p>
+            <p>State: {{ centerState }}</p>
+            <p>Address: {{ centerAddress }}</p>
+        </div>
+
+        <div class="contact-details">
+            <h2>Center Contact</h2>
+            <p><i class="pi pi-phone"></i> {{ centerContact }}</p>
+            <p><i class="pi pi-envelope"></i> {{ centeremail }}</p>
+        </div>
+        <div class="btn">
+            <button mat-raised-button matTooltip="chat"><mat-icon> chat</mat-icon></button>
+            <button (click)="viewWallet()" mat-raised-button matTooltip="Wallet"><mat-icon>account_balance_wallet</mat-icon></button>
+        </div>
+        <div class="help-btn">
+            <button mat-raised-button matTooltip="Help"><mat-icon>help</mat-icon></button>
+        </div>
+    </div>
+
+    <!-- ------------------------------apointment---------------------------------- -->
+    <div class="center-info">
+        <div class="center-details">
+            <h2>Appointment History</h2>
+            <div class="table-container">
+                <table class="appointment-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Teacher</th>
+                      <th>Visit Type</th>
+                      <th>Date</th>
+                      <th>Time</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let appointment of appointments; let i = index">
+                      <td>{{ i + 1 }}</td>
+                      <td>{{ appointment.doctor }}</td>
+                      <td>{{ appointment.visitType }}</td>
+                      <td>{{ appointment.date }}</td>
+                      <td>{{ appointment.time }}</td>
+                      <td>{{ appointment.status }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+            
+        </div>
+
+       
+    </div>
+
+    <!-- ----------------------------transection history---------------------------- -->
+    <div class="center-info">
+        <div class="center-details">
+            <h2>Transection History</h2>
+            <div class="transaction-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Transaction ID</th>
+                      <th>Amount</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        154512154585
+                      </td>
+                      <td>$100.09</td>
+                      <td>20-10-2023</td>
+                      <td><span class="status success">Success</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        154512154585
+                      </td>
+                      <td>$10.99</td>
+                      <td>10-11-2023</td>
+                      <td><span class="status declined">Declined</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        154512154585
+                      </td>
+                      <td>$100.00</td>
+                      <td>20-10-2023</td>
+                      <td><span class="status success">Success</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+        </div>
+    </div>
+</div>

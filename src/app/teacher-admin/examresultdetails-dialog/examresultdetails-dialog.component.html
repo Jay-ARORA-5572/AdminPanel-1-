@@ -1,0 +1,86 @@
+<div class="header">
+    <h1>Exam Result Details</h1>
+    <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+</div>
+<div class="quiz-result-details-container">
+    
+    
+    
+    <!-- Header Section -->
+    <div class="result">
+      <!-- <button class="back-button" (click)="closeDialog()">←</button> -->
+      
+      <p class="result-declaration">
+        Result Declared on {{ resultTime }} | {{ resultDate }}
+      </p>
+    </div>
+  
+    <!-- Student Info Section -->
+    <div class="student-details">
+      <img class="profile-pic" src="../assets/student.jpeg" alt="Student" />
+      <div class="student-info">
+        <h2>{{ studentName }}</h2>
+        <p>Student ID: {{ studentId }}</p>
+      </div>
+    </div>
+  
+    <!-- Quiz Info Section -->
+    <div class="quiz-info">
+      <p class="description">{{ quizDescription }}</p>
+      <div class="quiz-meta">
+        <p id="batch"><strong>Batch:</strong> {{ batch }}</p>
+        <p><i class="pi pi-clock"></i> {{ quizTime }}</p>
+        <p><i class="pi pi-calendar"></i> {{ quizDate }}</p>
+        <p class="status" [ngClass]="status === 'Pass' ? 'status-pass' : 'status-fail'">
+          Status: {{ status }}
+        </p>
+      </div>
+      <div class="course-info">
+        <p><strong>Course:</strong> {{ course }}</p>
+        <p><strong>Subject:</strong> {{ subject }}</p>
+      </div>
+    </div>
+
+    <!-- ------------------inside content----------------- -->
+
+    <div class="result-container">
+        <h3>Total Marks : 50</h3>
+        
+        <div class="passing-percentage">
+          <label>Passing Percentage</label>
+          <span class="percentage">70%</span>
+        </div>
+      
+        <div class="question-paper">
+          <label>Question Paper</label>
+          <button class="download-btn">Networking Mid Sem Question Paper.pdf</button>
+        </div>
+      
+        <h4>Result</h4>
+      
+        <div class="student-response">
+          <label>Student's Response</label>
+          <button class="download-btn">Networking Mid Sem Question Paper.pdf</button>
+        </div>
+      
+        <div class="student-score">
+          <label>Student's Score</label>
+          <input type="text" class="score-input" value="32/50" disabled />
+        </div>
+      
+        <div class="student-percentage">
+          <label>Student's Percentage</label>
+          <span class="percentage"> 64%</span>
+        </div>
+      
+        <div class="instructor-notes">
+          <h4>Instructor's Notes</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. 
+            Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, 
+            ultrices mauris. Maecenas vitae mattis tellus.
+          </p>
+        </div>
+      </div>
+      
+</div>  

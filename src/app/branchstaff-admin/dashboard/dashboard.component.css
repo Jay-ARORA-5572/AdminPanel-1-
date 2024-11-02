@@ -1,0 +1,301 @@
+#container {
+    width: 100%;
+    height: 97%;
+}
+
+#heading {
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.custom-card {
+    width: 98%;
+    padding: 1%;
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+
+#left {
+    width: 20%;
+    padding: 1%;
+}
+
+
+.title {
+    height: 24px;
+    font-family: 'Mulish', sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+span {
+    color: #6C6C6C;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+#right,
+#download {
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+
+/* ---------------- cards design ---------------------*/
+
+.card1 {
+    background-color: #F5E2E2 !important;
+    transition: transform 0.3s ease;
+}
+
+.textsize1 {
+    color: #B0945A !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight: 900 !important;
+}
+
+.header {
+    font-family: 'Mulish', sans-serif;
+    font-size: 2vh;
+    font-weight: 900;
+    color: #242424;
+}
+
+.card2 {
+    background-color: #E2F5EA !important;
+    transition: transform 0.3s ease;
+
+}
+
+.textsize2 {
+    color: #EE7D3D !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight: 900 !important;
+}
+
+.card3 {
+    background-color: #EEE2F5 !important;
+    transition: transform 0.3s ease;
+
+}
+
+.textsize3 {
+    color: #EF4444 !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight: 900 !important;
+}
+
+.card4 {
+    background-color: #D3E1ED !important;
+    transition: transform 0.3s ease;
+
+}
+
+.textsize4 {
+    color: #445FEF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight: 900 !important;
+}
+
+.card5 {
+    background-color: #EDD3D3 !important;
+    transition: transform 0.3s ease;
+
+}
+
+.textsize5 {
+    color: #0BA700 !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight: 900 !important;
+
+}
+
+.card6 {
+    background-color: #E7F6E6 !important;
+    transition: transform 0.3s ease;
+
+}
+
+.textsize6 {
+    color: #915F26 !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 4vh !important;
+    font-weight: 900 !important;
+}
+
+.surface-card:hover {
+    cursor: pointer;
+    /* background-color: #E7F6E6 !important; */
+    transform: scale(1.02);
+}
+
+/* ---------------- cards design ---------------------*/
+
+
+
+
+/* --------------Searcbar -------------- */
+.stab {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.down {
+    margin-top: 8vh;
+}
+
+.up {
+    margin-top: 0.8vh;
+}
+
+#searchpop {
+    display: flex;
+    flex-wrap: wrap;
+    width: 76vw;
+    height: 13vh;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-right: 1vw;
+}
+
+#filterForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70vw;
+    align-items: center;
+}
+
+/* .example-full-width{
+    width: 22vw;
+    margin-top:2vh;
+} */
+
+
+.inputfield {
+    height: 5vh;
+    width: 25vw;
+}
+
+#closeicon {
+    float: right;
+    width: 25px;
+    height: 25px;
+}
+#closebtnx{
+    color: #f44336;
+    font-size: 24px;
+    position: absolute;
+    top: 2.3vh;
+    margin-left: 3.7vw;
+    cursor: pointer;
+}
+
+.closebtn {
+    color: #f44336;
+    font-size: 24px;
+    position: absolute;
+    top: 2.3vh;
+    left: 75.9vw;
+    cursor: pointer;
+}
+
+
+#actionbtns {
+    display: flex;
+    gap: 14%;
+    width: 22%;
+}
+
+
+#searchbtn {
+    background-color: #0D1046 !important;
+    color: #FFFFFF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+    text-align: center;
+    width: 100%;
+}
+
+
+.btn {
+    background-color: #0D1046 !important;
+    color: #FFFFFF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+    text-align: center;
+    width: 100%;
+    height: 4.5vh;
+}
+
+
+#resetbtn {
+    background-color: #FF5833 !important;
+    color: #FFFFFF !important;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    widows: 100%;
+
+}
+
+/* --------------Searcbar -------------- */
+
+
+/* -------------- Chart Css --------------------*/
+
+#chartContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    gap: 2%;
+    width: 100%;
+    padding: 0.5%;
+}
+
+.graphcard {
+    width: 48%;
+}
+
+
+
+.barchart {
+    width: 70%;
+    height: 0%;
+}
+
+.piechart {
+    width: 50%;
+    height: 50%;
+}
+
+
+
+/* -------------- Chart Css --------------------*/
+
+
+/*--------------- tables data------------  */
+
+#tablediv {
+    width: 100%;
+    overflow: scroll;
+}
+
+
+/*--------------- tables data------------  */

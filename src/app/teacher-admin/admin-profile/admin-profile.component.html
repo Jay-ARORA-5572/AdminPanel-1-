@@ -1,0 +1,210 @@
+<div class="container">
+    <!-- Sidebar Menu -->
+    <div class="sidebar">
+            <p-card>
+                <div class="profile-header">
+                    <p-avatar label="AB" size="large"></p-avatar>
+                    <div class="profile-info">
+                        <h3 id="gap">karan </h3>
+                        <p>infosoftnio.com</p>
+                    </div>
+                </div>
+                <div class="account-balance">
+                    <h4>Account Balance</h4>
+                    <p class="bigbold">12.395769 USD</p>
+                    <p>Pending: 0.344939 USD</p>
+                </div>
+
+                <!-- <p-divider></p-divider> -->
+                 <hr style="border-top:1px solid #4b5563;">
+                <p-menu [model]="items"  [style]="{width: '100%'}"></p-menu>
+                <!-- <p-divider></p-divider> -->
+                <hr style="border-top:1px solid #4b5563;">
+
+
+                <div class="last-login">
+                    <p>Last Login</p>
+                    <p>06-29-2020 02:39pm</p>
+                    <p>Login IP</p>
+                    <p>192.168.1.10</p>
+                </div>
+
+            </p-card>
+    </div>
+
+    <!-- Personal Information Section -->
+    <div class="main-content" *ngIf="personalinfo">
+        <p-card>
+            <h2 class="bold">Personal Information</h2>
+            <p>Basic info, like your name and address, that you use on Nio Platform.</p>
+            <div class="personal-info">
+                <h4>BASICS</h4>
+                <div class="info-group">
+                    <label>Full Name</label>
+                    <p>Abu Bin Ishtiyak</p>
+                </div>
+                <div class="info-group">
+                    <label>Display Name</label>
+                    <p>Ishtiyak</p>
+                </div>
+                <div class="info-group">
+                    <label>Email</label>
+                    <p>infosoftnio.com</p>
+                </div>
+                <div class="info-group">
+                    <label>Phone Number</label>
+                    <p>Not added yet</p>
+                </div>
+                <div class="info-group">
+                    <label>Date of Birth</label>
+                    <p>29 Feb, 1986</p>
+                </div>
+                <div class="info-group">
+                    <label>Nationality</label>
+                    <p>Canadian</p>
+                </div>
+                <div class="info-group-1">
+                    <label>Address</label>
+                    <p>2337 Kildeer Drive,Kentucky, Canada</p>
+                </div>
+                <h4>PREFERENCES</h4>
+                <div class="info-group">
+                    <label>Language</label>
+                    <p>English (United State)</p>
+                    <button pButton label="Change Language" class="p-button-link"></button>
+                </div>
+                <div class="info-group">
+                    <label>Date Format</label>
+                    <p>M, D, YYYY</p>
+                    <button pButton label="Change" class="p-button-link"></button>
+                </div>
+                <div class="info-group-1">
+                    <label>Timezone</label>
+                    <p>Bangladesh (GMT +6:00)</p>
+                    <button pButton label="Change" class="p-button-link"></button>
+                </div>
+            </div>
+        </p-card>
+    </div>
+
+
+    <!-- Notification -->
+
+    <div class="main-content" *ngIf="notification">
+        <p-card>
+            <h2 class="bold">Notification Settings</h2>
+            <p>You will get only the notification that you have enabled.</p>
+
+            <h2 class="bold-1">Security Alerts</h2>
+            <p>You will get only those email notifications that you want.</p>
+            <div class="p-field-checkbox">
+                <label class="toggle">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <p class="left-margin">Email me whenever unusual activity is encountered.</p>
+            </div>
+            <div class="p-field-checkbox">
+                <label class="toggle">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <p class="left-margin">Email me if a new browser is used to sign in</p>
+            </div>
+
+            <h2 class="bold-1">News</h2>
+            <p>You will get only those email notifications that you want.</p>
+            <div class="p-field-checkbox">
+                <label class="toggle">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <p class="left-margin">Notify me by email about sales and the latest news</p>
+            </div>
+            <div class="p-field-checkbox">
+                <label class="toggle">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <p class="left-margin">Email me about new features and updates</p>
+            </div>
+            <div class="p-field-checkbox">
+                <label class="toggle">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <p class="left-margin">Email me about tips on using the account</p>
+            </div>
+        </p-card>
+    </div>
+
+    <!-- account activity -->
+
+    <div class="main-content" *ngIf="accountactivity">
+        <p-card>
+            <h2 class="bold">Login Activity</h2>
+            <p>Here is your last 20 login activities log.</p>
+            <p-table [value]="loginActivity" responsiveLayout="scroll">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Browser</th>
+                        <th>IP</th>
+                        <th>Time</th>
+                        <th></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-activity>
+                    <tr>
+                        <td>{{ activity.browser }}</td>
+                        <td>{{ activity.ip }}</td>
+                        <td>{{ activity.time }}</td>
+                        <td>
+                            <i class="pi pi-times cross"></i>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </p-card>
+    </div>
+
+    <!-- security settings -->
+
+    <div class="main-content" *ngIf="securitysettings">
+        <p-card>
+            <h2 class="title">Security Settings</h2>
+            <p class="description">These settings help you keep your account secure.</p>
+
+            <div class="setting-item">
+                <div class="setting-description">
+                    <h3 class="setting-title">Save my Activity Logs</h3>
+                    <p class="setting-text">You can save all your activity logs including unusual activity detected.</p>
+                </div>
+                <label class="toggle">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <div class="setting-description">
+                    <h3 class="setting-title">Change Password</h3>
+                    <p class="setting-text">Set a unique password to protect your account.
+                        <span class="last-changed">Last changed: Oct 2, 2019</span>
+                    </p>
+                </div>
+                <button pButton type="button" label="Change Password" class="changepass"></button>
+            </div>
+
+            <div class="setting-item">
+                <div class="setting-description">
+                    <h3 class="setting-title">2 Factor Auth</h3>
+                    <p class="setting-text">Secure your account with 2FA security. When it is activated, you will need
+                        to enter not only your password, but also a special code using an app. You can receive this code
+                        in the mobile app.</p>
+                </div>
+                <button pButton type="button" label="Disable" class="disabelbtn"></button>
+            </div>
+        </p-card>
+    </div>
+
+</div>

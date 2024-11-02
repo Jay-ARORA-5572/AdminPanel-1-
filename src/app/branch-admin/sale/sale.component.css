@@ -1,0 +1,1161 @@
+.main {
+  width: 97%;
+  margin: auto;
+}
+
+/* top-header */
+
+.heading {
+  background-color: #f8f9fa;
+  padding: 20px;
+  /* width: 97%; */
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+}
+
+.title-section h1 {
+  margin: 0;
+  font-size: 24px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+}
+
+/* 1st container */
+
+.stats-dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: 2%;
+}
+
+.stat-card {
+  width: calc(25% - 16px);
+  min-width: 250px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.details-link {
+  color: #9b59b6;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.percentage {
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.positive {
+  background-color: #e6fff1;
+  color: #27ae60;
+}
+
+.negative {
+  background-color: #ffe6e6;
+  color: #e74c3c;
+}
+
+
+::ng-deep .p-card {
+  height: 155px !important;
+}
+
+::ng-deep .p-card .p-card-body {
+  padding: .6rem !important;
+}
+
+@media (max-width: 768px) {
+  .stat-card {
+    width: calc(50% - 16px);
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-card {
+    width: 100%;
+  }
+}
+
+/* 1st container */
+
+
+/* 2nd container */
+
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.recent-transactions,
+.sales-overview,
+.activities {
+  flex: 1 1 calc(33.33% - 1rem);
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  box-sizing: border-box;
+  /* height: 50%; */
+}
+
+.divdata {
+  height: 54vh;
+  overflow-y: scroll;
+}
+
+/* Ensure full width on smaller screens */
+@media (max-width: 1024px) {
+
+  .recent-transactions,
+  .sales-overview,
+  .activities {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .recent-transactions,
+  .sales-overview,
+  .activities {
+    flex: 1 1 100%;
+  }
+}
+
+.card-header h2 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.transaction-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.transaction-details {
+  flex-grow: 1;
+  min-width: 150px;
+}
+
+.transaction-name {
+  font-weight: bold;
+}
+
+.transaction-date {
+  color: #888;
+  font-size: 0.875rem;
+}
+
+.transaction-amount {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.activities-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.card-header .view-all {
+  font-size: 0.875rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.activity-list {
+  margin: 0;
+  padding: 0;
+  height: 54vh;
+  overflow-y: scroll;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.activity-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.activity-content {
+  flex-grow: 1;
+}
+
+.activity-text {
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.activity-time {
+  color: #888;
+  font-size: 0.75rem;
+}
+
+.activity-tag {
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.75rem;
+  color: #fff;
+  background-color: #4caf50;
+  border-radius: 4px;
+}
+
+/* Ensure full width on smaller screens */
+@media (max-width: 768px) {
+  .activities-card {
+    padding: 0.75rem;
+  }
+
+  .card-header h2 {
+    font-size: 1rem;
+  }
+
+  .card-header .view-all {
+    font-size: 0.75rem;
+  }
+
+  .activity-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .activity-text {
+    font-size: 0.75rem;
+  }
+
+  .activity-time {
+    font-size: 0.65rem;
+  }
+
+  .activity-tag {
+    font-size: 0.65rem;
+  }
+}
+
+/* 2nd container */
+
+
+
+/* task-section */
+
+
+.tasks-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.instructor-info {
+  display: flex;
+  align-items: center;
+}
+
+section.shadow-3.border-round-sm {
+  margin-top: 26px;
+}
+
+.instructor-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.instructor-name {
+  font-weight: bold;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 12px;
+  text-align: center;
+  width: 78%;
+}
+
+.status.Active {
+  background-color: #28a745;
+  color: white;
+  display: block;
+}
+
+.status.Pending {
+  background-color: #ffc107;
+  color: white;
+  display: block;
+}
+
+.status.Suspend {
+  background-color: #dc3545;
+  color: white;
+  display: block;
+}
+
+.actionicon {
+  background-color: #fff;
+  color: black;
+  border: none;
+}
+
+.actions {
+  display: flex;
+  gap: 0.88rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  margin-top: 1rem;
+}
+
+.actionicon:hover {
+  background-color: gray;
+  border: none;
+}
+
+.p-button {
+  background: none;
+  border: none;
+  color: black;
+}
+
+/* main-content */
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .top-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-controls {
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-controls>* {
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .instructor-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .instructor-image {
+    margin-bottom: 10px;
+  }
+}
+
+/* Responsive Design */
+
+
+/* Pop show the button */
+
+.p-button {
+  background: none;
+  border: none;
+  color: black;
+}
+
+
+.actionicon:hover {
+  background-color: rgb(206, 202, 202);
+  border: none;
+}
+
+::ng-deep .p-overlaypanel-content {
+  padding: 0rem !important;
+}
+
+.menu {
+  padding: 5px;
+  width: 170px;
+}
+
+.menu-item {
+  display: flex;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+.actioniconover.p-button {
+  transition: none;
+  border: none;
+}
+
+.actioniconover.p-button:hover {
+  background-color: inherit;
+  border-color: inherit;
+  box-shadow: none;
+}
+
+.actioniconover {
+  border: none;
+  font-size: 10px;
+}
+
+.actioniconover:hover {
+  border: none;
+  background-color: rgb(221, 219, 219);
+}
+
+.status-complete {
+  color: green;
+  font-weight: bold;
+}
+
+.status-pending {
+  color: orange;
+  font-weight: bold;
+}
+
+.status-cancelled {
+  color: red;
+  font-weight: bold;
+}
+
+/* task-section */
+
+
+/* 3rd container */
+
+
+.visitor-card {
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 48.88%;
+}
+
+.visitor-card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-size: large;
+}
+
+.visitor-list {
+  flex: 1;
+  font-size: larger;
+  /* min-width: 250px; */
+  /* Ensures the list doesn't get too narrow on smaller screens */
+}
+
+.visitor-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.visitor-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.visitor-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 2.4rem;
+}
+
+.visitor-country {
+  flex-grow: 1;
+  margin-bottom: 2.4rem;
+}
+
+.visitor-count {
+  font-weight: bold;
+  margin-bottom: 2.4rem;
+}
+
+.map-section {
+  flex: 2;
+  min-width: 300px;
+  /* Ensures the map doesn't get too narrow on smaller screens */
+  height: 100%;
+  /* Make sure the map container takes the full height of the card */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .visitor-card-content {
+    flex-direction: column;
+  }
+
+  .map-section {
+    margin-top: 1rem;
+  }
+}
+
+/* 3rd container */
+
+.orders-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.orders-card h3 {
+  font-size: 18px;
+  color: black;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th,
+table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ececec;
+}
+
+table th {
+  color: black;
+}
+
+table td img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+table td a {
+  color: #43a047;
+  text-decoration: none;
+}
+
+.status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  background-color: #64b5f6;
+  color: white;
+}
+
+.status.shipped {
+  background-color: #43a047;
+}
+
+.status.cancelled {
+  background-color: #e57373;
+}
+
+.status.under-process {
+  background-color: #64b5f6;
+}
+
+.pending {
+  background-color: #ffb300;
+}
+
+.success {
+  background-color: #66bb6a;
+}
+
+.action-buttons {
+
+  display: flex;
+  cursor: pointer;
+  gap: 10px;
+
+}
+
+.action-buttons button {
+  height: 30px;
+  width: 40px;
+  align-content: center;
+  border: none;
+  border-radius: 5px;
+
+}
+
+.download-button {
+  background-color: #e9f9f4;
+  color: #008000;
+}
+
+.edit-button {
+  background-color: #e9f9f4;
+  color: skyblue;
+}
+
+.download-button:hover {
+  background-color: #008000;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: skyblue;
+  color: white;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.pagination .page-numbers {
+  display: flex;
+  gap: 10px;
+}
+
+.pagination .page-numbers span {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5%;
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.pagination .page-numbers .active {
+  background-color: #9d8ee2;
+  color: white;
+}
+
+/* customer section */
+
+.customer-container {
+  font-family: Arial, sans-serif;
+  /* background-color: #f7f7f7; */
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 5px; */
+  /* Adds spacing between the boxes */
+  justify-content: space-between;
+  height: auto;
+}
+
+.section-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.customers-section {
+  background-color: #ffffff;
+  padding: 20px 20px 0 20px;
+  border-radius: 10px;
+  width: 40%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* overflow-y: scroll; */
+  scrollbar-width: none;
+  height: 50rem;
+}
+
+.billing-section {
+  background-color: #ffffff;
+  padding: 20px 20px 0 20px;
+  border-radius: 10px;
+  width: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* overflow-y: scroll; */
+  scrollbar-width: none;
+  height: 47.08rem;
+}
+
+.sales-section {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 28%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: auto;
+}
+
+.billing-details,
+.customer-details {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  height: 88%;
+}
+
+
+.customer,
+.invoice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.customer img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1.4rem;
+}
+
+.customer-info {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.customer-name {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.customer-time {
+  font-size: 0.7em;
+  color: #777;
+}
+
+.customer-id {
+  color: rgb(39, 203, 39);
+}
+
+.invoice-status {
+  font-size: 9px;
+  border-radius: 5px;
+  width: 48px;
+  display: flex;
+}
+
+.processing {
+  color: white;
+  background-color: skyblue;
+}
+
+.sent {
+  color: white;
+  background-color: #28a745;
+  justify-content: center;
+
+}
+
+.pending {
+  background-color: orange;
+  color: white;
+  justify-content: center;
+}
+
+
+.increase-text {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #8a4ef3;
+  margin-top: 10px;
+}
+
+.sales-summary {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sales-items,
+.sales-revenue {
+  font-size: 0.9rem;
+}
+
+.sales-value,
+.revenue-value {
+  font-size: 1.3rem;
+}
+
+.sales-change,
+.revenue-change {
+  font-size: 0.6rem;
+  color: grey;
+}
+
+.change-value {
+  font-size: 0.8rem;
+  background-color: #28a745;
+  color: white;
+  border-radius: 3px;
+
+}
+
+.category-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.category-list li {
+  padding: 5px 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 32.2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* margin-bottom: 20px; */
+  height: auto;
+}
+
+.card h3 {
+  font-size: 18px;
+  color: black;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ececec;
+}
+
+.category-list li:last-child {
+  border-bottom: none;
+}
+
+.category-list li span:first-child {
+  font-weight: bold;
+  color: #333;
+}
+
+.category-list li span:last-child {
+  color: #43a047;
+}
+
+.see-all {
+  color: blueviolet;
+  font-weight: 400;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: #f0f1f7;
+  text-align: center;
+  margin-top: 220px;
+  border: none;
+  height: 30px;
+}
+
+.see-all-button {
+  display: flex;
+  justify-content: center;
+}
+
+.see-all:hover {
+  background-color: rgb(162, 115, 162);
+  color: white;
+}
+
+.orders-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.orders-card h3 {
+  font-size: 18px;
+  color: black;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th,
+table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ececec;
+}
+
+table th {
+  color: black;
+}
+
+table td img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+table td a {
+  color: #43a047;
+  text-decoration: none;
+}
+
+.status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  background-color: #64b5f6;
+  color: white;
+}
+
+.status.shipped {
+  background-color: #43a047;
+}
+
+.status.cancelled {
+  background-color: #e57373;
+}
+
+.status.under-process {
+  background-color: #64b5f6;
+}
+
+.pending {
+  background-color: #ffb300;
+}
+
+.success {
+  background-color: #66bb6a;
+}
+
+.action-buttons {
+  display: flex;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.action-buttons button {
+  height: 30px;
+  width: 40px;
+  align-content: center;
+  border: none;
+  border-radius: 5px;
+}
+
+.download-button {
+  background-color: #e9f9f4;
+  color: #008000;
+}
+
+.edit-button {
+  background-color: #e9f9f4;
+  color: skyblue;
+}
+
+.download-button:hover {
+  background-color: #008000;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: skyblue;
+  color: white;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.pagination .page-numbers {
+  display: flex;
+  gap: 10px;
+}
+
+.pagination .page-numbers span {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5%;
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.pagination .page-numbers .active {
+  background-color: #9d8ee2;
+  color: white;
+}
+
+.order-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.customer1 {
+  display: flex;
+  align-items: center;
+}
+
+.customer1 img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
+}
+
+.pi {
+  font-size: 1.2em;
+}
+
+.p-button {
+  background: none;
+  border: none;
+  color: black;
+  margin-right: 8px;
+}
+
+
+.actionicon:hover {
+  background-color: gray;
+  border: none;
+}
+
+
+.actionicon1 {
+  background-color: #0D1046;
+  color: white;
+}
+
+.student-payment-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+.student-payment-table th, 
+.student-payment-table td {
+  padding: 12px 15px;
+}
+
+.student-payment-table tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
+
+.student-payment-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.status-complete {
+  color: green;
+  font-weight: bold;
+}
+
+.status-pending {
+  color: orange;
+  font-weight: bold;
+}
+
+.status-cancelled {
+  color: red;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .student-payment-table th,
+  .student-payment-table td {
+      font-size: 14px;
+  }
+
+  .student-payment-table td a {
+      font-size: 14px;
+  }
+}

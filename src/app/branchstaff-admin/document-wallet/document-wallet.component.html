@@ -1,0 +1,66 @@
+<!-- my-doc.component.html -->
+<div class="document-upload">
+    <h2>Your Document Wallet</h2>
+  
+    <div class="toggle-top">
+      <div class="digi-lock-toggle">
+        <img src="../../../assets/digilocker1.png" alt="" />
+        <span>Connect DigiLocker</span>
+      </div>
+  
+      <div class="lock-toggle" (click)="toggleLock()">
+        <mat-icon>{{ isLocked ? 'lock' : 'lock_open' }}</mat-icon>
+        <span>{{ isLocked ? 'Documents Locked' : 'Documents Unlocked' }}</span>
+      </div>
+    </div>
+  
+    <div *ngIf="!isLocked">
+      <div class="categories-container">
+        <div *ngFor="let category of documentCategories" class="category-row">
+          <div class="category-header">
+            <h3 class="category-title">{{ category.name }}</h3>
+            <div class="category-progress">
+              <div class="progress-bar" [style.width]="calculateProgress(category) + '%'"></div>
+            </div>
+          </div>
+          <div class="documents-container">
+            <div *ngFor="let document of category.documents" class="card">
+              <div class="card-header-aws">
+                <mat-icon>{{ document.icon }}</mat-icon>
+                <h3>{{ document.label }}</h3>
+              </div>
+  
+              <form class="file-upload-form">
+                <label [for]="'file-' + document.key" class="file-upload-label">
+                  <div class="file-upload-design">
+                    <svg width="75" height="75" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="bevel">
+                      <path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 8l-5-5-5 5M12 4.2v10.3"></path>
+                    </svg>
+                  </div>
+                  <!-- <input
+                    [id]="'file-' + document.key"
+                    type="file"
+                    accept=".pdf,.jpg,.jpeg,.png"
+                    (change)="handleFileChange($event, document.key)"
+                  /> -->
+                </label>
+              </form>
+  
+              <button *ngIf="documents[document.key]" (click)="handlePreview(document.key)" class="submit-button">
+                Preview Document
+              </button>
+              <span *ngIf="documents[document.key]; else notUploadedTemplate" class="status upload-status">
+                <mat-icon style="color: blue; font-size: 20px;">check_circle</mat-icon> Uploaded
+              </span>
+              <ng-template #notUploadedTemplate>
+                <span class="status not-uploaded">
+                  <mat-icon>file_upload_off</mat-icon> Not Uploaded
+                </span>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

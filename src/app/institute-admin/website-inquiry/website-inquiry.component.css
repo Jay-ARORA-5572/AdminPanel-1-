@@ -1,0 +1,267 @@
+/* top css */
+#main {
+    width: 97%;
+    margin: auto;
+  }
+  
+  .courses-header {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 16px 10px 16px;
+    margin-top: 1.4rem;
+  }
+  
+  .course-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .course-info h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+    color: #000;
+  }
+  
+  .course-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .course-actions p-dropdown {
+    margin-right: 10px;
+  }
+  
+  .login {
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #0D1046 !important;
+    color: #fff !important;
+    border: 1px solid #0D1046;
+    height: 74%;
+    padding: 0.4rem;
+  }
+  
+  
+  
+  /* Media Queries */
+  @media (max-width: 1200px) {
+    .courses-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .course-actions {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .course-actions {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .course-actions p-dropdown {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .add-course-button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .courses-header {
+      padding: 10px;
+    }
+  
+    .course-info h2 {
+      font-size: 1.5rem;
+    }
+  
+    .course-actions p-dropdown,
+    .add-course-button {
+      width: 100%;
+    }
+  }
+  
+  /* top css */
+  
+  
+  /* Table data css */
+  .table-container {
+    padding: 16px;
+    width: 100%;
+    margin: 28px 1px 1px 1px;
+  }
+  
+  .p-datatable table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+  
+  .p-datatable th,
+  .p-datatable td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .p-datatable th {
+    background-color: #f4f4f4;
+  }
+  
+  .p-datatable tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .course-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .course-badge.rd {
+    background-color: #7c4dff;
+  }
+  
+  .course-badge.ad {
+    background-color: #00bcd4;
+  }
+  
+  .course-badge.ud {
+    background-color: #ffb300;
+  }
+  
+  .course-badge.wt {
+    background-color: #7c4dff;
+  }
+  
+  
+  .status {
+    padding: 5px 10px;
+    border-radius: 12px;
+    text-align: center;
+    width: 78%;
+  }
+  
+  .status.active {
+    background-color: #54244d;
+    color: white;
+    display: block;
+  }
+  
+  .status.inactive {
+    background-color: #ffc107;
+    color: white;
+    display: block;
+  }
+
+  .status.done {
+    background-color: green;
+    color: white;
+    display: block;
+  }
+
+  .status.noaction {
+    background-color: #7c4dff;
+    color: white;
+    display: block;
+  }
+  
+  /*
+  @media screen and (max-width: 768px) {
+      .p-datatable table, .p-datatable tbody, .p-datatable tr, .p-datatable td {
+          display: block;
+          width: 100%;
+      }
+      .p-datatable tr {
+          margin-bottom: 15px;
+      }
+      .p-datatable td {
+          text-align: right;
+          padding-left: 50%;
+          position: relative;
+      }
+      .p-datatable td::before {
+          content: attr(data-label);
+          position: absolute;
+          left: 10px;
+          width: 45%;
+          padding-right: 10px;
+          text-align: left;
+          font-weight: bold;
+      }
+  } */
+  
+  /* Table data css */
+  
+  
+  
+  /* Pop show the button */
+  
+  .p-button {
+    background: none;
+    border: none;
+    color: black;
+  }
+  
+  
+  .actionicon:hover {
+    background-color: rgb(206, 202, 202);
+    border: none;
+  }
+  
+  ::ng-deep .p-overlaypanel-content {
+    padding: 0rem !important;
+  }
+  
+  .menu {
+    padding: 5px;
+    width: 170px;
+  }
+  
+  .menu-item {
+    display: flex;
+    cursor: pointer;
+  }
+  
+  .menu-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  
+  .actioniconover.p-button {
+    transition: none;
+    border: none;
+  }
+  
+  .actioniconover.p-button:hover {
+    background-color: inherit;
+    border-color: inherit;
+    box-shadow: none;
+  }
+  
+  .actioniconover {
+    border: none;
+    font-size: 10px;
+  }
+  
+  .actioniconover:hover {
+    border: none;
+    background-color: rgb(221, 219, 219);
+  }
+  
+  /* Pop show the button */

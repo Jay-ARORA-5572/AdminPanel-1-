@@ -1,0 +1,371 @@
+#main {
+  width: 97%;
+  margin: auto;
+}
+
+/* top-header */
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  margin-bottom: 2px;
+}
+
+h1 {
+  margin-left: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.top-header {
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.title-section h1 {
+  margin: 0;
+  font-size: 24px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  width: 100%;
+}
+
+/* main-section */
+
+.username {
+  color: green;
+  margin-left: 0.2%;
+}
+
+h4 {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  margin-left: 1.2rem;
+}
+
+.container {
+  width: 100%;
+  height: 50vh;
+}
+
+.p-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.header h1 {
+  font-size: 24px;
+}
+
+.header span {
+  color: #703fe5;
+}
+
+/* personal information tab */
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .courses-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .courses-header {
+    padding: 10px;
+  }
+
+  .course-info h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* form data  */
+
+.form-layout {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.field {
+  padding: 0.5rem;
+}
+
+.field-half {
+  flex: 1 1 50%;
+}
+
+.field-half1 {
+  flex: 1 1 50%;
+  width: 60%;
+}
+
+.field-full {
+  width: 15%;
+  flex: 1 1 100%;
+}
+
+.field-full1 {
+  flex: 1 1 100%;
+}
+
+.button {
+  background-color: #0D1046 !important;
+  color: #fff !important;
+}
+
+@media (max-width: 768px) {
+  .field-half {
+    flex: 1 1 100%;
+  }
+}
+
+/* --------------- overviews section ---------------- */
+.file-upload {
+  font-family: Arial, sans-serif;
+  border: 1px solid gray;
+  display: flex;
+  /* Use flexbox */
+  align-items: center;
+  /* Vertically center the content */
+  justify-content: space-between;
+  border-radius: 6px;
+}
+
+.custom-file-upload {
+  padding: 6px 6px;
+  border: 2px solid #0d1046;
+  background-color: #0d1046;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  float: right;
+  border-radius: 6px;
+}
+
+
+input[type="file"] {
+  display: none;
+}
+
+.file-name {
+  font-size: 15px;
+  vertical-align: middle;
+  padding: 1%;
+  margin-left: 1%;
+  /* margin-left: 87px; */
+}
+
+
+
+/* --------------- overviews section ---------------- */
+
+
+
+/* --------------- Course Tab --------------*/
+
+:host ::ng-deep .p-datatable {
+  width: 100%;
+  overflow-x: auto;
+}
+
+:host ::ng-deep .p-datatable-tbody>tr>td {
+  white-space: nowrap;
+}
+
+:host ::ng-deep .p-badge-success {
+  background-color: #28a745 !important;
+}
+
+:host ::ng-deep .p-badge-warning {
+  background-color: #ffc107 !important;
+}
+
+:host ::ng-deep .p-badge-danger {
+  background-color: #dc3545 !important;
+}
+
+.actionicon {
+  background-color: #fff;
+  color: black;
+  border: none;
+}
+
+
+
+/* --------------- Course Tab --------------*/
+
+
+
+/* ---------------- Review Tab --------------- */
+
+.instructor-info {
+  display: flex;
+  align-items: center;
+}
+
+section.shadow-3.border-round-sm {
+  margin-top: 26px;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: auto;
+  margin-bottom: 26px;
+}
+
+.instructor-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.instructor-name {
+  font-weight: bold;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 12px;
+  text-align: center;
+  width: 78%;
+}
+
+.status.Active {
+  background-color: #28a745;
+  color: white;
+  display: block;
+}
+
+.status.Pending {
+  background-color: #ffc107;
+  color: white;
+  display: block;
+}
+
+.status.Canceled {
+  background-color: #dc3545;
+  color: white;
+  display: block;
+}
+
+.table-row {
+  position: relative;
+  height: 60px;
+  align-items: center;
+
+  &:hover {
+    background-color: #f5f5f5;
+
+    .actions {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 0.88rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  margin-top: 1rem;
+}
+
+.actionicon:hover {
+  background-color: white !important;
+  cursor: pointer;
+  border: none;
+}
+
+.p-button {
+  background: none;
+  border: none;
+  color: black;
+
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .instructor-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .instructor-image {
+    margin-bottom: 10px;
+  }
+
+}
+
+/* ---------------- Review Tab --------------- */
+
+
+/* Pop show the button */
+
+.p-button {
+  background: none;
+  border: none;
+  color: black;
+}
+
+
+.actionicon:hover {
+  background-color: rgb(206, 202, 202);
+  border: none;
+}
+
+::ng-deep .p-overlaypanel-content {
+  padding: 0rem !important;
+}
+
+.menu {
+  padding: 5px;
+  width: 170px;
+}
+
+.menu-item {
+  display: flex;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+
+.actioniconover.p-button {
+  transition: none;
+  border: none;
+}
+
+.actioniconover.p-button:hover {
+  background-color: inherit;
+  border-color: inherit;
+  box-shadow: none;
+}
+
+.actioniconover {
+  border: none;
+  font-size: 10px;
+}
+
+.actioniconover:hover {
+  border: none;
+  background-color: rgb(221, 219, 219);
+}
+
+/* Pop show the button */

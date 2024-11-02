@@ -1,0 +1,434 @@
+<div id="main">
+    <!-- Top header  -->
+    <section class="shadow-3 border-round-sm">
+        <header class="heading">
+            <div class="title-section">
+                <h1>Home Page</h1>
+            </div>
+        </header>
+    </section>
+    <!-- Top header -->
+
+    <!-- 2nd Section -->
+
+    <p-tabView>
+        <!-- Personal Information -->
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <div class="flex align-items-center gap-2">
+                    <span class="font-bold white-space-nowrap m-0">
+                        Home Page
+                    </span>
+                </div>
+            </ng-template>
+            <section class="shadow-3 border-round-sm">
+
+                <div class="p-fluid form-layout mt-4 p-3">
+                    <div class="field field-full1">
+                        <label for="user">Header Text</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-full1">
+                        <label for="course">Header Description</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="course">Header Image 1</label>
+                        <div class="file-upload">
+                            <span class="file-name">No file selected</span>
+                            <label for="fileInput" class="custom-file-upload">
+                                <i class="pi pi-upload"></i> Choose File
+                            </label>
+                            <input type="file" id="fileInput" (change)="onFileSelected($event)"
+                                class="custom-file-input" accept=".png, .jpg, .jpeg, .pdf" multiple>
+                        </div>
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="course">Header Image 2</label>
+                        <div class="file-upload">
+                            <span class="file-name">No file selected</span>
+                            <label for="fileInput" class="custom-file-upload">
+                                <i class="pi pi-upload"></i> Choose File
+                            </label>
+                            <input type="file" id="fileInput" (change)="onFileSelected($event)"
+                                class="custom-file-input" accept=".png, .jpg, .jpeg, .pdf" multiple>
+                        </div>
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="course">Header Image 3</label>
+                        <div class="file-upload">
+                            <span class="file-name">No file selected</span>
+                            <label for="fileInput" class="custom-file-upload">
+                                <i class="pi pi-upload"></i> Choose File
+                            </label>
+                            <input type="file" id="fileInput" (change)="onFileSelected($event)"
+                                class="custom-file-input" accept=".png, .jpg, .jpeg, .pdf" multiple>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="field field-full1 p-3">
+                    <button class="button" pButton type="button" label="Publish" (click)="enrollStudent()"></button>
+                    <button class="button" pButton type="button" label="Preview" (click)="enrollStudent()"></button>
+                </div>
+            </section>
+
+        </p-tabPanel>
+        <!-- Personal Information -->
+
+        <!-- Courses -->
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <div class="flex align-items-center gap-2">
+                    <span class="font-bold white-space-nowrap m-0">
+                        About Us
+                    </span>
+                </div>
+            </ng-template>
+
+            <section class="shadow-3 border-round-sm">
+
+                <div class="p-fluid form-layout mt-4 p-3">
+
+                    <div class="field field-full1">
+                        <label for="course">Banner</label>
+                        <div class="file-upload">
+                            <span class="file-name">No file selected</span>
+                            <label for="fileInput" class="custom-file-upload">
+                                <i class="pi pi-upload"></i> Choose File
+                            </label>
+                            <input type="file" id="fileInput" (change)="onFileSelected($event)"
+                                class="custom-file-input" accept=".png, .jpg, .jpeg, .pdf" multiple>
+                        </div>
+                    </div>
+
+                    <div class="field field-half">
+                        <label for="country">About Us Heading</label>
+                        <input id="country" type="text" pInputText [(ngModel)]="country" class="custom-input">
+                    </div>
+
+                    <div class="field field-half">
+                        <label for="state">About Us Description</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="payment">About Us Point 1</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="payment">About Us Point 2</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="payment">About Us Point 3</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+                </div>
+
+                <div class="field field-full1 p-3">
+                    <button class="button" pButton type="button" label="Publish" (click)="enrollStudent()"></button>
+                    <button class="button" pButton type="button" label="Preview" (click)="enrollStudent()"></button>
+                </div>
+
+            </section>
+        </p-tabPanel>
+        <!-- Courses -->
+
+        <!-- Review -->
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <div class="flex align-items-center gap-2">
+                    <span class="font-bold white-space-nowrap m-0">
+                        Choose Us
+                    </span>
+                </div>
+            </ng-template>
+
+            <section class="shadow-3 border-round-sm">
+
+                <div class="p-fluid form-layout mt-4 p-3">
+                    <div class="field field-onethird">
+                        <label for="user">Heading 1</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="course">Heading 2</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="course">Heading 3</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+                </div>
+                <hr />
+                <div class="p-fluid form-layout mt-4 p-3">
+                    <div class="field field-onethird">
+                        <label for="course">Description 1</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="course">Description 2</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="course">Description 3</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="country">Icon 1</label>
+                        <div class="file-upload">
+                            <span class="file-name">No file selected</span>
+                            <label for="fileInput" class="custom-file-upload">
+                                <i class="pi pi-upload"></i> Choose File
+                            </label>
+                            <input type="file" id="fileInput" (change)="onFileSelected($event)"
+                                class="custom-file-input" accept=".png, .jpg, .jpeg, .pdf" multiple>
+                        </div>
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="state">Icon 2</label>
+                        <div class="file-upload">
+                            <span class="file-name">No file selected</span>
+                            <label for="fileInput" class="custom-file-upload">
+                                <i class="pi pi-upload"></i> Choose File
+                            </label>
+                            <input type="file" id="fileInput" (change)="onFileSelected($event)"
+                                class="custom-file-input" accept=".png, .jpg, .jpeg, .pdf" multiple>
+                        </div>
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="payment">Icon 3</label>
+                        <div class="file-upload">
+                            <span class="file-name">No file selected</span>
+                            <label for="fileInput" class="custom-file-upload">
+                                <i class="pi pi-upload"></i> Choose File
+                            </label>
+                            <input type="file" id="fileInput" (change)="onFileSelected($event)"
+                                class="custom-file-input" accept=".png, .jpg, .jpeg, .pdf" multiple>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="field field-full1 p-3">
+                    <button class="button" pButton type="button" label="Publish" (click)="enrollStudent()"></button>
+                    <button class="button" pButton type="button" label="Preview" (click)="enrollStudent()"></button>
+                </div>
+            </section>
+
+        </p-tabPanel>
+
+        <!-- Review -->
+
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <div class="flex align-items-center gap-2">
+                    <span class="font-bold white-space-nowrap m-0">
+                        Data Counter
+                    </span>
+                </div>
+            </ng-template>
+
+            <section class="shadow-3 border-round-sm">
+
+                <div class="p-fluid form-layout mt-4 p-3">
+
+                    <div class="field field-onefourth">
+                        <label for="country">Heading 1</label>
+                        <input id="country" type="text" pInputText [(ngModel)]="country" class="custom-input">
+                    </div>
+
+                    <div class="field field-onefourth">
+                        <label for="country">Heading 2</label>
+                        <input id="country" type="text" pInputText [(ngModel)]="country" class="custom-input">
+                    </div>
+
+                    <div class="field field-onefourth">
+                        <label for="state">Heading 3</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onefourth">
+                        <label for="payment">Heading 4</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+                </div>
+
+                <h4>Data Number</h4>
+
+                <div class="p-fluid form-layout mt-4 p-3">
+                    <div class="field field-onefourth">
+                        <label for="payment">Country 1</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onefourth">
+                        <label for="payment">Country 2</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onefourth">
+                        <label for="payment">Country 3</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onefourth">
+                        <label for="payment">Country 4</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onefourth">
+                        <label for="payment">Description 1</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onefourth">
+                        <label for="payment">Description 2</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onefourth">
+                        <label for="payment">Description 3</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onefourth">
+                        <label for="payment">Description 4</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+                </div>
+
+                <div class="field field-full1 p-3">
+                    <button class="button" pButton type="button" label="Publish" (click)="enrollStudent()"></button>
+                    <button class="button" pButton type="button" label="Preview" (click)="enrollStudent()"></button>
+                </div>
+
+            </section>
+        </p-tabPanel>
+
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <div class="flex align-items-center gap-2">
+                    <span class="font-bold white-space-nowrap m-0">
+                        Mission
+                    </span>
+                </div>
+            </ng-template>
+
+            <section class="shadow-3 border-round-sm">
+
+                <div class="p-fluid form-layout mt-4 p-3">
+
+                    <div class="field field-half">
+                        <label for="country">Heading</label>
+                        <input id="country" type="text" pInputText [(ngModel)]="country" class="custom-input">
+                    </div>
+
+                    <div class="field field-half">
+                        <label for="country">Description</label>
+                        <input id="country" type="text" pInputText [(ngModel)]="country" class="custom-input">
+                    </div>
+
+                    <div class="field field-full1">
+                        <label for="state">Banner</label>
+                        <div class="file-upload">
+                            <span class="file-name">No file selected</span>
+                            <label for="fileInput" class="custom-file-upload">
+                                <i class="pi pi-upload"></i> Choose File
+                            </label>
+                            <input type="file" id="fileInput" (change)="onFileSelected($event)"
+                                class="custom-file-input" accept=".png, .jpg, .jpeg, .pdf" multiple>
+                        </div>
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="payment">Heading 1</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="payment">Heading 2</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="payment">Heading 3</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="payment">Description 1</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="payment">Description 2</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-onethird">
+                        <label for="payment">Description 3</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+                </div>
+
+                <div class="field field-full1 p-3">
+                    <button class="button" pButton type="button" label="Publish" (click)="enrollStudent()"></button>
+                    <button class="button" pButton type="button" label="Preview" (click)="enrollStudent()"></button>
+                </div>
+
+            </section>
+        </p-tabPanel>
+
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <div class="flex align-items-center gap-2">
+                    <span class="font-bold white-space-nowrap m-0">
+                        Watch Us
+                    </span>
+                </div>
+            </ng-template>
+
+            <section class="shadow-3 border-round-sm">
+
+                <div class="p-fluid form-layout mt-4 p-3">
+
+                    <div class="field field-half">
+                        <label for="country">Heading</label>
+                        <input id="country" type="text" pInputText [(ngModel)]="country" class="custom-input">
+                    </div>
+
+                    <div class="field field-half">
+                        <label for="country">Youtube Video URL</label>
+                        <input id="country" type="text" pInputText [(ngModel)]="country" class="custom-input">
+                    </div>
+                </div>
+
+                <div class="field field-full1 p-3">
+                    <button class="button" pButton type="button" label="Publish" (click)="enrollStudent()"></button>
+                    <button class="button" pButton type="button" label="Preview" (click)="enrollStudent()"></button>
+                </div>
+
+            </section>
+        </p-tabPanel>
+
+    </p-tabView>
+
+    <!-- </section> -->
+
+</div>

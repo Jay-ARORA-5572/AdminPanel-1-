@@ -1,0 +1,76 @@
+.container {
+    height: 100%;
+    width: 100%;
+    border-radius: 16px 16px 0px 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #F4F0E7;
+}
+
+
+/* Content Section  Css*/
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    padding-top: 7vh;
+    text-align: center;
+    background-color: #F4F0E7;
+}
+
+.allinput {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+}
+
+.imagesection {
+    height: 25%;
+    width: 20%;
+}
+
+.imgdiv {
+    height: 30vh;
+    background-color: #D7D7D7;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+mat-form-field {
+    width: 18vw;
+}
+
+tr>td:nth-child(even) {
+    padding-left: 1vw;
+}
+
+
+/*Button css */
+
+.mybtn {
+    margin: auto !important;
+}
+
+.addcourse {
+    font-size: 16px;
+    font-weight: 400;
+    background-color:#0D1046 !important;
+    color: #ffff !important;
+}
+
+.cancel {
+    font-size: 16px;
+    font-weight: 500;
+    color: #FF5833 !important;
+    border: 1px solid #FF5833;
+    background-color: #D7D7D7;
+}

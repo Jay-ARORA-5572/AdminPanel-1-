@@ -1,0 +1,92 @@
+<div class="p-dialog p-component p-fluid">
+    <div class="p-dialog-header">
+        <span class="p-dialog-title">Edit Course </span>
+        <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+    </div>
+
+    <div class="p-dialog-content">
+        <div class="form-container">
+            <!-- Course Name -->
+            <div class="form-item1 mt-1">
+                <label for="courseName" class="mb-4">Course Name</label>
+                <input id="courseName" type="text" pInputText class="mt-2">
+            </div>
+
+            <!-- Course Category -->
+            <div class="form-item">
+                <label for="courseCategory">Course Category</label>
+                <p-dropdown class="mt-2" [options]="categories" placeholder="Select Category"></p-dropdown>
+            </div>
+
+            <!-- Course Difficulties -->
+            <div class="form-item ">
+                <label for="courseDifficulties">Course Difficulties</label>
+                <p-dropdown class="mt-2" [options]="difficulties" placeholder="Select Difficulty"></p-dropdown>
+            </div>
+
+            <!-- Total Lesson -->
+            <div class="totalLesson">
+                <label for="totalLesson">Total Lesson</label>
+                <input class="mt-2" id="totalLesson" type="number" pInputText />
+            </div>
+
+            <!-- Course Thumbnail -->
+            <div class="form-item full-width">
+                <div class="innerdiv">
+                    <label for="courseThumbnail">Course Thumbnail</label>
+                    <div class="file-upload">
+                        <span class="file-name">No file selected</span>
+                        <label for="fileInput" class="custom-file-upload">
+                            <i class="pi pi-upload"></i> Upload File
+                        </label>
+                        <input type="file" id="fileInput" (change)="onFileSelected($event)" class="custom-file-input"
+                            accept=".png, .jpg, .jpeg, .pdf" multiple>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Course Description -->
+            <div class="form-item full-width">
+                <label for="courseDescription">Course Description</label>
+                <textarea id="courseDescription" rows="5" pInputTextarea></textarea>
+            </div>
+
+            <!-- Status -->
+            <div class="form-item1">
+                <label>Status</label>
+                <div class="p-formgroup-inline">
+                    <div class="field-radiobutton">
+                        <p-radioButton name="status" value="Active" label="Active"></p-radioButton>
+                    </div>
+                    <div class="field-radiobutton">
+                        <p-radioButton name="status" value="Pending" label="Pending"></p-radioButton>
+                    </div>
+                    <div class="field-radiobutton">
+                        <p-radioButton name="status" value="Rejected" label="Rejected"></p-radioButton>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Price -->
+            <div class="form-item">
+                <label for="coursePrice">Course Price</label>
+                <input class="mt-2" id="coursePrice" type="number" pInputText />
+            </div>
+
+            <!-- Deadline -->
+            <div class="form-item">
+                <label for="deadline">Deadline</label>
+                <!-- <input  class="datatype mt-2" type="datetime"> -->
+                <input class="mt-2" id="coursePrice" type="datetime" pInputText />
+
+            </div>
+        </div>
+    </div>
+
+    <div class="p-dialog-footer">
+        <button pButton pRipple label="Save Information" class="savebtn"></button>
+        <button pButton pRipple label="Cancel" class="Cancel" (click)="onCancelClick()"></button>
+    </div>
+
+</div>

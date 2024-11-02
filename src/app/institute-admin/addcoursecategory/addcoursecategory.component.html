@@ -1,0 +1,63 @@
+<div class="p-dialog p-component p-fluid">
+
+    <!-- top-header -->
+    <div class="p-dialog-header">
+        <span class="p-dialog-title">Add Course Category</span>
+        <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+    </div>
+
+    <!-- main-content -->
+    <div class="p-dialog-content">
+
+        <form #categorydata="ngForm" (ngSubmit)="categoryadd(categorydata)" enctype="multipart/form-data">
+
+            <div class="p-field mt-2">
+                <label for="categoryName">Category Name :</label>
+                <br>
+                <input id="categoryName" name="category" ngModel class="mt-2" type="text" pInputText placeholder="e.g. Web Development" />
+
+                <div *ngIf="categorydata.submitted && !categorydata.controls['category']?.valid" class="error"> Category Name is required
+                </div>
+            </div>
+            <div class="p-field mt-3">
+                <label for="description">Description :</label>
+                <br>
+                &nbsp;
+                <textarea id="description" name="description" ngModel class="form-control mt-2" placeholder="Write Category Description"
+                    name="description" rows="5" cols="30" pInputTextarea class="custom-width" required
+                    spellcheck="true"></textarea>
+                
+
+            </div>
+            <div class="p-field mt-3">
+                <div class="file-upload">
+                    <span class="file-name">No file selected</span>
+                    <label for="fileInput" class="custom-file-upload">
+                        <i class="pi pi-upload"></i> Upload File
+                    </label>
+                    <input type="file" name="categoryicon" id="fileInput" (change)="onFileSelected($event)" class="custom-file-input"
+                        accept=".png, .jpg, .jpeg, .pdf" multiple>
+                </div>
+            </div>
+            <div class="p-field mt-3">
+
+                <div class="flex justify-content-between align-items-center">
+                    <label for="subcategory">Subcategory :</label>
+                    <button type="button" pButton pRipple icon="pi pi-plus" class="savebtn" (click)="onAddNewCategory()"></button>
+                </div>
+        
+                <div class="p-inputgroup mt-2" *ngFor="let subcat of subCategoryAdd; let i = index">
+                    <input id="subcategory" name="subcatName" [(ngModel)]="subCategoryAdd[i].name" type="text" 
+                           pInputText placeholder="e.g. Frontend Development" />
+                </div>
+            </div>
+            <div class="p-dialog-footer mt-5">
+                <button type="submit" pButton pRipple label="Save Information" class="savebtn"></button>
+                <!-- <button type="button" pButton pRipple label="Cancel" class="Cancel" (click)="onCancelClick()"></button> -->
+                <button type="button" class="Cancel" (click)="onCancelClick()"> Cancel </button>
+
+            </div>
+
+        </form>
+    </div>
+</div> 

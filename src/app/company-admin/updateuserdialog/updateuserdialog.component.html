@@ -1,0 +1,134 @@
+<div class="container">
+
+    <div id="content">
+        <div class="imagesection">
+            <div class="imgdiv">
+                <img *ngIf="imgsrc" [src]="imgsrc">
+                <img src="../assets/imageupload.png" alt="" *ngIf="!imgsrc">
+            </div>
+            <br>
+            <input hidden (change)="readURL($event)" #fileInput type="file" id="file" accept=".jpg, .jpeg, .png">
+            <button type="button" class="addcourse" mat-raised-button (click)="fileInput.click()">User image</button>
+        </div>
+
+        <div id="inputsection">
+            <div class="allinput">
+                <form #userdata="ngForm" (submit)="updateuser(userdata)">
+                    <table>
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Full Name</mat-label>
+                                    <input matInput required name="name" ngModel  [(ngModel)]="this.uservalue.name">
+                                </mat-form-field>
+                            </td>
+                            <td>
+
+                                <mat-form-field appearance="outline">
+                                    <mat-label>User Name</mat-label>
+                                    <input matInput required name="username" ngModel [(ngModel)]="this.uservalue.username">
+                                </mat-form-field>
+                                
+                               
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+
+                                <mat-form-field appearance="outline">
+                                    <mat-label>User ID</mat-label>
+                                    <input matInput required name="userId" ngModel [(ngModel)]="this.userId" readonly>
+                                </mat-form-field>
+                               
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline" class="period">
+                                    <mat-label>Role</mat-label>
+                                    <mat-select required name="role" ngModel [(ngModel)]="this.uservalue.role">
+                                        <mat-option value="admin">Admin</mat-option>
+                                        <mat-option value="branch">Branch</mat-option>
+                                        <mat-option value="institute">Institute</mat-option>
+                                        <mat-option value="jobposter">Job Poster</mat-option>
+                                        <!-- <mat-option value="franchise">Franchise</mat-option> -->
+                                    </mat-select>
+                                </mat-form-field>
+
+                               
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Aadhar No.</mat-label>
+                                    <input matInput required name="aadharnumber" ngModel [(ngModel)]="this.uservalue.aadharnumber">
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>House No.</mat-label>
+                                    <input matInput required name="housenumber" ngModel [(ngModel)]="this.uservalue.address.housenumber">
+                                </mat-form-field>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Pin Code</mat-label>
+                                    <input matInput required name="zipcode" ngModel [(ngModel)]="this.uservalue.address.landmark">
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Landmark</mat-label>
+                                    <input matInput required name="landmark" ngModel [(ngModel)]="this.uservalue.address.landmark">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>State</mat-label>
+                                    <input matInput required name="state" ngModel [(ngModel)]="this.uservalue.address.state">
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>City</mat-label>
+                                    <input matInput required name="city" ngModel [(ngModel)]="this.uservalue.address.city">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Mobile No.</mat-label>
+                                    <input matInput required name="mobnum" ngModel [(ngModel)]="this.uservalue.contactdetail.mobnum">
+                                </mat-form-field>
+
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Email id</mat-label>
+                                    <input matInput required name="emailid" ngModel [(ngModel)]="this.uservalue.contactdetail.emailid">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                <button type="button" class="cancel" mat-raised-button
+                                    (click)="onCancelClick()">Cancel</button> &nbsp; &nbsp;
+                                <button class="addcourse" mat-raised-button>Update User</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<p-toast></p-toast>

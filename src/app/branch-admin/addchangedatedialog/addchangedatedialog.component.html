@@ -1,0 +1,15 @@
+<!-- top-header -->
+<div class="p-dialog-header">
+    <h2 class="p-dialog-title">Date Format</h2>
+    <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+</div>
+
+<!-- main-section -->
+<div class="box">
+    <!-- <p-dropdown [options]="dateFormats" [(ngModel)]="selectedFormat" optionLabel="format" placeholder="M,D,YYYY">
+    </p-dropdown> -->
+
+    <div class="field field-full p-3">
+        <button class="button" pButton type="button" label="Save" (click)="changeDateFormat()"></button>
+    </div>
+</div>

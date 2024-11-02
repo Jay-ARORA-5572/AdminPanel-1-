@@ -1,0 +1,143 @@
+<div class="header">
+    <h1>Add New Questions</h1>
+    <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+</div>
+<div class="Exam-container">
+    <div class="card flex justify-content-center">
+        <p-stepper>
+            <!-- Step I: Add Questions -->
+            <p-stepperPanel header="Step I">
+                <ng-template pTemplate="content" let-nextCallback="nextCallback">
+                    <div class="container">
+                        <div class="container-heading">
+                            <p class="tag">Tag: Mathematics</p>
+                            <div class="question-action-buttons">
+                                <button class="add-button" (click)="onAddQuestion()"><span>+ Add
+                                        Question</span></button>
+                                <p-toast />
+                                <p-confirmDialog />
+                                <button class="delete-all-questions" (click)="onDeleteAllQuestions($event)">
+                                    <span>Delete All Questions</span>
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="all-questions">
+                            <div class="question-box" *ngFor="let question of questions; let qIndex = index">
+                                <div class="question-input">
+                                    <input type="text" placeholder="Type your question here"
+                                        [(ngModel)]="question.text" />
+                                    <div class="question-buttons">
+                                        <button class="icon-button" (click)="onAddImageToQuestion(qIndex)">
+                                            <i class="pi pi-image"></i>
+                                        </button>
+                                        <button class="icon-button" (click)="onDeleteQuestion(qIndex)">
+                                            <i class="pi pi-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="options">
+                                    <div class="option" *ngFor="let option of question.options; let i = index">
+                                        <input type="radio" name="option{{qIndex}}" />
+                                        <input type="text" [(ngModel)]="option.text" placeholder="Option {{ i + 1 }}" />
+
+                                        <button class="icon-button" (click)="onAddImageToOption(qIndex, i)">
+                                            <i class="pi pi-image"></i>
+                                        </button>
+                                        <button class="icon-button" (click)="onRemoveOption(qIndex, i)">
+                                            <i class="pi pi-trash"></i>
+                                        </button>
+                                    </div>
+                                    <div class="add-option">
+                                        <button (click)="onAddOption(qIndex)">+ Add Option</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="button">
+                        <p-button class="Proceed-button" label="Proceed" icon="pi pi-arrow-right"
+                            (click)="nextCallback.emit()" (click)="onProceed()"></p-button>
+                    </div>
+                </ng-template>
+            </p-stepperPanel>
+
+            <!-- Step II: Loading Screen and Report -->
+            <p-stepperPanel header="Step II">
+                <ng-template pTemplate="content" let-nextCallback="nextCallback">
+                    <div *ngIf="showFirstScreen" class="loading-screen">
+                        <div class="loading-content">
+                            <img src="../assets/loading.gif" alt="Loading" class="phone-image" />
+                            <p>Please Wait While We Analyse Your Questions</p>
+                            <small>Do not refresh or Close this Screen</small>
+                        </div>
+                    </div>
+
+                    <div *ngIf="showSecondScreen && !showFirstScreen" class="loading-screen">
+                        <div class="loading-content2">
+                            <img src="../assets/analysed.gif" alt="Preparing Report" class="report-image" />
+                            <p>Questions Analysed Successfully, Preparing Report</p>
+                            <small>This can take a while, do not refresh or close this tab.</small>
+                        </div>
+                    </div>
+
+                    <div *ngIf="showThirdScreen && !showFirstScreen && !showSecondScreen" class="report-container">
+                        <div class="chartdiv">
+                            <h2>Report Generated</h2>
+                            <div class="card flex justify-content-center">
+                                <p-chart class="p-chart" type="doughnut" [data]="data" [options]="options" />
+                            </div>
+                            <div class="total-question">Total Questions Uploaded <span>{{ totalQuestions }}</span></div>
+                            <div class="unique-repeated-question">
+                                <p class="label unique">Unique Questions <span>{{ uniqueQuestions }}</span></p>
+                                <p class="label repeated">Repeated Questions <span>{{ repeatedQuestions }}</span></p>
+                            </div>
+                            <button class="preview-btn" (click)="previewQuestions()" (click)="nextCallback.emit()">+
+                                Preview
+                                Questions</button>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-stepperPanel>
+
+            <!-- Step III: Preview and Edit Questions -->
+            <p-stepperPanel header="Step III">
+                <ng-template pTemplate="content" let-prevCallback="prevCallback">
+                    <!-- <p class="pi pi-arrow-circle-left" (click)="prevCallback.emit()"></p> -->
+                    <div class="preview-questions">
+                        <h3>Preview Questions</h3>
+                        <div class="preview-question">
+                            <div *ngFor="let question of questions2; let i = index" class="question-container">
+                                <h3>Q{{ i + 1 }}</h3>
+                                <p>{{ question.text }}</p>
+
+                                <img *ngIf="question.hasImage" [src]="question.imageUrl" alt="Question Image"
+                                    class="question-image" />
+
+                                <ul class="options">
+                                    <li *ngFor="let option of question.options">
+                                        <input type="radio" [checked]="option.isCorrect" /> {{ option.text }}
+                                        <span *ngIf="option.isCorrect" class="correct">✔ Marked as Correct</span>
+                                    </li>
+                                </ul>
+
+                                <div class="actions">
+                                    <button class="edit-btn" (click)="previeweditQuestion(i)"><span>Edit</span></button>
+                                    <p-toast />
+                                    <p-confirmDialog />
+                                    <button class="delete-btn" (click)="confirmDelete($event, i)">
+                                        <span>Delete</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-stepperPanel>
+        </p-stepper>
+    </div>
+</div>

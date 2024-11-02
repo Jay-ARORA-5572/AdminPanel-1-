@@ -1,0 +1,86 @@
+<div id="maindiv">
+
+    <!-- top-header -->
+    <section class="shadow-3 border-round-sm">
+
+        <div class="top-header">
+            <h2>Instructors</h2>
+            <div class="header-controls">
+                <input type="text" pInputText placeholder="Search by name" />
+                <p-dropdown [options]="statusOptions" placeholder="Status"></p-dropdown>
+                <button pButton type="button" label="Add" icon="pi pi-plus" class="add-button"
+                    (click)="addinstructor()"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- top-header  -->
+
+
+    <section class="shadow-3 border-round-sm">
+        <!-- main-content -->
+        <div class="maincontent mt-3">
+            <p-table [value]="instructors" responsiveLayout="scroll" [paginator]="true" [rows]="rows" [first]="first"
+                (onPage)="onPageChange($event)">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Teacher Name</th>
+                        <th>Phone</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Salary </th>
+                        <th>Active courses</th>
+                        <th>Courses Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-instructor>
+                    <tr>
+                        <td>
+                            <div class="instructor-info">
+                                <img [src]="instructor?.image || '../assets/playicon1.png'"  alt="Instructor Image" class="instructor-image">
+                                <div>
+                                    <div class="instructor-name">{{ instructor?.personalInfo?.firstName || 'N/A' }} {{ instructor?.personalInfo?.lastName || '' }}</div>
+                                    <div class="instructor-email">{{ instructor?.personalInfo?.email || 'N/A' }}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>{{ instructor?.personalInfo?.phone || 'N/A' }}</td>
+                        <td>{{ instructor?.address?.city || 'N/A' }}</td>
+                        <td>{{ instructor?.address?.state || 'N/A' }}</td>
+                        <td>{{ instructor?.isTeacher?.salary || 'N/A' }}</td>
+                        <td>
+                            <span class="status" [ngClass]="getStatusClass(instructor.status)">{{ instructor.status|| 'Active'}}</span>
+                        </td>
+                        <td>{{ instructor?.courses?.length > 0 ? instructor.courses : 'Web Development' }}</td>
+
+                        <td>
+                            <p-toast />
+                            <button class="actionicon" pButton type="button" (click)="op.toggle($event)"
+                                icon="pi pi-ellipsis-h"></button>
+
+                            <!-- Overlay Panel -->
+                             <p-overlayPanel #op>
+                                <div class="menu">
+                                    <div class="menu-item" (click)="EditCourse()">
+                                        <button class="actioniconover"  (click)="selectbtn(op)" label="Edit Course" pButton type="button"
+                                            icon="pi pi-file-edit"></button>
+                                    </div>
+                                    
+                                    <div class="menu-item" (click)="DeleteCourse()">
+                                        <button class="actioniconover" (click)="selectbtn(op)" label="Delete Course" pButton type="button"
+                                            icon="pi pi-trash"></button>
+                                    </div>
+                                    
+                                </div>
+                            </p-overlayPanel>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+        <!-- main-content -->
+
+    </section>
+
+</div>

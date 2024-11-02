@@ -1,0 +1,123 @@
+<div id="main">
+    
+    <!-- Top header  -->
+    <section class="shadow-3 border-round-sm">
+        <div class="courses-header">
+            <div class="course-info">
+                <h2>Staff Management</h2>
+            </div>
+            <div class="course-actions">
+                <button class="login" mat-raised-button (click)="addStaff()">+ Add Staff </button>
+            </div>
+        </div>
+    </section>
+    <!-- Top header  -->
+
+    <!-- 1st conatiner -->
+    <div class="stats-dashboard">
+        <div class="stat-card">
+            <p-card>
+                <div class="card-content">
+                    <div class="header">
+                        <span>Number of Employees</span>
+                        <span class="percentage">+40%</span>
+                    </div>
+                    <h2>1000</h2>
+                    <p>Total</p>
+                    <a href="#" class="details-link">Show full stats <i icon="pi pi-calendar"></i></a>
+                </div>
+            </p-card>
+        </div>
+        <!-- 1st conatiner -->
+
+        <!-- 2nd conatiner -->
+        <div class="stat-card">
+            <p-card>
+                <div class="card-content">
+                    <div class="header">
+                        <span>Number of Employees</span>
+                        <span class="percentage">+40%</span>
+                    </div>
+                    <h2>1000</h2>
+                    <p>Total</p>
+                    <a href="#" class="details-link">Show full stats <i icon="pi pi-calendar"></i></a>
+                </div>
+            </p-card>
+        </div>
+        <!-- 2nd conatiner -->
+
+        <!-- 3rd conatiner -->
+        <div class="stat-card">
+            <p-card>
+                <div class="card-content">
+                    <div class="header">
+                        <span>Number of Employees</span>
+                        <span class="percentage">+40%</span>
+                    </div>
+                    <h2>1000</h2>
+                    <p>Total</p>
+                    <a href="#" class="details-link">Show full stats <i icon="pi pi-calendar"></i></a>
+                </div>
+            </p-card>
+        </div>
+        <!-- 3rd conatiner -->
+
+        <!-- 4th conatiner -->
+        <div class="stat-card">
+            <p-card>
+                <div class="card-content">
+                    <div class="header">
+                        <span>Number of Employees</span>
+                        <span class="percentage">+40%</span>
+                    </div>
+                    <h2>1000</h2>
+                    <p>Total</p>
+                    <a href="#" class="details-link">Show full stats <i icon="pi pi-calendar"></i></a>
+                </div>
+            </p-card>
+        </div>
+        <!-- 4th conatiner -->
+
+    </div>
+
+    <section class="shadow-3 border-round-sm mt-4">
+        <p-table [value]="studentPayments" responsiveLayout="scroll" [paginator]="true" [rows]="rows" [first]="first"
+            (onPage)="moredata($event)">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Work Mode</th>
+                    <th>Active Time</th>
+                    <th>Leave</th>
+                    <th>Attendance Ratio</th>
+                    <th>Actions</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-payment>
+                <tr>
+                    <td>
+                        <a href="#">{{ payment.studentId }}</a>
+                    </td>
+                    <td>
+                        <span [ngClass]="{
+                        'status-complete': payment.status === 'Complete',
+                        'status-pending': payment.status === 'Pending',
+                        'status-cancelled': payment.status === 'Cancelled'
+                    }">
+                            {{ payment.status }}
+                        </span>
+                    </td>
+                    <td>{{ payment.date }}</td>
+                    <td>{{ payment.amount }}</td>
+                    <td>{{ payment.ratio }}</td>
+                    <td>
+                        <button pButton type="button" icon="pi pi-pencil"
+                            class="actionicon p-button p-button-secondary"></button>
+                        <button pButton type="button" label="View" (click)="viewemployee()"
+                            class="actionicon p-button p-button-primary"></button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </section>
+</div>

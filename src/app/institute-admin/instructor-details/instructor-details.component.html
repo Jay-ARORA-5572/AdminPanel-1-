@@ -1,0 +1,208 @@
+<div id="main">
+    <!-- Top header  -->
+    <section class="shadow-3 border-round-sm">
+        <header class="heading">
+            <div class="title-section">
+                <h1>Instructor Details</h1>
+            </div>
+        </header>
+    </section>
+    <!-- Top header -->
+
+    <!-- 2nd Section -->
+
+    <p-tabView>
+        <!-- Personal Information -->
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <div class="flex align-items-center gap-2">
+                    <i class="pi pi-user" style="font-size: 1rem"></i>
+                    <span class="font-bold white-space-nowrap m-0">
+                        Personal Information
+                    </span>
+                </div>
+            </ng-template>
+
+            <div class="info-section">
+                <div class="info-item">
+                    <label>Title:</label>
+                    <span>Mr.</span>
+                </div>
+                <div class="info-item">
+                    <label>Full Name:</label>
+                    <span>Abu Bin Ishtiyak</span>
+                </div>
+                <div class="info-item">
+                    <label>Date of Birth:</label>
+                    <span>10 Aug, 1980</span>
+                </div>
+                <div class="info-item">
+                    <label>Mobile Number:</label>
+                    <span>+811 758-756433</span>
+                </div>
+                <div class="info-item">
+                    <label>Email Address:</label>
+                    <span>info softnio.com</span>
+                </div>
+                <div class="info-item">
+                    <label>Joining Date:</label>
+                    <span>08-16-2018 09:04PM</span>
+                </div>
+                <div class="info-item">
+                    <label>Country:</label>
+                    <span>United State</span>
+                </div>
+                <div class="info-item">
+                    <label>Nationality:</label>
+                    <span>United State</span>
+                </div>
+            </div>
+            <div class="courses-header">
+                <div class="course-info">
+                    <h3>Admin Note</h3>
+                </div>
+                <div class="course-actions">
+                    <button class="actionicon1" pButton type="button" icon="pi pi-plus" style="font-size: 0.8rem"
+                        label="Add Note"></button>
+                </div>
+            </div>
+            <ng-template let-adminnote let-i="rowIndex">
+                <div class="admin-note">
+                    <p>{{i+1}}</p>
+                    <p>{{ adminnote.note }}</p>
+                    <p>
+                        Added on November 18, 2019 at 5:34 PM | By Softnio
+                        <i class="actionicon2 pi pi-times cross" (click)="deleteCourse(i)"></i>
+                    </p>
+                </div>
+            </ng-template>
+        </p-tabPanel>
+        <!-- Personal Information -->
+
+        <!-- Courses -->
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <div class="flex align-items-center gap-2">
+                    <i class="pi pi-book" style="font-size: 1rem"></i>
+                    <span class="font-bold white-space-nowrap m-0">
+                        Courses
+                    </span>
+                </div>
+            </ng-template>
+
+            <p-table [value]="courses" responsiveLayout="scroll" [paginator]="true" [rows]="rows1" [first]="first"
+                (onPage)="onPageChange($event)">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>#</th>
+                        <th>Course List</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-course let-i="rowIndex">
+                    <tr>
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ course.name }}</td>
+                        <td>
+                            <p-badge [value]="course.status" [severity]="getBadgeSeverity(course.status)">
+                            </p-badge>
+                        </td>
+                        <td>
+                            <i class="actionicon pi pi-times cross" (click)="deleteCourse1(i)"></i>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </p-tabPanel>
+        <!-- Courses -->
+
+        <!-- Review -->
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <div class="flex align-items-center gap-2">
+                    <i class="pi pi-thumbs-up" style="font-size: 1rem"></i>
+                    <span class="font-bold white-space-nowrap m-0">
+                        Review
+                    </span>
+                </div>
+            </ng-template>
+
+            <div class="maincontent mt-3">
+                <p-table [value]="instructors" responsiveLayout="scroll" [paginator]="true" [rows]="rows"
+                    [first]="first" (onPage)="onPageChange($event)">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th> <p-checkbox [(ngModel)]="checkedall" [binary]="true" inputId="binary" />
+                            </th>
+                            <th>Students</th>
+                            <th>Course Name</th>
+                            <th>Rating</th>
+                            <th>Review</th>
+                            <th>
+                                <button class="actionicon" pButton type="button" icon="pi pi-ellipsis-h"
+                                    (click)="opt.toggle($event)"></button>
+        
+                                <!-- Overlay Panel -->
+                                <p-overlayPanel #opt>
+                                    <div class="menu">
+                                        <div class="menu-item">
+                                            <button class="actioniconover" label="Send Email to All" pButton type="button"
+                                                icon="pi pi-envelope"></button>
+                                        </div>
+        
+                                        <div class="menu-item">
+                                            <button class="actioniconover" label="Suspend Selected" pButton type="button"
+                                                icon="pi pi-ban"></button>
+                                        </div>
+        
+                                        <div class="menu-item">
+                                            <button class="actioniconover" label="Remove Selected" pButton type="button"
+                                                icon="pi pi-trash"></button>
+                                        </div>
+        
+        
+                                    </div>
+                                </p-overlayPanel>
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-instructor let-i="rowIndex">
+                        <tr class="table-row">
+                            <td> <p-checkbox [(ngModel)]="checkedone" [binary]="true" inputId="binary" />
+                            </td>
+                            <td>
+                                <div class="instructor-info">
+                                    <img [src]="instructor.image" alt="Instructor Image" class="instructor-image">
+                                    <div>
+                                        <div class="instructor-name">{{ instructor.name }}</div>
+                                        <div class="instructor-email">{{ instructor.email }}</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>{{ instructor.coursename }}</td>
+                            <td>{{ instructor.rating }}</td>
+                            <td>{{ instructor.review }}</td>
+                            <!-- <td class="actions">
+                                <i class="pi pi-envelope" style="font-size: 1rem;cursor:pointer;"></i>
+                                <i class="pi pi-user-edit" style="font-size: 1rem;cursor:pointer;"></i>
+                                <button pButton icon="pi pi-envelope" class="p-button-rounded p-button-text"></button>
+                                              <button pButton icon="pi pi-user-edit" class="p-button-rounded p-button-text"></button>
+                            </td> -->
+                            <td>
+                                <button class="actionicon" icon="pi pi-trash" pButton type="button"
+                                    (click)="deleteReview(i)"></button>
+                            </td>
+
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </p-tabPanel>
+        <!-- Review -->
+
+    </p-tabView>
+
+    <!-- </section> -->
+
+</div>

@@ -1,0 +1,95 @@
+<div class="container">
+
+    <div id="content">
+        <div class="imagesection">
+            <div class="imgdiv">
+                <img *ngIf="imgsrc" [src]="imgsrc">
+                <!-- <img src="../assets/imageupload.png" alt="" *ngIf="!imgsrc"> -->
+                <img src="../../../assets/imageupload.png" alt="" *ngIf="!imgsrc">
+            </div>
+            <br>
+            <input hidden (change)="readURL($event)" #fileInput type="file" id="file" accept=".jpg, .jpeg, .png">
+            <button type="button" class="addcourse" mat-raised-button (click)="fileInput.click()">Branch icon</button>
+        </div>
+
+        <div id="inputsection">
+            <div class="allinput">
+                <form #userdata="ngForm" (submit)="addbranch(userdata)">
+                    <table>
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Branch Name</mat-label>
+                                    <input matInput required name="branchName" ngModel>
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>City</mat-label>
+                                    <input matInput required name="city" ngModel>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Address</mat-label>
+                                    <input matInput required name="baseaddress" ngModel>
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Landmark</mat-label>
+                                    <input matInput required name="landmark" ngModel>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Pincode </mat-label>
+                                    <input matInput required name="pincode" ngModel>
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Mobile No.</mat-label>
+                                    <input matInput required name="contact" ngModel>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+          
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>User Name</mat-label>
+                                    <input matInput required name="username" ngModel>
+                                </mat-form-field>
+                            </td>
+                            <td> 
+                                <mat-form-field appearance="outline"> 
+                                    <mat-label>Enter your password</mat-label>
+                                    <input matInput [type]="hide ? 'password' : 'text'" required name="password" ngModel>
+                                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+                                  </mat-form-field>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                <button type="button" class="cancel" mat-raised-button (click)="onCancelClick()">Cancel</button> &nbsp; &nbsp;
+                                <button class="addcourse" mat-raised-button>Add Branch</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<p-toast></p-toast>

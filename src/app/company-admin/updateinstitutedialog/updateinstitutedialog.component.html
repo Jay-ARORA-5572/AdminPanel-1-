@@ -1,0 +1,76 @@
+<div class="container">
+
+    <div id="content">
+        <div class="imagesection">
+            <div class="imgdiv">
+                <img *ngIf="imgsrc" [src]="imgsrc">
+                <img src="../assets/imageupload.png" alt="" *ngIf="!imgsrc">
+            </div>
+            <br>
+            <input hidden (change)="readURL($event)" #fileInput type="file" id="file" accept=".jpg, .jpeg, .png">
+            <button type="button" class="addcourse" mat-raised-button (click)="fileInput.click()">Institute icon</button>
+        </div>
+
+        <div id="inputsection">
+            <div class="allinput">
+                <form #updateinstitutedata="ngForm" (submit)="updateinstitute(updateinstitutedata)">
+                    <table>
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Institute Name</mat-label>
+                                    <input matInput required name="institutionname"  ngModel  [(ngModel)]="institutionData.institutionname"> 
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Address</mat-label>
+                                    <!-- <input matInput required name="baseAddress" ngModel [(ngModel)]="institutionData.location.baseAddress"> -->
+                                    <input matInput required name="landmark" ngModel [(ngModel)]="institutionData.location.landmark">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Landmark</mat-label>
+                                    <input matInput required name="landmark" ngModel  [(ngModel)]="institutionData.location.landmark">
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Zip Code</mat-label>
+                                    <input matInput required name="zipcode" ngModel [(ngModel)]="institutionData.location.zipcode">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Mobile No.</mat-label>
+                                    <input matInput required name="mobnum" ngModel [(ngModel)]="institutionData.contact.mobnum">
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Email Id.</mat-label>
+                                    <input matInput required name="emailid" ngModel [(ngModel)]="institutionData.contact.emailid">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                <button type="button" class="cancel" mat-raised-button (click)="onCancelClick()">Cancel</button> &nbsp; &nbsp;
+                                <button class="addcourse" mat-raised-button>Update Institute</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<p-toast></p-toast>

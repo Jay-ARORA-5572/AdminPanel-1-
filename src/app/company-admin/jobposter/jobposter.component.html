@@ -1,0 +1,373 @@
+<div id="outer-container">
+
+    <mat-card class="custom-card mx-3 my-4">
+        <mat-card-content class="custom-content">
+            <div id="heading">
+                <div id="left">
+                    <div>
+                        <mat-icon class="arrow">arrow_back</mat-icon>
+                    </div>
+                    <div>
+                        <p class="title">
+                            All Posted Jobs
+                        </p>
+                    </div>
+                </div>
+
+                <div id="right">
+                    <button mat-flat-button class="btn1" (click)="addjobposter()">+ Add Jobsposter</button>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<mat-card class="custom-card mx-3 my-1">
+    <div class="" id="courseheading">
+        <div class="mx-3">
+            <mat-icon style="cursor: pointer ;">list</mat-icon>
+        </div>
+        <div>
+            <p class="Coursetitle">Showing 20 jobs</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="job-list">
+            <div class="job-card" *ngFor="let data of jobposterlist">
+                <img src="{{data.icon}}" alt="Job Icon" class="job-icon">
+                <div class="job-info">
+                    <h3>{{data.title}}</h3>
+                    <p><span class="location">{{data.location}}</span> &nbsp;&nbsp;&nbsp;&nbsp; <span class="employment-type">{{data.jobstype}}</span></p>
+                    <div class="jobs_posterdate">
+                        <p class="category">{{data.category}}</p>
+                        <p class="date">{{data.date}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="filters">
+            <p-accordion [activeIndex]="0">
+                <p-accordionTab header="Private Job">
+                    <ul>
+                        <li *ngFor="let jobType of privatejob">
+                            <div id="jobstypecount">
+                                <div class="checkboxshow">
+                                    <p-checkbox [binary]="true" inputId="binary" (click)="singlechecked(jobType)" />
+                                    <span class="jobstype">{{ jobType }}</span>
+                                </div>
+                                <div class="totaljobshow">
+                                    <p class="countjobs">11</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </p-accordionTab>
+                
+                <p-accordionTab header="Government Job">
+                    <ul>
+                        <li *ngFor="let jobType of govtjobs">
+                            <div id="jobstypecount">
+                                <div class="checkboxshow">
+                                    <p-checkbox [binary]="true" inputId="binary" (click)="singlechecked(jobType)" />
+                                    <span class="jobstype">{{ jobType }}</span>
+                                </div>
+                                <div class="totaljobshow">
+                                    <p class="countjobs">11</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </p-accordionTab>
+              
+            </p-accordion>
+
+
+
+            <!-- <div *ngFor="let jobCategory of jobslist | keyvalue">
+            <div id="heading">
+                <div class="left_heading">
+                    <h2>{{ jobCategory.key }}</h2>
+                </div>
+                <div class="right_btn">
+                    <i class="pi pi-angle-down" style="color: black"></i>
+                </div>
+            </div>
+            <ul *ngIf="jobshow">
+                <li *ngFor="let jobType of jobCategory.value">
+                    <div id="jobstypecount">
+                        <div class="checkboxshow">
+                            <p-checkbox [binary]="true" inputId="binary" (click)="singlechecked(jobType)" />
+                            <span class="jobstype">{{ jobType }}</span>
+                        </div>
+                        <div class="totaljobshow">
+                            <p class="countjobs">11</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div> -->
+        </div>
+    </div>
+
+
+
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Business Summary -->
+
+<!-- <mat-card class="custom-card mx-3 my-4">
+        <mat-card-content class="custom-content">
+            <div class="maincontainer">
+                <div class="surface-ground">
+                    <div class="grid">
+                        <div class="col-12 md:col-6 lg:col-4 hovereffect">
+                            <div class="surface-card shadow-2 p-3 border-round card1">
+                                <div class="flex justify-content-between mb-3">
+                                    <div>
+                                        <span class="block header font-medium mb-3">Total Posted Jobs</span>
+                                        <div class="text-900 font-medium text-xl textsize1">2855</div>
+                                    </div>
+                                    <div class="flex align-items-center justify-content-center bg-blue-100 border-round"
+                                        style="width:2.5rem;height:2.5rem">
+                                        <i class="pi pi-user text-blue-500 text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 md:col-6 lg:col-4 hovereffect">
+                            <div class="surface-card shadow-2 p-3 border-round card2">
+                                <div class="flex justify-content-between mb-3">
+                                    <div>
+                                        <span class="block header font-medium mb-3">Total Apply Jobs</span>
+                                        <div class="text-900 font-medium text-xl textsize2">100</div>
+                                    </div>
+                                    <div class="flex align-items-center justify-content-center bg-orange-100 border-round"
+                                        style="width:2.5rem;height:2.5rem">
+                                        <i class="pi pi-users text-orange-500 text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 md:col-6 lg:col-4 hovereffect">
+                            <div class="surface-card shadow-2 p-3 border-round card3">
+                                <div class="flex justify-content-between mb-3">
+                                    <div>
+                                        <span class="block header font-medium mb-3">Total Govt. jobs</span>
+                                        <div class="text-900 font-medium text-xl textsize3">75</div>
+                                    </div>
+                                    <div class="flex align-items-center justify-content-center bg-cyan-100 border-round"
+                                        style="width:2.5rem;height:2.5rem">
+                                        <i class="pi pi-user-plus text-cyan-500 text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 md:col-6 lg:col-4 hovereffect">
+                            <div class="surface-card shadow-2 p-3 border-round card4">
+                                <div class="flex justify-content-between mb-3">
+                                    <div>
+                                        <span class="block header font-medium mb-3">Total Private Jobs</span>
+                                        <div class="text-900 font-medium text-xl textsize4">123</div>
+                                    </div>
+                                    <div class="flex align-items-center justify-content-center bg-purple-100 border-round"
+                                        style="width:2.5rem;height:2.5rem">
+                                        <mat-icon class="text-blue-500 text-xl">supervised_user_circle</mat-icon>
+                                    </div>
+                                </div>
+                     
+                            </div>
+                        </div>
+                        <div class="col-12 md:col-6 lg:col-4 hovereffect">
+                            <div class="surface-card shadow-2 p-3 border-round card5">
+                                <div class="flex justify-content-between mb-3">
+                                    <div>
+                                        <span class="block header font-medium mb-3">Total Active Jobs</span>
+                                        <div class="text-900 font-medium text-xl textsize5">152</div>
+                                    </div>
+                                    <div class="flex align-items-center justify-content-center bg-purple-100 border-round"
+                                        style="width:2.5rem;height:2.5rem">
+                                        <mat-icon class="text-orange-500 text-xl">verified_user</mat-icon>
+                                    </div>
+                                </div>
+                             z
+                            </div>
+                        </div>
+                        <div class="col-12 md:col-6 lg:col-4 hovereffect">
+                            <div class="surface-card shadow-2 p-3 border-round card6">
+                                <div class="flex justify-content-between mb-3">
+                                    <div>
+                                        <span class="block header font-medium mb-3">Total Intership Jobs</span>
+                                        <div class="text-900 font-medium text-xl textsize6">15</div>
+                                    </div>
+                                    <div class="flex align-items-center justify-content-center bg-purple-100 border-round"
+                                        style="width:2.5rem;height:2.5rem">
+                                        <mat-icon class="text-green-500 text-xl">add_alert</mat-icon>
+                                    </div>
+                                </div>
+              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </mat-card-content>
+    </mat-card> -->
+<!-- Business Summary -->
+
+<!-- Searching  -->
+<!-- <mat-card class="custom-card mx-3 my-4">
+        <mat-card-content class="custom-content">
+            <div class="main">
+                <div class="stab">
+                    <div id="searchbox">
+                        <button *ngIf="!search_bar" mat-flat-button id="searchbtn" color="primary" class="btn btn-save"
+                            (click)="searchbar()">
+                            <i class="fa fa-search" aria-hidden="true"></i> Search
+                        </button>
+                        <button mat-raised-button color="warn" *ngIf="singlecheck.length > 0"
+                            (click)="deletedata()">Delete</button>
+                    </div>
+
+                    <div id="searchpop" *ngIf="search_bar">
+                        <form id="filterForm" class="mx-2">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Search by institute id</mat-label>
+                                <input matInput name="instituteid" [(ngModel)]="this.searchby">
+                            </mat-form-field>
+
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Branch Name</mat-label>
+                                <input matInput name="Amount" />
+                            </mat-form-field>
+
+
+                            <div id="actionbtns">
+                                <button mat-flat-button id="search" color="primary" class="btn btn-save"
+                                    (click)="searching()">
+                                    Search
+                                </button>
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+
+                                <button mat-flat-button id="resetbtn" class="btn btn-save" (click)="resetFilter()">
+                                    Reset
+                                </button>
+                            </div>
+                        </form>
+                        <div id="closeicon">
+                            <mat-icon class="closebtn" (click)="close_search_bar()">cancel</mat-icon>
+                        </div>
+                    </div>
+
+                    <div id="download">
+                        <i class="pi pi-download text-black-500 text-xl" style="color: #0D1046;"
+                        (click)="download(searcharray)"></i>
+                    </div>
+                </div>
+            </div>
+
+        </mat-card-content>
+    </mat-card> -->
+<!-- Searching  -->
+
+
+
+
+
+<!-- Table data  -->
+
+<!-- <mat-card class="custom-card mx-3 my-4">
+        <mat-card-content class="custom-content">
+            <div id="tablediv" *ngIf="searcharray.length>0">
+                <app-dynamic-table-component [isCheckbox]="true" [items]="searcharray"
+                (selectedRow)="checkbox($event)" headerBackgroundColor="#0D1046"
+                headerTextColor="#ffffff" tableTextColor="#365B64" rowHeight="45"
+                tableFontFamily="Mulish', sans-serif" tableFontSize="18" [Actions]="['View']"
+                (onView)="viewfunc($event)">
+            
+            </app-dynamic-table-component> -->
+
+
+<!--  <table class="table">
+                <thead>
+                <tr>
+                    <th>Name </th>
+                    <th>GSTIN</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>User Code</th>
+                    <th>Password</th>
+                    <th>Location</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let data of searcharray ;let i = index">
+                    <td class="imagecircle">
+                        <tr id="imgrow">
+                            <td id="imagedata">
+                                {{data.name}}
+                            </td>
+
+                            <td class="insideimg">
+                                <img src="../assets/img.jpeg" alt="Not Found" class="userimage">
+                            </td>
+                        </tr>
+                    </td>
+                    <td>{{ data.gstin }}</td>
+                    <td>{{ data.mobile }}</td>
+                    <td>{{ data.email }}</td>
+                    <td>{{ data.usercode }}</td>
+                    <td>{{ data.password }}</td>
+                    <td>{{ data.location }}</td>
+                    <td>
+                        <mat-icon>open_in_new</mat-icon>
+                    </td>
+                </tr>
+            </tbody>
+        </table> -->
+<!-- </div>
+        </mat-card-content>
+    </mat-card> -->
+
+
+
+
+
+
+<!-- </div> -->

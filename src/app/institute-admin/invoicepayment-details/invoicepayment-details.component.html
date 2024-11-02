@@ -1,0 +1,133 @@
+<div id="main">
+
+    <section class="border-round-sm">
+        <div class="p-p-4">
+            <div class="p-grid p-nogutter p-jc-between p-ai-center p-mb-4">
+                <div class="p-col-12 p-md-6 flex justify-content-center">
+                    <img src="assets/Navbaricon/Nickicon.png" alt="Company Logo" class="p-mb-2 iconbackground" />
+                </div>
+                <!-- <div class="p-col-12 p-md-6 p-text-right">
+                    <h2 class="p-text-bold p-text-indigo-600 invoice">INVOICE</h2>
+                    <p>Invoice ID : 66K5W3</p>
+                    <p>Date : 26 Jan, 2020</p>
+                </div> -->
+            </div>
+
+            <!-- <div class="p-card p-p-3 p-mb-4">
+                <h3 class="p-text-bold p-mb-1">INVOICE TO</h3>
+                <p>Gregory Anderson</p>
+                <p>House #65, 4328 Marion Street</p>
+                <p>Newbury, VT 05051</p>
+                <p>+012 8764 556</p>
+            </div> -->
+
+            <!-- <div class="invoice">
+                <div class="invoice-header">
+                    <div>
+                        <h2>INVOICE TO</h2>
+                        <p id="name">{{ invoice.customer.name }}</p>
+                        <p icon="pi-map-marker">{{ invoice.customer.address }}</p>
+                        <p icon="pi-phone">{{ invoice.customer.phone }}</p>
+                    </div>
+                    <div class="invoice-info">
+                        <h2>INVOICE</h2>
+                        <p>INVOICE ID: {{ invoice.id }}</p>
+                        <p>DATE: {{ invoice.date }}</p>
+                    </div>
+                </div>
+
+                <p-table [value]="invoiceItems" class="p-mb-4">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>ITEM ID</th>
+                            <th>DESCRIPTION</th>
+                            <th>PRICE</th>
+                            <th>QTY</th>
+                            <th>AMOUNT</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-item>
+                        <tr>
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.description }}</td>
+                            <td>{{ item.price | currency }}</td>
+                            <td>{{ item.qty }}</td>
+                            <td>{{ item.amount | currency }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+
+                <div class="p-text-right">
+                    <p>Subtotal: $435.00</p>
+                    <p>Processing Fee: $10.00</p>
+                    <p>TAX: $43.50</p>
+                    <p class="p-text-bold">Grand Total: $478.50</p>
+                </div>
+
+                <div class="p-mt-4 p-text-center p-text-muted">
+                    <p>Invoice was created on a computer and is valid without the signature and seals.</p>
+                </div>
+            </div> -->
+            <!-- </div> -->
+
+            <div class="invoice">
+                <div class="invoice-header">
+                    <div>
+                        <h2>INVOICE TO</h2>
+                        <p id="name">{{ invoice.customer.name }}</p>
+                        <p icon="pi-map-marker">{{ invoice.customer.address }}</p>
+                        <p icon="pi-phone">{{ invoice.customer.phone }}</p>
+                    </div>
+                    <div class="invoice-info">
+                        <h2>INVOICE</h2>
+                        <p>INVOICE ID: {{ invoice.id }}</p>
+                        <p>DATE: {{ invoice.date }}</p>
+                    </div>
+                </div>
+                <div class="invoice-table">
+                    <p-table [value]="invoice.items">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>ITEM ID</th>
+                                <th>DESCRIPTION</th>
+                                <th>PRICE</th>
+                                <th>QTY</th>
+                                <th>AMOUNT</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-item>
+                            <tr>
+                                <td>{{ item.id }}</td>
+                                <td>{{ item.description }}</td>
+                                <td>\${{ item.price.toFixed(2) }}</td>
+                                <td>{{ item.qty }}</td>
+                                <td>\${{ (item.price * item.qty).toFixed(2) }}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+                <div class="invoice-summary">
+                    <div class="summary-item">
+                        <p>Subtotal</p>
+                        <p>\${{ invoice.subtotal.toFixed(2) }}</p>
+                    </div>
+                    <div class="summary-item">
+                        <p>Processing fee</p>
+                        <p>\${{ invoice.processingFee.toFixed(2) }}</p>
+                    </div>
+                    <div class="summary-item">
+                        <p>TAX</p>
+                        <p>\${{ invoice.tax.toFixed(2) }}</p>
+                    </div>
+                    <div class="summary-item total">
+                        <p>Grand Total</p>
+                        <p>\${{ invoice.grandTotal.toFixed(2) }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+</div>
