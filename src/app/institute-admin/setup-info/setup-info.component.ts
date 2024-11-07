@@ -11,7 +11,7 @@ interface City {
   templateUrl: './setup-info.component.html',
   styleUrl: './setup-info.component.css'
 })
-export class SetupInfoComponent {
+export class SetupInfoComponent implements OnInit {
   username:any = localStorage.getItem("name")
 
   first: number = 0;
@@ -308,5 +308,11 @@ export class SetupInfoComponent {
       }
     }
   }
+
+  addnew() {
+
+  }
+
+  editCourse1() {}
 
 }

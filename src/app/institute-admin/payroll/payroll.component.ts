@@ -72,7 +72,7 @@ export class PayrollComponent implements OnInit {
   statusOptions: any[];
 
   first: number = 0;
-  rows: number = 4;
+  rows: number = 3;
   checkedall: boolean = false;
   checkedone: boolean = false;
 

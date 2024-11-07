@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmPopup } from 'primeng/confirmpopup';
-import { VisitorbooksComponent } from '../visitorbooks/visitorbooks.component';
 import { MatDialog } from '@angular/material/dialog';
+import { AddexpenseheadComponent } from '../addexpensehead/addexpensehead.component';
 
 interface City {
   name: string,
@@ -131,7 +131,7 @@ export class AddExpenseComponent implements OnInit {
   }
 
   addnew() {
-    const dialogRef = this.dialog.open(VisitorbooksComponent, {
+    const dialogRef = this.dialog.open(AddexpenseheadComponent, {
       width: "60%",
       // height: "75%",
       height: "auto",

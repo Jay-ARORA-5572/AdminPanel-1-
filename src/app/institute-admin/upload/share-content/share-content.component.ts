@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmPopup } from 'primeng/confirmpopup';
+import { AdduploadcontentComponent } from '../../adduploadcontent/adduploadcontent.component';
 
 interface City {
   name: string,
@@ -22,7 +24,7 @@ export class ShareContentComponent implements OnInit {
   country: any;
   state: any;
 
-  constructor(private confirmationService: ConfirmationService, private messageService: MessageService) {
+  constructor(private confirmationService: ConfirmationService, private dialog: MatDialog, private messageService: MessageService) {
     this.statusOptions = [
       { label: 'Online', value: 'Online' },
       { label: 'Offline', value: 'Offline' },
@@ -128,6 +130,13 @@ export class ShareContentComponent implements OnInit {
 
   }
 
+  addnew() {
+    const dialogRef = this.dialog.open(AdduploadcontentComponent, {
+      width: "60%",
+      // height: "75%",
+      height: "auto",
+    });
+  }
 
 }
 

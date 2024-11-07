@@ -1,0 +1,54 @@
+    <div class="p-dialog-header">
+        <span class="p-dialog-title">Add Income Head</span>
+        <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+    </div>
+
+    <div class="p-fluid form-layout p-3">
+
+        <div class="field field-half">
+            <label for="state">Income Head</label>
+            <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+        </div>
+
+        <div class="field field-half">
+            <label for="state">Name</label>
+            <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+        </div>
+
+        <div class="field field-half">
+            <label for="state">Invoice No</label>
+            <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+        </div>
+
+        <div class="field field-half">
+            <label for="state">Date</label>
+            <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+        </div>
+
+        <div class="field field-half">
+            <label for="state">Amount</label>
+            <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+        </div>
+
+        <div class="field field-half">
+            <label for="state">Attach Document</label>
+            <div class="file-upload">
+                <span class="file-name">No file selected</span>
+                <label for="fileInput" class="custom-file-upload">
+                    <i class="pi pi-upload"></i> Choose File
+                </label>
+                <input type="file" id="fileInput" (change)="onFileSelected($event)" class="custom-file-input"
+                    accept=".png, .jpg, .jpeg, .pdf" multiple>
+            </div>
+        </div>
+
+        <div class="field field-full1">
+            <label for="state">Description</label>
+            <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+        </div>
+
+    </div>
+
+    <div class="field field-full p-3">
+        <button class="button" pButton type="button" label="Submit Now"></button>
+    </div>

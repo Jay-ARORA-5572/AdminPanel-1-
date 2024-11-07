@@ -146,6 +146,16 @@ import { AddcomplainsComponent } from './addcomplains/addcomplains.component';
 import { AddphonecalllogsComponent } from './addphonecalllogs/addphonecalllogs.component';
 import { VisitorbooksComponent } from './visitorbooks/visitorbooks.component';
 import { AddadmissionlistComponent } from './addadmissionlist/addadmissionlist.component';
+import { AddleaverequestComponent } from './addleaverequest/addleaverequest.component';
+import { AddleavetypeComponent } from './addleavetype/addleavetype.component';
+import { AdddepartmentComponent } from './adddepartment/adddepartment.component';
+import { AdddesignationComponent } from './adddesignation/adddesignation.component';
+import { AddincomeheadComponent } from './addincomehead/addincomehead.component';
+import { AddexpenseheadComponent } from './addexpensehead/addexpensehead.component';
+import { AddnewnoticeComponent } from './addnewnotice/addnewnotice.component';
+import { AddnewcontenttypeComponent } from './addnewcontenttype/addnewcontenttype.component';
+import { AdduploadcontentComponent } from './adduploadcontent/adduploadcontent.component';
+import { AddvideotutorialComponent } from './addvideotutorial/addvideotutorial.component';
 
 
 // ------------ Teacher ----------------
@@ -245,7 +255,17 @@ import { AddadmissionlistComponent } from './addadmissionlist/addadmissionlist.c
     AddcomplainsComponent,
     AddphonecalllogsComponent,
     VisitorbooksComponent,
-    AddadmissionlistComponent
+    AddadmissionlistComponent,
+    AddleaverequestComponent,
+    AddleavetypeComponent,
+    AdddepartmentComponent,
+    AdddesignationComponent,
+    AddincomeheadComponent,
+    AddexpenseheadComponent,
+    AddnewnoticeComponent,
+    AddnewcontenttypeComponent,
+    AdduploadcontentComponent,
+    AddvideotutorialComponent
   ],
   imports: [
     CommonModule,

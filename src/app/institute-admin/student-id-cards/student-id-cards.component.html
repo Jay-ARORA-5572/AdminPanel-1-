@@ -16,31 +16,54 @@
 
         <div class="p-fluid form-layout mt-4 p-3">
 
-            <div class="field field-onefourth">
-                <label for="state">From Date</label>
+            <div class="field field-half">
+                <label for="state">Background Image</label>
                 <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
             </div>
 
-            <div class="field field-onefourth">
-                <label for="state">To Date</label>
+            <div class="field field-half">
+                <label for="state">Institute Name</label>
                 <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
             </div>
 
-            <div class="field field-onefourth">
-                <label for="state">Class</label>
-                <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+            <div class="field field-half">
+                <label for="state">Institute Logo</label>
+                <div class="file-upload">
+                    <span class="file-name">No file selected</span>
+                    <label for="fileInput" class="custom-file-upload">
+                        <i class="pi pi-upload"></i> Choose File
+                    </label>
+                    <input type="file" id="fileInput" (change)="onFileSelected($event)" class="custom-file-input"
+                        accept=".png, .jpg, .jpeg, .pdf" multiple>
+                </div>
             </div>
-            
-            <div class="field field-onefourth">
-                <label for="country">Section</label>
+
+            <div class="field field-half">
+                <label for="country">Signature</label>
+                <div class="file-upload">
+                    <span class="file-name">No file selected</span>
+                    <label for="fileInput" class="custom-file-upload">
+                        <i class="pi pi-upload"></i> Choose File
+                    </label>
+                    <input type="file" id="fileInput" (change)="onFileSelected($event)" class="custom-file-input"
+                        accept=".png, .jpg, .jpeg, .pdf" multiple>
+                </div>
+            </div>
+
+            <div class="field field-half">
+                <label for="country">ID Card Title</label>
+                <input id="country" type="text" pInputText [(ngModel)]="country" class="custom-input">
+            </div>
+
+            <div class="field field-half">
+                <label for="country">Institute Address / Phone / Email</label>
                 <input id="country" type="text" pInputText [(ngModel)]="country" class="custom-input">
             </div>
 
         </div>
 
         <div class="field field-full p-3">
-            <button class="button" pButton type="button" label="Search"></button>
-            <button class="button" pButton type="button" label="Reset"></button>
+            <button class="button" pButton type="button" label="Update"></button>
         </div>
 
     </section>
@@ -55,10 +78,6 @@
 
         <div class="top-header">
             <input type="text" pInputText placeholder="Search" />
-            <!-- <div class="header-controls">
-                <button pButton type="button" label="making .csv type file button" class="add-button"></button>
-                <button pButton type="button" label="making copy button" class="add-button"></button>
-            </div> -->
         </div>
 
         <p-table [value]="instructors" responsiveLayout="scroll" [paginator]="true" [rows]="rows" [first]="first"
@@ -66,13 +85,14 @@
             <ng-template pTemplate="header">
                 <tr>
                     <th>Sr no.</th>
-                    <th>Restore</th>
-                    <th>Date</th>
+                    <th>Download</th>
+                    <th>Share On</th>
+                    <th>Class</th>
+                    <th>Section</th>
                     <th>Admission No</th>
                     <th>Roll No</th>
-                    <th>Class/Course</th>
                     <th>Name</th>
-                    <th>Mobile</th>
+                    <th>Photo</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-instructor>
@@ -80,6 +100,7 @@
                     <td>{{ instructor.phone }} </td>
                     <td>{{ instructor.country }}</td>
                     <td>{{ instructor.user }}</td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>

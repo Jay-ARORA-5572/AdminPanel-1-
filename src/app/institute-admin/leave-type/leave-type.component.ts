@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmPopup } from 'primeng/confirmpopup';
-import { VisitorbooksComponent } from '../visitorbooks/visitorbooks.component';
+import { AddleavetypeComponent } from '../addleavetype/addleavetype.component';
 
 interface City {
   name: string,
@@ -131,8 +131,8 @@ export class LeaveTypeComponent implements OnInit {
   }
 
   addnew() {
-    const dialogRef = this.dialog.open(VisitorbooksComponent, {
-      width: "60%",
+    const dialogRef = this.dialog.open(AddleavetypeComponent, {
+      width: "40%",
       // height: "75%",
       height: "auto",
     });

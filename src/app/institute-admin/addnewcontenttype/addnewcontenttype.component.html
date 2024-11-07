@@ -1,0 +1,22 @@
+<div class="p-dialog-header">
+    <span class="p-dialog-title">Add Content Type</span>
+    <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+</div>
+
+<div class="p-fluid form-layout p-3">
+
+    <div class="field field-full">
+        <label for="state">Topic</label>
+        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+    </div>
+
+    <div class="field field-full">
+        <label for="state">Expiry Date</label>
+        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+    </div>
+
+</div>
+
+<div class="field field-full p-3">
+    <button class="button" pButton type="button" label="Submit Now"></button>
+</div>

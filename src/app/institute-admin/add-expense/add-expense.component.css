@@ -266,8 +266,9 @@ h4 {
 }
 
 .button {
-    background-color: #0D1046;
-    color: #fff;
+    background-color: #0D1046 !important;
+    color: #fff !important;
+    margin-right: 0.6rem;
 }
 
 @media (max-width: 768px) {
@@ -362,7 +363,6 @@ input[type="file"] {
 
 section.shadow-3.border-round-sm {
     margin-top: 26px;
-    max-height: 400px;
     overflow-y: auto;
     overflow-x: auto;
     margin-bottom: 26px;

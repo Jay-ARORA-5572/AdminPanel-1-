@@ -266,8 +266,9 @@ h4 {
 }
 
 .button {
-    background-color: #0D1046;
-    color: #fff;
+    background-color: #0D1046 !important;
+    color: #fff !important;
+    margin-right: 0.6rem;
 }
 
 @media (max-width: 768px) {

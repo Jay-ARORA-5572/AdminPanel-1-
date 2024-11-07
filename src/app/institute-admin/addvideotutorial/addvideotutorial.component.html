@@ -1,0 +1,32 @@
+<div class="p-dialog-header">
+    <span class="p-dialog-title">Add Video Tutorial</span>
+    <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+</div>
+
+<div class="p-fluid form-layout p-3">
+
+    <div class="field field-half">
+        <label for="state">Class</label>
+        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+    </div>
+
+    <div class="field field-half">
+        <label for="state">Section</label>
+        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+    </div>
+
+    <div class="field field-half">
+        <label for="state">Title</label>
+        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+    </div>
+
+    <div class="field field-half">
+        <label for="state">Video Link</label>
+        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+    </div>
+
+</div>
+
+<div class="field field-full p-3">
+    <button class="button" pButton type="button" label="Submit Now"></button>
+</div>

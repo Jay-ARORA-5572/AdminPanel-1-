@@ -73,9 +73,7 @@
     </div>
 
     <section class="shadow-3 border-round-sm">
-
-        <h1>Select Criteria</h1>
-
+        
         <div class="p-fluid form-layout mt-4 p-3">
 
             <div class="field field-onethird">
@@ -111,11 +109,12 @@
         </div>
 
         <div class="top-header">
-            <input type="text" pInputText placeholder="Search" />
-            <div class="header-controls">
-                <button pButton type="button" label="making .csv type file button" class="add-button"></button>
-                <button pButton type="button" label="making copy button" class="add-button"></button>
-            </div>
+                <!-- <button pButton type="button" label="making .csv type file button" class="add-button"></button>
+                <button pButton type="button" label="making copy button" class="add-button"></button> -->
+        </div>
+
+        <div class="top-header">
+            <button class="login" mat-raised-button (click)="addnew()">Mark Attendance</button>
         </div>
 
         <p-table [value]="instructors" responsiveLayout="scroll" [paginator]="true" [rows]="rows" [first]="first"
@@ -137,7 +136,6 @@
                     <td>{{ instructor.phone }} </td>
                     <td>{{ instructor.country }}</td>
                     <td>{{ instructor.user }}</td>
-                    <td></td>
                     <td></td>
                     <td>{{ instructor.activeCourses }}</td>
                     <td>

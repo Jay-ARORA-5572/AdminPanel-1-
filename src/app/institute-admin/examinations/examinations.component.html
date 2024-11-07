@@ -1,1 +1,251 @@
-<p>examinations works!</p>
+<div id="main">
+    <!-- Top header  -->
+    <section class="shadow-3 border-round-sm">
+        <header class="heading">
+            <div class="title-section">
+                <h1>Examinations</h1>
+            </div>
+        </header>
+    </section>
+    <!-- Top header -->
+
+    <!-- 2nd Section -->
+
+    <p-tabView>
+        <!-- Personal Information -->
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <div class="flex align-items-center gap-2">
+                    <span class="font-bold white-space-nowrap m-0">
+                        Create New Exam
+                    </span>
+                </div>
+            </ng-template>
+
+            <section class="shadow-3 border-round-sm">
+
+                <div class="p-fluid form-layout mt-4 p-3">
+                    <div class="field field-half">
+                        <label for="user">Class</label>
+                        <p-dropdown [options]="users" [(ngModel)]="selectedUser" placeholder="Open this select menu"
+                            class="custom-input"></p-dropdown>
+                    </div>
+
+                    <div class="field field-half">
+                        <label for="user">Section</label>
+                        <p-dropdown [options]="users" [(ngModel)]="selectedUser" placeholder="Open this select menu"
+                            class="custom-input"></p-dropdown>
+                    </div>
+
+                    <div class="field field-full1">
+                        <label for="user">Exam Title</label>
+                        <p-dropdown [options]="users" [(ngModel)]="selectedUser" placeholder="Open this select menu"
+                            class="custom-input"></p-dropdown>
+                    </div>
+
+                    <div class="field field-half">
+                        <label for="country">Start Date</label>
+                        <input id="country" type="text" pInputText [(ngModel)]="country" class="custom-input">
+                    </div>
+
+                    <div class="field field-half">
+                        <label for="state">Time</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-half">
+                        <label for="payment">Exam Duration</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-half">
+                        <label for="payment">Result Publish Date</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-half">
+                        <label for="payment">Attempt No</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-half">
+                        <label for="payment">Passing Percentage</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+                </div>
+
+                <h4>Set Questions</h4>
+
+                <div class="p-fluid form-layout mt-4 p-3">
+                    <div class="field field-half">
+                        <label for="course">Import File</label>
+                        <div class="file-upload">
+                            <span class="file-name">No file selected</span>
+                            <label for="fileInput" class="custom-file-upload">
+                                <i class="pi pi-upload"></i> Choose File
+                            </label>
+                            <input type="file" id="fileInput" (change)="onFileSelected($event)"
+                                class="custom-file-input" accept=".png, .jpg, .jpeg, .pdf" multiple>
+                        </div>
+                    </div>
+                </div>
+
+                <p id="check">Or</p>
+
+                <div class="p-fluid form-layout mt-4 p-3">
+                    <div class="field field-full1">
+                        <label for="payment">Question 1</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-half">
+                        <label for="payment">Option 1</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-half">
+                        <label for="payment">Option 2</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-half">
+                        <label for="payment">Option 3</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-half">
+                        <label for="payment">Option 4</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                    <div class="field field-full1">
+                        <label for="payment">Correct Answer</label>
+                        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+                    </div>
+
+                </div>
+
+                <div class="field field-full2 p-3">
+                    <button class="button" pButton type="button" label="+ Add More Questions" (click)="enrollStudent()"></button>
+                </div>
+
+                <div class="field field-full p-3">
+                    <button class="button" pButton type="button" label="Submit" (click)="enrollStudent()"></button>
+                </div>
+            </section>
+
+        </p-tabPanel>
+        <!-- Personal Information -->
+
+        <!-- Courses -->
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <div class="flex align-items-center gap-2">
+                    <span class="font-bold white-space-nowrap m-0">
+                        Total Exam
+                    </span>
+                </div>
+            </ng-template>
+
+            <div class="courses-header">
+                <div class="course-info">
+                    <h2>Total Exam</h2>
+                </div>
+            </div>
+
+            <div class="top-header">
+                <input type="text" pInputText placeholder="Search" />
+                <!-- <div class="header-controls">
+                    <button pButton type="button" label="making .csv type file button" class="button"></button>
+                    <button pButton type="button" label="making copy button" class="button"></button>
+                </div> -->
+            </div>
+
+            <p-table [value]="courses" responsiveLayout="scroll" [paginator]="true" [rows]="rows1" [first]="first"
+                (onPage)="onPageChange($event)">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Sr No</th>
+                        <th>Action</th>
+                        <th>Assign</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>View Paper</th>
+                        <th>Class</th>
+                        <th>Section</th>
+                        <th>From Date</th>
+                        <th>Timing</th>
+                        <th>Publish Date</th>
+                        <th>Time Duration</th>
+                        <th>Attempt No</th>
+                        <th>Passing Percentage</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-course let-i="rowIndex">
+                    <tr>
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ course.name }}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="header-controls">
+                            <i class="actionicon pi pi-pencil" (click)="editCourse1()"></i>
+                            <i class="actionicon pi pi-times cross" (click)="deleteCourse1(i)"></i>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+
+        </p-tabPanel>
+        <!-- Courses -->
+
+        <!-- Review -->
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <div class="flex align-items-center gap-2">
+                    <span class="font-bold white-space-nowrap m-0">
+                        Result
+                    </span>
+                </div>
+            </ng-template>
+
+            <div class="top-header">
+                <input type="text" pInputText placeholder="Search" />
+            </div>
+
+            <p-table [value]="courses" responsiveLayout="scroll" [paginator]="true" [rows]="rows1" [first]="first"
+                (onPage)="onPageChange($event)">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Sr No</th>
+                        <th>Student Name</th>
+                        <th>View Exam</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-course let-i="rowIndex">
+                    <tr>
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ course.name }}</td>
+                        <td class="header-controls">
+                            <i class="actionicon pi pi-pencil" (click)="editCourse1()"></i>
+                            <i class="actionicon pi pi-times cross" (click)="deleteCourse1(i)"></i>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+
+        </p-tabPanel>
+
+    </p-tabView>
+
+    <!-- </section> -->
+
+</div>

@@ -311,6 +311,7 @@ export class LoginComponent {
         this.arr[14]['sub']= [
           { "logo": "test.png", "name": "Employee Directory" },
           { "logo": "Payment.png", "name": "Employee Attendance"},
+          { "logo": "Payment.png", "name": "Employee ID Card"},
           { "logo": "test.png", "name": "Leave Request" },
           { "logo": "test.png", "name": "Leave Type" },
           { "logo": "test.png", "name": "Department" },

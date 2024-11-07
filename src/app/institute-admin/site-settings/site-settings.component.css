@@ -109,8 +109,8 @@
 }
 
 .button{
-  background-color:#0D1046 ;
-  color: #fff;
+  background-color:#0D1046 !important;
+  color: #fff !important;
 }
 
 @media (max-width: 768px) {

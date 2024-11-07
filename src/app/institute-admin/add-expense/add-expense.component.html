@@ -44,15 +44,15 @@
             <div class="course-info">
                 <h2>Expense List</h2>
             </div>
-            <button class="login" mat-raised-button (click)="addnew()">+ Add New </button>
+            <button class="login" mat-raised-button (click)="addnew()">+ Add</button>
         </div>
 
         <div class="top-header">
             <input type="text" pInputText placeholder="Search" />
-            <div class="header-controls">
+            <!-- <div class="header-controls">
                 <button pButton type="button" label="making .csv type file button" class="add-button"></button>
                 <button pButton type="button" label="making copy button" class="add-button"></button>
-            </div>
+            </div> -->
         </div>
 
         <p-table [value]="instructors" responsiveLayout="scroll" [paginator]="true" [rows]="rows" [first]="first"

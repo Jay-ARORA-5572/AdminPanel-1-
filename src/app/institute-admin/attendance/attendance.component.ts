@@ -72,7 +72,7 @@ export class AttendanceComponent implements OnInit {
   statusOptions: any[];
 
   first: number = 0;
-  rows: number = 4;
+  rows: number = 2;
   checkedall: boolean = false;
   checkedone: boolean = false;
 
@@ -128,5 +128,8 @@ export class AttendanceComponent implements OnInit {
 
   }
 
+  addnew() {
+    
+  }
 
 }

@@ -1,0 +1,192 @@
+/* top-header */
+
+.p-component {
+    overflow-y: hidden;
+}
+
+.p-dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f4f4f4;
+}
+
+.p-dialog-title {
+    font-weight: bold;
+}
+
+.cross {
+    cursor: pointer;
+}
+
+/* main-content */
+
+#categoryName {
+    width: 100%;
+}
+
+.custom-width {
+    width: 96%;
+}
+
+.p-dialog-title {
+    font-weight: bold;
+}
+
+.p-dialog-content {
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.p-dialog-footer {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.student-info {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+}
+
+.p-inputgroup {
+    display: flex;
+}
+
+.p-inputgroup>input {
+    flex-grow: 1;
+}
+
+.savebtn {
+    background-color: #0D1046;
+    color: #fff;
+}
+
+.file-upload {
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    border: 1px solid gray;
+    height: 6%;
+    display: flex;
+    /* Use flexbox */
+    align-items: center;
+    /* Vertically center the content */
+    justify-content: space-between;
+}
+
+.file-name {
+    font-size: 15px;
+    vertical-align: middle;
+    margin-left: 87px;
+}
+
+.custom-file-upload {
+    padding: 9px 16px;
+    border: 2px solid #0d1046;
+    background-color: #0d1046;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    float: right;
+}
+
+.form-group {
+    flex: 1 1 48%;
+    /* Take up approximately half the width of the container */
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    /* Prevent fields from getting too small on small screens */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(50% - 20px);
+    min-width: 200px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-field {
+    flex: 1;
+    /* min-width: 200px; */
+}
+
+.bottom {
+    margin-bottom: 1.6rem;
+    font-size: larger;
+}
+
+.bottom1 {
+    margin-top: 0.48rem;
+}
+
+.p-dialog-content {
+    overflow-y: auto;
+    max-height: 688px;
+}
+
+.bottom3 {
+    margin-bottom: 0.4rem;
+}
+
+.full-width {
+    flex: 1 1 100%;
+}
+
+.uploadimage {
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #0d1046 !important;
+    color: #ffff !important;
+}
+
+.uploadimage1 {
+    font-size: 16px;
+    font-weight: 400;
+    background-color: grey !important;
+    color: #ffff !important;
+}
+
+.cancel {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0D1046 !important;
+    border: none;
+    background-color: #FF5833;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 100%;
+    width: 100%;
+    border-radius: 16px 16px 0px 0px;
+    margin: 20px;
+    padding: 0;
+    box-sizing: border-box;
+    flex-direction: column;
+  }

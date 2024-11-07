@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmPopup } from 'primeng/confirmpopup';
+import { AddnewcontenttypeComponent } from '../addnewcontenttype/addnewcontenttype.component';
+import { MatDialog } from '@angular/material/dialog';
 
 interface City {
   name: string,
@@ -22,7 +24,7 @@ export class ContentTypeComponent implements OnInit {
   country: any;
   state: any;
 
-  constructor(private confirmationService: ConfirmationService, private messageService: MessageService) {
+  constructor(private confirmationService: ConfirmationService, private dialog: MatDialog, private messageService: MessageService) {
     this.statusOptions = [
       { label: 'Online', value: 'Online' },
       { label: 'Offline', value: 'Offline' },
@@ -128,5 +130,12 @@ export class ContentTypeComponent implements OnInit {
 
   }
 
+  addnew() {
+    const dialogRef = this.dialog.open(AddnewcontenttypeComponent, {
+      width: "60%",
+      // height: "75%",
+      height: "auto",
+    });
+  }
 
 }

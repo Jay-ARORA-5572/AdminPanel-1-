@@ -1,0 +1,37 @@
+<div class="p-dialog-header">
+    <span class="p-dialog-title">Add Content</span>
+    <i class="pi pi-times cross" (click)="onCancelClick()"></i>
+</div>
+
+<div class="p-fluid form-layout mt-4 p-3">
+
+    <div class="field field-full1">
+        <label for="country">Content Type</label>
+        <input id="country" type="text" pInputText [(ngModel)]="country" class="custom-input">
+    </div>
+
+    <div class="field field-half">
+        <label for="state">Upload File</label>
+        <div class="file-upload">
+            <span class="file-name">No file selected</span>
+            <label for="fileInput" class="custom-file-upload">
+                <i class="pi pi-upload"></i> Choose File
+            </label>
+            <input type="file" id="fileInput" (change)="onFileSelected($event)"
+                class="custom-file-input" accept=".png, .jpg, .jpeg, .pdf" multiple>
+        </div>   
+    </div>
+</div>
+
+<h4>Or</h4>
+
+<div class="p-fluid form-layout mt-4 p-3">
+    <div class="field field-half">
+        <label for="payment">Youtube Link</label>
+        <input id="state" type="text" pInputText [(ngModel)]="state" class="custom-input">
+    </div>
+</div>
+
+<div class="field field-full p-3">
+    <button class="button" pButton type="button" label="Submit Now" (click)="enrollStudent()"></button>
+</div>
